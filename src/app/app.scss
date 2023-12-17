@@ -1,0 +1,65 @@
+// Colors
+@import "./variables";
+@import "./reset.scss";
+@import "../pages/coolBandShow/index.scss";
+@import "../pages/coolStudio/index.scss";
+@import "../shared/UI/index.scss";
+
+// global rules
+
+:root {
+    background-color: $main-background-color;
+    color: $main-font-color;
+    font-family: $main-font;
+}
+
+// font styles
+
+.h1-bold {
+    color: #000;
+    /* H1 - Bold 32 */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%; /* 40px */
+    letter-spacing: 0.64px;
+}
+
+.h2-bold {
+    color: #000;
+
+    /* H2 - Bold */
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 39px */
+    letter-spacing: 0.52px;
+}
+
+.h3-medium {
+    color: #000;
+
+    /* H3- Medium */
+    font-family: Montserrat Alternates;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    letter-spacing: 0.48px;
+}
+
+.h3-bold {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+    letter-spacing: 0.48px;
+}
+
+
+// media queries responsive section
+
+html {
+    max-width: 1440px;
+}

@@ -1,0 +1,60 @@
+header {
+    
+    top: 0;
+    width: -webkit-fill-available;
+    padding: 0 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    background-color: $main-background-color;
+}
+
+
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0px 59px;
+    flex-wrap: wrap;
+}
+
+header ul {
+    padding: 0;
+    text-decoration: none;
+}
+
+.header-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 39px;
+    margin-top: 10px;
+}
+.navigation {
+    display: flex;
+    gap: 45px;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.navigation a {
+    text-decoration: none;
+    color: #FFF;
+
+}
+.social-links{
+    display: flex;
+    gap: 10px;
+}
+
+.select-language {
+    position: absolute;
+    background: gray;
+    padding: 10px;
+}
