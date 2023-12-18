@@ -13,11 +13,11 @@ function AppRoute() {
          <Routes>
             <Route path="" element={<App />}>
                <Route path="" element={<CoolBandShow />}>
-                  <Route path="" element={<CBMain />} />
+                  <Route index element={<CBMain />} />
                   <Route path="gallery" element={<Gallery />} />
                </Route>
                <Route path="studio" element={<CoolStudio />}>
-                  <Route path="" element={<CSMain />} />
+                  <Route index element={<CSMain />} />
                   <Route path="events" element={<EventsGallery />} />
                   <Route path="students" element={<StudentsGallery />} />
                </Route>
