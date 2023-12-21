@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
-import CoolStudio from "../pages/coolStudio";
+import CoolStudio from "./pages/coolStudio";
 import CoolBandShow from "../pages/coolBandShow";
 import CBMain from "../pages/coolBandShow/main";
 import Gallery from "../pages/coolBandShow/gallery";
-import CSMain from "../pages/coolStudio/main";
-import EventsGallery from "../pages/coolStudio/eventsGallery";
-import StudentsGallery from "../pages/coolStudio/studentsGallery";
+import CSMain from "./pages/coolStudio/main";
+import EventsGallery from "./pages/coolStudio/eventsGallery";
+import StudentsGallery from "./pages/coolStudio/studentsGallery";
 function AppRoute() {
    return (
       <>
