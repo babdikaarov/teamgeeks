@@ -8,7 +8,7 @@
       "build": "tsc && vite build",
       "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
       "preview": "vite preview",
-      "format": "prettier --write .",
+      "format-all": "prettier --write .",
       "prepare": "husky install"
    },
    "husky": {
@@ -25,6 +25,7 @@
    "dependencies": {
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "prettier": "^3.1.1",
       "react-router-dom": "^6.21.0",
       "react-router-hash-link": "^2.4.3"
    },
