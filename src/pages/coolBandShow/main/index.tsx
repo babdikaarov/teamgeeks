@@ -1,5 +1,5 @@
 function CBMain() {
-  return <div>Main</div>;
+   return <div>Main</div>;
 }
 
 export default CBMain;
