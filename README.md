@@ -1,19 +1,5 @@
 # Cool Show Band
 
-## to start
-
-```cli
-##to start
-git clone <PROJECTLINK> .
-npm i
-npm run dev
-
-
-##optional
-npm run format ##runs pritier foramter
-[install auto formater](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-```
-
 ## FRONT END
 
 ### File architer
@@ -28,9 +14,9 @@ notes:
 
 `slices` for redux slices.
 
-`naming convention for components` use the headers of blocks from [design](https://www.figma.com/file/tK8z28UrBr1hoOoFG3oz0P/My-Cool-Band?node-id=0%3A1&mode=dev) for exmaples:
+ `naming convention for components` use the headers of blocks from [design](https://www.figma.com/file/tK8z28UrBr1hoOoFG3oz0P/My-Cool-Band?node-id=0%3A1&mode=dev) for exmaples:
 
-`naming class selectors` to avoid name conflicts between styles component's higher order tag should be named as name component `About.tsx => className="about"` all following children either use `.about *div*nav*img*{}` css rule selector or use the `about` as an extention to className for children tags `className="about-container` , `className="about-box` etc.
+ `naming class selectors` to avoid name conflicts between styles component's higher order tag should be named as name component `About.tsx => className="about"` all following children either use `.about *div*nav*img*{}` css rule selector or use the `about` as an extention to className for children tags `className="about-container` , `className="about-box` etc.
 
 ```txt
 - public //for .html  realted files (favicon etc)
@@ -39,7 +25,7 @@ notes:
         - store //
         - app.scss // CSS global rules
         - reset.scss // global reset rules
-        - App.tsx
+        - App.tsx 
         - index.tsx //use for nesting routes and components.
         - index.scss  // use for nesting css rules from pages directory.
   - pages

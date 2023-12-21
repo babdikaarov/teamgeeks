@@ -1,10 +1,9 @@
 import { Outlet } from "react-router";
-import HeaderStudioContainer from "./header/HeaderStudioContainer";
 
 function CoolStudio() {
    return (
       <>
-         <HeaderStudioContainer />
+         <div>CoolStudio</div>
          <Outlet />
       </>
    );
