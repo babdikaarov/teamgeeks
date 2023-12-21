@@ -4,5 +4,24 @@
 @import "../pages/coolBandShow/index.scss";
 @import "../pages/coolStudio/index.scss";
 @import "../shared/UI/index.scss";
+@import "../shared/widgets/index.scss";
 
 // global rules
+
+body {
+   font-family: $main-font;
+   // .header is absolute position with heaigh 80px to accomodate space
+   margin-top: 80px;
+   // ^^^^^^^^^^^^^^^
+}
+a {
+   text-decoration: none;
+}
+
+.active {
+   color: $hover-color;
+}
+
+a:hover {
+   color: $hover-color;
+}
