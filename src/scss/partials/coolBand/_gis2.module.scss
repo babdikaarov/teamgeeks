@@ -1,0 +1,43 @@
+@use "../mixin" as mix;
+
+.mainMapDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.callToUs {
+  font-weight: bold;
+  font-size: 32px;
+  color: #FCFCFC;
+}
+
+.music {
+  color: #FFFFFF;
+}
+
+.toBook {
+  max-width: 506px;
+  color: white;
+}
+
+.innerMapDiv {
+  text-align: center;
+}
+
+.btnCall {
+  color: yellow;
+  position: relative;
+  border: 1px solid yellow;
+  border-radius: 16px;
+  padding: 8px 93px;
+}
+
+.btnCall::after {
+  content: "";
+  position: absolute;
+  background: url("../../../assets/Vector.png") no-repeat 50% 50%;
+  top: 9px;
+  right: 67px;
+  width: 14px;
+  height: 20px;
+}

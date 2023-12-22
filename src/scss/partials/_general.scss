@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 18px;
+  background:  #151515;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, button {
+  color: inherit;
+  background: inherit;
+}

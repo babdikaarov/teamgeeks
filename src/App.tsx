@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import CoolBand from "./pages/CoolBand/CoolBand.tsx";
-
 const App = () => {
    return (
       <>
