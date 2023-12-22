@@ -1,0 +1,63 @@
+.wrapper {
+   background-color: black;
+   align-items: center;
+}
+
+.WhyUs {
+   color: #fcfcfc;
+   font-size: 32px;
+   font-weight: 700;
+   display: flex;
+   justify-content: center;
+   padding-top: 40px;
+}
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 40px 100px;
+}
+
+.infoBlock {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.info1,
+.info2 {
+   width: 466px;
+   margin-bottom: 40px;
+}
+
+.info1 {
+   margin-right: 169px;
+}
+
+.info3,
+.info4 {
+   width: 541px;
+   margin-bottom: 40px;
+}
+
+.info3 {
+   margin-right: 93px;
+}
+
+.icon {
+   margin-right: 8px;
+}
+
+.textH3 {
+   font-weight: 500;
+   font-size: 24px;
+   color: #fcfcfc;
+}
+
+.text {
+   color: #fcfcfc;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 27px;
+   margin-left: 28px;
+}
