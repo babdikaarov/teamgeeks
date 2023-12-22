@@ -1,5 +1,5 @@
 import styles from "../../../scss/partials/coolBand/_coolshowband.module.scss";
-import image from "./Cool band Photo.png";
+import image from "../../../assets/Cool band Photo.png";
 const CoolShowBand = () => {
    return (
       <div className={styles.block}>

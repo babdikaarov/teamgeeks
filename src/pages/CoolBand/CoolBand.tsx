@@ -7,8 +7,8 @@ const CoolBand = () => {
       <>
          <div>
             <CoolShowBand />
-            <Gis2 />
             <WhyUs />
+            <Gis2 />
          </div>
       </>
    );
