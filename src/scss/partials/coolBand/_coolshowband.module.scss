@@ -1,0 +1,23 @@
+.box {
+   width: 1240px;
+   display: flex;
+   justify-content: space-between;
+   margin: auto;
+}
+.show {
+   width: 610px;
+   text-align: center;
+   color: #fff;
+}
+.title {
+   margin: 0 0 32px;
+   size: 32px;
+   line-height: 40px;
+}
+p {
+   font-size: 19px;
+   font-weight: 400px;
+   max-width: 610px;
+   max-height: 457px;
+   line-height: 28.5px;
+}
