@@ -18,7 +18,7 @@ const Gis2 = () => {
             key: "042b5b75-f847-4f2a-b695-b5f58adc9dfd",
          });
          new mapglAPI.Marker(map, {
-            coordinates: [74.609890, 42.850100],
+            coordinates: [74.609962, 42.850329],
          });
       });
 
@@ -36,13 +36,11 @@ const Gis2 = () => {
                <p className="music">
                   Не теряй связь с музыкой!
                </p>
-               <div className="toBook">
-               <span>
+               <span className="toBook">
                Чтобы забронировать выступление Coolshowband отправьте
                нам  сообщение на WhatsApp. Мы свяжемся с вами в ближайшее время
                и ответим на все интересующие вас вопросы
                </span>
-               </div>
                <button className="btnCall">
                   Связаться с нами
                </button>

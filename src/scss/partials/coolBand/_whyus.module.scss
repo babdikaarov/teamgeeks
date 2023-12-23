@@ -11,10 +11,10 @@
    padding-top: 40px;
 }
 
-.container {
+.flexDiv {
    display: flex;
+   justify-content: space-between;
    flex-wrap: wrap;
-   padding: 40px 100px;
 }
 
 .infoBlock {
@@ -29,19 +29,12 @@
    margin-bottom: 40px;
 }
 
-.info1 {
-   margin-right: 169px;
-}
-
 .info3,
 .info4 {
    width: 541px;
    margin-bottom: 40px;
 }
 
-.info3 {
-   margin-right: 93px;
-}
 
 .icon {
    margin-right: 8px;
