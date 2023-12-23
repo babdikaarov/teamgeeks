@@ -1,0 +1,11 @@
+.socialLinks {
+  display: flex;
+  gap: 10px;
+}
+
+.socialLinks li a svg path {
+  fill: #fcfcfc;
+}
+.socialLinks li a:hover svg path {
+  fill: #fed102;
+}

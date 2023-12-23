@@ -3,4 +3,5 @@
 @use "partials/mixin";
 @use "partials/normalize";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat+Alternates:wght@300;400;500;600;700&family=Overpass&family=Poiret+One&family=Poppins&family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat+Alternates:wght@300;400;500;600;700&family=Overpass&family=Poiret+One&family=Poppins&family=Roboto:wght@500&display=swap");
+@import "../UI/Header/topButtons/topButtons.scss";

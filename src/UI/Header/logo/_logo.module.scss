@@ -1,0 +1,28 @@
+.pageLogo {
+  position: relative;
+  width: 104px;
+  height: 60px;
+}
+
+.hoverStateBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pageLogo:hover .hover-state-background {
+  opacity: 0.4;
+}
+
+/* Additional styles for the image if needed */
+.pageLogo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
