@@ -1,0 +1,33 @@
+@use "../mixin" as mix;
+
+.callToUs {
+    font-weight: bold;
+    font-size: 32px;
+    color: #FCFCFC;
+}
+.btn {
+    color: black;
+    font-weight: 900;
+    background-color: #FED102;
+    position: relative;
+    border-radius: 16px;
+    padding: 13px 25px;
+    font-size: 27px;
+}
+.icons {
+    margin-top: 50px;
+}
+.mainDiv {
+    text-align: center;
+}
+.peoples {
+    width: 400px;
+    color: #FFFFFF;
+    margin-left: 420px;
+    font-size: 22px;
+}
+.images {
+    width: 150px;
+    margin-left: 10px;
+
+}
