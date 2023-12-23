@@ -1,40 +1,31 @@
-.wrapper {
-   align-items: center;
-}
-
-.WhyUs {
-   color: #fcfcfc;
-   font-size: 32px;
-   font-weight: 700;
-   display: flex;
-   justify-content: center;
-   padding-top: 40px;
-}
-
-.flexDiv {
+.container {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   padding-bottom: 60px;
 }
 
-.infoBlock {
+.WhyUs {
+   width: 100%;
+   color: #fcfcfc;
+   font-size: 32px;
+   font-weight: 700;
+   justify-content: center;
+   display: flex;
+   padding-bottom: 40px;
+   padding-top: 100px;
+}
+
+.InfoBlock {
    display: flex;
    align-items: center;
    margin-bottom: 20px;
 }
 
-.info1,
-.info2 {
-   width: 466px;
-   margin-bottom: 40px;
+.InfoBlockWrapper {
+   width: 570px;
+   padding-bottom: 40px;
 }
-
-.info3,
-.info4 {
-   width: 541px;
-   margin-bottom: 40px;
-}
-
 
 .icon {
    margin-right: 8px;
