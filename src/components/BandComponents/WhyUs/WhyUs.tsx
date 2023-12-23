@@ -10,7 +10,7 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
             {title}
          </div>
       </div>
-      <div className="text">{text}</div>
+      <div className={styles.text}>{text}</div>
    </div>
 );
 
