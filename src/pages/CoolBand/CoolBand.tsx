@@ -6,17 +6,18 @@ import WhyUs from "../../components/BandComponents/WhyUs/WhyUs.tsx";
 import OurClients from "../../components/BandComponents/OurClients/OurClients.tsx";
 
 const CoolBand = () => {
-  return (
-    <>
-      <div>
-        <CoolShowBand />
-        <WhyUs />
-        <OurTeam />
-        <OurClients />
-        <Gis2 />
-      </div>
-    </>
-  );
+   return (
+      <>
+         <div>
+            <HeaderContainer />
+            <CoolShowBand />
+            <WhyUs />
+            <OurTeam />
+            <OurClients />
+            <Gis2 />
+         </div>
+      </>
+   );
 };
 
 export default CoolBand;

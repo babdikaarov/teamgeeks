@@ -22,7 +22,6 @@ const Gis2 = () => {
          });
       });
 
-
       return () => {
          return map && map.destroy();
       };
@@ -33,17 +32,12 @@ const Gis2 = () => {
          <div className={styles.mainMapDiv}>
             <div className={styles.innerMapDiv}>
                <h4 className={styles.callToUs}>Связаться с нами</h4>
-               <p className={styles.music}>
-                  Не теряй связь с музыкой!
-               </p>
+               <p className={styles.music}>Не теряй связь с музыкой!</p>
                <span className={styles.toBook}>
-               Чтобы забронировать выступление Coolshowband отправьте
-               нам  сообщение на WhatsApp. Мы свяжемся с вами в ближайшее время
-               и ответим на все интересующие вас вопросы
+                  Чтобы забронировать выступление Coolshowband отправьте нам сообщение на WhatsApp. Мы свяжемся с вами в
+                  ближайшее время и ответим на все интересующие вас вопросы
                </span>
-               <button className={styles.btnCall}>
-                  Связаться с нами
-               </button>
+               <button className={styles.btnCall}>Связаться с нами</button>
             </div>
             <MapWrapper />
          </div>

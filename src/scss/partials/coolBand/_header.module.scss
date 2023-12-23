@@ -1,23 +1,23 @@
-header {
-  // for responsive fix later
-  max-width: calc(100% - 200px);
-  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  top: 0;
-  width: -webkit-fill-available;
-  padding: 0 100px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 10;
-  background-color: #151515;
+.header {
+   // for responsive fix later
+   // max-width: calc(100% - 200px);
+   // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   top: 0;
+   width: -webkit-fill-available;
+   padding: 0 100px;
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: fixed;
+   z-index: 10;
+   background-color: #151515;
 }
 
 .headerNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   flex-wrap: wrap;
 }
