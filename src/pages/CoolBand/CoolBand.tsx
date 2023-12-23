@@ -1,5 +1,6 @@
 import CoolShowBand from "../../components/BandComponents/CoolShowBand/CoolShowBand.tsx";
 import Gis2 from "../../components/BandComponents/Gis2/Gis2.tsx";
+import OurTeam from "../../components/BandComponents/OurTeam/OurTeam.tsx"
 import WhyUs from "../../components/BandComponents/WhyUs/WhyUs.tsx";
 
 const CoolBand = () => {
@@ -8,6 +9,7 @@ const CoolBand = () => {
          <div>
             <CoolShowBand />
             <WhyUs />
+            <OurTeam/>
             <Gis2 />
          </div>
       </>
