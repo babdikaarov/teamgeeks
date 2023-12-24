@@ -5,21 +5,23 @@ import OurTeam from "../../components/BandComponents/OurTeam/OurTeam.tsx";
 import WhyUs from "../../components/BandComponents/WhyUs/WhyUs.tsx";
 import OurClients from "../../components/BandComponents/OurClients/OurClients.tsx";
 import FooterContainer from "../../components/BandComponents/Footer/FooterContainer.tsx";
+import HeroContainer from "../../components/BandComponents/Hero/HeroContainer.tsx";
 
 const CoolBand = () => {
-   return (
-      <>
-         <div style={{ marginTop: "110px" }}>
-            <HeaderContainer />
-            <CoolShowBand />
-            <WhyUs />
-            <OurTeam />
-            <OurClients />
-            <Gis2 />
-            <FooterContainer />
-         </div>
-      </>
-   );
+  return (
+    <>
+      <div style={{ marginTop: "110px" }}>
+        <HeaderContainer />
+        <HeroContainer />
+        <CoolShowBand />
+        <WhyUs />
+        <OurTeam />
+        <OurClients />
+        <Gis2 />
+        <FooterContainer />
+      </div>
+    </>
+  );
 };
 
 export default CoolBand;
