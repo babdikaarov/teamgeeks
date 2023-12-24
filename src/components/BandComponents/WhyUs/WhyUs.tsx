@@ -18,7 +18,7 @@ const WhyUs: React.FC = () => {
    return (
       <div className={styles.container}>
          <div className={styles.WhyUs}>Почему выбирают нас?</div>
-         <div className="container flexDiv">
+         <div className={styles.flexDiv}>
             <InfoBlock
                title="Профессионалы своего дела"
                text="Большой опыт всех участников коллектива, ответственность и креатив"
