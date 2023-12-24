@@ -6,7 +6,7 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
    <div className={styles.InfoBlockWrapper}>
       <div className={styles.InfoBlock}>
          <div className={styles.textH3}>
-            <img className="icon" src={icon} alt="Icon" />
+            <img className={styles.icon} src={icon} alt="Icon" />
             {title}
          </div>
       </div>
@@ -16,7 +16,7 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
 
 const WhyUs: React.FC = () => {
    return (
-      <div className={styles.container}>
+      <div className="container">
          <div className={styles.WhyUs}>Почему выбирают нас?</div>
          <div className={styles.flexDiv}>
             <InfoBlock
