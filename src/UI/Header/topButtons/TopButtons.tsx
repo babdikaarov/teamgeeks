@@ -1,3 +1,4 @@
+import styles from "./_topButtons.module.scss";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -15,12 +16,16 @@ const TopButtons = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [pathname]);
    return (
-      <div className="top-buttons">
+      <div className={styles.topButtons}>
          <NavLink to={"/"}>
-            <button className={`top-buttons-main-${!activeButton ? "active" : "notActive"}`}>Cool Band</button>
+            <button className={!activeButton ? styles.topButtonsMainActive : styles.topButtonsMainNotActive}>
+               Cool Band
+            </button>
          </NavLink>
          <NavLink to={"/studio"}>
-            <button className={`top-buttons-secondary-${activeButton ? "active" : "notActive"}`}>Cool Studio</button>
+            <button className={activeButton ? styles.topButtonsSecondaryActive : styles.topButtonsSecondaryNotActive}>
+               Cool Studio
+            </button>
          </NavLink>
       </div>
    );

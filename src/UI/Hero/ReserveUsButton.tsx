@@ -2,16 +2,16 @@ import styles from "./_reserveUsButton.module.scss";
 import { FC } from "react";
 import { iconPhone } from "./iconPhone";
 type whatsapp = {
-  whatsapp: string;
+   whatsapp: string;
 };
 const ReserveUsButton: FC<whatsapp> = (whatsapp) => {
-  return (
-    <button className={styles.reserveUsButton}>
-      <a href={`${whatsapp}`} target="blank">
-        Заказать Шоу {iconPhone}
-      </a>
-    </button>
-  );
+   return (
+      <button className={styles.reserveUsButton}>
+         <a href={`${whatsapp}`} target="blank">
+            Заказать Шоу {iconPhone}
+         </a>
+      </button>
+   );
 };
 
 export default ReserveUsButton;

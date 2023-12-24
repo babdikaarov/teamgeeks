@@ -14,21 +14,15 @@ const OurEvents = () => {
          <div className={styles.slider}>
             <img src={topImage} alt="#" className={styles.top} />
             <div className={styles.slideTrack}>
-               {
-                  images.map((every, index) => (
-                     <img src={every} className={styles.slide} key={index} alt="#" />
-                  ))
-               }
-               {
-                  images.map((every, index) => (
-                     <img src={every} className={styles.slide} key={index} alt="#" />
-                  ))
-               }
-               {
-                  images.map((every, index) => (
-                     <img src={every} className={styles.slide} key={index} alt="#" />
-                  ))
-               }
+               {images.map((every, index) => (
+                  <img src={every} className={styles.slide} key={index} alt="#" />
+               ))}
+               {images.map((every, index) => (
+                  <img src={every} className={styles.slide} key={index} alt="#" />
+               ))}
+               {images.map((every, index) => (
+                  <img src={every} className={styles.slide} key={index} alt="#" />
+               ))}
             </div>
             <img src={topImage} alt="#" className={styles.bottom} />
          </div>
