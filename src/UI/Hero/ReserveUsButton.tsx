@@ -7,7 +7,9 @@ type whatsapp = {
 const ReserveUsButton: FC<whatsapp> = (whatsapp) => {
   return (
     <button className={styles.reserveUsButton}>
-      <a href={`${whatsapp}`}>Заказать Шоу {iconPhone}</a>
+      <a href={`${whatsapp}`} target="blank">
+        Заказать Шоу {iconPhone}
+      </a>
     </button>
   );
 };
