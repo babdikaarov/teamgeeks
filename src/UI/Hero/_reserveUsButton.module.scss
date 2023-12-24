@@ -1,0 +1,37 @@
+//  #151515;
+//  "Montserrat Alternates";
+//  #ffffff;
+
+.reserveUsButton {
+  width: 400px;
+  height: 53px;
+  border-radius: 16px;
+  color: #151515;
+  border: 1px solid #fed102;
+
+  /* H3- Medium */
+  font-family: "Montserrat Alternates";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 36px */
+  letter-spacing: 0.48px;
+  background-color: #fed102;
+}
+
+.reserveUsButton svg {
+  top: 4px;
+  position: relative;
+}
+.reserveUsButton svg path {
+  fill: #151515;
+}
+
+.reserveUsButton:hover a {
+  background-color: #fed102;
+  color: #151515;
+}
+
+// .reserveUsButton:hover svg path {
+//   fill: #151515;
+// }

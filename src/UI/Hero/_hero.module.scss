@@ -1,0 +1,15 @@
+.hero {
+  max-height: 677px;
+}
+.hero video {
+  min-width: 100%;
+  max-height: 677px;
+  object-fit: cover;
+}
+
+.hero button {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
