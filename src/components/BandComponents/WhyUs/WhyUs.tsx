@@ -10,7 +10,7 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
             {title}
          </div>
       </div>
-      <div className="text">{text}</div>
+      <div className={styles.text}>{text}</div>
    </div>
 );
 
@@ -18,7 +18,7 @@ const WhyUs: React.FC = () => {
    return (
       <div className={styles.container}>
          <div className={styles.WhyUs}>Почему выбирают нас?</div>
-         <div className="container flexDiv">
+         <div className={styles.flexDiv}>
             <InfoBlock
                title="Профессионалы своего дела"
                text="Большой опыт всех участников коллектива, ответственность и креатив"
