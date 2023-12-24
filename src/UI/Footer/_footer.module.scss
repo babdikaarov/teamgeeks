@@ -2,91 +2,95 @@
 //  "Montserrat Alternates";
 //  #ffffff;
 footer {
-   margin: 64px 100px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 60px auto;
 }
 footer ul {
-   margin: 0;
+  margin: 0;
 }
 footer h5 {
-   margin-top: 0;
+  margin-top: 0;
 }
 
 .footerContainer {
-   display: flex;
-   min-width: 100%;
-   gap: 120px;
+  display: flex;
+
+  min-width: 100%;
+  gap: 120px;
 }
 
 .footerLogos {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footerContent h5 {
-   padding-bottom: 14px;
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 20px;
-   font-style: normal;
-   font-weight: 700;
-   line-height: 150%; /* 30px */
-   letter-spacing: 0.4px;
+  padding-bottom: 14px;
+  color: #ffffff;
+  font-family: "Montserrat Alternates";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0.4px;
 }
 
 .footerContent p {
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 150%; /* 27px */
-   letter-spacing: 0.36px;
-   white-space: nowrap;
+  color: #ffffff;
+  font-family: "Montserrat Alternates";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.36px;
+  white-space: nowrap;
 }
 .footerContent a {
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 150%; /* 27px */
-   letter-spacing: 0.36px;
+  color: #ffffff;
+  font-family: "Montserrat Alternates";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.36px;
 }
 
 .footerContent {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   gap: 64px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 64px;
+  padding-left: 0;
 }
 
 .footerBoxContacts ul li a {
-   white-space: nowrap;
+  white-space: nowrap;
 }
 .footerBoxEdu ul {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 0px 25px;
-   text-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 25px;
+  text-wrap: nowrap;
 }
 
 .footerContent li ul {
-   padding: 0;
+  padding: 0;
 }
 
 .footerContacts {
-   white-space: pre;
+  white-space: pre;
 }
 
 .active {
-   color: #fed102;
+  color: #fed102;
 }
 
 a:active {
-   color: #fed102;
+  color: #fed102;
 }
 
 a:hover {
-   color: #fed102;
+  color: #fed102;
 }

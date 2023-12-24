@@ -1,5 +1,8 @@
 .hero {
+  width: 100%;
+  max-width: 1440px;
   max-height: 677px;
+  margin: auto;
 }
 .hero video {
   min-width: 100%;
@@ -8,8 +11,7 @@
 }
 
 .hero button {
-  position: absolute;
-  top: 65%;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -200%);
 }
