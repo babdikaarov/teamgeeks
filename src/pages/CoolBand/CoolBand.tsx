@@ -7,19 +7,19 @@ import OurClients from "../../components/BandComponents/OurClients/OurClients.ts
 import FooterContainer from "../../components/BandComponents/Footer/FooterContainer.tsx";
 
 const CoolBand = () => {
-  return (
-    <>
-      <div style={{ marginTop: "110px" }}>
-        <HeaderContainer />
-        <CoolShowBand />
-        <WhyUs />
-        <OurTeam />
-        <OurClients />
-        <Gis2 />
-        <FooterContainer />
-      </div>
-    </>
-  );
+   return (
+      <>
+         <div style={{ marginTop: "110px" }}>
+            <HeaderContainer />
+            <CoolShowBand />
+            <WhyUs />
+            <OurTeam />
+            <OurClients />
+            <Gis2 />
+            <FooterContainer />
+         </div>
+      </>
+   );
 };
 
 export default CoolBand;
