@@ -4,17 +4,19 @@ import HeaderContainer from "../../components/BandComponents/Header/HeaderContai
 import OurTeam from "../../components/BandComponents/OurTeam/OurTeam.tsx";
 import WhyUs from "../../components/BandComponents/WhyUs/WhyUs.tsx";
 import OurClients from "../../components/BandComponents/OurClients/OurClients.tsx";
+import FooterContainer from "../../components/BandComponents/Footer/FooterContainer.tsx";
 
 const CoolBand = () => {
    return (
       <>
-         <div>
+         <div style={{ marginTop: "110px" }}>
             <HeaderContainer />
             <CoolShowBand />
             <WhyUs />
             <OurTeam />
             <OurClients />
             <Gis2 />
+            <FooterContainer />
          </div>
       </>
    );

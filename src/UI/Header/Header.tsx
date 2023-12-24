@@ -1,9 +1,9 @@
-import styles from "../../../scss/partials/coolBand/_header.module.scss";
-import SocialLinks from "../../../UI/Header/socialLinks/SocialLinks";
+import styles from "./_header.module.scss";
+import SocialLinks from "./socialLinks/SocialLinks";
 import { FC, useEffect, useState } from "react";
-import Logo from "../../../UI/Header/logo/Logo";
+import Logo from "./logo/Logo";
 import { useLocation } from "react-router-dom";
-import TopButtons from "../../../UI/Header/topButtons/TopButtons";
+import TopButtons from "./topButtons/TopButtons";
 
 type logos = {
    bandLogo: Logo;
