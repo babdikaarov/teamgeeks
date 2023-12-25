@@ -37,7 +37,8 @@ const Gis2 = () => {
                   Чтобы забронировать выступление Coolshowband отправьте нам сообщение на WhatsApp. Мы свяжемся с вами в
                   ближайшее время и ответим на все интересующие вас вопросы
                </span>
-               <button className={styles.btnCall}>Связаться с нами</button>
+               <button className={styles.btnCall}>Связаться с нами
+               </button>
             </div>
             <MapWrapper />
          </div>
