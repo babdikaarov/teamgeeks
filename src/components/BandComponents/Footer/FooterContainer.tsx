@@ -1,5 +1,5 @@
 import Footer from "../../../UI/Footer/Footer";
-import { content, pageLogos } from "./temp/footerData";
+import { content, pageLogos } from "./footerData";
 
 const FooterContainer = () => {
    return (

@@ -45,13 +45,13 @@ export const content = {
 export const pageLogos = {
    bandLogo: {
       mainLogo: true,
-      src: "/src/assets/logos/blogo.svg",
+      src: "/blogo.svg",
       alt: "CoolBand",
       color: "#FED102",
    },
    studioLogo: {
       mainLogo: false,
-      src: "/src/assets/logos/slogo.svg",
+      src: "/slogo.svg",
       alt: "CoolStudio",
       color: "#0049FF",
    },
