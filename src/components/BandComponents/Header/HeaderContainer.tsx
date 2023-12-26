@@ -1,6 +1,6 @@
 import BandNavList from "./BandNavList";
 
-import { lyrics, pageLogos, tempLinks } from "./temp/headerData";
+import { lyrics, pageLogos, tempLinks } from "./headerData";
 
 import Header from "../../../UI/Header/Header";
 

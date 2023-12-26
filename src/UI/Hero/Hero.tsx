@@ -1,5 +1,5 @@
 import styles from "./_hero.module.scss";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import ReserveUsButton from "./ReserveUsButton";
 interface HeroProps {
    contacts: string;
@@ -13,12 +13,6 @@ interface HeroProps {
    };
 }
 const Hero: FC<HeroProps> = ({ contacts, video }) => {
-   useEffect(() => {
-      const video = document.getElementById("videoTag");
-      if (video) {
-         video.onplay;
-      }
-   }, []);
    return (
       <div className={styles.hero}>
          <video muted autoPlay loop id="videoTag">
