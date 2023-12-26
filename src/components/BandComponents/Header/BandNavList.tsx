@@ -1,28 +1,38 @@
 import { FC } from "react";
-import { HashLink, NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import styles from "../../../scss/partials/coolBand/_bandNavList.module.scss";
+import { useLocation } from "react-router-dom";
 
 interface BandNavListProps {
    lyrics: string;
 }
 
 const BandNavList: FC<BandNavListProps> = ({ lyrics }) => {
+   const { pathname } = useLocation();
+   console.log(pathname);
+
    return (
       <ul className={styles.navigation}>
          <li>
-            <NavHashLink
+            <HashLink
                to={"/#home"}
-               className={({ isActive }) => (isActive ? styles.active : "")}
                onClick={() => window.scrollTo(0, 0)}
+               className={pathname === "/" ? styles.active : ""}
             >
                Главная
-            </NavHashLink>
+            </HashLink>
          </li>
          <li>
             <HashLink to={"/#about"}>О нас</HashLink>
          </li>
          <li>
-            <NavHashLink to={"/gallery"}>Галерея</NavHashLink>
+            <HashLink
+               to={"/gallery"}
+               onClick={() => window.scrollTo(0, 0)}
+               className={pathname === "/gallery" ? styles.active : ""}
+            >
+               Галерея
+            </HashLink>
          </li>
          <li>
             <HashLink to={"/#collaboration"}>Коллаборация</HashLink>
