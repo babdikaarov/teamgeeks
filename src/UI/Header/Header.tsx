@@ -4,7 +4,6 @@ import { FC, useEffect, useState } from "react";
 import Logo from "./logo/Logo";
 import { useLocation } from "react-router-dom";
 import TopButtons from "./topButtons/TopButtons";
-
 type logos = {
    bandLogo: Logo;
    studioLogo: Logo;

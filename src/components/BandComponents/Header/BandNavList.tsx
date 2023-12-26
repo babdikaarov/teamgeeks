@@ -9,7 +9,6 @@ interface BandNavListProps {
 
 const BandNavList: FC<BandNavListProps> = ({ lyrics }) => {
    const { pathname } = useLocation();
-   console.log(pathname);
 
    return (
       <ul className={styles.navigation}>
