@@ -12,6 +12,7 @@
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   gap: 40px;
 }
 .InfoBlock {
    display: flex;
@@ -21,7 +22,6 @@
 
 .InfoBlockWrapper {
    width: 570px;
-   padding-bottom: 40px;
 }
 
 .icon {
