@@ -2,28 +2,16 @@ import styles from "../../../scss/partials/coolBand/_ourTeam.module.scss";
 import "../../../scss/index.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Back from "../../../assets/Back.mp4";
-import AnaraCard from "../../../assets/AnaraCard.png";
-import ErbolCard from "../../../assets/ErbolCard.png";
-import SultanCard from "../../../assets/SultanCard.png";
-import DavletCard from "../../../assets/DavletCard.png";
-import OsmaniCard from "../../../assets/OsmaniCard.png";
-import DjKhanCard from "../../../assets/DjKhanCard.png";
-import DjOlympCard from "../../../assets/DjOlympCard.png";
-import KenoCard from "../../../assets/KenoCard.png";
-import DanceShowCard from "../../../assets/DanceShowCard.png";
-
-const cardImages = [
-   AnaraCard,
-   ErbolCard,
-   SultanCard,
-   DavletCard,
-   OsmaniCard,
-   DjKhanCard,
-   DjOlympCard,
-   KenoCard,
-   DanceShowCard,
-];
+import Back from "../../../assets/ourTeamImages/Back.mp4";
+import AnaraCard from "../../../assets/ourTeamImages/AnaraCard.png";
+import ErbolCard from "../../../assets/ourTeamImages/ErbolCard.png";
+import SultanCard from "../../../assets/ourTeamImages/SultanCard.png";
+import DavletCard from "../../../assets/ourTeamImages/DavletCard.png";
+import OsmaniCard from "../../../assets/ourTeamImages/OsmaniCard.png";
+import DjKhanCard from "../../../assets/ourTeamImages/DjKhanCard.png";
+import DjOlympCard from "../../../assets/ourTeamImages/DjOlympCard.png";
+import KenoCard from "../../../assets/ourTeamImages/KenoCard.png";
+import DanceShowCard from "../../../assets/ourTeamImages/DanceShowCard.png";
 
 type CardProps = {
    card: string;
@@ -51,31 +39,31 @@ const OurTeam = () => {
          <div className={styles.OurTeamSlider}>
             <Swiper spaceBetween={-550} slidesPerView={3}>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[0]} />
+                  <OurTeamCard card={AnaraCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[1]} />
+                  <OurTeamCard card={ErbolCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[2]} />
+                  <OurTeamCard card={SultanCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[3]} />
+                  <OurTeamCard card={DavletCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[4]} />
+                  <OurTeamCard card={OsmaniCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[5]} />
+                  <OurTeamCard card={DjKhanCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[6]} />
+                  <OurTeamCard card={DjOlympCard} />
                </SwiperSlide>
                <SwiperSlide>
-                  <OurTeamCard card={cardImages[7]} />
+                  <OurTeamCard card={KenoCard} />
                </SwiperSlide>
                <SwiperSlide className={styles.DanceShow}>
-                  <OurTeamCard card={cardImages[8]} />
+                  <OurTeamCard card={DanceShowCard} />
                </SwiperSlide>
             </Swiper>
          </div>
