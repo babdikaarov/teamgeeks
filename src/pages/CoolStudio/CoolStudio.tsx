@@ -1,5 +1,10 @@
+import HeroStudio from "../../components/StudioComponents/HeroStudio/HeroStudio";
 const CoolStudio = () => {
-   return <div></div>;
+   return (
+      <div>
+         <HeroStudio />
+      </div>
+   );
 };
 
 export default CoolStudio;
