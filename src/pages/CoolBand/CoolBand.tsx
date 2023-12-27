@@ -7,6 +7,7 @@ import OurClients from "../../components/BandComponents/OurClients/OurClients.ts
 import FooterContainer from "../../components/BandComponents/Footer/FooterContainer.tsx";
 import HeroContainer from "../../components/BandComponents/Hero/HeroContainer.tsx";
 import OurEvents from "../../components/BandComponents/OurEvents/OurEvents.tsx";
+import Collaboration from "../../components/BandComponents/Collaboration/Collaboration.tsx";
 
 const CoolBand = () => {
    return (
@@ -18,6 +19,7 @@ const CoolBand = () => {
             <WhyUs />
             <OurEvents />
             <OurTeam />
+            <Collaboration/>
             <OurClients />
             <Gis2 />
             <FooterContainer />
