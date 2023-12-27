@@ -1,0 +1,29 @@
+.SignLessonButton {
+   width: 535px;
+   height: 76px;
+   border-radius: 16px;
+   color: #fff;
+   font-family: "Montserrat Alternates";
+   font-size: 24px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 150%;
+   letter-spacing: 0.48px;
+   background-color: #5979fa;
+}
+
+.SignLessonButton svg {
+   top: 4px;
+   position: relative;
+}
+.SignLessonButton svg path {
+   fill: #fff;
+}
+.SignLessonButton:hover {
+   border: 1px solid #fff;
+   border-color: #fff;
+}
+
+.SignLessonButton:hover a {
+   color: #fff;
+}
