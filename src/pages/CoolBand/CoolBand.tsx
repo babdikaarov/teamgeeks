@@ -12,7 +12,7 @@ const CoolBand = () => {
   return (
     <>
       <div>
-        <Hero />
+        <HeroContainer />
         <CoolShowBand />
         <WhyUs />
         <OurEvents />
