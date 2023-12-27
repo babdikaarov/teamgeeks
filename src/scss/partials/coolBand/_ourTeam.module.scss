@@ -55,5 +55,12 @@
    & .OurTeamCard {
       width: 734px;
       height: 340px;
+      & .back {
+         width: 734px;
+         height: 340px;
+         & video {
+            width: 734px;
+         }
+      }
    }
 }
