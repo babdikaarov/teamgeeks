@@ -1,7 +1,9 @@
 .hero {
-  max-width: 1440px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
   max-height: 677px;
-  margin: 0 auto;
 }
 .hero video {
   width: 100%;

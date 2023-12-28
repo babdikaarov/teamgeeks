@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../scss/partials/ui/_logo.module.scss";
-import blogo from "../../assets/logo/blogo.svg";
-import slogo from "../../assets/logo/slogo.svg";
+import blogo from "/logo/blogo.svg";
+import slogo from "/logo/slogo.svg";
 
 type Logo = {
   mainLogo: boolean;

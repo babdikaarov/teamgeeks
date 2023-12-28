@@ -1,0 +1,29 @@
+@import "../variables";
+
+.courseCardContainer {
+  // width: 236px;
+  // height: 177px;
+
+  // internal box
+  // 130px 124px
+  // bold 20px
+  border-radius: $radius;
+  background: #252525;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 33px;
+
+  aspect-ratio: 236 / 177;
+  width: 236px;
+  height: 177px;
+}
+.courseCardContainer img {
+  aspect-ratio: 1/1;
+  height: 35%;
+}
+.courseCardContainer h6 {
+  font-weight: $bold;
+}

@@ -15,19 +15,29 @@ const SocialLinks: FC<SocialLinksProps> = ({ links }) => {
   return (
     <ul className={styles.socialLinks}>
       <li id="telegram">
-        <a href={links.telegram}>{socialIcons.telegram}</a>
+        <a href={links.telegram} target="blank">
+          {socialIcons.telegram}
+        </a>
       </li>
       <li id="whatsapp">
-        <a href={links.whatsapp}>{socialIcons.whatsapp}</a>
+        <a href={links.whatsapp} target="blank">
+          {socialIcons.whatsapp}
+        </a>
       </li>
       <li id="instagram">
-        <a href={links.instagram}>{socialIcons.instagram}</a>
+        <a href={links.instagram} target="blank">
+          {socialIcons.instagram}
+        </a>
       </li>
       <li id="youtube">
-        <a href={links.youtube}>{socialIcons.youtube}</a>
+        <a href={links.youtube} target="blank">
+          {socialIcons.youtube}
+        </a>
       </li>
       <li id="tiktok">
-        <a href={links.tiktok}>{socialIcons.tiktok}</a>
+        <a href={links.tiktok} target="blank">
+          {socialIcons.tiktok}
+        </a>
       </li>
     </ul>
   );

@@ -32,7 +32,9 @@ const BandNavList: FC<BandNavListProps> = ({ lyrics }) => {
         <HashLink to={"/#collaboration"}>Коллаборация</HashLink>
       </li>
       <li>
-        <a href={lyrics}>Репертуар</a>
+        <a href={lyrics} target="blank">
+          Репертуар
+        </a>
       </li>
     </ul>
   );

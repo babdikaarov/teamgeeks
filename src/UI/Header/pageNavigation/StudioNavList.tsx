@@ -16,7 +16,7 @@ const BandNavList = () => {
         <HashLink to={"/studio#about"}>О студии</HashLink>
       </li>
       <li>
-        <HashLink to={"/studio#majors"}>Направления</HashLink>
+        <HashLink to={"/studio#courses"}>Направления</HashLink>
       </li>
       <li>
         <HashLink to={"/studio#teachers"}>Преподаватели</HashLink>

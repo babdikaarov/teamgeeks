@@ -6,4 +6,4 @@ export const tempLinks = {
   tiktok: "https://www.tiktok.com/en/",
 };
 
-export const lyrics = "";
+export const lyrics = "https://drive.google.com/file/d/1if9BNLrygXaJUV1B15wnJTLmIhuaLQx4/view?usp=drive_link";

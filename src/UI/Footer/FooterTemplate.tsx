@@ -16,16 +16,15 @@ interface FooterTemplateProps {
 
 const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, content }) => {
   return (
-    <footer className="container">
+    <footer>
       <div className={styles.footerLogos}>
         <Logo bandPage={bandPage} />
         <Logo bandPage={!bandPage} />
       </div>
-      <ul className={styles.footerContent}>
-        <FooterBox className={styles.footerBoxEdu} text={content.education} />
-        <FooterBox className={styles.footerBoxAddress} text={content.address} />
-        <FooterBox className={styles.footerBoxContacts} text={content.contact} />
-      </ul>
+      {/* <ul className={styles.footerContent}> */}
+      <FooterBox className={styles.footerBoxEdu} text={content.education} />
+      <FooterBox className={styles.footerBoxAddress} text={content.address} />
+      <FooterBox className={styles.footerBoxContacts} text={content.contact} />
     </footer>
   );
 };

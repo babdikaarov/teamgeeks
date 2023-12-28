@@ -1,3 +1,5 @@
+@import "./variables";
+
 // Sizing
 *,
 *::after,
@@ -16,10 +18,6 @@
   margin: 0 auto;
 }
 
-.section_wrapper {
-  max-width: 1440px;
-}
-
 a,
 button {
   color: inherit;
@@ -29,6 +27,16 @@ button {
   box-shadow: none;
   cursor: pointer;
 }
+// sizing
+
+main {
+  max-width: $desktop_width;
+  margin: 110px auto 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
 // Typography
 
 body {
@@ -37,11 +45,6 @@ body {
   font-weight: 400;
   background: #151515;
   color: #fff;
-}
-
-:root {
-  margin-top: 110px;
-  margin-bottom: 60px;
 }
 
 p,

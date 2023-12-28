@@ -18,12 +18,6 @@ $hover_blue: #5979fa;
 // border
 $radius: 16px;
 
-// Breakpoints
-$mobile_width: 600px;
-$tablet_width: 768px;
-$desktop_width: 1440px;
-$large_desktop_width: 1200px;
-
 // Buttons
 
 @mixin buttons($fill: $color_yellow) {
@@ -35,3 +29,12 @@ $large_desktop_width: 1200px;
   height: 60px;
   border-radius: $radius;
 }
+
+// Size
+
+// Breakpoints
+//
+$mobile_width: 600px;
+$tablet_width: 768px;
+$desktop_width: 1440px;
+$large_desktop_width: 1200px;
