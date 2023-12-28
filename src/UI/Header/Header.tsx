@@ -1,53 +1,28 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Logo from "../Logo/Logo";
-import SocialLinks from "./socialLinks/SocialLinks";
-import TopButtons from "./topButtons/TopButtons";
-import styles from "./_header.module.scss";
-type logos = {
-  bandLogo: Logo;
-  studioLogo: Logo;
-};
-type lyrics = {
-  lyrics: string;
-};
-interface HeaderProps {
-  links: {
-    telegram: string;
-    whatsapp: string;
-    instagram: string;
-    youtube: string;
-    tiktok: string;
-  };
-  pageLogos: logos;
-  lyrics: string;
-  NavList: FC<lyrics>;
-}
+import { lyrics, tempLinks } from "./getHeaderData";
+import BandNavList from "./pageNavigation/BandNavList";
+import StudioNavList from "./pageNavigation/StudioNavList";
+import HeaderTemplate from "./HeaderTemplate";
 
-const Header: FC<HeaderProps> = ({ links, pageLogos, lyrics, NavList }) => {
-  const { bandLogo, studioLogo } = pageLogos;
-  const [logoToDisplay, setLogoToDIsplay] = useState<Logo>(bandLogo);
+const Header = () => {
+  const [bandPage, setBandPage] = useState<boolean>(true);
   const { pathname } = useLocation();
   useEffect(() => {
-    if (pathname == "/studio") {
-      setLogoToDIsplay(studioLogo);
-    } else if (pathname === "/") {
-      setLogoToDIsplay(bandLogo);
+    // console.log(pathname);
+    if (pathname === "/") {
+      setBandPage(true);
+    } else if (pathname === "/studio") {
+      setBandPage(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
-
   return (
-    <>
-      <header className={styles.header}>
-        <nav>
-          <Logo logo={logoToDisplay} />
-          <NavList lyrics={lyrics} />
-          <SocialLinks links={links} />
-        </nav>
-        <TopButtons />
-      </header>
-    </>
+    <HeaderTemplate
+      bandPage={bandPage}
+      lyrics={lyrics}
+      links={tempLinks}
+      NavList={bandPage ? BandNavList : StudioNavList}
+    />
   );
 };
 

@@ -7,18 +7,3 @@ export const tempLinks = {
 };
 
 export const lyrics = "";
-
-export const pageLogos = {
-  bandLogo: {
-    mainLogo: true,
-    src: "/src/assets/logos/blogo.svg",
-    alt: "CoolBand",
-    color: "#FED102",
-  },
-  studioLogo: {
-    mainLogo: false,
-    src: "../../../../assets/logos/slogo.svg",
-    alt: "CoolStudio",
-    color: "#0049FF",
-  },
-};

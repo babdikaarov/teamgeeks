@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import styles from "./_bandNavList.module.scss";
+import styles from "../../../scss/partials/ui/_NavList.module.scss";
 
 const BandNavList = () => {
   const { pathname } = useLocation();
 
   return (
-    <ul className="navigation">
+    <ul className={styles.navigation}>
       <li>
         <HashLink to={"/studio"} className={pathname === "/studio" ? styles.active : ""}>
           Главная

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./_topButtons.module.scss";
+import styles from "../../../scss/partials/ui/_topButtons.module.scss";
 const TopButtons = () => {
   const { pathname } = useLocation();
   const [activeButton, setActiveButton] = useState<boolean>();

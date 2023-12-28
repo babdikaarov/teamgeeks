@@ -1,9 +1,10 @@
+@import "../variables";
 .navigation {
-  width: 100%;
+  width: calc(100% - 200px);
   display: flex;
   justify-content: space-evenly;
   gap: 24px;
-  //   text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .navigation a {
@@ -11,13 +12,13 @@
 }
 
 .active {
-  color: #fed102;
+  color: $hover_yellow;
 }
 
 .navigation a:active {
-  color: #fed102;
+  color: $hover_yellow;
 }
 
 .navigation a:hover {
-  color: #fed102;
+  color: $hover_yellow;
 }

@@ -1,8 +1,11 @@
+@import "../variables";
+
 .navButtons {
   display: flex;
   background-color: #151515;
   border-top: 1px solid #353535;
   border-bottom: 1px solid #353535;
+  height: 30px;
 }
 
 .navButtons a {
@@ -12,12 +15,11 @@
 
 .navButtons:hover a {
   // global
-  // color: #fff;
+  color: $color_white;
 }
 
 .navButtons p {
   font-weight: 500;
-  margin: 0;
 }
 
 // on coolBand page

@@ -1,7 +1,14 @@
-import Hero from "../../../UI/Hero/Hero";
 import { getHeroData } from "./temp/getHeroData";
-const HeroContainer = () => {
-  return <Hero {...getHeroData.bandHero} />;
+import HeroTeamplate from "../../../UI/Hero/HeroTemplate";
+import ReserveUsButton from "../../../UI/Hero/ReserveUsButton";
+
+const Hero = () => {
+  return (
+    <HeroTeamplate {...getHeroData.bandHero}>
+      <ReserveUsButton whatsapp={getHeroData.bandHero.contacts} />
+    </HeroTeamplate>
+  );
 };
 
-export default HeroContainer;
+export default Hero;
+// <ReserveUsButton whatsapp={contacts} />;

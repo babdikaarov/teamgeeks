@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { socialIcons } from "./icons";
-import styles from "./_socialLinks.module.scss";
+import styles from "../../../scss/partials/ui/_socialLinks.module.scss";
 interface SocialLinksProps {
   links: {
     telegram: string;

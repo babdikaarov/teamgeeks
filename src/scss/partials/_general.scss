@@ -1,15 +1,8 @@
+// Sizing
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  background: #151515;
-  color: #fff;
 }
 
 .clearfix::after {
@@ -23,9 +16,8 @@ body {
   margin: 0 auto;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.section_wrapper {
+  max-width: 1440px;
 }
 
 a,
@@ -37,12 +29,57 @@ button {
   box-shadow: none;
   cursor: pointer;
 }
+// Typography
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li {
-    padding: 0;
-  }
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background: #151515;
+  color: #fff;
+}
+
+:root {
+  margin-top: 110px;
+  margin-bottom: 60px;
+}
+
+p,
+a {
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.36px;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.4px;
+}
+
+h5 {
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 0.44px;
+}
+h4 {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.48px;
+}
+h3 {
+  font-size: 26px;
+  line-height: 150%;
+  letter-spacing: 0.52px;
+}
+h2 {
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 150%;
+  letter-spacing: 0.8px;
 }

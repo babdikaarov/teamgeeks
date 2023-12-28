@@ -1,5 +1,5 @@
-import styles from "./_reserveUsButton.module.scss";
 import { FC } from "react";
+import styles from "../../scss/partials/ui/_reserveUsButton.module.scss";
 import { iconPhone } from "./iconPhone";
 type whatsapp = {
   whatsapp: string;
