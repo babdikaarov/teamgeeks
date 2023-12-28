@@ -5,8 +5,7 @@ const CoolStudio = () => {
    return (
       <div>
          <HeroStudio />
-         <AboutStudio/>
-         <StudentsFeedback/>
+         <AboutStudio />
       </div>
    );
 };
