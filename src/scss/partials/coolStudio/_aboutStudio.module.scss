@@ -1,0 +1,58 @@
+.AboutUsWrapper {
+   display: flex;
+   justify-content: space-between;
+   gap: 90px;
+   margin-bottom: 150px;
+}
+.AboutUsH2 {
+   color: #fff;
+   font-family: Montserrat Alternates;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 700;
+   margin-top: 150px;
+   margin-bottom: 48px;
+   display: flex;
+   justify-content: center;
+   letter-spacing: 0.64px;
+}
+.TextWrapper {
+   width: 700px;
+   color: #fff;
+   font-family: Montserrat Alternates;
+   font-size: 19px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 150%;
+   letter-spacing: 0.38px;
+   position: relative;
+}
+.ExpandedText {
+   width: 792px;
+   opacity: 0;
+}
+
+.expanded {
+   opacity: 1;
+   transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
+}
+.ExpandButton {
+   color: #fff;
+}
+.AboutUsImg {
+   width: 432px;
+   height: 288px;
+}
+.MoreButton {
+   opacity: 0.5;
+   text-decoration: underline;
+   margin-left: 2px;
+}
+.CollapseButton {
+   position: absolute;
+   margin-top: 24px;
+   text-decoration: underline;
+   display: flex;
+   justify-content: center;
+   width: 792px;
+}
