@@ -1,96 +1,47 @@
-//  #151515;
-//  "Montserrat Alternates";
-//  #ffffff;
 footer {
-   width: 100%;
-   max-width: 1240px;
-   margin: 60px auto;
-}
-footer ul {
-   margin: 0;
-}
-footer h5 {
-   margin-top: 0;
-}
-
-.footerContainer {
-   display: flex;
-
-   min-width: 100%;
-   gap: 120px;
+  display: flex;
+  gap: 100px;
 }
 
 .footerLogos {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footerContent h5 {
-   padding-bottom: 14px;
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 20px;
-   font-style: normal;
-   font-weight: 700;
-   line-height: 150%; /* 30px */
-   letter-spacing: 0.4px;
-}
-
-.footerContent p {
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 150%; /* 27px */
-   letter-spacing: 0.36px;
-   white-space: nowrap;
-}
-.footerContent a {
-   color: #ffffff;
-   font-family: "Montserrat Alternates";
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 150%; /* 27px */
-   letter-spacing: 0.36px;
+.footerContent h4 {
+  margin: 0;
+  padding-bottom: 10px;
 }
 
 .footerContent {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   gap: 64px;
-   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
 }
 
-.footerBoxContacts ul li a {
-   white-space: nowrap;
+.footerBoxContacts > a {
+  white-space: nowrap;
 }
+
+// Education
+
 .footerBoxEdu ul {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 0px 25px;
-   text-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 25px;
+  text-wrap: nowrap;
+}
+
+.footerBoxAddress {
+  max-width: 20%;
 }
 
 .footerContent li ul {
-   padding: 0;
+  padding: 0;
 }
 
 .footerContacts {
-   white-space: pre;
-}
-
-.active {
-   color: #fed102;
-}
-
-a:active {
-   color: #fed102;
-}
-
-a:hover {
-   color: #fed102;
+  white-space: pre;
 }

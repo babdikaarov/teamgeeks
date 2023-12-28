@@ -1,11 +1,7 @@
 import Hero from "../../../UI/Hero/Hero";
 import { getHeroData } from "./temp/getHeroData";
 const HeroContainer = () => {
-   return (
-      // <div className="container">
-      <Hero {...getHeroData.bandHero} />
-      // {/* </div> */}
-   );
+  return <Hero {...getHeroData.bandHero} />;
 };
 
 export default HeroContainer;

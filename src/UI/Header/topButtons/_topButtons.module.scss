@@ -1,63 +1,50 @@
-.topButtons {
-   width: 100%;
-   max-width: 1440px;
-   top: 80px;
-   left: 50%;
-   transform: translate(-50%, 0);
-   z-index: 12;
-   position: fixed;
-   height: 30px;
-   display: flex;
-   background-color: #151515;
-   border-top: 1px solid #353535;
-   border-bottom: 1px solid #353535;
-}
-.topButtons:hover a {
-   color: #fff;
+.navButtons {
+  display: flex;
+  background-color: #151515;
+  border-top: 1px solid #353535;
+  border-bottom: 1px solid #353535;
 }
 
-.topButtons *,
-.topButtons * * {
-   color: #fff;
-   width: 100%;
-   height: 100%;
-   // add font
-   font-family: "Montserrat Alternates";
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 500;
-   line-height: 150%; /* 27px */
-   letter-spacing: 0.36px;
+.navButtons a {
+  width: 100%;
+  text-align: center;
+}
+
+.navButtons:hover a {
+  // global
+  // color: #fff;
+}
+
+.navButtons p {
+  font-weight: 500;
+  margin: 0;
 }
 
 // on coolBand page
 
-.topButtonsMainActive {
-   background-color: #fed102;
-   color: #fff;
-   font-weight: bold;
-   box-shadow: 0px -4px 6.7px 0px rgba(80, 80, 80, 0.37) inset;
-   border-end-end-radius: 16px;
-   overflow: hidden;
+.navButtonsMainActive {
+  // transfer to glabal
+  background-color: #fed102;
+  font-weight: 700;
+  box-shadow: 0px -4px 6.7px 0px rgba(80, 80, 80, 0.37) inset;
+  //   transfer to global
+  border-end-end-radius: 16px;
 }
 
-.topButtonsSecondaryNotActive {
-   background-color: #151515;
-   color: #fff;
-   box-shadow: 0px -4px 7px 0px rgba(37, 37, 37, 0.31) inset;
+.navButtonsSecondaryNotActive {
+  box-shadow: 0px -4px 7px 0px rgba(37, 37, 37, 0.31) inset;
 }
 
 // on Coolstudio page
 
-.topButtonsSecondaryActive {
-   // background: var(--Blue, #5979fa);
-   background: rgba(9, 80, 188, 0.87);
-   color: #fff;
-   border-radius: 0px 0px 0px 16px;
-   box-shadow: 0px -4px 7px 0px rgba(0, 0, 0, 0.25);
+.navButtonsSecondaryActive {
+  background: rgba(9, 80, 188, 0.87);
+  font-weight: 700;
+
+  //   transfer to global
+  border-end-start-radius: 16px;
+  box-shadow: 0px -4px 6.7px 0px rgba(80, 80, 80, 0.37) inset;
 }
-.topButtonsMainNotActive {
-   background-color: #151515;
-   color: #fff;
-   box-shadow: 0px -4px 7px 0px rgba(0, 0, 0, 0.25);
+.navButtonsMainNotActive {
+  box-shadow: 0px -4px 7px 0px rgba(37, 37, 37, 0.31) inset;
 }

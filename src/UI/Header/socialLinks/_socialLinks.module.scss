@@ -1,12 +1,14 @@
 .socialLinks {
-   display: flex;
-   gap: 10px;
-   list-style-type: none;
+  display: flex;
+  gap: 10px;
+  height: 24px;
 }
 
 .socialLinks li a svg path {
-   fill: #fcfcfc;
+  // transfer to global
+  fill: #fff;
 }
 .socialLinks li a:hover svg path {
-   fill: #fed102;
+  // transfer to global
+  fill: #fed102;
 }

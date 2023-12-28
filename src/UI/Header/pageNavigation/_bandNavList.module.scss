@@ -1,0 +1,23 @@
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 24px;
+  //   text-wrap: nowrap;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+.active {
+  color: #fed102;
+}
+
+.navigation a:active {
+  color: #fed102;
+}
+
+.navigation a:hover {
+  color: #fed102;
+}
