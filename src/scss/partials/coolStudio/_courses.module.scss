@@ -1,10 +1,10 @@
 @import "../variables";
 
 .courses_grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  width: calc(100% - 200px);
-  margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 15px;
+   width: calc(100% - 200px);
+   margin: auto;
 }

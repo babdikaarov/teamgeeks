@@ -1,5 +1,5 @@
 const Collage = () => {
-  return <div>Collage</div>;
+   return <div>Collage</div>;
 };
 
 export default Collage;

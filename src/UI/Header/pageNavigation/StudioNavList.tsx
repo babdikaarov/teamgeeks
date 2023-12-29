@@ -3,32 +3,32 @@ import { HashLink } from "react-router-hash-link";
 import styles from "../../../scss/partials/ui/_NavList.module.scss";
 
 const BandNavList = () => {
-  const { pathname } = useLocation();
+   const { pathname } = useLocation();
 
-  return (
-    <ul className={styles.navigation}>
-      <li>
-        <HashLink to={"/studio"} className={pathname === "/studio" ? styles.active : ""}>
-          Главная
-        </HashLink>
-      </li>
-      <li>
-        <HashLink to={"/studio#about"}>О студии</HashLink>
-      </li>
-      <li>
-        <HashLink to={"/studio#courses"}>Направления</HashLink>
-      </li>
-      <li>
-        <HashLink to={"/studio#teachers"}>Преподаватели</HashLink>
-      </li>
-      <li>
-        <HashLink to={"/studio#students"}>Ученики</HashLink>
-      </li>
-      <li>
-        <HashLink to={"/studio#concerts"}>Концерты</HashLink>
-      </li>
-    </ul>
-  );
+   return (
+      <ul className={styles.navigation}>
+         <li>
+            <HashLink to={"/studio"} className={pathname === "/studio" ? styles.active : ""}>
+               Главная
+            </HashLink>
+         </li>
+         <li>
+            <HashLink to={"/studio#about"}>О студии</HashLink>
+         </li>
+         <li>
+            <HashLink to={"/studio#courses"}>Направления</HashLink>
+         </li>
+         <li>
+            <HashLink to={"/studio#teachers"}>Преподаватели</HashLink>
+         </li>
+         <li>
+            <HashLink to={"/studio#students"}>Ученики</HashLink>
+         </li>
+         <li>
+            <HashLink to={"/studio#concerts"}>Концерты</HashLink>
+         </li>
+      </ul>
+   );
 };
 
 export default BandNavList;

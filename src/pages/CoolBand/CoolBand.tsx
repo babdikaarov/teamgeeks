@@ -9,18 +9,18 @@ import OurEvents from "../../components/BandComponents/OurEvents/OurEvents.tsx";
 import Collaboration from "../../components/BandComponents/Collaboration/Collaboration.tsx";
 
 const CoolBand = () => {
-  return (
-    <>
-      <Hero />
-      <CoolShowBand />
-      <WhyUs />
-      <OurEvents />
-      <OurTeam />
-      <Collaboration />
-      <OurClients />
-      <Gis2 />
-    </>
-  );
+   return (
+      <>
+         <Hero />
+         <CoolShowBand />
+         <WhyUs />
+         <OurEvents />
+         <OurTeam />
+         <Collaboration />
+         <OurClients />
+         <Gis2 />
+      </>
+   );
 };
 
 export default CoolBand;
