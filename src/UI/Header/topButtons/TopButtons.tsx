@@ -16,14 +16,11 @@ const TopButtons = () => {
   }, [pathname]);
   return (
     <div className={styles.navButtons}>
-      <Link
-        to={pathname === "/gallery/band" ? "/gallery/band" : "/"}
-        className={!activeButton ? styles.navButtonsMainActive : styles.navButtonsMainNotActive}
-      >
+      <Link to="/" className={!activeButton ? styles.navButtonsMainActive : styles.navButtonsMainNotActive}>
         <p>Cool Band</p>
       </Link>
       <Link
-        to={pathname === "/gallery/studio" ? "/gallery/studio" : "/studio"}
+        to="/studio"
         className={activeButton ? styles.navButtonsSecondaryActive : styles.navButtonsSecondaryNotActive}
       >
         <p>Cool Studio</p>
