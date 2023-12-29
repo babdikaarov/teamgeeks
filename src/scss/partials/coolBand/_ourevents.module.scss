@@ -1,84 +1,88 @@
 .slider {
-   margin: 200px 0 0 0;
-   overflow: hidden;
+  //   margin: 200px 0 0 0;
+
+  margin-top: 100px;
+  overflow: hidden;
 }
 
 .events {
-   color: #fcfcfc;
-   font-weight: bold;
-   z-index: initial;
-   font-size: 32px;
-   margin: 100px 0 -50px 0;
-   text-align: center;
+  color: #fcfcfc;
+  font-weight: bold;
+  z-index: initial;
+  font-size: 32px;
+  // margin: 100px 0 -50px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .pDiv {
-   display: flex;
-   justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .toCont {
-   cursor: pointer;
-   color: white;
-   text-align: center;
-   display: inline-block;
-   z-index: 1;
-   margin: 60px 0 0 0;
-   padding: 0 50px 0 0;
-   position: relative;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  z-index: 1;
+  margin: 60px 0 0 0;
+  padding: 0 50px 0 0;
+  position: relative;
 }
 
 .toCont::after {
-   content: "";
-   position: absolute;
-   background: url("../../../assets/Vector.png") no-repeat;
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   top: 8px;
-   right: 11px;
+  content: "";
+  position: absolute;
+  background: url("../../../assets/Vector.png") no-repeat;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  right: 11px;
 }
 
 .slideTrack {
-   position: relative;
-   display: flex;
-   width: calc(250px * 18);
-   animation: play 35s linear infinite;
+  position: relative;
+  display: flex;
+  width: calc(250px * 18);
+  animation: play 35s linear infinite;
 }
 
 .top {
-   position: absolute;
-   width: 1500px;
-   z-index: 1;
-   transform: translate(0, -74%);
+  position: absolute;
+  width: 1500px;
+  z-index: 1;
+  transform: translate(0, -74%);
 }
 .bottom {
-   position: absolute;
-   width: 1500px;
-   z-index: 1;
-   transform: translate(0, -27%);
+  position: absolute;
+  width: 1500px;
+  z-index: 1;
+  transform: translate(0, -27%);
 }
 
 .slide {
-   max-height: 900px;
-   max-width: 860px;
-   display: flex;
-   padding: 0 7px;
-   align-items: center;
-   perspective: 100px;
+  max-height: 900px;
+  max-width: 860px;
+  display: flex;
+  padding: 0 7px;
+  align-items: center;
+  perspective: 100px;
 }
 
 .slider::after {
-   left: 0;
-   right: 0;
-   transform: rotateZ(180deg);
+  left: 0;
+  right: 0;
+  transform: rotateZ(180deg);
 }
 
 @keyframes play {
-   0% {
-      transform: translateX(0);
-   }
-   100% {
-      transform: translateX(calc(-250px * 9));
-   }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 9));
+  }
 }

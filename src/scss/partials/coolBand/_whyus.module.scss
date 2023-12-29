@@ -1,43 +1,43 @@
 .WhyUs {
-   width: 100%;
-   color: #fcfcfc;
-   font-size: 32px;
-   font-weight: 700;
-   justify-content: center;
-   display: flex;
-   padding-bottom: 40px;
-   padding-top: 100px;
+  width: 100%;
+  color: #fcfcfc;
+  font-size: 32px;
+  font-weight: 700;
+  justify-content: center;
+  display: flex;
+  padding-bottom: 40px;
+  // padding-top: 100px;
 }
 .flexDiv {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 .InfoBlock {
-   display: flex;
-   align-items: center;
-   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .InfoBlockWrapper {
-   width: 570px;
+  width: 570px;
 }
 
 .icon {
-   margin-right: 8px;
+  margin-right: 8px;
 }
 
 .textH3 {
-   font-weight: 500;
-   font-size: 24px;
-   color: #fcfcfc;
+  font-weight: 500;
+  font-size: 24px;
+  color: #fcfcfc;
 }
 
 .text {
-   color: #fcfcfc;
-   font-weight: 400;
-   font-size: 18px;
-   line-height: 27px;
-   margin-left: 28px;
+  color: #fcfcfc;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  margin-left: 28px;
 }

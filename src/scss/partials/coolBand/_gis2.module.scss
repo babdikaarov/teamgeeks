@@ -1,61 +1,61 @@
 @use "../mixin" as mix;
 
 .mainMapDiv {
-   display: flex;
-   margin: 100px 0;
-   justify-content: space-between;
+  display: flex;
+  // margin: 100px 0;
+  justify-content: space-between;
 }
 
 .callToUs {
-   font-weight: bold;
-   font-size: 32px;
-   color: #fcfcfc;
+  font-weight: bold;
+  font-size: 32px;
+  color: #fcfcfc;
 }
 
 .music {
-   font-size: 26px;
-   font-weight: bold;
-   margin: 43px 0;
-   color: #ffffff;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 43px 0;
+  color: #ffffff;
 }
 
 .toBook {
-   display: block;
-   max-width: 450px;
-   color: white;
-   line-height: 27px;
+  display: block;
+  max-width: 450px;
+  color: white;
+  line-height: 27px;
 }
 
 .innerMapDiv {
-   text-align: center;
+  text-align: center;
 }
 
 .mapDiv {
-   border-radius: 16px;
-   overflow: hidden;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .btnCall {
-   margin: 100px 0 0 0;
-   color: yellow;
-   position: relative;
-   border: 1px solid yellow;
-   border-radius: 16px;
-   padding: 10px 133px;
+  margin: 100px 0 0 0;
+  color: yellow;
+  position: relative;
+  border: 1px solid yellow;
+  border-radius: 16px;
+  padding: 10px 133px;
 }
 
 .btnCall:active {
-   color: black;
-   background: yellow;
+  color: black;
+  background: yellow;
 }
 
 .btnCall::after {
-   content: "";
-   position: absolute;
-   background: url("../../../assets/Group.png") no-repeat;
-   display: inline-block;
-   top: 8px;
-   right: 105px;
-   width: 20px;
-   height: 22px;
+  content: "";
+  position: absolute;
+  background: url("../../../assets/Group.png") no-repeat;
+  display: inline-block;
+  top: 8px;
+  right: 105px;
+  width: 20px;
+  height: 22px;
 }
