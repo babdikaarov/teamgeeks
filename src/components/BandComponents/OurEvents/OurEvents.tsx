@@ -9,7 +9,7 @@ const OurEvents = () => {
    const images: string[] = [image1, image2, image3, image4, image1, image2];
 
    return (
-      <div>
+      <div className={styles.mainDiv}>
          <h3 className={styles.events}>Наши мероприятия</h3>
          <div className={styles.slider}>
             <img src={topImage} alt="#" className={styles.top} />

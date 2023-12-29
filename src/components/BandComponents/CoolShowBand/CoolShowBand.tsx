@@ -1,4 +1,4 @@
-import image from "../../../assets/Cool band Photo.png";
+import image from "../../../assets/CoolbandPhoto.png";
 import styles from "../../../scss/partials/coolBand/_coolshowband.module.scss";
 const CoolShowBand = () => {
    return (

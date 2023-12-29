@@ -27,11 +27,15 @@ button {
    box-shadow: none;
    cursor: pointer;
 }
+
+li {
+   list-style: none;
+}
 // sizing
 
 main {
    max-width: $desktop_width;
-   margin: 110px auto 150px;
+   margin: 150px auto 150px;
    display: flex;
    flex-direction: column;
    gap: 150px;

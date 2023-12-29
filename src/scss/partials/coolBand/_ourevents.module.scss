@@ -5,12 +5,15 @@
    overflow: hidden;
 }
 
+.mainDiv {
+   max-width: 1440px;
+   margin: 100px auto 0 auto;
+}
+
 .events {
    color: #fcfcfc;
    font-weight: bold;
-   z-index: initial;
    font-size: 32px;
-   // margin: 100px 0 -50px 0;
    text-align: center;
    position: relative;
    z-index: 2;
@@ -52,13 +55,13 @@
 
 .top {
    position: absolute;
-   width: 1500px;
+   width: 1440px;
    z-index: 1;
    transform: translate(0, -74%);
 }
 .bottom {
    position: absolute;
-   width: 1500px;
+   width: 1440px;
    z-index: 1;
    transform: translate(0, -27%);
 }

@@ -1,7 +1,16 @@
 import { load } from "@2gis/mapgl";
-import React, { useEffect } from "react";
+import React, { ReactNode, useEffect } from "react";
 import styles from "../../../scss/partials/coolBand/_gis2.module.scss";
-const Gis2 = () => {
+
+interface IProps {
+   callToUs?: string;
+   music?: string;
+   toBook?: string;
+   extraSpan?: string;
+   btn?: ReactNode;
+}
+
+const Gis2: React.FC<IProps> = ({ callToUs, music, toBook, extraSpan, btn }) => {
    const MapWrapper = React.memo(
       () => {
          return <div id="map-container" className={styles.mapDiv} style={{ width: "612px", height: "461px" }}></div>;
@@ -22,6 +31,7 @@ const Gis2 = () => {
          });
       });
 
+
       return () => {
          return map && map.destroy();
       };
@@ -31,13 +41,15 @@ const Gis2 = () => {
       <div className="container">
          <div className={styles.mainMapDiv}>
             <div className={styles.innerMapDiv}>
-               <h4 className={styles.callToUs}>Связаться с нами</h4>
-               <p className={styles.music}>Не теряй связь с музыкой!</p>
+               <h4 className={styles.callToUs}>{callToUs}</h4>
+               <p className={styles.music}>{music}</p>
                <span className={styles.toBook}>
-                  Чтобы забронировать выступление Coolshowband отправьте нам сообщение на WhatsApp. Мы свяжемся с вами в
-                  ближайшее время и ответим на все интересующие вас вопросы
+                  {extraSpan}
                </span>
-               <button className={styles.btnCall}>Связаться с нами</button>
+               <span className={styles.toBook}>
+                  {toBook}
+               </span>
+               {btn}
             </div>
             <MapWrapper />
          </div>

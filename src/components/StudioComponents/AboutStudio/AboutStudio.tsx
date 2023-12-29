@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-// import CoolStudio from "../../../assets/CoolStudio.png";
+import CoolStudio from "../../../assets/CoolStudio.png";
 import styles from "../../../scss/partials/coolStudio/_aboutStudio.module.scss";
 
 const AboutStudio: FC = () => {

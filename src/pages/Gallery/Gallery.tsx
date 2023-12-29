@@ -1,5 +1,11 @@
+import GEvents from "../../components/GalleryComponents/GEvents/GEvents.tsx";
+
 const Gallery = () => {
-   return <div>Gallery</div>;
+   return (
+      <>
+         <GEvents />
+      </>
+   );
 };
 
 export default Gallery;
