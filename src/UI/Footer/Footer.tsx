@@ -1,39 +1,20 @@
-import styles from "./_footer.module.scss";
-import { FC } from "react";
-import FooterBox from "./footerBox/FooterBox";
-import Logo from "../Header/logo/Logo";
+import { useEffect, useState } from "react";
+import FooterTemplate from "./FooterTemplate";
+import { content } from "./footerData";
+import { useLocation } from "react-router-dom";
 
-type content = {
-   education: FooterBox;
-   address: FooterBox;
-   contact: FooterBox;
-};
-type logos = {
-   bandLogo: Logo;
-   studioLogo: Logo;
-};
-
-interface FooterProps {
-   content: content;
-   pageLogos: logos;
-}
-
-const Footer: FC<FooterProps> = ({ pageLogos, content }) => {
-   return (
-      <footer className={styles.footer}>
-         <div className={styles.footerContainer}>
-            <div className={styles.footerLogos}>
-               <Logo logo={pageLogos.bandLogo} />
-               <Logo logo={pageLogos.studioLogo} />
-            </div>
-            <ul className={styles.footerContent}>
-               <FooterBox className={styles.footerBoxEdu} text={content.education} />
-               <FooterBox className="footer-box-address" text={content.address} />
-               <FooterBox className={styles.footerBoxContacts} text={content.contact} />
-            </ul>
-         </div>
-      </footer>
-   );
+const Footer = () => {
+   const [bandPage, setBandPage] = useState<boolean>(true);
+   const { pathname } = useLocation();
+   useEffect(() => {
+      // console.log(pathname);
+      if (pathname === "/") {
+         setBandPage(true);
+      } else if (pathname === "/studio") {
+         setBandPage(false);
+      }
+   }, [pathname]);
+   return <FooterTemplate content={content} bandPage={bandPage} />;
 };
 
 export default Footer;

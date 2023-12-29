@@ -1,7 +1,6 @@
-import styles from "./_topButtons.module.scss";
 import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import styles from "../../../scss/partials/ui/_topButtons.module.scss";
 const TopButtons = () => {
    const { pathname } = useLocation();
    const [activeButton, setActiveButton] = useState<boolean>();
@@ -16,17 +15,16 @@ const TopButtons = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [pathname]);
    return (
-      <div className={styles.topButtons}>
-         <NavLink to={"/"}>
-            <button className={!activeButton ? styles.topButtonsMainActive : styles.topButtonsMainNotActive}>
-               Cool Band
-            </button>
-         </NavLink>
-         <NavLink to={"/studio"}>
-            <button className={activeButton ? styles.topButtonsSecondaryActive : styles.topButtonsSecondaryNotActive}>
-               Cool Studio
-            </button>
-         </NavLink>
+      <div className={styles.navButtons}>
+         <Link to="/" className={!activeButton ? styles.navButtonsMainActive : styles.navButtonsMainNotActive}>
+            <p>Cool Band</p>
+         </Link>
+         <Link
+            to="/studio"
+            className={activeButton ? styles.navButtonsSecondaryActive : styles.navButtonsSecondaryNotActive}
+         >
+            <p>Cool Studio</p>
+         </Link>
       </div>
    );
 };

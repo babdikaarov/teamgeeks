@@ -1,5 +1,7 @@
 .slider {
-   margin: 200px 0 0 0;
+   //   margin: 200px 0 0 0;
+
+   margin-top: 100px;
    overflow: hidden;
 }
 
@@ -8,8 +10,10 @@
    font-weight: bold;
    z-index: initial;
    font-size: 32px;
-   margin: 100px 0 -50px 0;
+   // margin: 100px 0 -50px 0;
    text-align: center;
+   position: relative;
+   z-index: 2;
 }
 
 .pDiv {

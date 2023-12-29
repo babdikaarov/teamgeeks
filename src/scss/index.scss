@@ -1,6 +1,8 @@
+// @use "partials/reset";
+@use "partials/normalize";
+@use "partials/variables";
 @use "partials/general";
 @use "partials/coolBand/gis2.module";
 @use "partials/mixin";
-@use "partials/normalize";
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat+Alternates:wght@300;400;500;600;700&family=Overpass&family=Poiret+One&family=Poppins&family=Roboto:wght@500&display=swap");

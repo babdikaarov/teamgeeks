@@ -1,0 +1,40 @@
+// Colors for text, border, svg, backgrounds
+$color_black: #151515;
+$color_yellow: #fed102;
+$color_white: #ffffff;
+$color_blue: #5979fa;
+
+// Fonts
+
+$medium: 500;
+$bold: 700;
+
+// hover state
+$hover_yellow: #fed102;
+$hover_white: #fff;
+$hover_black: #151515;
+$hover_blue: #5979fa;
+
+// border
+$radius: 16px;
+
+// Buttons
+
+@mixin buttons($fill: $color_yellow) {
+   background: $fill;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 400px;
+   height: 60px;
+   border-radius: $radius;
+}
+
+// Size
+
+// Breakpoints
+//
+$mobile_width: 600px;
+$tablet_width: 768px;
+$desktop_width: 1440px;
+$large_desktop_width: 1200px;

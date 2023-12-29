@@ -15,8 +15,8 @@ const FooterBox: FC<FooterBoxProps> = ({ text, ...props }) => {
    const { p, li } = text;
 
    return (
-      <li {...props}>
-         <h5>{p}</h5>
+      <div {...(props as React.HTMLAttributes<HTMLDivElement>)}>
+         <h4>{p}</h4>
          <ul>
             {li.map((el, i) =>
                typeof el === "string" ? (
@@ -32,7 +32,7 @@ const FooterBox: FC<FooterBoxProps> = ({ text, ...props }) => {
                ),
             )}
          </ul>
-      </li>
+      </div>
    );
 };
 export default FooterBox;

@@ -1,54 +1,28 @@
-import styles from "./_header.module.scss";
-import SocialLinks from "./socialLinks/SocialLinks";
-import { FC, useEffect, useState } from "react";
-import Logo from "./logo/Logo";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import TopButtons from "./topButtons/TopButtons";
+import { lyrics, tempLinks } from "./getHeaderData";
+import BandNavList from "./pageNavigation/BandNavList";
+import StudioNavList from "./pageNavigation/StudioNavList";
+import HeaderTemplate from "./HeaderTemplate";
 
-type logos = {
-   bandLogo: Logo;
-   studioLogo: Logo;
-};
-type lyrics = {
-   lyrics: string;
-};
-interface HeaderProps {
-   links: {
-      telegram: string;
-      whatsapp: string;
-      instagram: string;
-      youtube: string;
-      tiktok: string;
-   };
-   pageLogos: logos;
-   lyrics: string;
-   NavList: FC<lyrics>;
-}
-
-const Header: FC<HeaderProps> = ({ links, pageLogos, lyrics, NavList }) => {
-   const { bandLogo, studioLogo } = pageLogos;
-   const [logoToDisplay, setLogoToDIsplay] = useState<Logo>(bandLogo);
+const Header = () => {
+   const [bandPage, setBandPage] = useState<boolean>(true);
    const { pathname } = useLocation();
    useEffect(() => {
-      if (pathname == "/studio") {
-         setLogoToDIsplay(studioLogo);
-      } else if (pathname === "/") {
-         setLogoToDIsplay(bandLogo);
+      // console.log(pathname);
+      if (pathname === "/") {
+         setBandPage(true);
+      } else if (pathname === "/studio") {
+         setBandPage(false);
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [pathname]);
-
    return (
-      <div>
-         <header className={styles.header}>
-            <Logo logo={logoToDisplay} />
-            <nav className={styles.headerNav}>
-               <NavList lyrics={lyrics} />
-               <SocialLinks links={links} />
-            </nav>
-         </header>
-         <TopButtons />
-      </div>
+      <HeaderTemplate
+         bandPage={bandPage}
+         lyrics={lyrics}
+         links={tempLinks}
+         NavList={bandPage ? BandNavList : StudioNavList}
+      />
    );
 };
 
