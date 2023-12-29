@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+
+
+.ConcertSlider {
+    margin-left: 170px;
+    width: 82%;
+}
+
+.watchmore {
+    font-family: "Montserrat Alternates", sans-serif;
+    color: white;
+    margin-left: 1050px;
+}
+
+
+.LeftSwip {
+    position: absolute;
+    top: 50%;
+    transform: translate(-230%, -300%);
+    width: 30px;
+    height: 30px;
+    background-color: #151515; 
+    color: #fff; 
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.RightSwip {
+    position: absolute;
+    top: 50%;
+    transform: translate(-220%, -300%);
+    width: 30px; 
+    height: 30px;
+    background-color: #151515; 
+    color: #fff; 
+    font-size: 70px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.RightSwip {
+    right: 0; 
+}
+
+.LeftSwip {
+    position: absolute;
+    margin-right: 70px;
+}
+
+

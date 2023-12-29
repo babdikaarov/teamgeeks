@@ -11,6 +11,7 @@ const App = () => {
       <Layout>
          <Routes>
             <Route path="/" element={<CoolBand />} />
+            <Route path="/studio" element={<CoolStudio />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/gallery/event" element={<Collage />} />
             <Route path="/studio" element={<CoolStudio />} />
