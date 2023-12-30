@@ -1,25 +1,30 @@
-.box {
-   display: flex;
-   margin: 100px 0;
-   justify-content: space-between;
-}
-.show {
-   max-width: 780px;
-   text-align: left;
-   color: #fff;
+.about {
+  display: flex;
+  justify-content: space-between;
+  gap: 33px;
+  padding-inline: 100px;
 }
 
-.block {
-   // margin: 100px 0 0 0;
+.article {
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 }
 
-.title {
-   text-align: center;
-   margin: 0 0 32px;
-   font-size: 32px;
-   line-height: 40px;
+.article p {
+  white-space: pre-wrap;
 }
-p {
-   font-size: 19px;
-   line-height: 28.5px;
+.article p::after {
+  content: "\00a0";
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about img {
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 362px;
+  object-fit: cover;
 }

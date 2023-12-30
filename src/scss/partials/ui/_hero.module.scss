@@ -1,18 +1,40 @@
+@import "../variables";
+
 .hero {
-   position: relative;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 100vw;
-   max-height: 677px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-height: 677px;
 }
 .hero video {
-   width: 100%;
-   max-height: 677px;
-   object-fit: cover;
+  width: 100%;
+  max-height: 677px;
+  object-fit: cover;
 }
 
-.hero button {
-   position: relative;
-   left: 50%;
-   transform: translate(-50%, -200%);
+.hero a {
+  display: block;
+  width: min-content;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -200%);
+}
+
+.textPosition {
+  width: 100%;
+  max-width: 1240px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -200%);
+}
+.textPosition h1 {
+  max-width: 900px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  padding-bottom: 40px;
+  font-weight: $bold;
+}
+
+.textPosition h6 {
+  max-width: 550px;
 }

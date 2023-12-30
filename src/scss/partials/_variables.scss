@@ -20,15 +20,15 @@ $radius: 16px;
 
 // Buttons
 
-@mixin buttons($fill: $color_yellow) {
-   background: $fill;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 400px;
-   height: 60px;
-   border-radius: $radius;
-}
+// @mixin buttons($fill: $color_yellow) {
+//    background: $fill;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    width: 400px;
+//    height: 60px;
+//    border-radius: $radius;
+// }
 
 // Size
 

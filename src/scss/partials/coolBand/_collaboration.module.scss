@@ -1,34 +1,47 @@
-.Collaboration {
-   // margin: 120px 0px;
-   width: 100%;
-   height: 480px;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   color: #fcfcfc;
-   & h1 {
-      margin-bottom: 60px;
-   }
+.collabCardsContainer {
+  height: 430px;
+  margin-left: 100px;
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+  border-start-start-radius: 15px;
+  border-end-start-radius: 15px;
+}
+.collabCardsContainer::-webkit-scrollbar {
+  display: none;
 }
 
-.CollaborationCard {
-   width: 230px;
-   height: 378px;
-   text-align: center;
-   & img {
-      width: 230px;
-      height: 296px;
-      border-radius: 16px;
-      margin-bottom: 16px;
-   }
-   & h4 {
-      margin: 0;
-      padding: 0;
-   }
-}
+// .Collaboration {
+//    // margin: 120px 0px;
+//    width: 100%;
+//    height: 480px;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: space-between;
+//    align-items: center;
+//    color: #fcfcfc;
+//    & h1 {
+//       margin-bottom: 60px;
+//    }
+// }
 
-.CollaborationSlider {
-   width: 1340px;
-   height: 378px;
-}
+// .CollaborationCard {
+//    width: 230px;
+//    height: 378px;
+//    text-align: center;
+//    & img {
+//       width: 230px;
+//       height: 296px;
+//       border-radius: 16px;
+//       margin-bottom: 16px;
+//    }
+//    & h4 {
+//       margin: 0;
+//       padding: 0;
+//    }
+// }
+
+// .CollaborationSlider {
+//    width: 1340px;
+//    height: 378px;
+// }

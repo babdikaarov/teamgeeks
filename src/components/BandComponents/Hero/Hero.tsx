@@ -1,14 +1,13 @@
-import { getHeroData } from "./temp/getHeroData";
+import { getHeroData } from "./getHeroData";
 import HeroTeamplate from "../../../UI/Hero/HeroTemplate";
-import ReserveUsButton from "../../../UI/Hero/ReserveUsButton";
+import ReserveUsButton from "../../../UI/buttons/ReserveUsButton";
 
 const Hero = () => {
-   return (
-      <HeroTeamplate {...getHeroData.bandHero}>
-         <ReserveUsButton whatsapp={getHeroData.bandHero.contacts} />
-      </HeroTeamplate>
-   );
+  return (
+    <HeroTeamplate {...getHeroData.bandHero}>
+      <ReserveUsButton whatsapp={getHeroData.bandHero.contacts} />
+    </HeroTeamplate>
+  );
 };
 
 export default Hero;
-// <ReserveUsButton whatsapp={contacts} />;

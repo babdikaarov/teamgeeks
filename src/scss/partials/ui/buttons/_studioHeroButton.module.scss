@@ -1,0 +1,8 @@
+@import "../../mixin";
+@import "../../variables";
+
+.button {
+  @include buttons($fill: $color_white, $color: $color_white, $background: $color_blue, $border: $color_blue);
+  align-self: center;
+  width: 500px;
+}

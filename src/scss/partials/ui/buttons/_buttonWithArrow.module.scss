@@ -1,0 +1,18 @@
+@import "../../variables";
+
+.a {
+  display: inline-block;
+}
+
+.h6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h6:hover {
+  color: $color_yellow;
+}
+.h6:hover path {
+  fill: $color_yellow;
+}

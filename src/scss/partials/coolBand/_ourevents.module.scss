@@ -1,91 +1,48 @@
-.slider {
-   //   margin: 200px 0 0 0;
-
-   margin-top: 100px;
-   overflow: hidden;
+.ourEvent {
+  text-align: center;
 }
 
-.mainDiv {
-   max-width: 1440px;
-   margin: 100px auto 0 auto;
+.sliderEventsContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.events {
-   color: #fcfcfc;
-   font-weight: bold;
-   font-size: 32px;
-   text-align: center;
-   position: relative;
-   z-index: 2;
+.sliderEventsContainer::after,
+.sliderEventsContainer::before {
+  content: "";
+  display: block;
+  background: #151515;
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
 }
 
-.pDiv {
-   display: flex;
-   justify-content: space-around;
+.sliderEventsContainer::after {
+  top: calc(-0.6 * 120px);
+}
+.sliderEventsContainer::before {
+  bottom: calc(-0.6 * 120px);
 }
 
-.toCont {
-   cursor: pointer;
-   color: white;
-   text-align: center;
-   display: inline-block;
-   z-index: 1;
-   margin: 60px 0 0 0;
-   padding: 0 50px 0 0;
-   position: relative;
+.sliderEvents {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  gap: 36px;
+  animation: scroll 15s linear infinite;
 }
 
-.toCont::after {
-   content: "";
-   position: absolute;
-   background: url("../../../assets/Vector.png") no-repeat;
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   top: 8px;
-   right: 11px;
+@keyframes scroll {
+  0% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(calc(-400px * 5));
+  }
 }
-
-.slideTrack {
-   position: relative;
-   display: flex;
-   width: calc(250px * 18);
-   animation: play 35s linear infinite;
-}
-
-.top {
-   position: absolute;
-   width: 1440px;
-   z-index: 1;
-   transform: translate(0, -74%);
-}
-.bottom {
-   position: absolute;
-   width: 1440px;
-   z-index: 1;
-   transform: translate(0, -27%);
-}
-
-.slide {
-   max-height: 900px;
-   max-width: 860px;
-   display: flex;
-   padding: 0 7px;
-   align-items: center;
-   perspective: 100px;
-}
-
-.slider::after {
-   left: 0;
-   right: 0;
-   transform: rotateZ(180deg);
-}
-
-@keyframes play {
-   0% {
-      transform: translateX(0);
-   }
-   100% {
-      transform: translateX(calc(-250px * 9));
-   }
+.our-events-container::-webkit-scrollbar {
+  display: none;
 }

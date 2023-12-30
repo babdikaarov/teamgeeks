@@ -1,0 +1,17 @@
+export const getHeroData = {
+  bandHero: {
+    contacts: "https://wa.me/+996755608908?text=zakazat%20CoolBand",
+    video: { src: "/hero/heroVideo.mp4", type: "video/mp4" },
+    image: { src: "../../../../assets/AnaraCard.png", alt: "hero image" },
+  },
+  studioHero: {
+    contacts: "https://wa.me/+996755608908?text=zakazat%20CoolBand",
+    video: { src: "/hero/HeroStudio.mp4", type: "video/mp4" },
+    image: { src: "../../../../assets/AnaraCard.png", alt: "hero image" },
+    text: {
+      header: "Откройте двери в мир музыки с Coolstudio",
+      paragraph:
+        "Очарование кавербэнда, магия танцевального шоу, творчество в студии — воплощаем вашу музыкальную мечту!",
+    },
+  },
+};

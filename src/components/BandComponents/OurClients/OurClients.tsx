@@ -10,34 +10,31 @@ import Image8 from "../../../assets/Clientscard(7).png";
 import Image9 from "../../../assets/Clientscard(8).png";
 import Image10 from "../../../assets/Clientscard(9).png";
 import Image11 from "../../../assets/Clientscard(10).png";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 
 const OurClients = () => {
-   return (
-      <div className="container">
-         <div className={styles.mainDiv}>
-            <div>
-               <h4 className={styles.callToUs}>Наши клиенты</h4>
-               <button className={styles.btn}>500+</button>
+  return (
+    <SectionWrapper header="Наши клиенты" className={styles.ourClients}>
+      <article className={styles.clientsArticle}>
+        <h2>500+</h2>
+        <h4>Более 500 корпоративов и мероприятий</h4>
+      </article>
 
-               <p className={styles.peoples}>Более 500 корпоративов и мероприятий</p>
-            </div>
-
-            <div className={styles.icons}>
-               <img className={styles.images} src={Image1} alt="Cola" />
-               <img className={styles.images} src={Image2} alt="" />
-               <img className={styles.images} src={Image3} alt="" />
-               <img className={styles.images} src={Image4} alt="" />
-               <img className={styles.images} src={Image5} alt="" />
-               <img className={styles.images} src={Image6} alt="" />
-               <img className={styles.images} src={Image7} alt="" />
-               <img className={styles.images} src={Image8} alt="" />
-               <img className={styles.images} src={Image9} alt="" />
-               <img className={styles.images} src={Image10} alt="" />
-               <img className={styles.images} src={Image11} alt="" />
-            </div>
-         </div>
+      <div className={styles.clientsCards}>
+        <img className={styles.images} src={Image1} alt="Cola" />
+        <img className={styles.images} src={Image2} alt="" />
+        <img className={styles.images} src={Image3} alt="" />
+        <img className={styles.images} src={Image4} alt="" />
+        <img className={styles.images} src={Image5} alt="" />
+        <img className={styles.images} src={Image6} alt="" />
+        <img className={styles.images} src={Image7} alt="" />
+        <img className={styles.images} src={Image8} alt="" />
+        <img className={styles.images} src={Image9} alt="" />
+        <img className={styles.images} src={Image10} alt="" />
+        <img className={styles.images} src={Image11} alt="" />
       </div>
-   );
+    </SectionWrapper>
+  );
 };
 
 export default OurClients;
