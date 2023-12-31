@@ -1,0 +1,69 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+  gap: 33px;
+  padding-inline: 100px;
+  // max-height: 400px;
+  // overflow: hidden;
+  transition: all 1 ease;
+}
+.about:has(.expandBtn:checked) {
+  max-height: none;
+  overflow: visible;
+}
+
+.article {
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  white-space: pre-wrap;
+}
+
+.article p {
+  margin-bottom: 24px;
+}
+
+.article:has(.expandBtn:checked) .truncate {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: unset;
+}
+
+.expandBtn {
+  appearance: none;
+}
+
+.expandBtn::before {
+  content: url(../../../assets/icons/arrowDown.svg);
+  font-size: 30px;
+  color: white;
+  position: relative;
+  right: 0;
+  transform: translate(0%, -100%);
+}
+.expandBtn:checked::before {
+  content: url(../../../assets/icons/arrowUp.svg);
+  font-size: 30px;
+  color: white;
+}
+
+.truncate {
+  // margin: 0 auto;
+  // height: 300px;
+  // max-height: auto;
+  // max-width: 550px;
+  transition: max-height 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.about img {
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 362px;
+  object-fit: cover;
+}

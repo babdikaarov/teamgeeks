@@ -1,0 +1,11 @@
+.clientCard {
+  display: inline;
+  border-radius: 15px;
+  height: 76px;
+}
+.png {
+  object-fit: contain;
+}
+.NoPng {
+  object-fit: cover;
+}

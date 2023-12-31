@@ -1,5 +1,5 @@
 import { Link, LinkProps } from "react-router-dom";
-import { arrow } from "../../assets/icons/arrow";
+import arrow from "../../assets/icons/arrow";
 import styles from "../../scss/partials/ui/buttons/_buttonWithArrow.module.scss";
 import { FC } from "react";
 

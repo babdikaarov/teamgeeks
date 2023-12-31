@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { phone } from "../../assets/icons/phone";
+import phone from "../../assets/icons/phone";
 import styles from "../../scss/partials/ui/buttons/_studioHeroButton.module.scss";
 
 type whatsapp = {

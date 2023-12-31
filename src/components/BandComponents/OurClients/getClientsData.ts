@@ -1,4 +1,4 @@
-const partners = [
+export default [
   {
     alt: "Coca Cola",
     src: "/src/assets/ClientsIcons/1.png",
@@ -44,5 +44,3 @@ const partners = [
     src: "/src/assets/ClientsIcons/11.png",
   },
 ];
-
-export default partners;
