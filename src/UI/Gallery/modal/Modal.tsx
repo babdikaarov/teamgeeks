@@ -60,7 +60,7 @@ const Modal: FC<ModalProps> = ({ images, i, setIndexImage }) => {
           {arrowLeft}
         </button>
         <div
-          className={(images[i]?.view === "protrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage}
+          className={(images[i]?.view === "portrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage}
           onClick={handleImageClick}
         >
           <img src={images[i]?.src} alt={images[i]?.alt} />
