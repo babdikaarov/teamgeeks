@@ -1,14 +1,14 @@
 .collabCardsContainer {
-   height: 430px;
-   margin-left: 100px;
-   display: flex;
-   gap: 24px;
-   overflow-x: scroll;
-   border-start-start-radius: 15px;
-   border-end-start-radius: 15px;
+  height: 430px;
+  margin-left: 100px;
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+  border-start-start-radius: 15px;
+  border-end-start-radius: 15px;
 }
 .collabCardsContainer::-webkit-scrollbar {
-   display: none;
+  display: none;
 }
 
 // .Collaboration {
