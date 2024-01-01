@@ -1,107 +1,107 @@
 @import "../../variables";
 
 .teamCard {
-  position: relative;
-  border-radius: 16px;
-  height: 340px;
-  min-width: 230px;
-  overflow: hidden;
+   position: relative;
+   border-radius: 16px;
+   height: 340px;
+   min-width: 230px;
+   overflow: hidden;
 }
 
 .teamCard h4 {
-  font-weight: $bold;
-  margin: 5px;
+   font-weight: $bold;
+   margin: 5px;
 }
 
 .teamCard p {
-  margin: 5px;
+   margin: 5px;
 }
 
 .teamCardContent {
-  height: 340px;
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
+   height: 340px;
+   transition: transform 0.8s ease;
+   transform-style: preserve-3d;
 }
 .teamCardContentFront {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: flex-start;
 }
 .teamCardContentFront img {
-  transform: translateZ(5px);
+   transform: translateZ(5px);
 }
 .teamCardContentFront p {
-  transform: translateZ(15px);
+   transform: translateZ(15px);
 }
 .teamCardContentFront h4 {
-  transform: translateZ(25px);
+   transform: translateZ(25px);
 }
 
 .teamCardContentBack h4,
 .teamCardContentBack p {
-  transform: rotateY(0.5turn);
+   transform: rotateY(0.5turn);
 }
 
 .teamCardContentFront,
 .teamCardContentBack {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   backface-visibility: hidden;
+   transform-style: preserve-3d;
 }
 
 .teamCardContentFront img,
 .teamCardContentBack video {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  object-fit: cover;
-  object-position: top;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   backface-visibility: hidden;
+   transform-style: preserve-3d;
+   object-fit: cover;
+   object-position: top;
 }
 
 .teamCard:hover .teamCardContent {
-  transform: rotateY(0.5turn);
+   transform: rotateY(0.5turn);
 }
 
 .teamCardContentBack {
-  transform: rotateY(0.5turn);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+   transform: rotateY(0.5turn);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: flex-start;
 }
 
 .teamCardContentBack video {
-  transform: translateZ(5px);
+   transform: translateZ(5px);
 }
 .teamCardContentBack p {
-  transform: translateZ(15px);
+   transform: translateZ(15px);
 }
 .teamCardContentBack h4 {
-  transform: translateZ(25px);
+   transform: translateZ(25px);
 }
 .shadow {
-  transform: translateZ(5px);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  border-radius: 16px;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 39.06%, rgba(0, 0, 0, 0.6) 78.65%, rgba(0, 0, 0, 0.79) 100%);
+   transform: translateZ(5px);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   backface-visibility: hidden;
+   transform-style: preserve-3d;
+   border-radius: 16px;
+   z-index: 2;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 39.06%, rgba(0, 0, 0, 0.6) 78.65%, rgba(0, 0, 0, 0.79) 100%);
 }

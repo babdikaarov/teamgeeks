@@ -1,42 +1,42 @@
 export const coursesList = [
    {
       title: "Бас-Гитара",
-      src: "/courses/basGuitar.svg",
+      src: "/src/assets/courses/basGuitar.svg",
    },
    {
       title: "Гитара",
-      src: "/courses/guitar.svg",
+      src: "/src/assets/courses/guitar.svg",
    },
    {
       title: "Электрогитара",
-      src: "/courses/electroG.svg",
+      src: "/src/assets/courses/electroG.svg",
    },
    {
       title: "Укулеле",
-      src: "/courses/ukelele.svg",
+      src: "/src/assets/courses/ukelele.svg",
    },
    {
       title: "Конго-Бонго",
-      src: "/courses/congo.svg",
+      src: "/src/assets/courses/congo.svg",
    },
    {
       title: "Фортепиано",
-      src: "/courses/piano.svg",
+      src: "/src/assets/courses/piano.svg",
    },
    {
       title: "Вокал",
-      src: "/courses/vocal.svg",
+      src: "/src/assets/courses/vocal.svg",
    },
    {
       title: "Барабаны",
-      src: "/courses/drums.svg",
+      src: "/src/assets/courses/drums.svg",
    },
    {
       title: "Диджеинг",
-      src: "/courses/dj.svg",
+      src: "/src/assets/courses/dj.svg",
    },
    {
       title: "Битмейкинг",
-      src: "/courses/bits.svg",
+      src: "/src/assets/courses/bits.svg",
    },
 ];

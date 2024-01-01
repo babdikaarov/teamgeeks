@@ -1,67 +1,66 @@
 @use "../mixin" as mix;
 
 .mainMapDiv {
-  display: flex;
-  margin: 100px 0 0 0;
-  justify-content: space-between;
+   display: flex;
+   margin: 100px 0 0 0;
+   justify-content: space-between;
 }
 
 .callToUs {
-  font-weight: bold;
-  font-size: 32px;
-  color: #fcfcfc;
+   font-weight: bold;
+   font-size: 32px;
+   color: #fcfcfc;
 }
 
 .music {
-  font-size: 26px;
-  font-weight: bold;
-  margin: 43px 0;
-  color: #ffffff;
+   font-size: 26px;
+   font-weight: bold;
+   margin: 43px 0;
+   color: #ffffff;
 }
 
 .toBook {
-  display: block;
-  max-width: 420px;
-  margin: 40px 0 0 0;
-  color: white;
-  line-height: 27px;
+   display: block;
+   max-width: 420px;
+   margin: 40px 0 0 0;
+   color: white;
+   line-height: 27px;
 }
 
 .innerMapDiv {
-  text-align: left
+   text-align: left;
 }
 
 .mapDiv {
-  border-radius: 16px;
-  overflow: hidden;
+   border-radius: 16px;
+   overflow: hidden;
 }
 
 .btnCall {
-  margin: 100px 0 0 0;
-  display: inline-block;
-  color: yellow;
-  border: 1px solid yellow;
-  border-radius: 16px;
-  padding: 10px 133px;
-  background: url("../../../assets/Group.png") no-repeat 75% 50%;
+   margin: 100px 0 0 0;
+   display: inline-block;
+   color: yellow;
+   border: 1px solid yellow;
+   border-radius: 16px;
+   padding: 10px 133px;
+   background: url("../../../assets/Group.png") no-repeat 75% 50%;
 }
 
 .btnCall:active {
-  color: black;
-  background: yellow url("../../../assets/Component6.png") no-repeat 75% 50%;
+   color: black;
+   background: yellow url("../../../assets/Component6.png") no-repeat 75% 50%;
 }
 
 .studioBtn {
-  margin: 100px 0 0 0;
-  display: inline-block;
-  color: white;
-  border: 1px solid blue;
-  border-radius: 16px;
-  padding: 10px 133px;
-  background: url("../../../assets/Phone.svg") no-repeat 75% 50%;
+   margin: 100px 0 0 0;
+   display: inline-block;
+   color: white;
+   border: 1px solid blue;
+   border-radius: 16px;
+   padding: 10px 133px;
+   background: url("../../../assets/Phone.svg") no-repeat 75% 50%;
 }
 
 .studioBtn:hover {
-  color: white;
+   color: white;
 }
-

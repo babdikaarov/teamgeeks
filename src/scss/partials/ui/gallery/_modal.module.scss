@@ -1,16 +1,16 @@
 .modal {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: rgb(21 21 21 / 0.9);
-  top: 5px;
-  padding: 0;
-  //   left: -5px;
-  overflow: hidden;
-  //   padding: revert;
-  border: none;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   background: rgb(21 21 21 / 0.9);
+   top: 5px;
+   padding: 0;
+   //   left: -5px;
+   overflow: hidden;
+   //   padding: revert;
+   border: none;
 }
 
 // .modal-container > * {
@@ -18,28 +18,28 @@
 //   z-index: 20;
 // }
 .modalContainer {
-  position: relative;
-  //   z-index: 20;
+   position: relative;
+   //   z-index: 20;
 
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   top: 50%;
+   transform: translateY(-50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .modalImage {
-  position: relative;
-  z-index: 10;
-  margin: 0 20px;
-  border-radius: 16px;
-  overflow: hidden;
+   position: relative;
+   z-index: 10;
+   margin: 0 20px;
+   border-radius: 16px;
+   overflow: hidden;
 }
 .modalImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   cursor: pointer;
 }
 
 // #close-modal {
@@ -53,17 +53,17 @@
 
 .modalButtonLeft:hover path,
 .modalButtonRight:hover path {
-  fill: #fff;
+   fill: #fff;
 }
 
 .landscape {
-  aspect-ratio: 1032 / 616;
-  max-width: 1032px;
-  max-height: 616px;
+   aspect-ratio: 1032 / 616;
+   max-width: 1032px;
+   max-height: 616px;
 }
 
 .portrait {
-  aspect-ratio: 578 / 806;
-  max-width: 578px;
-  max-height: 806px;
+   aspect-ratio: 578 / 806;
+   max-width: 578px;
+   max-height: 806px;
 }

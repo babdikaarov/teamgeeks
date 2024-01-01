@@ -5,20 +5,20 @@ import ButtonWithArrow from "../../../UI/buttons/ButtonWithArrow";
 import OurEventsCard from "../../../UI/Cards/OurEventsCard";
 
 const OurEvents = () => {
-  const ourEventsCards = [...getEventCards, ...getEventCards];
+   const ourEventsCards = [...getEventCards, ...getEventCards];
 
-  return (
-    <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
-      <div className={styles.sliderEventsContainer}>
-        <div className={styles.sliderEvents}>
-          {ourEventsCards.map((card, i) => (
-            <OurEventsCard key={i} src={card.src} alt={card.alt} />
-          ))}
-        </div>
-      </div>
-      <ButtonWithArrow text="Подробнее" to={"/gallery"} />
-    </SectionWrapper>
-  );
+   return (
+      <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
+         <div className={styles.sliderEventsContainer}>
+            <div className={styles.sliderEvents}>
+               {ourEventsCards.map((card, i) => (
+                  <OurEventsCard key={i} src={card.src} alt={card.alt} />
+               ))}
+            </div>
+         </div>
+         <ButtonWithArrow text="Подробнее" to={"/gallery"} />
+      </SectionWrapper>
+   );
 };
 
 export default OurEvents;

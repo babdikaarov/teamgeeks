@@ -1,16 +1,16 @@
 @import "../../variables";
 
 .socialLinks {
-  display: flex;
-  gap: 10px;
-  height: 24px;
+   display: flex;
+   gap: 10px;
+   height: 24px;
 }
 
 .socialLinks li a svg path {
-  // transfer to global
-  fill: $color_white;
+   // transfer to global
+   fill: $color_white;
 }
 .socialLinks li a:hover svg path {
-  // transfer to global
-  fill: $hover_yellow;
+   // transfer to global
+   fill: $hover_yellow;
 }

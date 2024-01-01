@@ -1,19 +1,19 @@
 .teamCardsContainer {
-  margin-left: 100px;
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  border-start-start-radius: 15px;
-  border-end-start-radius: 15px;
+   margin-left: 100px;
+   display: flex;
+   gap: 20px;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   border-start-start-radius: 15px;
+   border-end-start-radius: 15px;
 }
 
 .teamCardsContainer::-webkit-scrollbar {
-  display: none;
+   display: none;
 }
 
 .lastCardPadding {
-  width: 100px;
+   width: 100px;
 }
 
 // .OurTeam {

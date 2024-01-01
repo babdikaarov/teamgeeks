@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "../../scss/partials/ui/_coursesCard.module.scss";
+import styles from "../../scss/partials/ui/cards/_coursesCard.module.scss";
 
 interface CoursesCardProps {
    src: string;

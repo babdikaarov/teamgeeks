@@ -1,48 +1,48 @@
 .ourEvent {
-  text-align: center;
+   text-align: center;
 }
 
 .sliderEventsContainer {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
 }
 
 .sliderEventsContainer::after,
 .sliderEventsContainer::before {
-  content: "";
-  display: block;
-  background: #151515;
-  width: 100%;
-  height: 130px;
-  position: absolute;
-  border-radius: 50%;
-  z-index: 1;
+   content: "";
+   display: block;
+   background: #151515;
+   width: 100%;
+   height: 130px;
+   position: absolute;
+   border-radius: 50%;
+   z-index: 1;
 }
 
 .sliderEventsContainer::after {
-  top: calc(-0.6 * 120px);
+   top: calc(-0.6 * 120px);
 }
 .sliderEventsContainer::before {
-  bottom: calc(-0.6 * 120px);
+   bottom: calc(-0.6 * 120px);
 }
 
 .sliderEvents {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  gap: 36px;
-  animation: scroll 15s linear infinite;
+   width: 100%;
+   height: 400px;
+   display: flex;
+   gap: 36px;
+   animation: scroll 15s linear infinite;
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(-15px);
-  }
-  100% {
-    transform: translateX(calc(-400px * 5));
-  }
+   0% {
+      transform: translateX(-15px);
+   }
+   100% {
+      transform: translateX(calc(-400px * 5));
+   }
 }
 .our-events-container::-webkit-scrollbar {
-  display: none;
+   display: none;
 }

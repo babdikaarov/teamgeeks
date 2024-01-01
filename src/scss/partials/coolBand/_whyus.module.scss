@@ -1,10 +1,10 @@
 .whyGrid {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px 164px;
-  width: calc(100% - 200px);
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 64px 164px;
+   width: calc(100% - 200px);
 }
 .whyGrid h3 {
-  padding-bottom: 1rem;
+   padding-bottom: 1rem;
 }

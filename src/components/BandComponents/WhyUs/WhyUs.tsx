@@ -14,21 +14,21 @@ import getData from "../../../tempData/getWhyUsData";
 // }
 
 const WhyUs = () => {
-  return (
-    <SectionWrapper header="Почему выбирают нас" className="why-us">
-      <section className={styles.whyGrid}>
-        {getData.map((el, i) => (
-          <article key={i}>
-            <h3>
-              <span>{checkbox}</span>
-              {el.header}
-            </h3>
-            <p>{el.paragraph}</p>
-          </article>
-        ))}
-      </section>
-    </SectionWrapper>
-  );
+   return (
+      <SectionWrapper header="Почему выбирают нас" className="why-us">
+         <section className={styles.whyGrid}>
+            {getData.map((el, i) => (
+               <article key={i}>
+                  <h3>
+                     <span>{checkbox}</span>
+                     {el.header}
+                  </h3>
+                  <p>{el.paragraph}</p>
+               </article>
+            ))}
+         </section>
+      </SectionWrapper>
+   );
 };
 
 export default WhyUs;

@@ -2,12 +2,12 @@
 @import "../../variables";
 
 .button {
-  @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
-  align-self: center;
+   @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
+   align-self: center;
 }
 
 .button:hover {
-  color: $color_black;
-  fill: $color_black;
-  background: $color_yellow;
+   color: $color_black;
+   fill: $color_black;
+   background: $color_yellow;
 }
