@@ -6,9 +6,9 @@ type Item = {
    alt: string;
    src: string;
    view: string;
-}[];
+};
 interface GalleryCollageProps {
-   items: Item | undefined[];
+   items: (Item | undefined)[];
 }
 
 const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {

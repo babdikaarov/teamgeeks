@@ -3,7 +3,10 @@ export const getHeroData = {
       contacts: "https://wa.me/+996755608908?text=zakazat%20CoolBand",
       video: { src: "/src/assets/hero/heroVideo.mp4", type: "video/mp4" },
       image: { src: "../../../../assets/AnaraCard.png", alt: "hero image" },
-      text: "",
+      text: {
+         header: "",
+         paragraph: "",
+      },
    },
    studioHero: {
       contacts: "https://wa.me/+996755608908?text=zakazat%20CoolBand",

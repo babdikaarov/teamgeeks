@@ -8,7 +8,7 @@ type Text = {
    paragraph: string;
 };
 interface HeroTemplateProps {
-   // contacts: string;
+   contacts?: string;
    video: {
       src: string;
       type: string;

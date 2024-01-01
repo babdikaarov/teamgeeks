@@ -3,18 +3,23 @@ import GalleryCollage from "../../../UI/Gallery/GalleryCollage";
 import getGalleryData from "../../../tempData/getGalleyData";
 import returnIcon from "../../../assets/icons/return";
 import styles from "../../../scss/partials/gallery/_collage.module.scss";
+
+interface GalleryItem {
+   alt: string;
+   src: string;
+   view: string;
+}
+
 // interface CollageProps {
-//   galleryData: {
-//     eventID: number;
-//     name: string;
-//     date: string;
-//     description: string;
-//     poster: string;
-//     items: {
-//       alt: string;
-//       src: string;
-//       view: string;
-//     }[];
+//   eventID: number;
+//   name: string;
+//   date: string;
+//   description: string;
+//   poster: string;
+//   items: {
+//     alt: string;
+//     src: string;
+//     view: string;
 //   }[];
 // }
 
@@ -23,16 +28,9 @@ const Collage = () => {
    const { id } = useParams();
    const sorted = getGalleryData.find((el) => el.eventID === Number(id))!;
 
-   function sortArrayWithPortraitEveryThird(arr: {
-      eventID: number;
-      name: string;
-      date: string;
-      description: string;
-      poster: string;
-      items: { alt: string; src: string; view: string }[];
-   }): { alt: string; src: string; view: string }[] {
-      const portraitObjects = arr?.items.filter((obj: { view: string }) => obj.view === "portrait");
-      const landscapeObjects = arr?.items.filter((obj: { view: string }) => obj.view === "landscape");
+   function sortArrayWithPortrait(arr: GalleryItem[]): (GalleryItem | undefined)[] {
+      const portraitObjects = arr?.filter((obj: { view: string }) => obj.view === "portrait");
+      const landscapeObjects = arr?.filter((obj: { view: string }) => obj.view === "landscape");
 
       const sortedArray = [];
 
@@ -47,10 +45,10 @@ const Collage = () => {
             landscapeObjects.length && sortedArray.push(landscapeObjects.shift());
          }
       }
-      return sortedArray && sortedArray;
+      return sortedArray;
    }
 
-   const sortedArray = sortArrayWithPortraitEveryThird(sorted);
+   const sortedArray = sortArrayWithPortrait(sorted.items);
    //   console.log(sortedArray);
    return (
       <section>

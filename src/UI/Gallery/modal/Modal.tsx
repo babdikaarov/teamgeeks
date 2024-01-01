@@ -12,13 +12,14 @@ import { arrowRight } from "./arrowRight";
 //   imageList: number[];
 // }
 interface ModalProps {
-   images?:
+   images: (
       | {
            alt: string;
            src: string;
            view: string;
-        }[]
-      | undefined[];
+        }
+      | undefined
+   )[];
    index: number;
 }
 
