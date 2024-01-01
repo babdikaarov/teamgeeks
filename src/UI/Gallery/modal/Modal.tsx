@@ -12,74 +12,65 @@ import { arrowRight } from "./arrowRight";
 //   imageList: number[];
 // }
 interface ModalProps {
-   images: (
-      | {
-           alt: string;
-           src: string;
-           view: string;
-        }
-      | undefined
-   )[];
-   i: number;
-   setIndexImage: React.Dispatch<React.SetStateAction<number>>;
+  images: (
+    | {
+        alt: string;
+        src: string;
+        view: string;
+      }
+    | undefined
+  )[];
+  i: number;
+  setIndexImage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Modal: FC<ModalProps> = ({ images, i, setIndexImage }) => {
-   const modal = document.getElementById("modal") as HTMLDialogElement;
+  const modal = document.getElementById("modal") as HTMLDialogElement;
 
-   const handleClose = () => {
-      modal && modal.close();
-   };
+  const handleClose = () => {
+    modal && modal.close();
+  };
 
-   const handleLeftButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.stopPropagation();
-      if (i == 0) {
-         console.log("begining of array");
-         return;
-      }
-      setIndexImage(i - 1);
+  const handleLeftButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    if (i == 0) {
+      return;
+    }
+    setIndexImage(i - 1);
+  };
 
-      console.log("left");
-   };
+  const handleRightButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    if (i >= images.length - 1) {
+      return;
+    }
+    setIndexImage(i + 1);
+    console.log("right");
+  };
 
-   const handleRightButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.stopPropagation();
-      if (i >= images.length - 1) {
-         console.log(images.length);
-         console.log("end of array");
-         return;
-      }
-      setIndexImage(i + 1);
-      console.log("right");
-   };
+  const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    modal && modal.close();
+  };
 
-   const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
-      event.stopPropagation();
-      modal && modal.close();
-
-      console.log("image");
-   };
-
-   return (
-      <dialog className={styles.modal} id="modal" onClick={handleClose}>
-         <div className={styles.modalContainer}>
-            <button className={styles.modalButtonLeft} onClick={handleLeftButtonClick}>
-               {arrowLeft}
-            </button>
-            <div
-               className={
-                  (images[i]?.view === "protrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage
-               }
-               onClick={handleImageClick}
-            >
-               <img src={images[i]?.src} alt={images[i]?.alt} />
-            </div>
-            <button className={styles.modalButtonRight} onClick={handleRightButtonClick}>
-               {arrowRight}
-            </button>
-         </div>
-      </dialog>
-   );
+  return (
+    <dialog className={styles.modal} id="modal" onClick={handleClose}>
+      <div className={styles.modalContainer}>
+        <button className={styles.modalButtonLeft} onClick={handleLeftButtonClick}>
+          {arrowLeft}
+        </button>
+        <div
+          className={(images[i]?.view === "protrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage}
+          onClick={handleImageClick}
+        >
+          <img src={images[i]?.src} alt={images[i]?.alt} />
+        </div>
+        <button className={styles.modalButtonRight} onClick={handleRightButtonClick}>
+          {arrowRight}
+        </button>
+      </div>
+    </dialog>
+  );
 };
 
 export default Modal;

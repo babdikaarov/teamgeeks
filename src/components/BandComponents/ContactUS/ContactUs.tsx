@@ -1,16 +1,17 @@
 import ContactUsTemplate from "../../../UI/contactUs/ContactUsTemplate";
 import ContactUsButton from "../../../UI/buttons/ContactUsButton";
 import data from "../../../tempData/getContactUsData";
+import { tempLinks } from "../../../UI/Header/getHeaderData";
 
 const ContactUs = () => {
-   return (
-      <ContactUsTemplate
-         heading={data.bandPage.heading}
-         paragraph={data.bandPage.paragraph}
-         secondHeading={data.bandPage.secondHeading}
-         button={<ContactUsButton whatsapp={""} />}
-      />
-   );
+  return (
+    <ContactUsTemplate
+      heading={data.bandPage.heading}
+      paragraph={data.bandPage.paragraph}
+      secondHeading={data.bandPage.secondHeading}
+      button={<ContactUsButton whatsapp={tempLinks.whatsapp} />}
+    />
+  );
 };
 
 export default ContactUs;
