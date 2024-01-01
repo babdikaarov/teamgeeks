@@ -58,19 +58,13 @@
   white-space: pre;
 }
 
-a:hover {
+.footer a:hover {
   color: $hover_yellow;
 }
 
-.footerInfo {
-  // display: none;
-}
 .footerSocialPositoin {
   display: none;
 }
-// .footerSocialPositoin {
-//   display: block;
-// }
 
 .footerInfo {
   display: flex;

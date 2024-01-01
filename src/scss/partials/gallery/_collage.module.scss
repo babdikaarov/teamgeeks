@@ -1,9 +1,16 @@
-.collage {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-width: 400px;
-  -moz-column-width: 400px;
-  column-width: 400px;
-  padding: 6px;
+@import "../variables";
+
+.section {
+  max-width: 1240px;
+  margin: auto;
+}
+
+.collageInfo {
+  margin-block: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  color: $color_white;
+  text-align: center;
 }

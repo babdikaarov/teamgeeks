@@ -2,7 +2,7 @@
 import checkbox from "../../../assets/icons/checkbox";
 import styles from "../../../scss/partials/coolBand/_whyus.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import getData from "./getWhyUsData";
+import getData from "../../../tempData/getWhyUsData";
 
 // type whyData = {
 //   header: string;

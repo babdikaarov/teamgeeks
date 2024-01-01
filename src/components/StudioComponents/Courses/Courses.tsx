@@ -1,4 +1,4 @@
-import { coursesList } from "./getCoursesList";
+import { coursesList } from "../../../tempData/getCoursesList";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import CoursesCard from "../../../UI/Cards/CoursesCard";
 import styles from "../../../scss/partials/coolStudio/_courses.module.scss";

@@ -1,5 +1,5 @@
 // import { FC } from "react";
-import data from "./getClientsData";
+import data from "../../../tempData/getClientsData";
 import styles from "../../../scss/partials/coolBand/_ourClient.module.scss";
 import ClientCard from "../../../UI/Cards/ClientCard";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";

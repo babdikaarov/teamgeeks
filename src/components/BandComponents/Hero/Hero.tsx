@@ -1,4 +1,4 @@
-import { getHeroData } from "./getHeroData";
+import { getHeroData } from "../../../tempData/getHeroData";
 import HeroTeamplate from "../../../UI/Hero/HeroTemplate";
 import ReserveUsButton from "../../../UI/buttons/ReserveUsButton";
 

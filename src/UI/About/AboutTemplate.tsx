@@ -11,6 +11,8 @@ interface AboutTemplateProps {
 }
 
 const AboutTemplate: FC<AboutTemplateProps> = ({ header, data }) => {
+  console.log(data.text.split(".").slice(0, -1));
+
   return (
     <SectionWrapper header={header} id="about">
       <div className={styles.about}>

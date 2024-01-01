@@ -1,4 +1,4 @@
-import getEventCards from "./getEventCards";
+import getEventCards from "../../../tempData/getEventCards";
 import styles from "../../../scss/partials/coolBand/_ourevents.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ButtonWithArrow from "../../../UI/buttons/ButtonWithArrow";

@@ -1,7 +1,7 @@
 import TeamCard from "../../../UI/Cards/TeamCard";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "../../../scss/partials/coolBand/_ourTeam.module.scss";
-import cards from "./getTeamList";
+import cards from "../../../tempData/getTeamList";
 
 const OurTeam = () => {
   return (
