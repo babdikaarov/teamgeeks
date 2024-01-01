@@ -16,6 +16,7 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
    const modal = document.getElementById("modal") as HTMLDialogElement;
 
    const handleOpen = (index: number) => {
+      console.log(index);
       setIndexImage(index);
       modal && modal.showModal();
    };
@@ -33,7 +34,7 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
                   <img src={data?.src} alt={data?.alt} />
                </div>
             ))}
-         <Modal images={items} index={indexImage} />
+         <Modal images={items} i={indexImage} setIndexImage={setIndexImage} />
       </div>
    );
 };

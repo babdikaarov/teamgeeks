@@ -4,109 +4,109 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 .clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+   content: "";
+   display: block;
+   clear: both;
 }
 
 .container {
-  max-width: 1240px;
-  margin: 0 auto;
+   max-width: 1240px;
+   margin: 0 auto;
 }
 
 a,
 button {
-  color: inherit;
-  background: inherit;
-  text-decoration: none;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
+   color: inherit;
+   background: inherit;
+   text-decoration: none;
+   border: none;
+   box-shadow: none;
+   cursor: pointer;
 }
 
 li {
-  list-style: none;
+   list-style: none;
 }
 // sizing
 
 :root {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 .sectionWrapper {
-  scroll-margin-top: 200px;
+   scroll-margin-top: 200px;
 }
 
 main {
-  max-width: $desktop_width;
-  margin: 110px auto 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 150px;
+   max-width: $desktop_width;
+   margin: 110px auto 150px;
+   display: flex;
+   flex-direction: column;
+   gap: 150px;
 }
 // animation of page switch
 .fade {
-  animation: fade 300ms ease-in;
+   animation: fade 300ms ease-in;
 }
 
 @keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
 }
 
 // Typography
 
 body {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  background: #151515;
-  color: #fff;
+   font-family: "Montserrat Alternates", sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   background: #151515;
+   color: #fff;
 }
 
 p,
 a {
-  font-size: 18px;
-  line-height: 150%;
-  letter-spacing: 0.36px;
+   font-size: 18px;
+   line-height: 150%;
+   letter-spacing: 0.36px;
 }
 
 h6 {
-  font-size: 20px;
-  line-height: 150%;
-  letter-spacing: 0.4px;
+   font-size: 20px;
+   line-height: 150%;
+   letter-spacing: 0.4px;
 }
 
 h5 {
-  font-size: 22px;
-  line-height: 150%;
-  letter-spacing: 0.44px;
+   font-size: 22px;
+   line-height: 150%;
+   letter-spacing: 0.44px;
 }
 h4 {
-  font-size: 24px;
-  line-height: 150%;
-  letter-spacing: 0.48px;
+   font-size: 24px;
+   line-height: 150%;
+   letter-spacing: 0.48px;
 }
 h3 {
-  font-size: 26px;
-  line-height: 150%;
-  letter-spacing: 0.52px;
+   font-size: 26px;
+   line-height: 150%;
+   letter-spacing: 0.52px;
 }
 h2 {
-  font-size: 32px;
-  line-height: 150%;
-  letter-spacing: 0.64px;
+   font-size: 32px;
+   line-height: 150%;
+   letter-spacing: 0.64px;
 }
 
 h1 {
-  font-size: 40px;
-  line-height: 125%;
-  letter-spacing: 0.8px;
+   font-size: 40px;
+   line-height: 125%;
+   letter-spacing: 0.8px;
 }
