@@ -1,0 +1,71 @@
+.coolStudio {
+   width: calc(100% - 200px);
+   margin: 0 auto;
+}
+.AboutUsWrapper {
+   display: flex;
+   gap: 170px;
+}
+
+.coolStudio h2 {
+   font-size: 32px;
+   font-weight: 700;
+   margin-bottom: 48px;
+   display: flex;
+   justify-content: center;
+}
+.TextWrapper {
+   font-size: 19px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 150%;
+   letter-spacing: 0.38px;
+   position: relative;
+}
+
+.AboutUsImg {
+   width: 432px;
+   height: 288px;
+   border-radius: 16px;
+}
+
+@keyframes fadeInOut {
+   0% {
+      opacity: 0;
+      max-height: 0;
+   }
+   100% {
+      opacity: 1;
+      max-height: 1000px;
+   }
+}
+.ExpandButton {
+   color: #fff;
+}
+.ExpandedText {
+   opacity: 0;
+   overflow: hidden;
+   animation: fadeInOut 1s ease-in-out;
+}
+
+.expanded {
+   opacity: 1;
+   max-height: 1000px;
+}
+.MoreButton {
+   opacity: 0.5;
+   margin-left: 2px;
+}
+.CollapseButton {
+   position: absolute;
+   margin-top: 24px;
+   display: flex;
+   justify-content: center;
+   width: 792px;
+}
+
+.CollapseButton,
+.MoreButton {
+   transition: 0.5s;
+   text-decoration: underline;
+}

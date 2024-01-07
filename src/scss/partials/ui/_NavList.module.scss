@@ -1,0 +1,24 @@
+@import "../variables";
+.navigation {
+   width: calc(100% - 200px);
+   display: flex;
+   justify-content: space-evenly;
+   gap: 24px;
+   white-space: nowrap;
+}
+
+.navigation a {
+   text-decoration: none;
+}
+
+.active {
+   color: $hover_yellow;
+}
+
+.navigation a:active {
+   color: $hover_yellow;
+}
+
+.navigation a:hover {
+   color: $hover_yellow;
+}

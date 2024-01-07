@@ -1,0 +1,31 @@
+.whyUs h2 {
+   font-size: 32px;
+   margin-bottom: 50px;
+}
+
+.WhyUs {
+   width: calc(100% - 200px);
+   margin: 0 auto;
+   display: grid;
+   gap: 64px 164px;
+   grid-template-columns: 1fr 1fr;
+}
+.InfoBlock {
+   display: flex;
+}
+.textWrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+
+.icon {
+   margin-right: 8px;
+   margin-top: 8px;
+   width: 24px;
+   height: 18px;
+}
+
+.textWhyUs {
+   font-weight: 500;
+}

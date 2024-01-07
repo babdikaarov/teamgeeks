@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+  gap: 33px;
+  padding-inline: 100px;
+  transition: all 1 ease;
+}
+
+.article {
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  white-space: pre-wrap;
+}
+
+.article p {
+  margin-bottom: 24px;
+  font-size: 19px;
+}
+
+.about img {
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 362px;
+  object-fit: cover;
+}

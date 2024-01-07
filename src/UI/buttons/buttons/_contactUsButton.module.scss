@@ -1,0 +1,28 @@
+@import "../../../scss/partials/mixin";
+@import "../../../scss/partials/variables";
+
+.button {
+  @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
+  align-self: center;
+}
+
+.button:hover {
+  color: $color_black;
+  fill: $color_black;
+  background: $color_yellow;
+}
+
+.buttonBlue {
+  @include buttons($fill: $color_white, $color: $color_white, $background: $button_blue, $border: $button_blue);
+  width: 470px;
+  align-self: center;
+  transition: all 0.3s ease-in-out;
+  margin: auto;
+}
+
+.buttonBlue:hover {
+  box-shadow: 0px -12px 150px 0px rgba(168, 208, 239, 0.63);
+}
+.buttonBlue:active {
+  border-color: $color_white;
+}

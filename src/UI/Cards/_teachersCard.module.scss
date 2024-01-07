@@ -1,0 +1,78 @@
+.cardContainer:hover {
+  background-color: #404040;
+}
+.cardContainer:hover svg {
+  background: linear-gradient(0deg, rgba(64, 64, 64, 1) 1%, transparent);
+  // background: #404040;
+  animation: fadeInOut 2s infinite;
+}
+@keyframes fadeInOut {
+  0% {
+    background-color: rgba(64, 64, 64, 0.1);
+  }
+  50% {
+    background-color: rgba(64, 64, 64, 1);
+  }
+  100% {
+    background-color: rgba(64, 64, 64, 0.1);
+  }
+}
+
+.cardContainer {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  width: 250px;
+  overflow: hidden;
+  padding: 1px;
+}
+.cardContainer article {
+  padding: 10px;
+}
+.cardContainer h5 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 13px;
+  letter-spacing: normal;
+}
+.cardContainer h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.cardContainer p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.imageContainer {
+  // margin-bottom: 10px;
+  height: 240px;
+  position: relative;
+}
+.imageContainer img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.imageContainer a svg {
+  //   background-color: rgba(128, 128, 128, 0.3);
+  border-top-right-radius: 6px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  fill: #fcfcfc;
+  width: 36px;
+  height: 36px;
+}
+.imageContainer a:hover path {
+  fill: gold;
+}

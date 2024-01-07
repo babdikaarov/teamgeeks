@@ -1,0 +1,25 @@
+.box {
+   display: flex;
+   margin: 100px 0;
+   justify-content: space-between;
+}
+.show {
+   max-width: 780px;
+   text-align: left;
+   color: #fff;
+}
+
+.block {
+   // margin: 100px 0 0 0;
+}
+
+.title {
+   text-align: center;
+   margin: 0 0 32px;
+   font-size: 32px;
+   line-height: 40px;
+}
+p {
+   font-size: 19px;
+   line-height: 28.5px;
+}

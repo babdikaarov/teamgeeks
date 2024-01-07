@@ -1,0 +1,114 @@
+@import "../../../scss/partials/variables";
+
+.collabCardContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  max-height: 296px;
+  min-width: 230px;
+
+  border-radius: 16px;
+  transition: all 0.27s ease-in-out;
+}
+
+.portrait {
+  //   height: 100%;
+}
+
+.landscape {
+  min-height: 296px;
+  height: 296px;
+  min-width: 730px;
+  width: 730px;
+  transition: all 0.27s ease-in-out;
+}
+.portrait {
+  min-height: 296px;
+  height: 296px;
+  min-width: 230px;
+  width: 230px;
+  transition: all 0.27s ease-in-out;
+}
+.collabCard img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.portrait:hover {
+  min-height: calc(334px + 30px);
+  min-width: calc(230px + 30px);
+}
+.landscape:hover {
+  min-height: calc(334px + 30px);
+  min-width: calc(730px + 30px);
+}
+.collabCardContainer:hover {
+  z-index: 5;
+  font-size: 20px;
+  font-weight: $bold;
+  letter-spacing: 0.4px;
+}
+
+// .collabCardContainer {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   //   transition: all 0.3s ease-in-out;
+//   position: relative;
+// }
+// .collabCardContainer div img {
+//   height: 100%;
+//   width: 100%;
+//   object-fit: cover;
+// }
+// .collabCardContainer div {
+//   position: relative;
+
+//   overflow: hidden;
+//   margin-bottom: 16px;
+//   border-radius: 16px;
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .portrait {
+//   position: relative;
+
+//   --var-por-width: 230px;
+//   height: 296px;
+//   min-width: var(--var-por-width);
+//   width: 100%;
+// }
+
+// .landscape {
+//   position: relative;
+
+//   --var-lan-width: 730px;
+//   height: 296px;
+//   min-width: var(--var-lan-width);
+//   width: 100%;
+// }
+
+// .collabCardContainer:hover {
+//   position: relative;
+//   z-index: 5;
+//   font-size: 20px;
+//   font-weight: $bold;
+//   letter-spacing: 0.4px;
+// }
+// .landscape:hover {
+//   position: relative;
+
+//   width: calc(var(--var-lan-width) + 30px);
+//   height: 333px;
+// }
+// .portrait:hover {
+//   position: relative;
+
+//   width: calc(var(--var-por-width) + 30px);
+//   height: 333px;
+// }

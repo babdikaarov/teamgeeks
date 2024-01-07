@@ -1,0 +1,16 @@
+@import "../../../scss/partials/variables";
+
+.section {
+   max-width: 1240px;
+   margin: auto;
+}
+
+.collageInfo {
+   margin-block: 30px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 20px;
+   color: $color_white;
+   text-align: center;
+}

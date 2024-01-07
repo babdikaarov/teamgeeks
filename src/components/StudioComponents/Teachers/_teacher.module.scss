@@ -1,0 +1,35 @@
+.teacherSwiper {
+  max-width: 1095px;
+  overflow: scroll;
+}
+
+.teacherSwiper::-webkit-scrollbar {
+  display: none;
+}
+
+.teacherContainer {
+  margin: auto;
+  max-width: 1240px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.buttonPrev {
+  position: absolute;
+  padding: 20px;
+  top: 25%;
+  left: 13px;
+  // left: 20%;
+  transform: translateX(-50%);
+}
+
+.buttonNext svg {
+  rotate: 180deg;
+}
+.buttonNext {
+  position: absolute;
+  padding: 20px;
+  top: 25%;
+  right: -48px;
+  transform: translateX(-50%);
+}
