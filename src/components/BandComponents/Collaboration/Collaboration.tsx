@@ -2,25 +2,46 @@ import styles from "./_collaboration.module.scss";
 import cardsData from "../../../tempData/getCollabData";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import CollabCard from "../../../UI/Cards/CollabCard";
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+
+type Cards = {
+   src: Promise<typeof import("*.png")>;
+   alt: string;
+   firstName: string;
+   lastName: string;
+}[];
 
 const Collaboration = () => {
-  return (
-    <SectionWrapper header={"Коллаборации"} id="collaboration" className={styles.collab}>
-      <div className={styles.collabContainer}>
-        {cardsData.map((card, i) => (
-          <CollabCard
-            key={i}
-            src={card.src}
-            alt={card.alt}
-            firstName={card.firstName}
-            lastName={card.lastName}
-            view={card.view}
-          ></CollabCard>
-        ))}
-        <div className={styles.lastCardPadding}></div>
-      </div>
-    </SectionWrapper>
-  );
+   const [cards, setCards] = useState<Cards>();
+   useEffect(() => {
+      const loadCards = async () => {
+         await new Promise(cardsData).then((imported) => setCards(imported));
+      };
+
+      loadCards();
+   }, []);
+   return (
+      <SectionWrapper header={"Коллаборации"} id="collaboration">
+         <div className={styles.collabCardsContainer}>
+            <Swiper slidesPerView={4.7}>
+            {cards?.map((card, i) => (
+               <SwiperSlide key={i}>
+                  <CollabCard
+                     src={card.src}
+                     alt={card.alt}
+                     firstName={card.firstName}
+                     lastName={card.lastName}
+                  ></CollabCard>
+               </SwiperSlide>
+            ))}
+            </Swiper>
+            <div className={styles.lastCardPadding}></div>
+         </div>
+      </SectionWrapper>
+   );
 };
 
 export default Collaboration;

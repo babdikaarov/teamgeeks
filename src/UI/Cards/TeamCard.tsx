@@ -1,5 +1,7 @@
 import { FC } from "react";
 import styles from "./cards/_teamCard.module.scss";
+
+
 interface TeamCardProps {
   video: string;
   img: string;
