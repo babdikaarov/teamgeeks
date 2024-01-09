@@ -1,9 +1,28 @@
 @import "../../../scss/partials/mixin";
 @import "../../../scss/partials/variables";
 
+.buttonContainer {
+  min-width: 356px;
+  max-width: 470px;
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    button {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    button {
+      font-size: 18px;
+    }
+  }
+}
+
 .button {
   @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
   align-self: center;
+  margin: auto;
+  max-width: 470px;
+  width: 100%;
 }
 
 .button:hover {
@@ -14,10 +33,11 @@
 
 .buttonBlue {
   @include buttons($fill: $color_white, $color: $color_white, $background: $button_blue, $border: $button_blue);
-  width: 470px;
   align-self: center;
   transition: all 0.3s ease-in-out;
   margin: auto;
+  max-width: 470px;
+  width: 100%;
 }
 
 .buttonBlue:hover {

@@ -8,7 +8,7 @@ const OurClients = () => {
     <SectionWrapper header={"Наши клиенты"} id="partners" className={styles.ourClients}>
       <article className={styles.clientsArticle}>
         <h2>500+</h2>
-        <h3>Более 500 корпоративов и мероприятий</h3>
+        <h4>Более 500 корпоративов и мероприятий</h4>
       </article>
       <div className={styles.clientsCards}>
         {data.map((card, i: number) => (

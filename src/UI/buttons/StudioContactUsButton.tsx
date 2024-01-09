@@ -1,10 +1,13 @@
 import styles from "./buttons/_contactUsButton.module.scss";
 import phone from "../../assets/icons/phone";
-import { tempLinks } from "../../tempData/getHeaderData";
 
-const StudioContactUsButton = () => {
+type Whatsapp = {
+  whatsapp: string;
+};
+
+const StudioContactUsButton = ({ whatsapp }: Whatsapp) => {
   return (
-    <a href={tempLinks.whatsapp} target="blank">
+    <a href={whatsapp} target="blank" className={styles.buttonContainer}>
       <button className={styles.buttonBlue}>
         Связаться с нами
         {phone}

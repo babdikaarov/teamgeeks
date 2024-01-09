@@ -8,18 +8,18 @@ import ContactUs from "../../components/BandComponents/ContactUS/ContactUs.tsx";
 import About from "../../components/BandComponents/About/About.tsx";
 
 const CoolBand = () => {
-   return (
-      <>
-         <Hero />
-         <About />
-         <WhyUs />
-         <OurEvents />
-         <OurTeam />
-         <Collaboration />
-         <OurClients />
-         <ContactUs />
-      </>
-   );
+  return (
+    <>
+      <Hero />
+      <About />
+      <WhyUs />
+      <OurEvents />
+      <OurTeam />
+      <Collaboration />
+      <OurClients />
+      <ContactUs />
+    </>
+  );
 };
 
 export default CoolBand;

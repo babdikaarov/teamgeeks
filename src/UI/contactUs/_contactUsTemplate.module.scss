@@ -1,45 +1,124 @@
 @import "../../scss/partials/variables";
 
 .mapContent {
-   padding: 0 100px;
-   display: flex;
-   justify-content: space-between;
-   flex-direction: row;
-   gap: 65px;
-   min-height: 470px;
+  // padding: 0 100px;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  // flex-direction: row;
+  gap: 50px;
+  // min-height: 470px;
+  @media screen and (max-width: 1280px) {
+    margin: 0 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .textContainer {
+      max-width: 470px;
+    }
+  }
+  @media screen and (max-width: 864px) {
+    gap: 20px;
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 775px) {
+    gap: 20px;
+    flex-direction: column;
+    .map {
+      height: 300px;
+      max-width: 470px;
+      margin: auto;
+    }
+    .textContainer {
+      margin: auto;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    margin: 0 17px;
+    gap: 20px;
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .map {
+      height: 226px;
+    }
+
+    .textContainer {
+      gap: 20px;
+    }
+    .text {
+      gap: 20px;
+    }
+  }
 }
 
 .mapContent > * {
-   width: 100%;
+  width: 100%;
 }
 
 .map {
-   // max-width: 600px;
-   border-radius: 16px;
-   overflow: hidden;
+  min-height: 226px;
+  min-width: 356px;
+  max-width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .textContainer h2 {
-   padding: 0;
-   font-weight: $bold;
+  text-wrap: nowrap;
+  padding: 0;
+  font-weight: $bold;
 }
 .textContainer h3 {
-   font-weight: $bold;
+  font-weight: $bold;
 }
 .textContainer a {
-   margin: 0 auto;
+  // margin: 0 auto;
 }
 .textContainer {
-   // max-width: 500px;
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-between;
-   flex-direction: column;
-   gap: 50px;
+  max-width: 513px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .text {
-   display: flex;
-   flex-direction: column;
-   gap: 43px;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
 }
