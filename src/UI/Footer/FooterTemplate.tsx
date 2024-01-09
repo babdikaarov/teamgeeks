@@ -20,7 +20,7 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, content }) => {
     <footer className={styles.footer}>
       <div className={styles.footerLogos}>
         <Logo bandPage={bandPage} />
-        <Logo bandPage={!bandPage} />
+        <Logo bandPage={!bandPage} footerHide={styles.footerHide} />
       </div>
       <div className={styles.footerInfo}>
         <FooterBox className={styles.footerBoxEdu} text={content.education} />
