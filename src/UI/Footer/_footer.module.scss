@@ -146,7 +146,7 @@
     }
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 870px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -163,6 +163,9 @@
 
   @media screen and (max-width: 680px) {
     grid-template-columns: 1fr 2fr;
+    span {
+      text-decoration: underline;
+    }
   }
 
   @media screen and (max-width: 545px) {

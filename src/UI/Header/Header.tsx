@@ -9,10 +9,9 @@ const Header = () => {
   const [bandPage, setBandPage] = useState<boolean>(true);
   const { pathname } = useLocation();
   useEffect(() => {
-    // console.log(pathname);
-    if (pathname === "/") {
+    if (/^\/(?!studio\b).*$/.test(pathname)) {
       setBandPage(true);
-    } else if (pathname === "/studio") {
+    } else {
       setBandPage(false);
     }
   }, [pathname]);

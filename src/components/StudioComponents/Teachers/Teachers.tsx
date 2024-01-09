@@ -40,7 +40,7 @@ const Teachers = () => {
           {icon}
         </button>
       </div>
-      <StudioContactUsButton />
+      <StudioContactUsButton whatsapp={""} />
     </SectionWrapper>
   );
 };
