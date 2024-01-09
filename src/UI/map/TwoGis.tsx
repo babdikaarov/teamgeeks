@@ -4,6 +4,7 @@ import { useEffect } from "react";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const DG: any;
 export default function TwoGis() {
+  // FIXME the Location coordinates and link static attachment or backend provider
   const coolStudioLocation: number[] = [42.850329, 74.609962];
   const coolStudiolink: string = "https://2gis.kg/bishkek/firm/70000001066401992?m=74.609962%2C42.850329%2F16";
 

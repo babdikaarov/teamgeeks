@@ -1,9 +1,7 @@
-import React, { FC, ReactNode } from "react";
+import { FC } from "react";
 import styles from "./_sectionWrapper.module.scss";
-interface SectionWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  header?: string;
-  children: ReactNode;
-}
+import { SectionWrapperProps } from "./types";
+
 const SectionWrapper: FC<SectionWrapperProps> = ({ header = "", className = "", id = "", children }) => {
   return (
     <section className={"sectionWrapper " + className} id={id}>

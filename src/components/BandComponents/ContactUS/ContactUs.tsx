@@ -1,15 +1,18 @@
 import ContactUsTemplate from "../../../UI/contactUs/ContactUsTemplate";
 import ContactUsButton from "../../../UI/buttons/ContactUsButton";
-import data from "../../../tempData/getContactUsData";
-import { tempLinks } from "../../../tempData/getHeaderData";
+import staticData from "./staticData.json";
+import backendData from "./backendData.json";
+import createWhatsAppLink from "../../../modules/createWhatsAppLink";
 
 const ContactUs = () => {
+  const whatsapp = createWhatsAppLink(backendData.whatsapp.link, backendData.whatsapp.text);
+
   return (
     <ContactUsTemplate
-      heading={data.bandPage.heading}
-      paragraph={data.bandPage.paragraph}
-      secondHeading={data.bandPage.secondHeading}
-      button={<ContactUsButton whatsapp={tempLinks.whatsapp} />}
+      heading={staticData.heading}
+      paragraph={staticData.paragraph}
+      secondHeading={staticData.secondHeading}
+      button={<ContactUsButton whatsapp={whatsapp} />}
     />
   );
 };

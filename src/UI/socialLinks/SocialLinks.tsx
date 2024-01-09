@@ -1,17 +1,10 @@
 import { FC } from "react";
 import { socialIcons } from "./icons";
 import styles from "../Header/header/_socialLinks.module.scss";
-interface SocialLinksProps {
-  links: {
-    telegram: string;
-    whatsapp: string;
-    instagram: string;
-    youtube: string;
-    tiktok: string;
-  };
-}
+import { SocialLinksProps } from "./types";
 
 const SocialLinks: FC<SocialLinksProps> = ({ links }) => {
+  // FIXME uti4nit links budut po backend or it has to be generated here
   return (
     <ul className={styles.socialLinks}>
       <li id="telegram">
