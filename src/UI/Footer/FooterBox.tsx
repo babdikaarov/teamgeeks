@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import { FooterBoxProps } from "./types";
 
 const FooterBox: FC<FooterBoxProps> = (props) => {
-  const { header, items } = props;
+  const { header, items, target } = props;
 
   return (
     <div {...(props as HTMLAttributes<HTMLDivElement>)}>
@@ -11,7 +11,7 @@ const FooterBox: FC<FooterBoxProps> = (props) => {
       <ul>
         {items.map((item, i: number) => (
           <li key={i}>
-            <HashLink to={String(item.link)} target="blank">
+            <HashLink to={item.link as string} target={target}>
               {item.text}
             </HashLink>
           </li>

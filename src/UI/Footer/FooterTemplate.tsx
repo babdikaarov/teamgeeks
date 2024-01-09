@@ -9,11 +9,9 @@ import createMailtoLink from "../../modules/createMailtoLink";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 import { FooterTemplateProps } from "./types";
 import { tempLinks } from "../../tempData/getHeaderData";
-
+import { Target } from "./types";
 const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
-  // FIXME notFoundData add link a whatsapp number with text bug found in website
-
-  const notFoundData = [{ text: "report to admin! Data not found", link: "" }];
+  const notFoundData = [{ text: "Data not found", link: "" }];
 
   return (
     <footer className={styles.footer}>
@@ -26,6 +24,7 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
         <FooterBox
           className={styles.footerBoxEdu}
           header={staticData.education.header}
+          target={Target.noBlank}
           items={staticData.education.items.map((item) => {
             return { text: item, link: "/studio/#teachers" };
           })}
@@ -33,11 +32,13 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
         <FooterBox
           className={styles.footerBoxAddress}
           header={staticData.address.header}
+          target={Target.blank}
           items={backendData?.address ?? notFoundData}
         />
         <FooterBox
           className={styles.footerBoxContacts}
           header={staticData.contacts.header}
+          target={Target.blank}
           items={
             backendData?.contacts.map((item, i) => {
               let formatText: string = "";
