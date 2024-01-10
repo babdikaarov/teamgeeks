@@ -1,14 +1,29 @@
+@import "../../../scss/partials/mixin";
 .whyUs h2 {
    font-size: 32px;
    margin-bottom: 50px;
+   @include xl {
+      font-size: 24px;
+   }
+
+   @include sm {
+      font-size: 16px;
+      margin-bottom: 24px;
+   }
 }
 
 .WhyUs {
-   width: calc(100% - 200px);
-   margin: 0 auto;
+   padding-inline: 100px;
    display: grid;
    gap: 64px 164px;
    grid-template-columns: 1fr 1fr;
+   @include xl {
+      padding-inline: 20px;
+      gap: 32px 154px;
+   }
+   @include md {
+      grid-template-columns: unset;
+   }
 }
 .InfoBlock {
    display: flex;
@@ -18,14 +33,35 @@
    flex-wrap: wrap;
    gap: 8px;
 }
-
+.textWrapper p {
+   @include xl {
+      font-size: 16px;
+   }
+   @include sm {
+      font-size: 12px;
+   }
+}
 .icon {
    margin-right: 8px;
    margin-top: 8px;
-   width: 24px;
-   height: 18px;
+   max-height: 18px;
+   @include xl {
+      margin-top: 5px;
+   }
+   @include sm {
+      max-height: 12px;
+      margin-top: 4px;
+   }
 }
 
 .textWhyUs {
    font-weight: 500;
+   @include xl {
+      font-size: 20px;
+   }
+   // @include md {
+   // }
+   @include sm {
+      font-size: 14px;
+   }
 }
