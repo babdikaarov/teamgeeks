@@ -20,9 +20,11 @@
    display: flex;
    gap: 170px;
    padding-inline: 100px;
+   @include xxl {
+      gap: 60px;
+   }
    @include xl {
       padding-inline: 20px;
-      gap: 60px;
    }
    @include md {
       flex-direction: column-reverse;
@@ -31,26 +33,25 @@
       gap: 14px;
    }
 }
-.AboutUsWrapper img {
+.AboutUsWrapper .Image {
    width: 100%;
    max-width: 432px;
-   min-height: 288px;
+   max-height: 288px;
    border-radius: 16px;
    object-fit: cover;
    @include xl {
       max-width: 373px;
-      min-height: 228px;
+      min-height: 100%;
    }
    @include md {
       max-width: 720px;
+      max-height: 100%;
    }
 }
-@media (max-width: 390px) {
-   .AboutUsWrapper img {
-      max-width: 358px;
-      min-height: 228px;
-   }
+.AboutUsWrapper .expandedImage {
+   max-height: 100%;
 }
+
 .TextWrapper {
    font-size: 19px;
    font-style: normal;

@@ -52,7 +52,11 @@ const AboutStudio: FC = () => {
                   {expanded ? "Свернуть" : "еще"}
                </button>
             </div>
-            <img src={CoolStudio} alt="Cool Studio" />
+            <img
+               className={`${styles.Image} ${expanded ? "" : styles.expandedImage}`}
+               src={CoolStudio}
+               alt="Cool Studio"
+            />
          </div>
       </SectionWrapper>
    );
