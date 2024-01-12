@@ -171,6 +171,8 @@
     grid-template-columns: 1fr 2fr;
     span {
       text-decoration: underline;
+      text-decoration-thickness: 0.1px;
+      text-underline-offset: 5px;
     }
   }
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "../../buttons/buttons/_topButtons.module.scss";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
+
 const TopButtons = () => {
   const { pathname } = useLocation();
   const [activeButton, setActiveButton] = useState<boolean>();
@@ -15,28 +17,19 @@ const TopButtons = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  const pageAnimation = () => {
-    const target = document.getElementsByTagName("main")[0];
-    target.classList.add("fade");
-    window.scroll(0, 0);
-    setTimeout(() => {
-      target.classList.remove("fade");
-    }, 300);
-  };
-
   return (
     <div className={styles.navButtons}>
       <Link
         to=""
         className={!activeButton ? styles.navButtonsMainActive : styles.navButtonsMainNotActive}
-        onClick={pageAnimation}
+        onClick={() => activeButton && mainElementAnimation()}
       >
         <p>Cool Band</p>
       </Link>
       <Link
         to="/studio"
         className={activeButton ? styles.navButtonsSecondaryActive : styles.navButtonsSecondaryNotActive}
-        onClick={pageAnimation}
+        onClick={() => !activeButton && mainElementAnimation()}
       >
         <p>Cool Studio</p>
       </Link>

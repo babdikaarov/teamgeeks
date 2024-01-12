@@ -2,25 +2,17 @@ import { FC, useState } from "react";
 import styles from "./gallery/_galleryCollage.module.scss";
 import Modal from "./modal/Modal";
 import { GalleryCollageProps } from "./types";
+import usePagination from "../../app/hooks/usePagination";
 
 const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
-  const itemsPerPage = 8;
-  const [currentPage, setCurrentPage] = useState(1);
-  // const startItemIndex = (currentPage - 1) * itemsPerPage;
-  const startItemIndex = 0;
-  const endItemIndex = currentPage * itemsPerPage;
-  const perPage = items.slice(startItemIndex, endItemIndex);
   const [indexImage, setIndexImage] = useState<number>(0);
+  const { getVisibleItems, nextPage } = usePagination(8);
+  const perPage = getVisibleItems(items);
 
   const handleOpen = (index: number) => {
     const modal = document.getElementById("modal") as HTMLDialogElement;
-    //  console.log(index);
     setIndexImage(index);
-    modal && modal.showModal();
-  };
-
-  const handleClick = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
+    modal && modal.show();
   };
 
   return (
@@ -29,12 +21,13 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
         {perPage &&
           perPage.map((data, i) => (
             <div key={i} className={data && styles.collageItem + " " + styles[data.view]} onClick={() => handleOpen(i)}>
+              <p>{i}</p>
               <img src={data?.src} alt={data?.alt} />
             </div>
           ))}
-        <Modal images={items} i={indexImage} setIndexImage={setIndexImage} />
+        <Modal images={perPage} index={indexImage} setIndexImage={setIndexImage} />
       </div>
-      <button className={styles.paginationButton} onClick={handleClick}>
+      <button className={styles.paginationButton} onClick={nextPage}>
         Далее
       </button>
     </>

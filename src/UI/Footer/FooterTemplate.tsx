@@ -4,7 +4,7 @@ import FooterBox from "./FooterBox";
 import Logo from "../Logo/Logo";
 import SocialLinks from "../socialLinks/SocialLinks";
 import staticData from "./staticData.json";
-import formatPhoneNumbertoText from "../../modules/formatPhoneNumbertoText";
+import formatPhoneNumberToText from "../../modules/formatPhoneNumberToText";
 import createMailtoLink from "../../modules/createMailtoLink";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 import { FooterTemplateProps } from "./types";
@@ -33,7 +33,11 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
           className={styles.footerBoxAddress}
           header={staticData.address.header}
           target={Target.blank}
-          items={backendData?.address ?? notFoundData}
+          items={
+            backendData?.address.map((el) => {
+              return { text: (<span>{el.text}</span>) as unknown as string, link: el.link };
+            }) ?? notFoundData
+          }
         />
         <FooterBox
           className={styles.footerBoxContacts}
@@ -48,7 +52,7 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
                 formatLink = createWhatsAppLink(item.link, item.text);
                 formatText = (
                   <>
-                    <span>{formatPhoneNumbertoText(item.link)}</span> {staticData.contacts.items[i]}
+                    <span>{formatPhoneNumberToText(item.link)}</span> {staticData.contacts.items[i]}
                   </>
                 ) as unknown as string;
               } else if (typeof item.link === "string") {

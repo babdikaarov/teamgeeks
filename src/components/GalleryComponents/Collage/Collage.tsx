@@ -3,7 +3,8 @@ import GalleryCollage from "../../../UI/Gallery/GalleryCollage";
 import getGalleryData from "../../../tempData/getGalleyData";
 import returnIcon from "../../../assets/icons/return";
 import styles from "./_collage.module.scss";
-import collageCreatePattern from "../../../modules/collageCreatePattern";
+import useResponsiveSorting from "../../../app/hooks/useResponsiveSorting";
+// FIXME add props to component from backend and types
 
 // interface CollageProps {
 //   eventID: number;
@@ -22,11 +23,11 @@ const Collage = () => {
   window.scroll(0, 0);
   const navigate = useNavigate();
   const { id } = useParams();
-  // FIXME add when backend ready
+  // FIXME when backend ready
   // const sorted = getGalleryData.find((el) => el.eventID === Number(id))!;
   const sorted = getGalleryData[Number(id)];
 
-  const sortedArray = collageCreatePattern(sorted.items);
+  const sortedArray = useResponsiveSorting(sorted.items);
   return (
     <section className={styles.section}>
       <div className={styles.collageInfo}>

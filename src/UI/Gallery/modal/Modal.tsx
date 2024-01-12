@@ -1,73 +1,37 @@
-// import React from "react";
-import { FC } from "react";
+// import { MouseEvent, MouseEventHandler, useCallback, useEffect, useRef } from "react";
 import styles from "../gallery/_modal.module.scss";
 import { arrowLeft } from "./arrowLeft";
 import { arrowRight } from "./arrowRight";
+import useCollageModal from "../../../app/hooks/useCollageModal";
+import { ModalProps } from "./types";
 
-// interface GalleryModalProps {
-//   setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
-//   setIndex: React.Dispatch<React.SetStateAction<number>>;
-//   showOverlay: boolean;
-//   index: number;
-//   imageList: number[];
-// }
-interface ModalProps {
-  images: (
-    | {
-        alt: string;
-        src: string;
-        view: string;
-      }
-    | undefined
-  )[];
-  i: number;
-  setIndexImage: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const Modal: FC<ModalProps> = ({ images, i, setIndexImage }) => {
-  const modal = document.getElementById("modal") as HTMLDialogElement;
-
-  const handleClose = () => {
-    modal && modal.close();
-  };
-
-  const handleLeftButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    if (i == 0) {
-      return;
-    }
-    setIndexImage(i - 1);
-  };
-
-  const handleRightButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    if (i >= images.length - 1) {
-      return;
-    }
-    setIndexImage(i + 1);
-    console.log("right");
-  };
-
-  const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    modal && modal.close();
-  };
+const Modal: React.FC<ModalProps> = ({ images, index, setIndexImage }) => {
+  const { dialogRef, imageRef } = useCollageModal(index, images.length, setIndexImage);
 
   return (
-    <dialog className={styles.modal} id="modal" onClick={handleClose}>
+    <dialog className={styles.modal} id="modal" ref={dialogRef}>
+      <div className={styles.close} id="modalClose"></div>
+      <button
+        className={styles.modalButtonLeft}
+        id="modalLeft"
+        onClick={() => !(index == 0) && setIndexImage(index - 1)}
+      >
+        {arrowLeft}
+      </button>
+      <button
+        className={styles.modalButtonRight}
+        id="modalRight"
+        onClick={() => !(index >= images.length - 1) && setIndexImage(index + 1)}
+      >
+        {arrowRight}
+      </button>
       <div className={styles.modalContainer}>
-        <button className={styles.modalButtonLeft} onClick={handleLeftButtonClick}>
-          {arrowLeft}
-        </button>
         <div
-          className={(images[i]?.view === "portrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage}
-          onClick={handleImageClick}
+          ref={imageRef}
+          className={(images[index]?.view == "portrait" ? styles.portrait : styles.landscape) + " " + styles.modalImage}
         >
-          <img src={images[i]?.src} alt={images[i]?.alt} />
+          <img src={images[index]?.src} alt={images[index]?.alt} />
         </div>
-        <button className={styles.modalButtonRight} onClick={handleRightButtonClick}>
-          {arrowRight}
-        </button>
       </div>
     </dialog>
   );

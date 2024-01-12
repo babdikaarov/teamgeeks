@@ -1,41 +1,94 @@
 .modal {
-  margin: auto;
-  width: 100%;
-  height: 100%;
   position: fixed;
-  background: none;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  z-index: 50;
   border: none;
+  background: #151515;
+  // background: rgb(21 21 21 / 0.9);
+  // TODO check with designer
+
+  @media screen and (max-width: 710px) {
+    .modalContainer {
+      width: 100%;
+    }
+    .portrait {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .landscape {
+      aspect-ratio: 25 /16;
+    }
+
+    .portrait {
+      aspect-ratio: 20 / 25;
+    }
+  }
 }
 
-.modal::backdrop {
-  background: rgb(21 21 21 / 0.9);
+.landscape {
+  aspect-ratio: 1032 / 616;
+  max-width: 890px;
+  max-height: 616px;
+  margin: auto;
 }
+
+.portrait {
+  aspect-ratio: 578 / 806;
+  max-width: 578px;
+  max-height: 806px;
+  margin: auto;
+}
+
 .modalContainer {
-  position: relative;
+  // width: 80%;
+  position: absolute;
+  z-index: 51;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .modalImage {
   position: relative;
-  z-index: 10;
-  margin: 0 20px;
-  border-radius: 16px;
-  overflow: hidden;
+  z-index: 60;
 }
 .modalImage img {
+  border-radius: 16px;
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
+
+.modalButtonLeft,
+.modalButtonRight {
+  position: absolute;
+  z-index: 51;
+  top: 50%;
+  transform: translate(0%, -50%);
+  background: none;
+}
+
+.modalButtonLeft {
+  left: 1%;
+}
+.modalButtonRight {
+  right: 1%;
+}
+
+.modalButtonLeft svg,
+.modalButtonRight svg {
+  position: relative;
+  z-index: -1;
+}
 .modalButtonLeft path,
 .modalButtonRight path {
-  fill: #fff;
+  fill: gold;
   opacity: 0.7;
 }
 
@@ -44,14 +97,41 @@
   opacity: 1;
 }
 
-.landscape {
-  aspect-ratio: 1032 / 616;
-  max-width: 1032px;
-  max-height: 616px;
+.close {
+  position: absolute;
+  z-index: 51;
+  width: 30px;
+  height: 30px;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
-.portrait {
-  aspect-ratio: 578 / 806;
-  max-width: 578px;
-  max-height: 806px;
+.close:before,
+.close:after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  background-color: gold;
+  border-radius: 2px;
+  top: 16px;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 2px;
+}
+.close:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 2px;
 }
