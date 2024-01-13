@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import FooterTemplate from "./FooterTemplate";
-import { content } from "./footerData";
 import { useLocation } from "react-router-dom";
+import backendData from "./backend.json";
 
 const Footer = () => {
    const [bandPage, setBandPage] = useState<boolean>(true);
@@ -14,7 +14,7 @@ const Footer = () => {
          setBandPage(false);
       }
    }, [pathname]);
-   return <FooterTemplate content={content} bandPage={bandPage} />;
+   return <FooterTemplate backendData={backendData} bandPage={bandPage} />;
 };
 
 export default Footer;

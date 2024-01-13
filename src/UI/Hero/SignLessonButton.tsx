@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "../../scss/partials/ui/_signLessonButton.module.scss";
+import styles from "./_signLessonButton.module.scss";
 import { iconPhone } from "./iconPhone";
 
 type whatsapp = {

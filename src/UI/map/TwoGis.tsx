@@ -4,6 +4,7 @@ import { useEffect } from "react";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const DG: any;
 export default function TwoGis() {
+   // FIXME the Location coordinates and link static attachment or backend provider
    const coolStudioLocation: number[] = [42.850329, 74.609962];
    const coolStudiolink: string = "https://2gis.kg/bishkek/firm/70000001066401992?m=74.609962%2C42.850329%2F16";
 
@@ -11,6 +12,10 @@ export default function TwoGis() {
       if (DG) {
          initializeMap();
       }
+
+      return () => {
+         DG;
+      };
    }, []);
 
    function initializeMap() {
@@ -21,8 +26,9 @@ export default function TwoGis() {
          [x: string]: any;
          bindPopup: (arg0: string) => void;
          openPopup: () => void;
+         closePopup: () => void;
       };
-      const openOnHover = document.getElementById("map") as HTMLDivElement;
+      const mapElement = document.getElementById("map") as HTMLDivElement;
 
       DG.then(function () {
          if (map) return;
@@ -32,7 +38,6 @@ export default function TwoGis() {
             minZoom: 12,
             maxZoom: 18,
          });
-         // DG.marker(coolStudioLocation).addTo(map);
          map.on("click", function () {
             console.log("clicked");
             window.location.href = coolStudiolink;
@@ -51,12 +56,16 @@ export default function TwoGis() {
 
          marker = DG.marker(coolStudioLocation).addTo(map);
          marker.bindPopup("Мы находимся здесь!");
-         if (openOnHover) {
-            openOnHover.onmouseover = () => marker.openPopup();
-            openOnHover.onmouseout = () => marker.closePopup();
-            openOnHover.onmousedown = () => marker.openPopup();
-            openOnHover.onmouseup = () => marker.closePopup();
+         if (mapElement) {
+            mapElement.onmouseover = marker.openPopup;
+            mapElement.onmouseout = marker.closePopup;
          }
+         // FIXME violation of smth
+         /* script.basic.js:16543 [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952 */
+         // if (mapElement) {
+         //   DG.DomEvent.on(mapElement, "mouseover", marker.openPopup, { passive: true });
+         //   DG.DomEvent.on(mapElement, "mouseout", marker.closePopup, { passive: true });
+         // }
       });
    }
 

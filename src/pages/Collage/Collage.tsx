@@ -10,31 +10,40 @@ import img8 from "../../assets/Collage(7).png";
 import { useNavigate } from "react-router-dom";
 
 const Collage = () => {
-   const data = [{
-      id: 1,
-      src: img1,
-   }, {
-      id: 2,
-      src: img2,
-   }, {
-      id: 3,
-      src: img3,
-   }, {
-      id: 4,
-      src: img4,
-   }, {
-      id: 5,
-      src: img5,
-   }, {
-      id: 6,
-      src: img6,
-   }, {
-      id: 7,
-      src: img7,
-   }, {
-      id: 8,
-      src: img8,
-   },];
+   const data = [
+      {
+         id: 1,
+         src: img1,
+      },
+      {
+         id: 2,
+         src: img2,
+      },
+      {
+         id: 3,
+         src: img3,
+      },
+      {
+         id: 4,
+         src: img4,
+      },
+      {
+         id: 5,
+         src: img5,
+      },
+      {
+         id: 6,
+         src: img6,
+      },
+      {
+         id: 7,
+         src: img7,
+      },
+      {
+         id: 8,
+         src: img8,
+      },
+   ];
 
    const navigate = useNavigate();
 
@@ -42,13 +51,11 @@ const Collage = () => {
       <>
          <div className={styles.collage}>
             <h3 onClick={() => navigate("/gallery")}>Exit</h3>
-            {
-               data.map((every, i) => (
-                  <div className={styles.pics} key={i}>
-                     <img src={every.src} alt="#" />
-                  </div>
-               ))
-            }
+            {data.map((every, i) => (
+               <div className={styles.pics} key={i}>
+                  <img src={every.src} alt="#" />
+               </div>
+            ))}
          </div>
       </>
    );

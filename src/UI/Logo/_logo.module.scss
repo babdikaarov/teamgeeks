@@ -21,23 +21,22 @@
 .studioLogo {
    background: radial-gradient(
       69.21% 74.92% at 0% 106.05%,
-      #0049ff 13.34%,
-      #0049ff 41.83%,
-      #0049ff 63.51%,
-      #0049ff 90.88%
+      #5979fa6b 13.34%,
+      #5979fa6b 41.83%,
+      #5979fa6b 63.51%,
+      #5979fa6b 90.88%
    );
 }
 
 .mainLogo {
    background: radial-gradient(
       69.21% 74.92% at 0% 106.05%,
-      #fed102 13.34%,
-      #fed102 41.83%,
-      #fed102 63.51%,
-      #fed102 90.88%
+      #fed0026b 13.34%,
+      #fed1026b 41.83%,
+      #fed1026b 63.51%,
+      #fed1026b 90.88%
    );
 }
-
 .pageLogo:hover .hoverStateBackground {
-   opacity: 0.4;
+   opacity: 1;
 }

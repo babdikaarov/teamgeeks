@@ -7,10 +7,8 @@
 }
 
 .socialLinks li a svg path {
-   // transfer to global
    fill: $color_white;
 }
 .socialLinks li a:hover svg path {
-   // transfer to global
    fill: $hover_yellow;
 }

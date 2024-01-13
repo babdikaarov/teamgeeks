@@ -1,57 +1,182 @@
 .modal {
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: none;
-  border: none;
+   // padding-block: 100px;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   z-index: 50;
+   border: none;
+   // background: #151515;
+   background: rgb(21 21 21 / 0.8);
+   transition: all 1s ease-in-out;
+   * {
+      transition: all 1s ease-in-out;
+   }
 }
 
-.modal::backdrop {
-  background: rgb(21 21 21 / 0.9);
+.landscape {
+   // aspect-ratio: 80 / 65;
+   max-width: min(80%, 1200px);
+   max-height: 65%;
+   // portrait device mode
+   @media screen and (orientation: portrait) and (max-width: 1240px) {
+      max-width: 80%;
+      max-height: 55%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 1024px) {
+      max-height: 45%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 860px) {
+      max-width: 100%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 600px) {
+      max-height: 35%;
+   }
+   // landscape device mode FIXME
+
+   // @media screen and (orientation: landscape) and (height <= 1200px) {
+   //   max-width: 65%;
+   // }
+   // @media screen and (orientation: landscape) and (height <= 800px) {
+   //   // max-width: 60%;
+   //   // max-width: 70%;
+   // }
+   // @media screen and (orientation: landscape) and (height <= 600px) and (max-width: 850px) {
+   //   max-height: 100%;
+   //   // max-height: 100%;
+
+   //   // max-width: 60%;
+   // }
+   // @media screen and (orientation: landscape) and (height <= 540px) {
+   //   // max-width: 50%;
+   // }
 }
+
+.portrait {
+   max-width: 50%;
+   max-height: 70%;
+
+   // portrait device mode
+   @media screen and (orientation: portrait) and (max-width: 1240px) {
+      max-width: 60%;
+      max-height: 70%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 960px) {
+      max-width: 70%;
+      max-height: 65%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 860px) {
+      // max-height: 70%;
+   }
+   @media screen and (orientation: portrait) and (max-width: 700px) {
+      max-width: 100%;
+   }
+
+   // landscape device mode
+   // FIXME
+   // @media screen and (orientation: landscape) and (){}
+}
+
 .modalContainer {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   width: calc(100%);
+   height: calc(100%);
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .modalImage {
-  position: relative;
-  z-index: 10;
-  margin: 0 20px;
-  border-radius: 16px;
-  overflow: hidden;
+   position: relative;
+   z-index: 60;
 }
 .modalImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+   border-radius: 16px;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   cursor: pointer;
+}
+
+.modalButtonLeft,
+.modalButtonRight {
+   position: absolute;
+   z-index: 61;
+   top: 50%;
+   transform: translate(0%, -50%);
+   background: none;
+}
+
+.modalButtonLeft {
+   left: 5%;
+}
+.modalButtonRight {
+   right: 5%;
+}
+
+.modalButtonLeft svg,
+.modalButtonRight svg {
+   position: relative;
+   z-index: -1;
 }
 .modalButtonLeft path,
 .modalButtonRight path {
-  fill: #fff;
-  opacity: 0.7;
+   fill: grey;
+   opacity: 0.5;
+   animation: fadeinout 1s infinite;
+}
+// FIXME animation or replace the color waiting designer
+@keyframes fadeinout {
+   from {
+      opacity: 0.5;
+   }
+   50% {
+      opacity: 1;
+   }
+   to {
+      opacity: 0.5;
+   }
 }
 
 .modalButtonLeft:hover path,
 .modalButtonRight:hover path {
-  opacity: 1;
+   opacity: 1;
 }
 
-.landscape {
-  aspect-ratio: 1032 / 616;
-  max-width: 1032px;
-  max-height: 616px;
+.close {
+   position: absolute;
+   z-index: 51;
+   width: 30px;
+   height: 30px;
+   right: 20px;
+   top: 20px;
+   cursor: pointer;
+   opacity: 0.5;
 }
 
-.portrait {
-  aspect-ratio: 578 / 806;
-  max-width: 578px;
-  max-height: 806px;
+.close:before,
+.close:after {
+   content: "";
+   position: absolute;
+   width: 27px;
+   height: 4px;
+   background-color: gold;
+   border-radius: 2px;
+   top: 16px;
+}
+
+.close:hover {
+   opacity: 1;
+}
+
+.close:before {
+   -webkit-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+   transform: rotate(45deg);
+   left: 2px;
+}
+.close:after {
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   right: 2px;
 }

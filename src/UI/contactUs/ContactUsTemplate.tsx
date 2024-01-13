@@ -1,14 +1,8 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import TwoGis from "../map/TwoGis";
 import styles from "./_contactUsTemplate.module.scss";
-
-interface ContactUsTemplateProps {
-   heading: string;
-   secondHeading?: string;
-   paragraph: string[];
-   button: ReactNode;
-}
+import { ContactUsTemplateProps } from "./types";
 
 const ContactUsTemplate: FC<ContactUsTemplateProps> = ({ heading, secondHeading, paragraph, button }) => {
    return (

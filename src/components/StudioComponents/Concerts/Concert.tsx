@@ -9,7 +9,7 @@ import ConcertImg7 from "../../../assets/coolstudio/Concert.jpeg";
 import ConcertImg8 from "../../../assets/coolstudio/Concert.jpeg";
 import ConcertImg9 from "../../../assets/coolstudio/Concert.jpeg";
 import styles from "./_concerts.module.scss";
-import icon from "../Concerts/iconSwipe"
+import icon from "../Concerts/iconSwipe";
 import { Link } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -47,30 +47,33 @@ const Concert = () => {
 
    return (
       <SectionWrapper header="Отчетные концерты">
-      <div>
-         <div className={styles.ConcertSlider}>
-            <Swiper
-               spaceBetween={0}
-               slidesPerView={3}
-               navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
-               modules={[Navigation]}
-            >
-               {concertImages.map((image, index) => (
-                  <SwiperSlide key={index}>
-                       <Link to={'/gallery/10'}><ConcertCard card={image} /></Link>   
-                  </SwiperSlide>
-               ))}
-            </Swiper>
-            <div id="btn2" className={styles.LeftSwip}>
-               {icon}
+         <div>
+            <div className={styles.ConcertSlider}>
+               <Swiper
+                  spaceBetween={0}
+                  slidesPerView={3}
+                  navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
+                  modules={[Navigation]}
+               >
+                  {concertImages.map((image, index) => (
+                     <SwiperSlide key={index}>
+                        <Link to={"/gallery/10"}>
+                           <ConcertCard card={image} />
+                        </Link>
+                     </SwiperSlide>
+                  ))}
+               </Swiper>
+               <div id="btn2" className={styles.LeftSwip}>
+                  {icon}
+               </div>
+               <div id="btn1" className={styles.RightSwip}>
+                  {icon}
+               </div>
+               <a className={styles.watchmore} href="/gallery">
+                  Смотреть еще
+               </a>
             </div>
-            <div id="btn1" className={styles.RightSwip}>
-              {icon}
-            </div>
-            <a className={styles.watchmore} href="/gallery">Смотреть еще</a>
-
          </div>
-      </div>
       </SectionWrapper>
    );
 };

@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import styles from "./cards/_collabCard.module.scss";
 
-
 interface CollabCardProps extends React.HTMLAttributes<HTMLDivElement> {
    src: Promise<typeof import("*.png")>;
    alt: string;

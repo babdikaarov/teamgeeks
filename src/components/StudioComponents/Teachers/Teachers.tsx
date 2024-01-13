@@ -10,39 +10,39 @@ import icon from "./bigArrow";
 import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
 
 const Teachers = () => {
-  const sliderRef = useRef(null);
+   const sliderRef = useRef(null);
 
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    // @ts-ignore
-    sliderRef.current.swiper.slidePrev();
-  }, []);
+   const handlePrev = useCallback(() => {
+      if (!sliderRef.current) return;
+      // @ts-ignore
+      sliderRef.current.swiper.slidePrev();
+   }, []);
 
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    // @ts-ignore
-    sliderRef.current.swiper.slideNext();
-  }, []);
-  return (
-    <SectionWrapper header="Преподаватели" id="teachers">
-      <div className={styles.teacherContainer}>
-        <button className={styles.buttonPrev} onClick={handlePrev}>
-          {icon}
-        </button>
-        <Swiper ref={sliderRef} slidesPerView={4} loop={true} className={styles.teacherSwiper}>
-          {getTeachersData.map((card, i) => (
-            <SwiperSlide key={i}>
-              <TeacherCard {...card} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <button className={styles.buttonNext} onClick={handleNext}>
-          {icon}
-        </button>
-      </div>
-      <StudioContactUsButton />
-    </SectionWrapper>
-  );
+   const handleNext = useCallback(() => {
+      if (!sliderRef.current) return;
+      // @ts-ignore
+      sliderRef.current.swiper.slideNext();
+   }, []);
+   return (
+      <SectionWrapper header="Преподаватели" id="teachers">
+         <div className={styles.teacherContainer}>
+            <button className={styles.buttonPrev} onClick={handlePrev}>
+               {icon}
+            </button>
+            <Swiper ref={sliderRef} slidesPerView={4} loop={true} className={styles.teacherSwiper}>
+               {getTeachersData.map((card, i) => (
+                  <SwiperSlide key={i}>
+                     <TeacherCard {...card} />
+                  </SwiperSlide>
+               ))}
+            </Swiper>
+            <button className={styles.buttonNext} onClick={handleNext}>
+               {icon}
+            </button>
+         </div>
+         <StudioContactUsButton whatsapp={""} />
+      </SectionWrapper>
+   );
 };
 
 export default Teachers;

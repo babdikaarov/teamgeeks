@@ -1,9 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import styles from "../header/_NavList.module.scss";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
 
 const BandNavList = () => {
    const { pathname } = useLocation();
+   const onStudio = pathname === "/studio";
 
    return (
       <ul className={styles.navigation}>
@@ -13,19 +15,29 @@ const BandNavList = () => {
             </HashLink>
          </li>
          <li>
-            <HashLink to={"/studio#about"}>О студии</HashLink>
+            <HashLink to={"/studio#about"} onClick={() => !onStudio && mainElementAnimation()}>
+               О студии
+            </HashLink>
          </li>
          <li>
-            <HashLink to={"/studio#courses"}>Направления</HashLink>
+            <HashLink to={"/studio#courses"} onClick={() => !onStudio && mainElementAnimation()}>
+               Направления
+            </HashLink>
          </li>
          <li>
-            <HashLink to={"/studio#teachers"}>Преподаватели</HashLink>
+            <HashLink to={"/studio#teachers"} onClick={() => !onStudio && mainElementAnimation()}>
+               Преподаватели
+            </HashLink>
          </li>
          <li>
-            <HashLink to={"/studio#students"}>Ученики</HashLink>
+            <HashLink to={"/studio#students"} onClick={() => !onStudio && mainElementAnimation()}>
+               Ученики
+            </HashLink>
          </li>
          <li>
-            <HashLink to={"/studio#concerts"}>Концерты</HashLink>
+            <HashLink to={"/studio/gallery"} onClick={() => onStudio && mainElementAnimation()}>
+               Концерты
+            </HashLink>
          </li>
       </ul>
    );
