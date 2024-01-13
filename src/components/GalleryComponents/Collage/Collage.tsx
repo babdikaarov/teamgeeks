@@ -20,26 +20,26 @@ import useResponsiveSorting from "../../../app/hooks/useResponsiveSorting";
 // }
 
 const Collage = () => {
-  window.scroll(0, 0);
-  const navigate = useNavigate();
-  const { id } = useParams();
-  // FIXME when backend ready
-  // const sorted = getGalleryData.find((el) => el.eventID === Number(id))!;
-  const sorted = getGalleryData[Number(id)];
+   window.scroll(0, 0);
+   const navigate = useNavigate();
+   const { id } = useParams();
+   // FIXME when backend ready
+   // const sorted = getGalleryData.find((el) => el.eventID === Number(id))!;
+   const sorted = getGalleryData[Number(id)];
 
-  const sortedArray = useResponsiveSorting(sorted.items);
-  return (
-    <section className={styles.section}>
-      <div className={styles.collageInfo}>
-        <button onClick={() => navigate(-1)}>{returnIcon}</button>
-        <div>
-          <p>{sorted?.date}</p>
-          <h3> {sorted?.name} </h3>
-        </div>
-      </div>
-      <GalleryCollage items={sortedArray} />
-    </section>
-  );
+   const sortedArray = useResponsiveSorting(sorted.items);
+   return (
+      <section className={styles.section}>
+         <div className={styles.collageInfo}>
+            <button onClick={() => navigate(-1)}>{returnIcon}</button>
+            <div>
+               <p>{sorted?.date}</p>
+               <h3> {sorted?.name} </h3>
+            </div>
+         </div>
+         <GalleryCollage items={sortedArray} />
+      </section>
+   );
 };
 
 export default Collage;

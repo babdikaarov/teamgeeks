@@ -1,28 +1,28 @@
 @import "../../../scss/partials/variables";
 
 .courseCardContainer {
-  border-radius: $radius;
-  background-color: #252525;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 33px;
-  aspect-ratio: 236 / 177;
-  width: 236px;
-  height: 177px;
-  //   cursor: pointer;
-  transition: background-color 0.25s ease-out;
+   border-radius: $radius;
+   background-color: #252525;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   gap: 33px;
+   aspect-ratio: 236 / 177;
+   width: 236px;
+   height: 177px;
+   //   cursor: pointer;
+   transition: background-color 0.25s ease-out;
 }
 .courseCardContainer img {
-  aspect-ratio: 1/1;
-  height: 35%;
+   aspect-ratio: 1/1;
+   height: 35%;
 }
 .courseCardContainer h6 {
-  font-weight: $bold;
+   font-weight: $bold;
 }
 
 .courseCardContainer:hover {
-  background-color: #505050;
+   background-color: #505050;
 }

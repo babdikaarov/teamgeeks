@@ -2,70 +2,70 @@
 @import "../../../scss/partials/variables";
 
 .ourClients {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  @media screen and (max-width: 1280px) {
-    margin: 0 20px;
-    .clientsCards {
-      gap: 24px;
-    }
-  }
-  @media screen and (max-width: 1024px) {
-    gap: 30px;
+   max-width: 1240px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+   @media screen and (max-width: 1280px) {
+      margin: 0 20px;
+      .clientsCards {
+         gap: 24px;
+      }
+   }
+   @media screen and (max-width: 1024px) {
+      gap: 30px;
 
-    h2 {
-      font-size: 24px;
-    }
-    h4 {
-      font-size: 18px;
-    }
-  }
-  @media screen and (max-width: 390px) {
-    gap: 20px;
+      h2 {
+         font-size: 24px;
+      }
+      h4 {
+         font-size: 18px;
+      }
+   }
+   @media screen and (max-width: 390px) {
+      gap: 20px;
 
-    h2 {
-      font-size: 18px;
-    }
-    h4 {
-      font-size: 14px;
-    }
-  }
+      h2 {
+         font-size: 18px;
+      }
+      h4 {
+         font-size: 14px;
+      }
+   }
 }
 
 .clientsArticle {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 350px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   margin: 0 auto;
+   text-align: center;
+   max-width: 350px;
 }
 
 .clientsArticle h2 {
-  margin: 0 auto;
-  width: fit-content;
-  padding: 10px 20px 10px;
-  color: $color_black;
+   margin: 0 auto;
+   width: fit-content;
+   padding: 10px 20px 10px;
+   color: $color_black;
 
-  border-radius: 16px;
-  background: #fed102;
+   border-radius: 16px;
+   background: #fed102;
 }
 
 .clientsCards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 32px;
 
-  @media screen and (max-width: 540px) {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow: scroll;
-  }
+   @media screen and (max-width: 540px) {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow: scroll;
+   }
 }
 .clientsCards::-webkit-scrollbar {
-  display: none;
+   display: none;
 }

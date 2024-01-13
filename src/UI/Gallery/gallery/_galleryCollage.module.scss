@@ -1,87 +1,87 @@
 .collage {
-  display: grid;
-  gap: 20px;
-  padding-inline: 16px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  color: black;
-  font-size: 60px;
-  transition: all 0.1s ease-in-out;
-  @media screen and (max-width: 1024px) {
-    .portrait {
-      max-height: calc(2 * (229px - 30px));
-    }
-    .landscape {
-      max-height: calc(229px - 40px);
-    }
-  }
-  @media screen and (max-width: 850px) {
-    gap: 16px;
+   display: grid;
+   gap: 20px;
+   padding-inline: 16px;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: auto;
+   color: black;
+   font-size: 60px;
+   transition: all 0.1s ease-in-out;
+   @media screen and (max-width: 1024px) {
+      .portrait {
+         max-height: calc(2 * (229px - 30px));
+      }
+      .landscape {
+         max-height: calc(229px - 40px);
+      }
+   }
+   @media screen and (max-width: 850px) {
+      gap: 16px;
 
-    grid-template-columns: repeat(2, 280px);
-    .portrait {
-      height: calc(2 * (229px - 70px));
-    }
-    .landscape {
-      max-height: calc(229px - 80px);
-    }
-  }
-  @media screen and (max-width: 650px) {
-    grid-template-columns: repeat(2, 250px);
-  }
-  @media screen and (max-width: 560px) {
-    grid-template-columns: repeat(2, 200px);
-  }
-  @media screen and (max-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
-    .portrait {
-      height: calc(2 * (229px - 90px));
-    }
-    .landscape {
-      height: calc(229px - 100px);
-    }
-  }
+      grid-template-columns: repeat(2, 280px);
+      .portrait {
+         height: calc(2 * (229px - 70px));
+      }
+      .landscape {
+         max-height: calc(229px - 80px);
+      }
+   }
+   @media screen and (max-width: 650px) {
+      grid-template-columns: repeat(2, 250px);
+   }
+   @media screen and (max-width: 560px) {
+      grid-template-columns: repeat(2, 200px);
+   }
+   @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      .portrait {
+         height: calc(2 * (229px - 90px));
+      }
+      .landscape {
+         height: calc(229px - 100px);
+      }
+   }
 }
 .paginationButton {
-  color: #fcfcfc;
-  margin: 30px auto 0;
-  display: block;
-  width: 300px;
+   color: #fcfcfc;
+   margin: 30px auto 0;
+   display: block;
+   width: 300px;
 }
 
 .paginationButton:hover {
-  color: #fcfcfc;
+   color: #fcfcfc;
 }
 .collageItem {
-  overflow: hidden;
-  border-radius: 16px;
-  object-fit: contain;
-  overflow: hidden;
-  transition: all 1s ease-in-out;
+   overflow: hidden;
+   border-radius: 16px;
+   object-fit: contain;
+   overflow: hidden;
+   transition: all 1s ease-in-out;
 }
 
 .collageItem:hover {
-  cursor: pointer;
+   cursor: pointer;
 }
 
 .collageItem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 .portrait {
-  max-height: 478px;
-  height: 100%;
-  grid-row: span 2;
+   max-height: 478px;
+   height: 100%;
+   grid-row: span 2;
 }
 .landscape {
-  max-height: 229px;
-  height: 100%;
+   max-height: 229px;
+   height: 100%;
 }
 
 .collage p {
-  position: absolute;
-  color: black;
-  font-size: 50px;
+   position: absolute;
+   color: black;
+   font-size: 50px;
 }

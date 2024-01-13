@@ -11,7 +11,7 @@ import getGalleryData from "../../../tempData/getGalleyData";
 //   }[];
 // }
 const Gallery = () => {
-  return <GalleryTemplate galleryData={getGalleryData} />;
+   return <GalleryTemplate galleryData={getGalleryData} />;
 };
 
 export default Gallery;

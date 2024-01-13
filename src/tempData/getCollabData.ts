@@ -2,7 +2,7 @@ export default (
    resolve: (
       arg0: { src: Promise<typeof import("*.png")>; alt: string; firstName: string; lastName: string }[],
    ) => void,
-   ) => {
+) => {
    resolve([
       {
          src: import("/src/assets/collaborationImages/Aktan.png"),

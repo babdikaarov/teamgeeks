@@ -5,25 +5,25 @@ import styles from "./_contactUsTemplate.module.scss";
 import { ContactUsTemplateProps } from "./types";
 
 const ContactUsTemplate: FC<ContactUsTemplateProps> = ({ heading, secondHeading, paragraph, button }) => {
-  return (
-    <SectionWrapper>
-      <div className={styles.mapContent}>
-        <div className={styles.textContainer}>
-          <h2>{heading}</h2>
-          <div className={styles.text}>
-            {secondHeading && <h3>{secondHeading}</h3>}
-            {paragraph.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          {button}
-        </div>
-        <div className={styles.map}>
-          <TwoGis />
-        </div>
-      </div>
-    </SectionWrapper>
-  );
+   return (
+      <SectionWrapper>
+         <div className={styles.mapContent}>
+            <div className={styles.textContainer}>
+               <h2>{heading}</h2>
+               <div className={styles.text}>
+                  {secondHeading && <h3>{secondHeading}</h3>}
+                  {paragraph.map((p, i) => (
+                     <p key={i}>{p}</p>
+                  ))}
+               </div>
+               {button}
+            </div>
+            <div className={styles.map}>
+               <TwoGis />
+            </div>
+         </div>
+      </SectionWrapper>
+   );
 };
 
 export default ContactUsTemplate;

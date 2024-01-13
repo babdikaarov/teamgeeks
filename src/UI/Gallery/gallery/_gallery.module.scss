@@ -1,101 +1,101 @@
 @import "../../../scss/partials/variables";
 
 .gallery::-webkit-scrollbar {
-  display: none;
+   display: none;
 }
 .gallery {
-  max-width: 1240px;
-  margin: 80px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  transition: all 1s ease-in-out;
+   max-width: 1240px;
+   margin: 80px auto 0;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+   transition: all 1s ease-in-out;
 
-  p {
-    font-size: 14px;
-    letter-spacing: 0.28px;
-    color: #fed102;
-  }
-  h4 {
-    color: #fed102;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-  }
+   p {
+      font-size: 14px;
+      letter-spacing: 0.28px;
+      color: #fed102;
+   }
+   h4 {
+      color: #fed102;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+   }
 
-  @media screen and (max-width: 1280px) {
-    margin-inline: 40px;
-    gap: 40px;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    .galleryCards {
-      animation: fadeOut 1s ease-in-out;
-    }
-  }
-  @media screen and (max-width: 1024px) {
-    margin-inline: 20px;
-  }
-  @media screen and (max-width: 924px) {
-    gap: 16px;
-  }
+   @media screen and (max-width: 1280px) {
+      margin-inline: 40px;
+      gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      .galleryCards {
+         animation: fadeOut 1s ease-in-out;
+      }
+   }
+   @media screen and (max-width: 1024px) {
+      margin-inline: 20px;
+   }
+   @media screen and (max-width: 924px) {
+      gap: 16px;
+   }
 
-  @media screen and (max-width: 680px) {
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    max-height: calc(3 * (270px - 30px + 26px));
-    overflow-y: scroll;
+   @media screen and (max-width: 680px) {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+      max-height: calc(3 * (270px - 30px + 26px));
+      overflow-y: scroll;
 
-    .galleryCards {
-      width: calc(400px - 30px);
-      height: calc(270px - 30px);
-    }
-  }
-  @media screen and (max-width: 440px) {
-    overflow-y: scroll;
+      .galleryCards {
+         width: calc(400px - 30px);
+         height: calc(270px - 30px);
+      }
+   }
+   @media screen and (max-width: 440px) {
+      overflow-y: scroll;
 
-    .galleryCards {
-      width: 100%;
-      height: 100%;
-    }
-  }
+      .galleryCards {
+         width: 100%;
+         height: 100%;
+      }
+   }
 }
 
 .galleryCards {
-  color: $color_yellow;
-  font-size: 30px;
-  aspect-ratio: 400/270;
+   color: $color_yellow;
+   font-size: 30px;
+   aspect-ratio: 400/270;
 
-  gap: 4px;
-  overflow: hidden;
-  border-radius: 16px;
-  transition: all 1s ease-in-out;
+   gap: 4px;
+   overflow: hidden;
+   border-radius: 16px;
+   transition: all 1s ease-in-out;
 }
 @keyframes slideIn {
-  from {
-    transform: translateX(-500%);
-  }
-  to {
-    transform: translateX(0px);
-  }
+   from {
+      transform: translateX(-500%);
+   }
+   to {
+      transform: translateX(0px);
+   }
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
 }
 
 .galleryCards img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 .galleryCardsContent {
-  position: relative;
-  transform: translate(7%, -130%);
-  z-index: 5;
+   position: relative;
+   transform: translate(7%, -130%);
+   z-index: 5;
 }

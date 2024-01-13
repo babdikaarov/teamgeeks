@@ -1,42 +1,42 @@
 .pageLogo {
-  display: block;
-  position: relative;
-  width: 104px;
-  height: 60px;
+   display: block;
+   position: relative;
+   width: 104px;
+   height: 60px;
 }
 .pageLogo img {
-  max-width: none;
+   max-width: none;
 }
 
 .hoverStateBackground {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  filter: blur(16px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+   filter: blur(16px);
+   opacity: 0;
+   transition: opacity 0.3s ease;
 }
 
 .studioLogo {
-  background: radial-gradient(
-    69.21% 74.92% at 0% 106.05%,
-    #5979fa6b 13.34%,
-    #5979fa6b 41.83%,
-    #5979fa6b 63.51%,
-    #5979fa6b 90.88%
-  );
+   background: radial-gradient(
+      69.21% 74.92% at 0% 106.05%,
+      #5979fa6b 13.34%,
+      #5979fa6b 41.83%,
+      #5979fa6b 63.51%,
+      #5979fa6b 90.88%
+   );
 }
 
 .mainLogo {
-  background: radial-gradient(
-    69.21% 74.92% at 0% 106.05%,
-    #fed0026b 13.34%,
-    #fed1026b 41.83%,
-    #fed1026b 63.51%,
-    #fed1026b 90.88%
-  );
+   background: radial-gradient(
+      69.21% 74.92% at 0% 106.05%,
+      #fed0026b 13.34%,
+      #fed1026b 41.83%,
+      #fed1026b 63.51%,
+      #fed1026b 90.88%
+   );
 }
 .pageLogo:hover .hoverStateBackground {
-  opacity: 1;
+   opacity: 1;
 }
