@@ -9,4 +9,5 @@ export interface ModalProps {
   )[];
   index: number;
   setIndexImage: React.Dispatch<React.SetStateAction<number>>;
+  nextPage: () => void;
 }

@@ -4,6 +4,7 @@ const useCollageModal = (
   index: number,
   arrayLength: number,
   setIndexImage: React.Dispatch<React.SetStateAction<number>>,
+  nextPage: () => void,
 ) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -79,18 +80,21 @@ const useCollageModal = (
     const handleTouchEnd = () => {
       const isInsideY = touchMoveEndY >= elementTop && touchMoveEndY <= elementBottom;
       const isInsideX = touchMoveEndX >= elementLeft && touchMoveEndX <= elementRight;
-      const swipeLeft = touchStartX > touchMoveEndX;
-      const swipeRight = touchStartX < touchMoveEndX;
+      const swipeRight = touchStartX > touchMoveEndX;
+      const swipeLeft = touchStartX < touchMoveEndX;
       // console.log(elementLeft + "left");
       // console.log(elementRight + "Right");
       // console.log(touchMoveEndX + "move end X");
       // console.log(isInsideX);
       if (isInsideY && isInsideX) {
-        if (swipeLeft) {
-          !(index >= arrayLength - 1) && setIndexImage(index + 1);
+        if (swipeRight) {
+          setIndexImage(index + 1);
+          if (index >= arrayLength - 1) {
+            nextPage();
+          }
           //   console.log(index + "  modal index");
         }
-        if (swipeRight) {
+        if (swipeLeft) {
           //   console.log(index + "  modal index");
           !(index === 0) && setIndexImage(index - 1);
         }

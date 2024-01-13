@@ -25,7 +25,7 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
               <img src={data?.src} alt={data?.alt} />
             </div>
           ))}
-        <Modal images={perPage} index={indexImage} setIndexImage={setIndexImage} />
+        <Modal images={perPage} index={indexImage} setIndexImage={setIndexImage} nextPage={nextPage} />
       </div>
       <button className={styles.paginationButton} onClick={nextPage}>
         Далее
