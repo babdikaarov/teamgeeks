@@ -1,19 +1,57 @@
-.coolStudio {
-   width: calc(100% - 200px);
-   margin: 0 auto;
-}
-.AboutUsWrapper {
-   display: flex;
-   gap: 170px;
-}
+@import "../../../scss//partials/mixin";
 
 .coolStudio h2 {
-   font-size: 32px;
    font-weight: 700;
    margin-bottom: 48px;
    display: flex;
    justify-content: center;
+   @include xl {
+      font-size: 24px;
+   }
+   @include md {
+      margin-bottom: 30px;
+   }
+   @include sm {
+      font-size: 16px;
+   }
 }
+
+.AboutUsWrapper {
+   display: flex;
+   gap: 170px;
+   padding-inline: 100px;
+   @include xxl {
+      gap: 60px;
+   }
+   @include xl {
+      padding-inline: 20px;
+   }
+   @include md {
+      flex-direction: column-reverse;
+   }
+   @include sm {
+      gap: 14px;
+   }
+}
+.AboutUsWrapper .Image {
+   width: 100%;
+   max-width: 432px;
+   max-height: 288px;
+   border-radius: 16px;
+   object-fit: cover;
+   @include xl {
+      max-width: 373px;
+      min-height: 100%;
+   }
+   @include md {
+      max-width: 720px;
+      max-height: 100%;
+   }
+}
+.AboutUsWrapper .expandedImage {
+   max-height: 100%;
+}
+
 .TextWrapper {
    font-size: 19px;
    font-style: normal;
@@ -21,14 +59,16 @@
    line-height: 150%;
    letter-spacing: 0.38px;
    position: relative;
+   @include xl {
+      font-size: 16px;
+   }
+   @include sm {
+      font-size: 12px;
+   }
 }
-
-.AboutUsImg {
-   width: 432px;
-   height: 288px;
-   border-radius: 16px;
+.ExpandButton {
+   color: #fff;
 }
-
 @keyframes fadeInOut {
    0% {
       opacity: 0;
@@ -38,9 +78,6 @@
       opacity: 1;
       max-height: 1000px;
    }
-}
-.ExpandButton {
-   color: #fff;
 }
 .ExpandedText {
    opacity: 0;
@@ -58,10 +95,9 @@
 }
 .CollapseButton {
    position: absolute;
-   margin-top: 24px;
-   display: flex;
-   justify-content: center;
-   width: 792px;
+   padding-top: 24px;
+   width: 100%;
+   margin: 0 auto;
 }
 
 .CollapseButton,
