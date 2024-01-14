@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import TeacherCard from "../../../UI/Cards/TeacherCard";
+import React, { useState, useCallback, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import getTeachersData from "../../../tempData/getTeachersData";
 import styles from "./_teacher.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { useCallback, useRef } from "react";
 import icon from "./bigArrow";
 import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
+import TeacherCard from "../../../UI/Cards/TeacherCard";
+import Modal from "./Modal"; // Импортируем компонент модального окна
 
 const Teachers = () => {
+   const [selectedTeacher, setSelectedTeacher] = useState(null);
    const sliderRef = useRef(null);
 
    const handlePrev = useCallback(() => {
@@ -23,6 +23,15 @@ const Teachers = () => {
       // @ts-ignore
       sliderRef.current.swiper.slideNext();
    }, []);
+
+   const openModal = useCallback((teacher) => {
+      setSelectedTeacher(teacher);
+   }, []);
+
+   const closeModal = useCallback(() => {
+      setSelectedTeacher(null);
+   }, []);
+
    return (
       <SectionWrapper header="Преподаватели" id="teachers">
          <div className={styles.teacherContainer}>
@@ -31,7 +40,7 @@ const Teachers = () => {
             </button>
             <Swiper ref={sliderRef} slidesPerView={4} loop={true} className={styles.teacherSwiper}>
                {getTeachersData.map((card, i) => (
-                  <SwiperSlide key={i}>
+                  <SwiperSlide key={i} onClick={() => openModal(card)}>
                      <TeacherCard {...card} />
                   </SwiperSlide>
                ))}
@@ -41,6 +50,7 @@ const Teachers = () => {
             </button>
          </div>
          <StudioContactUsButton whatsapp={""} />
+         {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
       </SectionWrapper>
    );
 };
