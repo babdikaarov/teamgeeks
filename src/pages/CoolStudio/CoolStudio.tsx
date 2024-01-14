@@ -6,6 +6,8 @@ import HeroStudio from "../../components/StudioComponents/HeroStudio/HeroStudio.
 import OurStudents from "../../components/StudioComponents/OurStudents/OurStudent.tsx";
 import StudentsFeedback from "../../components/StudioComponents/StudentsFeedback/StudentsFeedback.tsx";
 import Teachers from "../../components/StudioComponents/Teachers/Teachers.tsx";
+
+
 const CoolStudio = () => {
    return (
       <>

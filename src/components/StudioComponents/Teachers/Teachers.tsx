@@ -1,14 +1,17 @@
-import React, { useState, useCallback, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import TeacherCard from "../../../UI/Cards/TeacherCard";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import getTeachersData from "../../../tempData/getTeachersData";
 import styles from "./_teacher.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { useState, useCallback, useRef } from "react";
 import icon from "./bigArrow";
 import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
-import TeacherCard from "../../../UI/Cards/TeacherCard";
 import Modal from "./Modal"; // Импортируем компонент модального окна
 
+
 const Teachers = () => {
+
    const [selectedTeacher, setSelectedTeacher] = useState(null);
    const sliderRef = useRef(null);
 
@@ -38,7 +41,40 @@ const Teachers = () => {
             <button className={styles.buttonPrev} onClick={handlePrev}>
                {icon}
             </button>
-            <Swiper ref={sliderRef} slidesPerView={4} loop={true} className={styles.teacherSwiper}>
+            <Swiper
+            ref={sliderRef}
+            loop={true}
+            className={styles.teacherSwiper}
+            breakpoints={{
+               1440: {
+                  slidesPerView: 3.85,
+               },
+               1200: {
+                  slidesPerView: 3.9,
+               },
+               1024: {
+                  slidesPerView: 3.95,
+               },
+               892: {
+                  slidesPerView: 4,
+               },
+               768: {
+                  slidesPerView: 2.78,
+               },
+               658: {
+                  slidesPerView: 2.85,
+               },
+               576: {
+                  slidesPerView: 1.55,
+               },
+               482: {
+                  slidesPerView: 1.9,
+               },
+               390: {
+                  slidesPerView: 1.9,
+               }
+            }}
+            >
                {getTeachersData.map((card, i) => (
                   <SwiperSlide key={i} onClick={() => openModal(card)}>
                      <TeacherCard {...card} />

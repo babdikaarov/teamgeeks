@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { socialIcons } from "../socialLinks/icons";
-import styles from "./_teachersCard.module.scss";
+import styles from "./cards/_teachersCard.module.scss";
+
 
 interface TeacherCardProps {
    img: string;
@@ -11,7 +12,9 @@ interface TeacherCardProps {
    onClick: () => void;
 }
 
+
 const TeacherCard: FC<TeacherCardProps> = (props) => {
+
    const { img, name, expertise, instagram, description, onClick } = props;
 
    return (

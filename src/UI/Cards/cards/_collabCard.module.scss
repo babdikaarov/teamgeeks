@@ -1,4 +1,5 @@
 @import "../../../scss/partials/variables";
+@import "../../../scss/partials/mixin";
 
 .collabCardContainer {
    text-align: center;
@@ -7,10 +8,15 @@
    justify-content: space-between;
    gap: 16px;
    align-items: center;
-   height: 334px;
-   width: 230px;
    border-radius: 16px;
    transition: all 0.27s ease-in-out;
+   height: 334px;
+   width: 230px;
+   @include sm {
+      width: 164px;
+      height: 235px;
+      font-weight: 400;
+   }
 }
 
 .collabCard {
@@ -28,4 +34,32 @@
    font-size: 20px;
    font-weight: $bold;
    letter-spacing: 0.4px;
+   @include xxl {
+      height: calc(334px + 16px);
+      width: calc(230px + 16px);
+   }
+   @include xl {
+      height: calc(334px + 14px);
+      width: calc(230px + 14px);
+   }
+   @media screen and (max-width: 892px) {
+      height: 334px;
+      width: 230px;
+      font-weight: 400;
+      font-size: 18px;
+   }
+   @include md {
+      height: 334px;
+      width: 230px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+   }
+   @include sm {
+      height: 235px;
+      width: 164px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+   }
 }

@@ -1,10 +1,12 @@
-import styles from "../../components/StudioComponents/StudentsFeedback/_studentsFeedback.module.scss";
+import styles from "./cards/_feedbackCard.module.scss";
+
 
 type CardProps = {
    img: string;
    name: string;
    word: string;
 };
+
 
 const StudentsFeedbackCard = (card: CardProps) => {
    return (

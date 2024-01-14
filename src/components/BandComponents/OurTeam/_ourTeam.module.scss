@@ -1,17 +1,109 @@
+@import "../../../scss/partials/mixin";
+
+#teamWrapper {
+   position: relative;
+}
+
 .teamCardsContainer {
-   margin-left: 100px;
    display: flex;
    gap: 20px;
    overflow-x: scroll;
    overflow-y: hidden;
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
+   margin-left: 100px;
+   @include xxl {
+      margin-left: 80px;
+   }
+   @include xl {
+      margin-left: 60px;
+   }
+   @media screen and (max-width: 892px) {
+      margin-left: 40px;
+   }
+   @include md {
+      margin-left: 30px;
+   }
+   @include sm {
+      margin-left: 16px;
+   }
 }
 
 .teamCardsContainer::-webkit-scrollbar {
    display: none;
 }
-
+ 
 .lastCardPadding {
    width: 100px;
+}
+
+.buttonPrev {
+   display: none;
+   rotate: 180deg;
+   @include xxl {
+      display: none;
+   }
+   @include xl {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 45px;
+   }
+   @media screen and (max-width: 892px) {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 25px;
+   }
+   @include md {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 15px;
+   }
+   @include sm {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 1px;
+   }
+}
+
+.buttonNext {
+   display: none;
+   @include xxl {
+      display: none;
+   }
+   @include xl {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 15px;
+   }
+   @media screen and (max-width: 892px) {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 15px;
+   }
+   @include md {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 15px;
+   }
+   @include sm {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 1px;
+   }
 }

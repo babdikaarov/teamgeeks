@@ -1,12 +1,109 @@
+@import "../../../scss/partials/mixin";
+
+#collabWrapper {
+   position: relative;
+}
+
+.collabSwiper {
+   width: 1340px
+}
+
 .collabCardsContainer {
    height: 430px;
-   margin-left: 100px;
    display: flex;
-   // gap: 24px;
+   gap: 0;
    overflow-x: scroll;
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
+   margin-left: 100px;
+   @include xxl {
+      margin-left: 80px;
+   }
+   @include xl {
+      margin-left: 60px;
+   }
+   @media screen and (max-width: 892px) {
+      margin-left: 40px;
+   }
+   @include md {
+      margin-left: 30px;
+   }
+   @include sm {
+      margin-left: 16px;
+   }
 }
+
 .collabCardsContainer::-webkit-scrollbar {
    display: none;
+}
+
+.buttonPrev {
+   display: none;
+   rotate: 180deg;
+   @include xxl {
+      display: none;
+   }
+   @include xl {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      left: 45px;
+   }
+   @media screen and (max-width: 892px){
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      left: 25px;
+   }
+   @include md {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      left: 15px;
+   }
+   @include sm {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 35%;
+      left: 1px;
+   }
+}
+
+.buttonNext {
+   display: none;
+   @include xxl {
+      display: none;
+   }
+   @include xl {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      right: 15px;
+   }
+   @media screen and (max-width: 892px) {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      right: 15px;
+   }
+   @include md {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      right: 15px;
+   }
+   @include sm {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 35%;
+      right: 1px;
+   }
 }

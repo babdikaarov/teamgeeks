@@ -2,6 +2,7 @@ import Header from "../../UI/Header/Header";
 import Footer from "../../UI/Footer/Footer";
 import { PropsWithChildren } from "react";
 
+
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
    return (
       <>

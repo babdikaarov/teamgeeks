@@ -1,0 +1,112 @@
+@import "../../../scss/partials/mixin";
+
+.StudentsFeedbackCard {
+   width: 360px;
+   height: 525px;
+   background-color: #404040;
+   text-align: center;
+   border-radius: 16px;
+   color: white;
+   @media screen and (max-width: 1440px) {
+      width: 340px;
+      height: 496px;
+   }
+   @include xxl {
+      width: 320px;
+      height: 468px;
+   }
+   @include xl {
+      width: 300px;
+      height: 430px;
+   }
+   @media screen and (max-width: 892px) {
+      width: 270px;
+      height: 380px;
+   }
+   @include md {
+      width: 260px;
+      height: 350px;
+   }
+   @include sm {
+      width: 231px;
+      height: 340px;
+      background-color: #252525;
+      border-radius: 10px;
+   }
+   & img {
+      width: 100%;
+      height: 405px;
+      border-radius: 16px 16px 0 0;
+      @media screen and (max-width: 1440px) {
+         height: 380px;
+      }
+      @include xxl {
+         height: 360px;
+      }
+      @include xl {
+         height: 310px;
+      }
+      @media screen and (max-width: 892px) {
+         height: 270px;
+      }
+      @include md {
+         height: 250px;
+      }
+      @include sm {
+         height: 230px;
+      }
+   }
+   & .StudentsName {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      @media screen and (max-width: 1440px) {
+         font-size: 22px;
+      }
+      @include xxl {
+         font-weight: 500;
+         font-size: 20px;
+      }
+      @include xl {
+         font-size: 20px;
+      }
+      @media screen and (max-width: 892px) {
+         font-size: 16px;
+      }
+      @include md {
+         font-weight: 500;
+         font-size: 15px;
+      }
+      @include sm {
+         font-weight: 500;
+         font-size: 15px;
+         margin: 5px;
+      }
+   }
+   & .StudentsWord {
+      font-weight: 400;
+      font-size: 16px;
+      margin: 0 16px;
+      @media screen and (max-width: 1440px) {
+         font-size: 16px;
+      }
+      @include xxl {
+         font-size: 14px;
+      }
+      @include xl {
+         font-size: 14px;
+      }
+      @media screen and (max-width: 892px) {
+         font-size: 14px;
+      }
+      @include md {
+         font-weight: 400;
+         font-size: 12px;
+      }
+      @include sm {
+         font-weight: 400;
+         font-size: 12px;
+         margin: 5px;
+      }
+   }
+}
