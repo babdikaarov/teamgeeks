@@ -1,0 +1,165 @@
+@import "../../../scss/partials/mixin";
+
+.title {
+   margin: 10px 0;
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 40px;
+   letter-spacing: 0.02em;
+   text-align: left;
+   width: 420px;
+   @include xl {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+   }
+   @include md {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      width: 100%;
+      text-align: center;      
+   }
+}
+.shadow {
+   position: absolute;
+   width: 700px;
+   height: 54px;
+   background: linear-gradient(0deg, #404040 0%, rgba(80, 80, 80, 0) 100%);
+   margin: -63px 0;
+   @include xl {
+      width: 600px;
+      margin: -61px 0;
+   }
+   @include lg {
+      width: 460px;
+   }
+   @include md {
+      width: 345px;
+   }
+}
+
+.p {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   width: 669px;
+   height: 310px;
+   text-align: left;
+   overflow: auto;
+   margin: 10px 0;
+   
+   &::-webkit-scrollbar {
+     width: 0;
+   }
+   @include xl {
+      width: 568px;
+      height: 278px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 23px;
+   }
+   @include lg {
+      width: 460px;
+   }
+   @include md {
+      width: 320px;
+      height: 250px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 23px;
+      margin: 10px;
+   }
+}
+.modale .close {
+   text-align: end;
+}
+.close {
+   text-align: end;
+   margin: 15px 960px;
+   position: absolute;
+   @include xl {
+      margin: 10px 840px;
+   }
+   @include lg {
+      margin: 10px 730px;
+   }
+   @include md {
+      margin: 10px 320px;
+   }
+}
+.close:hover {
+   cursor: pointer;
+}
+.close:hover svg path {
+   fill: #fff;
+}
+@keyframes slideIn {
+   from {
+     opacity: 0;
+   }
+   to {
+     opacity: 1;
+   }
+}
+.modale {
+   width: 100%;
+   position: fixed;
+   display: flex;
+   width: 1000px;
+   height: 378px;
+   background-color: #404040;
+   border-radius: 10px;
+   margin: auto;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 9999;
+   animation: fadeIn 0.3s ease-in-out;
+   animation: slideIn 0.3s ease-out;
+   @include xl {
+      width: 879px;
+      height: 344px;
+   }
+   @include lg {
+      width: 770px;
+   }
+   @include md {
+      width: 358px;
+      height: 500px;
+      display: block;
+   }
+}
+
+@keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+   to {
+     opacity: 1;
+   }
+}
+
+.img {
+   width: 244px;
+   height: 364px;
+   margin: 6px;
+   border-radius: 10px;
+   @include xl {
+      width: 220xp;
+      height: 328px;
+   }
+   @include md {
+      width: 117px;
+      height: 174px;
+      margin: 10px 130px;
+   }
+}
+.block1 {
+   height: 322px;
+   margin: 0 0 0 20px;
+   @include xl {
+      margin: 0 0 0 10px;
+   }
+}
