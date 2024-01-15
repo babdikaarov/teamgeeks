@@ -42,6 +42,7 @@ const Teachers = () => {
           ref={sliderRef}
           loop={true}
           className={styles.teacherSwiper}
+          spaceBetween={"18px"}
           breakpoints={{
             1440: {
               slidesPerView: 3.85,
@@ -74,12 +75,7 @@ const Teachers = () => {
         >
           {getTeachersData.map((card, i) => (
             <SwiperSlide key={i} onClick={() => openModal(card)}>
-              <TeacherCard
-                onClick={function (): void {
-                  throw new Error("Function not implemented. FIXME");
-                }}
-                {...card}
-              />
+              <TeacherCard {...card} />
             </SwiperSlide>
           ))}
         </Swiper>
