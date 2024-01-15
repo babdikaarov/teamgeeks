@@ -1,11 +1,45 @@
+@use "../../../scss/partials/mixin" as mix;
 @import "../../../scss/partials/variables";
 .navigation {
    max-width: 1240px;
    width: 100%;
    display: flex;
+   position: relative;
    justify-content: space-evenly;
    gap: 24px;
    white-space: nowrap;
+   @include mix.xl {
+      flex-direction: column;
+      gap: 10px;
+   }
+}
+
+.whiteClose {
+   display: none;
+   background: url("../../../assets/close_fill(1).svg") no-repeat;
+   width: 34px;
+   height: 34px;
+   cursor: pointer;
+   top: 40px;
+   right: 8px;
+   position: absolute;
+   @include mix.xl {
+      display: block;
+   }
+}
+
+.yellowClose {
+   display: none;
+   background: url("../../../assets/closeYellow.svg") no-repeat;
+   width: 34px;
+   height: 34px;
+   cursor: pointer;
+   top: 40px;
+   right: 8px;
+   position: absolute;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .navigation a {

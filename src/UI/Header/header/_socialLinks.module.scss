@@ -1,6 +1,10 @@
+@use "../../../scss/partials/mixin" as mix;
 @import "../../../scss/partials/variables";
 
 .socialLinks {
+   @include mix.xl {
+      margin: 10px 0 0 0;
+   }
    display: flex;
    gap: 10px;
    height: 24px;

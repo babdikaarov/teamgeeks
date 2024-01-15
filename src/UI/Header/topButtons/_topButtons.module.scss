@@ -1,4 +1,5 @@
-@import "../variables";
+@use "../../../scss/partials/mixin" as mix;
+@import "../../../scss/partials/variables";
 
 .navButtons {
    display: flex;
@@ -6,6 +7,10 @@
    border-top: 1px solid #353535;
    border-bottom: 1px solid #353535;
    height: 30px;
+   @include mix.xl {
+      display: none;
+      height: 0;
+   }
 }
 
 .navButtons a {
