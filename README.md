@@ -1,4 +1,4 @@
-# Cool Show Band
+# Cool Band
 
 ## FRONT END
 
