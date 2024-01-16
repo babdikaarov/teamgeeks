@@ -1,107 +1,112 @@
 @import "../../../scss//partials/mixin";
 
 .coolStudio h2 {
-   font-weight: 700;
-   margin-bottom: 48px;
-   display: flex;
-   justify-content: center;
-   @include xl {
-      font-size: 24px;
-   }
-   @include md {
-      margin-bottom: 30px;
-   }
-   @include sm {
-      font-size: 16px;
-   }
+  font-weight: 700;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: center;
+  @include xl {
+    font-size: 24px;
+  }
+  @include md {
+    margin-bottom: 30px;
+  }
+  @include sm {
+    font-size: 16px;
+  }
 }
 
 .AboutUsWrapper {
-   display: flex;
-   gap: 170px;
-   padding-inline: 100px;
-   @include xxl {
-      gap: 60px;
-   }
-   @include xl {
-      padding-inline: 20px;
-   }
-   @include md {
-      flex-direction: column-reverse;
-   }
-   @include sm {
-      gap: 14px;
-   }
+  max-width: 1240px;
+  margin: 0 auto;
+  @media screen and (max-width: 1260px) {
+    padding-inline: 20px;
+  }
+  display: flex;
+  gap: 170px;
+  //   padding-inline: 100px;
+  @include xxl {
+    gap: 60px;
+  }
+  @include xl {
+    padding-inline: 20px;
+  }
+  @include md {
+    flex-direction: column-reverse;
+  }
+  @include sm {
+    gap: 14px;
+  }
 }
 .AboutUsWrapper .Image {
-   width: 100%;
-   max-width: 432px;
-   max-height: 288px;
-   border-radius: 16px;
-   object-fit: cover;
-   @include xl {
-      max-width: 373px;
-      min-height: 100%;
-   }
-   @include md {
-      max-width: 720px;
-      max-height: 100%;
-   }
+  width: 100%;
+  max-width: 432px;
+  max-height: 288px;
+  border-radius: 16px;
+  object-fit: cover;
+  @include xl {
+    max-width: 373px;
+    min-height: 100%;
+  }
+  @include md {
+    max-width: 720px;
+    max-height: 100%;
+  }
 }
 .AboutUsWrapper .expandedImage {
-   max-height: 100%;
+  max-height: 100%;
 }
 
 .TextWrapper {
-   font-size: 19px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 150%;
-   letter-spacing: 0.38px;
-   position: relative;
-   @include xl {
-      font-size: 16px;
-   }
-   @include sm {
-      font-size: 12px;
-   }
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.38px;
+  position: relative;
+  @include xl {
+    font-size: 16px;
+  }
+  @include sm {
+    font-size: 12px;
+  }
 }
 .ExpandButton {
-   color: #fff;
+  color: #fff;
 }
 @keyframes fadeInOut {
-   0% {
-      opacity: 0;
-      max-height: 0;
-   }
-   100% {
-      opacity: 1;
-      max-height: 1000px;
-   }
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 1000px;
+  }
 }
 .ExpandedText {
-   opacity: 0;
-   overflow: hidden;
-   animation: fadeInOut 1s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+  animation: fadeInOut 1s ease-in-out;
 }
 
 .expanded {
-   opacity: 1;
-   max-height: 1000px;
+  opacity: 1;
+  max-height: 1000px;
 }
 .MoreButton {
-   opacity: 0.5;
-   margin-left: 2px;
+  opacity: 0.5;
+  margin-left: 2px;
 }
 .CollapseButton {
-   position: absolute;
-   padding-top: 24px;
-   width: 100%;
-   margin: 0 auto;
+  position: absolute;
+  padding-top: 24px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .CollapseButton,
 .MoreButton {
-   transition: 0.5s;
-   text-decoration: underline;
+  transition: 0.5s;
+  text-decoration: underline;
 }

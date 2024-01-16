@@ -34,10 +34,13 @@
 }
 
 .menu {
-  max-width: 1440px;
+  @media screen and (max-width: 1260px) {
+    padding-inline: 20px;
+  }
+  max-width: 1240px;
   margin: 0 auto;
   height: 80px;
-  padding-inline: 100px;
+  // padding-inline: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
