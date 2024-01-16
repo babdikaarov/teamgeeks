@@ -1,48 +1,114 @@
 @use "../../scss/partials/mixin" as mix;
 
 .hero {
-   position: relative;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 100vw;
-   max-height: 677px;
+  position: relative;
+  width: 100%;
+  video {
+    max-height: 677px;
+    min-height: 500px;
+  }
+  @media screen and (min-width: 1440px) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+  }
 }
 .hero video {
-   @include mix.xl {
-      margin: -55px 0 0 0;
-   }
-   width: 100%;
-   max-height: 677px;
-   object-fit: cover;
+  @include mix.xl {
+    margin: -55px 0 0 0;
+  }
+  width: 100%;
+  max-height: 677px;
+  object-fit: cover;
 }
 
-.hero button {
-   position: relative;
-   left: 50%;
-   transform: translate(-50%, -200%);
-   width: 100%;
-   max-width: 470px;
+.hero a {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: 1024px) {
+    bottom: 30px;
+  }
+  @media screen and (max-width: 530px) {
+    bottom: 40px;
+  }
 }
+
+.textPosition {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  h1 {
+    max-width: 1000px;
+    width: 100%;
+    font-weight: 700;
+  }
+  h6 {
+    padding-top: 30px;
+    max-width: 485px;
+  }
+  @media screen and (max-width: 1270px) {
+    padding-left: 20px;
+  }
+  @media screen and (max-width: 1024px) {
+    bottom: 130px;
+    h1 {
+      max-width: 662px;
+      font-size: 32px;
+      letter-spacing: 0.64px;
+    }
+
+    h6 {
+      padding-top: 30px;
+      max-width: 485px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.32px;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    padding-left: 16px;
+    bottom: 160px;
+    h1 {
+      max-width: 278px;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+    }
+    h6 {
+      padding-top: 20px;
+      max-width: 340px;
+
+      font-size: 13px;
+      letter-spacing: 0.26px;
+    }
+  }
+}
+
 //heroStudio
 
 .heroStudio {
-   width: calc(100% - 200px);
-   margin: 0 auto;
+  width: calc(100% - 200px);
+  margin: 0 auto;
 }
 .text {
-   position: absolute;
-   top: 50%;
-   transform: translate(0%, -50%);
-   display: flex;
-   flex-direction: column;
-   gap: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .heroH1 {
-   font-weight: 700;
-   text-align: start;
-   width: 65%;
+  font-weight: 700;
+  text-align: start;
+  width: 65%;
 }
 .paragraph {
-   font-weight: 500;
-   width: 45%;
+  font-weight: 500;
+  width: 45%;
 }

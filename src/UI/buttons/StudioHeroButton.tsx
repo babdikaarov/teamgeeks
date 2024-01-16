@@ -1,15 +1,14 @@
-import { FC } from "react";
 import phone from "../../assets/icons/phone";
-import styles from "./buttons/_studioHeroButton.module.scss";
-
+import styles from "./buttons/_heroButton.module.scss";
+// TODO this component will stay for refference
 type whatsapp = {
-   whatsapp: string;
+  whatsapp: string;
 };
-const StudioHeroButton: FC<whatsapp> = ({ whatsapp }) => {
-   return (
-      <a href={whatsapp} target="blank">
-         <button className={styles.button}>Записаться на пробный урок {phone}</button>
-      </a>
-   );
+const StudioHeroButton: React.FC<whatsapp> = ({ whatsapp }) => {
+  return (
+    <a href={whatsapp} target="blank" className={styles.studio}>
+      <button>Записаться на пробный урок {phone}</button>
+    </a>
+  );
 };
 export default StudioHeroButton;
