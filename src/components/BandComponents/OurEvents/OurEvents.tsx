@@ -9,7 +9,7 @@ const OurEvents = () => {
     <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
       <div className={styles.sliderEventsContainer}>
         <div className={styles.sliderEvents}>
-          {[...getEventCards, ...getEventCards].map((card, i) => (
+          {getEventCards.concat(getEventCards, getEventCards).map((card, i) => (
             <OurEventsCard key={i} src={card.src} alt={card.alt} />
           ))}
         </div>
