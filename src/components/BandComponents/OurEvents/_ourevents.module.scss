@@ -1,90 +1,77 @@
+@media screen and (max-width: 576px) {
+  .ourEvent h6 {
+    font-size: 14px;
+  }
+}
 .ourEvent {
-   text-align: center;
+  text-align: center;
+}
+.ourEvent h6 svg {
+  transform: rotate(0.5turn);
 }
 
 .sliderEventsContainer {
-   width: 100%;
-   position: relative;
-   overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .sliderEventsContainer::after,
 .sliderEventsContainer::before {
-   content: "";
-   display: block;
-   background: #151515;
-   width: 100%;
-   height: 130px;
-   position: absolute;
-   border-radius: 50%;
-   z-index: 1;
-   @media screen and (max-width: 1024px) {
-     height: 100px;
-   }
-   @media screen and (max-width: 576px) {
-      height: 30px;
-   }
+  content: "";
+  display: block;
+  background: #151515;
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  @media screen and (max-width: 1024px) {
+    height: 75px;
+  }
+  @media screen and (max-width: 576px) {
+    height: 30px;
+  }
 }
 
 .sliderEventsContainer::after {
-   top: calc(-0.6 * 120px);
-   @media screen and (max-width: 1024px) {
-     top: calc(-0.6 * 100px);
-   }
-}
-.sliderEventsContainer::after {
-   top: calc(-0.6 * 120px);
-   @media screen and (max-width: 1024px) {
-     top: calc(-0.6 * 100px);
-   }
-   @media screen and (max-width: 576px) {
-     top: calc(-0.2 * 90px);
-   }
+  top: 0;
+  transform: translateY(-50%);
 }
 .sliderEventsContainer::before {
-   bottom: calc(-0.6 * 120px);
-   @media screen and (max-width: 1024px) {
-     bottom: calc(-0.6 * 100px);
-   }
-   @media screen and (max-width: 576px) {
-      bottom: calc(-0.2 * 90px);
-   }
+  bottom: 0;
+  transform: translateY(50%);
 }
 
 .sliderEvents {
-     width: 100%;
-   height: 400px;
-   display: flex;
-   gap: 16px;
-   animation: scroll 15s linear infinite;
-   @media screen and (max-width: 1024px) {
-     height: 216px;
-     gap: 8px;
-     div img {
-      width: 200px;
-     }
-   }
+  height: 400px;
+  display: flex;
+  gap: 16px;
+  animation: scroll 2s linear infinite;
+  @media screen and (max-width: 1024px) {
+    height: 216px;
+    gap: 8px;
+  }
 }
- 
+
+// FIXME checkedge cases if images more than 5 pc.
 @keyframes scroll {
-   0% {
-     transform: translateX(-15px);
-   }
-   100% {
-     transform: translateX(calc(-400px * 5));
-   }
+  0% {
+  }
+  100% {
+    transform: translateX(calc(-400px * 3));
+  }
 }
- 
+
 @media screen and (max-width: 1024px) {
-   @keyframes scroll {
-     0% {
-       transform: translateX(-15px);
-     }
-     100% {
-       transform: translateX(calc(-400px * 3));
-     }
-   }
+  @keyframes scroll {
+    0% {
+      transform: translateX(-190px);
+    }
+    100% {
+      transform: translateX(calc(-400px * 3));
+    }
+  }
 }
 .our-events-container::-webkit-scrollbar {
-   display: none;
+  display: none;
 }
