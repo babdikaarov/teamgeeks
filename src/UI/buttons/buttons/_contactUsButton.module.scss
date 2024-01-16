@@ -1,48 +1,68 @@
 @import "../../../scss/partials/mixin";
 @import "../../../scss/partials/variables";
 
-.buttonContainer {
-  min-width: 356px;
-  max-width: 470px;
-  width: 100%;
-  @media screen and (max-width: 1024px) {
-    button {
-      font-size: 20px;
-    }
-  }
-  @media screen and (max-width: 460px) {
-    button {
-      font-size: 18px;
-    }
-  }
-}
+// band button
 
 .button {
   @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
   align-self: center;
   margin: auto;
-  max-width: 470px;
-  width: 100%;
+  width: 490px;
+  height: 70px;
+  @media screen and (max-width: 1024px) {
+    width: 502px;
+    height: 70px;
+    button {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    width: 356px;
+    height: 60px;
+    button {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.36px;
+    }
+  }
 }
 
-.button:hover {
+.button:hover button {
   color: $color_black;
   fill: $color_black;
   background: $color_yellow;
 }
 
+// studio button
+
 .buttonBlue {
+  display: block;
   @include buttons($fill: $color_white, $color: $color_white, $background: $button_blue, $border: $button_blue);
   align-self: center;
-  transition: all 0.3s ease-in-out;
   margin: auto;
-  max-width: 470px;
-  width: 100%;
+  width: 490px;
+  height: 70px;
+  @media screen and (max-width: 1024px) {
+    // width: 502px;
+    // height: 70px;
+    button {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    width: 321px;
+    height: 54px;
+    button {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.36px;
+    }
+  }
 }
 
-.buttonBlue:hover {
+.buttonBlue:hover button {
   box-shadow: 0px -12px 150px 0px rgba(168, 208, 239, 0.63);
 }
-.buttonBlue:active {
+.buttonBlue:active button {
   border-color: $color_white;
 }
