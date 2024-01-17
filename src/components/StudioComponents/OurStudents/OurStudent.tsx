@@ -27,7 +27,7 @@ const StudentsCard = (props: CardProps) => {
         </a>
         <h2 className={styles.studens_text}>
           Radisson Collection
-          <br /> Paradise
+           Paradise
         </h2>
       </div>
     </div>
@@ -48,6 +48,7 @@ const OurStudents = () => {
     };
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", () => console.log(window.innerWidth));
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -63,7 +64,7 @@ const OurStudents = () => {
           ) : (
             <>
               <Swiper
-                spaceBetween={0}
+                spaceBetween={20}
                 slidesPerView={3}
                 navigation={{ nextEl: "#btn11", prevEl: "#btn22" }}
                 modules={[Navigation]}

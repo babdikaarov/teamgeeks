@@ -7,6 +7,8 @@ import CollagePage from "./pages/Collage/CollagePage.tsx";
 import "./scss/partials/_variables.scss";
 import useTitle from "./app/hooks/useTitle.ts";
 
+
+
 const App = () => {
   // export routepath and make it as a variables FIXME
   useTitle();
