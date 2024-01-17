@@ -40,7 +40,8 @@
   @include buttons($fill: $color_white, $color: $color_white, $background: $button_blue, $border: $button_blue);
   align-self: center;
   margin: auto;
-  width: 490px;
+  max-width: 470px;
+  width: 100%;
   height: 70px;
   @media screen and (max-width: 1024px) {
     // width: 502px;
