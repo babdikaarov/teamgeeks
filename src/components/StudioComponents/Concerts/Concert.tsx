@@ -28,35 +28,38 @@ const ConcertCard = (props: CardProps) => {
     </div>
   );
 };
-
 const Concert = () => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
-  const concertImages = tempData;
+  
 
-  const mobileArray = concertImages.slice(0, 3);
+   const [width, setWidth] = useState<number>(window.innerWidth);
+   const concertImages = tempData;
 
-  const mobileWidth = 700;
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
+   const mobileArray = concertImages.slice(0, 3);
 
-    window.addEventListener("resize", handleResize);
+   const mobileWidth = 700;
+   useEffect(() => {
+      const handleResize = () => {
+         setWidth(window.innerWidth);
+      };
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return (
-    <SectionWrapper header="Отчетные концерты">
-      <div>
-        <div className={styles.ConcertSlider}>
-          {width < mobileWidth ? (
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", () => console.log(window.innerWidth));
+
+      return () => {
+         window.removeEventListener("resize", handleResize);
+      };
+   }, []);
+
+   return (
+      <SectionWrapper header="Отчетные концерты">
+         <div>
+            <div className={styles.ConcertSlider}>
+            {width < mobileWidth ? (
             mobileArray.map((card, i) => <ConcertCard key={i} {...card} />)
           ) : (
             <>
               <Swiper
-                spaceBetween={0}
+                spaceBetween={20}
                 slidesPerView={3}
                 navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
                 modules={[Navigation]}
@@ -77,13 +80,12 @@ const Concert = () => {
               </div>
             </>
           )}
-          <a className={styles.watchmore} href="/gallery">
-            Смотреть еще
-          </a>
-        </div>
-      </div>
-    </SectionWrapper>
-  );
+
+               <a className={styles.watchmore} href="/gallery">Смотреть еще</a>
+            </div>
+         </div>
+      </SectionWrapper>
+   );
 };
 
 export default Concert;

@@ -16,7 +16,7 @@ const CoolStudio = () => {
       <AboutStudio />
       <Courses />
       <Teachers />
-      <StudentsFeedback />
+      <StudentsFeedback /> 
       <Concert />
       <OurStudents />
       <ContactUsStudio />
