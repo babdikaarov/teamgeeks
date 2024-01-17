@@ -2,8 +2,8 @@ import { FC, useState } from "react";
 import Logo from "../Logo/Logo";
 import SocialLinks from "../socialLinks/SocialLinks";
 import TopButtons from "./topButtons/TopButtons";
-import styles from "./header/_header.module.scss";
-import styles2 from "../Header/header/_NavList.module.scss";
+import styles from "./_header.module.scss";
+import styles2 from "./header/_NavList.module.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import BurgerBtn from "./BurgerBtn/BurgerBtn.tsx";
 
