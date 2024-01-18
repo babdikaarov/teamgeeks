@@ -1,13 +1,16 @@
 import "https://maps.api.2gis.ru/2.0/loader.js?pkg=basic";
 import { useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
+import bandIcon from "/bandIcon.svg";
+import studioIcon from "/studioFav.svg";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const DG: any;
 export default function TwoGis() {
+  const { pathname } = useLocation();
+
   // FIXME the Location coordinates and link static attachment or backend provider
   const coolStudioLocation: number[] = [42.850329, 74.609962];
   const coolStudiolink: string = "https://2gis.kg/bishkek/firm/70000001066401992?m=74.609962%2C42.850329%2F16";
-
   useEffect(() => {
     if (DG) {
       initializeMap();
@@ -43,7 +46,7 @@ export default function TwoGis() {
 
       //  Icon option
       myIcon = DG.icon({
-        iconUrl: "/favicon.png",
+        iconUrl: /^\/(?!studio\b).*$/.test(pathname) ? bandIcon : studioIcon,
         iconSize: [38, 38],
       });
       DG.marker(coolStudioLocation, {
