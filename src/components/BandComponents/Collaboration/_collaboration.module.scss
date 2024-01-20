@@ -17,16 +17,16 @@
    border-end-start-radius: 15px;
    margin-left: 100px;
    @include xxl {
-      margin-left: 80px;
+      margin-left: 20px;
    }
    @include xl {
-      margin-left: 60px;
+      margin-left: 20px;
    }
    @media screen and (max-width: 892px) {
-      margin-left: 40px;
+      margin-left: 20px;
    }
    @include md {
-      margin-left: 30px;
+      margin-left: 20px;
    }
    @include sm {
       margin-left: 16px;
@@ -48,21 +48,21 @@
       position: absolute;
       z-index: 2;
       top: 40%;
-      left: 45px;
+      left: 8px;
    }
    @media screen and (max-width: 892px){
       display: block;
       position: absolute;
       z-index: 2;
       top: 40%;
-      left: 25px;
+      left: 8px;
    }
    @include md {
       display: block;
       position: absolute;
       z-index: 2;
       top: 40%;
-      left: 15px;
+      left: 8px;
    }
    @include sm {
       display: block;
@@ -83,21 +83,21 @@
       position: absolute;
       z-index: 2;
       top: 40%;
-      right: 15px;
+      right: 12px;
    }
    @media screen and (max-width: 892px) {
       display: block;
       position: absolute;
       z-index: 2;
       top: 40%;
-      right: 15px;
+      right: 12px;
    }
    @include md {
       display: block;
       position: absolute;
       z-index: 2;
       top: 40%;
-      right: 15px;
+      right: 12px;
    }
    @include sm {
       display: block;

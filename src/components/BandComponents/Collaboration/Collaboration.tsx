@@ -53,8 +53,8 @@ const Collaboration = () => {
             className={styles.collabSwiper} 
             breakpoints={{
                1440: {
-                 slidesPerView: 3,
-                 spaceBetween: -470
+                 slidesPerView: 4,
+                 spaceBetween: -200
                },
                1200: {
                  slidesPerView: 3,
@@ -62,11 +62,15 @@ const Collaboration = () => {
                },
                1024: {
                  slidesPerView: 3,
-                 spaceBetween: -160
+                 spaceBetween: -230
+               },
+               1000: {
+                  slidesPerView: 4,
+                  spaceBetween: -20
                },
                892: {
                  slidesPerView: 3,
-                 spaceBetween: -50
+                 spaceBetween: -140
                },
                768: {
                  slidesPerView: 2,
@@ -74,7 +78,7 @@ const Collaboration = () => {
                },
                658: {
                  slidesPerView: 2,
-                 spaceBetween: -100
+                 spaceBetween: -140
                },
                576: {
                  slidesPerView: 2,

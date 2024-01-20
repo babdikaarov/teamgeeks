@@ -17,6 +17,24 @@ export default (
          lastName: "Волкодав",
       },
       {
+         src: import("/src/assets/collaborationImages/Jax.png"),
+         alt: "Jax",
+         firstName: "Jax",
+         lastName: "",
+      },
+      {
+         src: import("/src/assets/collaborationImages/Eazy.png"),
+         alt: "Eazy",
+         firstName: "Eazy",
+         lastName: "",
+      },
+      {
+         src: import("/src/assets/collaborationImages/Freeman.png"),
+         alt: "Freeman 996",
+         firstName: "Freeman 996",
+         lastName: "",
+      },
+      {
          src: import("/src/assets/collaborationImages/kga.png"),
          alt: "Симфонический оркестр",
          firstName: "КГА Симфонический оркестр им.А.Джумахматова",
