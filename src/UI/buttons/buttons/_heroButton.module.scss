@@ -2,50 +2,57 @@
 @import "../../../scss/partials/variables";
 
 .band {
-  @include buttons($fill: $color_black, $color: $color_black, $background: $color_yellow, $border: $color_yellow);
-  display: block;
-  width: 400px;
-  height: 70px;
+   @include buttons($fill: $color_black, $color: $color_black, $background: $color_yellow, $border: $color_yellow);
+   display: block;
+   width: 400px;
+   height: 70px;
+   border-radius: 16px;
 
-  @media screen and (max-width: 1024px) {
-    width: 303px;
-    height: 53px;
-    button {
-      font-size: 20px;
-    }
-  }
-  @media screen and (max-width: 424px) {
-    width: 358px;
-    height: 53px;
-    button {
-      font-size: 15px;
-      font-weight: 700;
-    }
-  }
+   @media screen and (max-width: 1024px) {
+      width: 303px;
+      height: 53px;
+      button {
+         font-size: 20px;
+      }
+   }
+   @media screen and (max-width: 424px) {
+      width: 358px;
+      height: 53px;
+      button {
+         font-size: 15px;
+         font-weight: 700;
+      }
+   }
 }
 
 .band:hover {
-  color: $color_black;
+   color: $color_black;
+   box-shadow: -10px -12px 100px 4px rgba(255, 207, 0, 0.73);
 }
 
 .studio {
-  @include buttons($fill: $color_white, $color: $color_white, $background: $color_blue, $border: $color_blue);
-  display: block;
-  width: 535px;
-  height: 76px;
-  @media screen and (max-width: 1024px) {
-    width: 400px;
-    height: 60px;
-    button {
-      font-size: 20px;
-    }
-  }
-  @media screen and (max-width: 530px) {
-    width: 358px;
-    height: 53px;
-    button {
-      font-size: 15px;
-      font-weight: 700;
-    }
-  }
+   @include buttons($fill: $color_white, $color: $color_white, $background: $color_blue, $border: $color_blue);
+   display: block;
+   width: 535px;
+   height: 76px;
+   @media screen and (max-width: 1024px) {
+      width: 400px;
+      height: 60px;
+      button {
+         font-size: 20px;
+      }
+   }
+   @media screen and (max-width: 530px) {
+      width: 358px;
+      height: 53px;
+      button {
+         font-size: 15px;
+         font-weight: 700;
+      }
+   }
+}
+
+.studio:hover {
+   border: white 1px solid;
+   border-radius: 16px;
 }

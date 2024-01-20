@@ -2,154 +2,154 @@
 @import "../../scss/partials/variables";
 
 .header {
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  background-color: $color_black;
-  @include mix.xl {
-    position: relative;
-    position: fixed;
-    background: #fed102;
-    height: 55px;
-  }
+   left: 50%;
+   top: 0;
+   transform: translateX(-50%);
+   width: 100%;
+   position: fixed;
+   z-index: 10;
+   background-color: $color_black;
+   @include mix.xl {
+      position: relative;
+      position: fixed;
+      background: #fed102;
+      height: 55px;
+   }
 }
 
 .headerStudio {
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  background-color: $color_black;
-  @include mix.xl {
-    position: relative;
-    position: fixed;
-    height: 55px;
-    background: #5979fa;
-  }
+   left: 50%;
+   top: 0;
+   transform: translateX(-50%);
+   width: 100%;
+   position: fixed;
+   z-index: 10;
+   background-color: $color_black;
+   @include mix.xl {
+      position: relative;
+      position: fixed;
+      height: 55px;
+      background: #5979fa;
+   }
 }
 
 .menu {
-  @media screen and (max-width: 1260px) {
-    padding-inline: 20px;
-  }
-  max-width: 1240px;
-  margin: 0 auto;
-  height: 80px;
-  // padding-inline: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  @include mix.xl {
-    position: absolute;
-    top: -20px;
-    left: 0;
-    flex-direction: column;
-    padding: 30px 40px 0 40px;
-    display: block;
-    margin: 20px 0 0 0;
-    transform: translateX(-100%);
-    transition: 0.5s;
-    width: 330px;
-    align-items: start;
-    height: 100vh;
-    background: #151515;
-  }
+   @media screen and (max-width: 1260px) {
+      padding-inline: 20px;
+   }
+   max-width: 1240px;
+   margin: 0 auto;
+   height: 80px;
+   // padding-inline: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   @include mix.xl {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      flex-direction: column;
+      padding: 30px 40px 0 40px;
+      display: block;
+      margin: 20px 0 0 0;
+      transform: translateX(-100%);
+      transition: 0.5s;
+      width: 330px;
+      align-items: start;
+      height: 100vh;
+      background: #151515;
+   }
 }
 
 .menu.active {
-  @include mix.xl {
-    transform: translateX(0);
-    transition: 0.5s;
-  }
+   @include mix.xl {
+      transform: translateX(0);
+      transition: 0.5s;
+   }
 }
 
 .textBand {
-  position: relative;
-  cursor: pointer;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 16px 0;
-  display: none;
-  text-align: center;
-  @include mix.xl {
-    display: block;
-  }
+   position: relative;
+   cursor: pointer;
+   color: black;
+   font-weight: bold;
+   font-size: 20px;
+   padding: 16px 0;
+   display: none;
+   text-align: center;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .textStudio {
-  position: relative;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 15px 0;
-  display: none;
-  text-align: center;
-  @include mix.xl {
-    display: block;
-  }
+   position: relative;
+   cursor: pointer;
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   padding: 15px 0;
+   display: none;
+   text-align: center;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .yellow {
-  display: none;
-  background: url("../../assets/Vector.svg") no-repeat;
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
-  top: 13px;
-  left: 20px;
-  position: absolute;
-  @include mix.xl {
-    display: block;
-  }
+   display: none;
+   background: url("../../assets/Vector.svg") no-repeat;
+   width: 34px;
+   height: 34px;
+   cursor: pointer;
+   top: 13px;
+   left: 20px;
+   position: absolute;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .white {
-  display: none;
-  background: url("../../assets/Group.svg") no-repeat;
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
-  top: 7px;
-  left: 20px;
-  position: absolute;
-  @include mix.xl {
-    display: block;
-  }
+   display: none;
+   background: url("../../assets/Group.svg") no-repeat;
+   width: 34px;
+   height: 34px;
+   cursor: pointer;
+   top: 7px;
+   left: 20px;
+   position: absolute;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .studioBtn {
-  background: #5979fa;
-  border-radius: 16px;
-  font-weight: bold;
-  display: none;
-  padding: 9px 80px;
-  margin: 20px 0 0 0;
-  @include mix.xl {
-    display: block;
-  }
+   background: #5979fa;
+   border-radius: 16px;
+   font-weight: bold;
+   display: none;
+   padding: 9px 80px;
+   margin: 20px 0 0 0;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .bandBtn {
-  margin: 20px 0 0 0;
-  background: #fed102;
-  display: none;
-  font-weight: bold;
-  color: black;
-  border-radius: 16px;
-  padding: 9px 66px;
-  @include mix.xl {
-    display: block;
-  }
+   margin: 20px 0 0 0;
+   background: #fed102;
+   display: none;
+   font-weight: bold;
+   color: black;
+   border-radius: 16px;
+   padding: 9px 66px;
+   @include mix.xl {
+      display: block;
+   }
 }
 
 .bandBtn:hover {
-  color: black;
+   color: black;
 }
