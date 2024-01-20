@@ -71,7 +71,7 @@ const OurTeam = () => {
                },
                390: {
                   slidesPerView: 1,
-                  spaceBetween: -140
+                  spaceBetween: -170
                }
             }}
             >

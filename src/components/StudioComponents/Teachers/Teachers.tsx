@@ -69,7 +69,7 @@ const Teachers = () => {
               slidesPerView: 1.9,
             },
             390: {
-              slidesPerView: 1.9,
+              slidesPerView: 2,
             },
           }}
         >

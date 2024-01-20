@@ -62,7 +62,7 @@ const Collaboration = () => {
                },
                1024: {
                  slidesPerView: 3,
-                 spaceBetween: -230
+                 spaceBetween: -265
                },
                1000: {
                   slidesPerView: 4,
@@ -90,7 +90,7 @@ const Collaboration = () => {
                },
                390: {
                  slidesPerView: 2,
-                 spaceBetween: 0
+                 spaceBetween: -10
                }
             }}
             >

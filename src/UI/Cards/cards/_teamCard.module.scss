@@ -10,6 +10,9 @@
    @include sm {
       width: 187px;
       height: 269px;
+      & :nth-child(9) {
+         width: 358px;
+      }
    }
 }
 
@@ -19,6 +22,11 @@
 
 .landscape {
    min-width: 730px;
+   @include sm {
+      & .teamCardContent {
+         width: 358px;
+      }
+   }
 }
 
 .teamCard h4 {
@@ -50,6 +58,7 @@
    @include sm {
       width: 187px;
       height: 269px;
+      
    }
 }
 
