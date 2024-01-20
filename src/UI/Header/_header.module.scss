@@ -29,7 +29,7 @@
     position: relative;
     position: fixed;
     height: 55px;
-    background: rgb(9, 80, 188, 0.87);
+    background: #5979fa;
   }
 }
 
@@ -57,7 +57,7 @@
     transition: 0.5s;
     width: 330px;
     align-items: start;
-    min-height: 700px;
+    height: 100vh;
     background: #151515;
   }
 }
