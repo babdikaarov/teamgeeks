@@ -42,12 +42,16 @@ const OurTeam = () => {
                   spaceBetween: -290
                },
                1024: {
-                  slidesPerView: 2,
-                  spaceBetween: -430
+                  slidesPerView: 3,
+                  spaceBetween: -240
+               },
+               1000: {
+                  slidesPerView: 1,
+                  spaceBetween: -750
                },
                892: {
                   slidesPerView: 2,
-                  spaceBetween: -310
+                  spaceBetween: -360
                },
                768: {
                   slidesPerView: 2,
