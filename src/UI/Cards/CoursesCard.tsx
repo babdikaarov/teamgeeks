@@ -1,20 +1,13 @@
-import { FC, useEffect, useState } from "react";
 import styles from "./cards/_coursesCard.module.scss";
 
 interface CoursesCardProps {
-   src: Promise<typeof import("*.svg")>;
-
+   src: string;
    title: string;
 }
-const CoursesCard: FC<CoursesCardProps> = ({ src, title }) => {
-   const [resolvedSrc, setResolvedSrc] = useState<string | undefined>(undefined);
-
-   useEffect(() => {
-      src.then((importedSrc) => setResolvedSrc(importedSrc.default));
-   }, [src]);
+const CoursesCard: React.FC<CoursesCardProps> = ({ src, title }) => {
    return (
       <div className={styles.courseCardContainer}>
-         <img src={resolvedSrc} alt={title} />
+         <img src={src} alt={title} />
          <h6>{title}</h6>
       </div>
    );

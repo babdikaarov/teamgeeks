@@ -1,38 +1,45 @@
 @import "../../../scss/partials/mixin";
 
-#teamWrapper {
-   position: relative;
-}
+.teamWrapper {
+   margin-right: 0 !important;
+   // FIX_ME scroll is not smooth animation
 
+   transition-duration: 1.5s !important;
+}
 .teamCardsContainer {
-   display: flex;
-   gap: 20px;
-   overflow-x: scroll;
-   overflow-y: hidden;
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
-   margin-left: 100px;
-   @include xxl {
-      margin-left: 20px;
+   margin-left: 80px;
+   @media screen and (max-width: 1024px) {
+      margin-left: 0;
    }
-   @include xl {
-      margin-left: 20px;
-   }
-   @media screen and (max-width: 892px) {
-      margin-left: 20px;
-   }
-   @include md {
-      margin-left: 20px;
-   }
+}
+
+.teamSlider {
+   border-radius: 16px;
+   height: 340px;
+}
+
+.portrait {
+   max-width: 230px;
    @include sm {
-      margin-left: 16px;
+      max-width: 187px;
+      max-height: 269px;
+   }
+}
+
+.landscape {
+   max-width: 730px;
+   @include sm {
+      max-width: 440px;
+      max-height: 269px;
    }
 }
 
 .teamCardsContainer::-webkit-scrollbar {
    display: none;
 }
- 
+
 .lastCardPadding {
    width: 100px;
 }
@@ -40,70 +47,23 @@
 .buttonPrev {
    display: none;
    rotate: 180deg;
-   @include xxl {
-      display: none;
-   }
-   @include xl {
+   position: absolute;
+   z-index: 2;
+   left: -12px;
+   top: 50%;
+
+   @media screen and (max-width: 1024px) {
       display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 8px;
-   }
-   @media screen and (max-width: 892px) {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 25px;
-   }
-   @include md {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 15px;
-   }
-   @include sm {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 1px;
    }
 }
 
 .buttonNext {
    display: none;
-   @include xxl {
-      display: none;
-   }
-   @include xl {
+   position: absolute;
+   z-index: 2;
+   right: 8px;
+   top: 50%;
+   @media screen and (max-width: 1024px) {
       display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      right: 12px;
-   }
-   @media screen and (max-width: 892px) {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      right: 15px;
-   }
-   @include md {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      right: 15px;
-   }
-   @include sm {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      right: 1px;
    }
 }

@@ -1,5 +1,9 @@
 @import "../../../scss/partials/mixin";
 
+.marginAuto {
+   margin: auto;
+}
+
 .teacherSwiper {
    width: 100%;
    overflow: scroll;
@@ -11,7 +15,7 @@
 
 .teacherContainer {
    margin: auto;
-   width: 1240px;
+   max-width: 1240px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -54,7 +58,7 @@
    @include xl {
       margin-right: 30px;
    }
-   @media screen and (max-width: 892px){
+   @media screen and (max-width: 892px) {
       margin-right: 28px;
    }
    @include md {

@@ -9,8 +9,8 @@ const ContactUsTemplate: FC<ContactUsTemplateProps> = ({ heading, secondHeading,
       <SectionWrapper>
          <div className={styles.mapContent}>
             <div className={styles.textContainer}>
-               <h2>{heading}</h2>
                <div className={styles.text}>
+                  <h2>{heading}</h2>
                   {secondHeading && <h3>{secondHeading}</h3>}
                   {paragraph.map((p, i) => (
                      <p key={i}>{p}</p>

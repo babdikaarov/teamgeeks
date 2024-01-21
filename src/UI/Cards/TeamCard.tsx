@@ -1,16 +1,6 @@
 import { FC } from "react";
 import styles from "./cards/_teamCard.module.scss";
-
-
-interface TeamCardProps {
-   video: string;
-   img: string;
-   role: string;
-   name: string;
-   view: string;
-}
-
-// make lanscape and portrait logic for cards
+import { TeamCardProps } from "./types";
 
 const TeamCard: FC<TeamCardProps> = ({ img, role, name, video, view }) => {
    return (
@@ -22,11 +12,11 @@ const TeamCard: FC<TeamCardProps> = ({ img, role, name, video, view }) => {
                <h4>{name}</h4>
                <p>{role}</p>
             </div>
-            <div className={styles.teamCardContentBack}>
+            <div className={styles.teamCardContentBack + " " + styles[view]}>
                <div className={styles.shadow}></div>
                <video src={video} autoPlay muted loop></video>
-               <h4>{name} back side</h4>
-               <p>{role} back side</p>
+               <h4>{name}</h4>
+               <p>{role}</p>
             </div>
          </div>
       </div>

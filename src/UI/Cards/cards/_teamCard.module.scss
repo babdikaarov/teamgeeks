@@ -2,46 +2,36 @@
 @import "../../../scss/partials/mixin";
 
 .teamCard {
+   height: 340px;
+   @include sm {
+      height: 269px;
+   }
    position: relative;
    border-radius: 16px;
-   height: 340px;
-   width: 230px;
    overflow: hidden;
-   @include sm {
-      width: 187px;
-      height: 269px;
-      & :nth-child(9) {
-         width: 358px;
-      }
-   }
 }
 
 .portrait {
-   min-width: 230px;
+   width: 100%;
 }
 
 .landscape {
-   min-width: 730px;
-   @include sm {
-      & .teamCardContent {
-         width: 358px;
-      }
-   }
+   width: 100%;
 }
 
 .teamCard h4 {
    font-weight: $bold;
-   margin: 5px;
+   margin-left: 24px;
    @include sm {
       font-size: 14px;
-      font-weight: 700;
       line-height: 21px;
       margin-left: 16px;
    }
 }
 
 .teamCard p {
-   margin: 5px;
+   margin: 0 0 35px 24px;
+
    @include sm {
       font-size: 12px;
       font-weight: 400;
@@ -53,39 +43,19 @@
 
 .teamCardContent {
    height: 340px;
+   @include sm {
+      height: 269px;
+   }
+   width: 100%;
    transition: transform 0.7s ease-out;
    transform-style: preserve-3d;
-   @include sm {
-      width: 187px;
-      height: 269px;
-      
-   }
 }
 
-.teamCardContentFront {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-end;
-   align-items: flex-start;
-}
-
-.teamCardContentFront img {
-   transform: translateZ(5px);
-}
-
-.teamCardContentFront p {
-   transform: translateZ(15px);
-}
-
-.teamCardContentFront h4 {
-   transform: translateZ(25px);
-}
- 
 .teamCardContentBack h4,
 .teamCardContentBack p {
    transform: rotateY(0.5turn);
 }
- 
+
 .teamCardContentFront,
 .teamCardContentBack {
    position: absolute;
@@ -96,10 +66,10 @@
    backface-visibility: hidden;
    transform-style: preserve-3d;
 }
- 
+
 .teamCardContentFront img,
 .teamCardContentBack video {
-   border-radius: 16px; 
+   border-radius: 16px;
    width: 100%;
    height: 100%;
    position: absolute;
@@ -112,34 +82,40 @@
    object-fit: cover;
    object-position: center;
 }
- 
-.teamCard:hover .teamCardContent {
-   transform: rotateY(0.5turn);
-}
 
+.teamCardContentFront,
 .teamCardContentBack {
-   transform: rotateY(0.5turn);
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
    align-items: flex-start;
 }
- 
+
+.teamCardContentBack {
+   transform: rotateY(0.5turn);
+}
+.teamCardContentFront img {
+   transform: translateZ(0.1px);
+}
+
 .teamCardContentBack video {
-   transform: translateZ(5px);
+   transform: translateZ(0.1px);
 }
 
-.teamCardContentBack p {
-   transform: translateZ(15px);
+.teamCardContent p,
+.teamCardContent h4 {
+   transform: translateZ(0.1px);
+   position: relative;
+   z-index: 3;
 }
 
-.teamCardContentBack h4 {
-   transform: translateZ(25px);
+.teamCard:hover .teamCardContent {
+   transform: rotateY(0.5turn);
 }
-
 .shadow {
-   transform: translateZ(5.1px);
+   transform: translateZ(0.12px);
    position: absolute;
+   border: 1px solid black;
    top: 0;
    bottom: 0;
    left: 0;

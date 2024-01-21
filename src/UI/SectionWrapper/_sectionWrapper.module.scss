@@ -1,5 +1,14 @@
 @import "../../scss/partials/variables";
 
+.sectionWrapper {
+   position: relative;
+   scroll-margin-top: 200px;
+   margin-inline: 20px;
+   @media screen and (max-width: 500px) {
+      margin-inline: 16px;
+   }
+}
+
 .h2 {
    text-align: center;
    font-weight: $bold;

@@ -1,109 +1,58 @@
 @import "../../../scss/partials/mixin";
 
-#collabWrapper {
-   position: relative;
+.collabWrapper {
+   margin-right: 0;
+   // FIX_ME scroll is not smooth animation
+   transition-duration: 1.5s !important;
+   height: 468px;
 }
 
-.collabSwiper {
-   width: 1340px
+.collabSwiperContainer {
+   margin-left: 80px;
+   @media screen and (max-width: 1024px) {
+      margin-left: 0;
+   }
 }
 
 .collabCardsContainer {
-   height: 430px;
-   display: flex;
-   gap: 0;
-   overflow-x: scroll;
-   border-start-start-radius: 15px;
-   border-end-start-radius: 15px;
-   margin-left: 100px;
-   @include xxl {
-      margin-left: 20px;
-   }
-   @include xl {
-      margin-left: 20px;
-   }
-   @media screen and (max-width: 892px) {
-      margin-left: 20px;
-   }
-   @include md {
-      margin-left: 20px;
-   }
-   @include sm {
-      margin-left: 16px;
-   }
+   transition: all 0.27s ease-in-out;
+   width: 230px;
+   min-height: 378px;
 }
-
-.collabCardsContainer::-webkit-scrollbar {
-   display: none;
+.collabCardsContainer:hover {
+   width: calc(230px + 30px);
+   div img {
+      min-width: calc(230px + 30px);
+      min-height: calc(296px + 30px);
+   }
+   div p {
+      z-index: 5;
+      font-size: 20px;
+      font-weight: $bold;
+      letter-spacing: 0.4px;
+   }
 }
 
 .buttonPrev {
    display: none;
    rotate: 180deg;
-   @include xxl {
-      display: none;
-   }
-   @include xl {
+   position: absolute;
+   z-index: 2;
+   left: -12px;
+   top: 50%;
+
+   @media screen and (max-width: 1024px) {
       display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      left: 8px;
-   }
-   @media screen and (max-width: 892px){
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      left: 8px;
-   }
-   @include md {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      left: 8px;
-   }
-   @include sm {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 35%;
-      left: 1px;
    }
 }
 
 .buttonNext {
    display: none;
-   @include xxl {
-      display: none;
-   }
-   @include xl {
+   position: absolute;
+   z-index: 2;
+   right: 8px;
+   top: 50%;
+   @media screen and (max-width: 1024px) {
       display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      right: 12px;
-   }
-   @media screen and (max-width: 892px) {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      right: 12px;
-   }
-   @include md {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 40%;
-      right: 12px;
-   }
-   @include sm {
-      display: block;
-      position: absolute;
-      z-index: 2;
-      top: 35%;
-      right: 1px;
    }
 }

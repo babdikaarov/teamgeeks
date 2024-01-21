@@ -19,17 +19,13 @@
 .AboutUsWrapper {
    max-width: 1240px;
    margin: 0 auto;
-   @media screen and (max-width: 1260px) {
-      padding-inline: 20px;
-   }
+
    display: flex;
    gap: 170px;
    @include xxl {
       gap: 60px;
    }
-   @include xl {
-      padding-inline: 20px;
-   }
+
    @include md {
       flex-direction: column-reverse;
    }

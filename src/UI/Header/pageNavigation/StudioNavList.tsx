@@ -10,11 +10,6 @@ const BandNavList = () => {
    return (
       <ul className={styles.navigation}>
          <li>
-            <HashLink to={"/studio"} className={pathname === "/studio" ? styles.active : ""}>
-               Главная
-            </HashLink>
-         </li>
-         <li>
             <HashLink to={"/studio#about"} onClick={() => !onStudio && mainElementAnimation()}>
                О студии
             </HashLink>

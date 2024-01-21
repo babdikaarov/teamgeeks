@@ -1,73 +1,68 @@
 @import "../../scss/partials/mixin";
 
 .about {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 33px;
-  @media screen and (max-width: 1260px) {
-    padding-inline: 20px;
-  }
-  // padding-inline: 100px;
-  transition: all 1 ease;
-  @include xl {
-    padding-inline: 20px;
-  }
-  @include md {
-    flex-direction: column-reverse;
-  }
-  @include sm {
-    gap: 24px;
-  }
+   max-width: 1240px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   gap: 33px;
+
+   transition: all 1 ease;
+
+   @include md {
+      flex-direction: column-reverse;
+   }
+   @include sm {
+      gap: 24px;
+   }
 }
 .aboutBand h2 {
-  @include xl {
-    font-size: 24px;
-  }
-  @include md {
-    margin-bottom: 24px;
-  }
-  @include sm {
-    font-size: 16px;
-  }
+   @include xl {
+      font-size: 24px;
+   }
+   @include md {
+      margin-bottom: 24px;
+   }
+   @include sm {
+      font-size: 16px;
+   }
 }
 
 .article {
-  max-width: 770px;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  white-space: pre-wrap;
+   max-width: 770px;
+   display: flex;
+   flex-direction: column;
+   gap: 26px;
+   white-space: pre-wrap;
 }
 
 .article p {
-  margin-bottom: 24px;
-  font-size: 19px;
-  @include xl {
-    font-size: 16px;
-  }
-  @include sm {
-    font-size: 12px;
-  }
+   margin-bottom: 24px;
+   font-size: 19px;
+   @include xl {
+      font-size: 16px;
+   }
+   @include sm {
+      font-size: 12px;
+   }
 }
 
 .about img {
-  border-radius: 16px;
-  width: 100%;
-  max-width: 400px;
-  min-height: 362px;
-  object-fit: cover;
-  @include xl {
-    min-height: 320px;
-  }
-  @include md {
-    max-width: 720px;
-  }
+   border-radius: 16px;
+   width: 100%;
+   max-width: 400px;
+   min-height: 362px;
+   object-fit: cover;
+   @include xl {
+      min-height: 320px;
+   }
+   @include md {
+      max-width: 720px;
+   }
 }
 @media (max-width: 390px) {
-  .about img {
-    max-width: 358px;
-    min-height: 185px;
-  }
+   .about img {
+      max-width: 358px;
+      min-height: 185px;
+   }
 }

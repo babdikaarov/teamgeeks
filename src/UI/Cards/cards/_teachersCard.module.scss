@@ -1,244 +1,248 @@
 @import "../../../scss/partials/mixin";
 
 .cardContainer:hover {
-  background-color: #404040;
+   background-color: #404040;
+   cursor: pointer;
 }
-// FIXME checkanimation of insta icon
+.cardContainer:active {
+   cursor: grab;
+}
+// FIXME checkanimation of insta icon and verify
 .cardContainer:hover svg {
-  background: linear-gradient(0deg, rgba(64, 64, 64, 1) 1%, transparent);
-  animation: fadeInOut 2s infinite;
+   background: linear-gradient(0deg, rgba(64, 64, 64, 1) 1%, transparent);
+   animation: fadeInOut 2s infinite;
 }
 
 @keyframes fadeInOut {
-  0% {
-    background-color: rgba(64, 64, 64, 0.1);
-  }
-  50% {
-    background-color: rgba(64, 64, 64, 1);
-  }
-  100% {
-    background-color: rgba(64, 64, 64, 0.1);
-  }
+   0% {
+      background-color: rgba(64, 64, 64, 0.1);
+   }
+   50% {
+      background-color: rgba(64, 64, 64, 1);
+   }
+   100% {
+      background-color: rgba(64, 64, 64, 0.1);
+   }
 }
 
 .cardContainer {
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  width: 250px;
-  overflow: hidden;
-  padding: 1px;
+   border-top-left-radius: 16px;
+   border-top-right-radius: 16px;
+   width: 250px;
+   overflow: hidden;
+   padding: 1px;
 
-  @include xxl {
-    width: 224px;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-  }
-  @include xl {
-    width: 202px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-  @media screen and (max-width: 892px) {
-    width: 186px;
-    background-color: #252525;
-    border-radius: 9px;
-  }
-  @include md {
-    width: 170px;
-    background-color: #252525;
-    border-radius: 3px;
-  }
-  @include sm {
-    width: 154px;
-    height: 227px;
-     border-radius: 10px;
-    background-color: #252525;
-  }
+   @include xxl {
+      width: 224px;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+   }
+   @include xl {
+      width: 202px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+   }
+   @media screen and (max-width: 892px) {
+      width: 186px;
+      background-color: #252525;
+      border-radius: 9px;
+   }
+   @include md {
+      width: 170px;
+      background-color: #252525;
+      border-radius: 3px;
+   }
+   @include sm {
+      width: 154px;
+      height: 227px;
+      border-radius: 10px;
+      background-color: #252525;
+   }
 }
 
 .cardContainer article {
-  padding: 10px;
-  @include xxl {
-    padding: 9px;
-  }
-  @include xl {
-    padding: 8px;
-  }
-  @media screen and (max-width: 892px) {
-    padding: 6px;
-  }
-  @include md {
-    padding: 5px;
-  }
-  @include sm {
-    padding: 3px;
-  }
+   padding: 10px;
+   @include xxl {
+      padding: 9px;
+   }
+   @include xl {
+      padding: 8px;
+   }
+   @media screen and (max-width: 892px) {
+      padding: 6px;
+   }
+   @include md {
+      padding: 5px;
+   }
+   @include sm {
+      padding: 3px;
+   }
 }
 
 .cardContainer h5 {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 13px;
-  letter-spacing: normal;
-  @include xxl {
-    font-size: 16px;
-    margin-bottom: 13px;
-  }
-  @include xl {
-    font-size: 14px;
-    margin-bottom: 11px;
-  }
-  @media screen and (max-width: 892px) {
-    font-size: 11px;
-    margin-bottom: 9px;
-  }
-  @include md {
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 1px;
-  }
-  @include sm {
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 1px;
-  }
+   font-size: 19px;
+   font-weight: 600;
+   margin-bottom: 13px;
+   letter-spacing: normal;
+   @include xxl {
+      font-size: 16px;
+      margin-bottom: 13px;
+   }
+   @include xl {
+      font-size: 14px;
+      margin-bottom: 11px;
+   }
+   @media screen and (max-width: 892px) {
+      font-size: 11px;
+      margin-bottom: 9px;
+   }
+   @include md {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 1px;
+   }
+   @include sm {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 1px;
+   }
 }
 
 .cardContainer h6 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 7px;
-  @include xxl {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-  @include xl {
-    font-size: 12px;
-    margin-bottom: 5px;
-  }
-  @media screen and (max-width: 892px) {
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-  @include md {
-    font-size: 12px;
-    font-weight: 500;
-    margin-bottom: 3px;
-  }
-  @include sm {
-    font-size: 12px;
-    font-weight: 500;
-    margin-bottom: 1px;
-  }
+   font-size: 16px;
+   font-weight: 600;
+   margin-bottom: 7px;
+   @include xxl {
+      font-size: 14px;
+      margin-bottom: 6px;
+   }
+   @include xl {
+      font-size: 12px;
+      margin-bottom: 5px;
+   }
+   @media screen and (max-width: 892px) {
+      font-size: 12px;
+      margin-bottom: 4px;
+   }
+   @include md {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 3px;
+   }
+   @include sm {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 1px;
+   }
 }
 
 .cardContainer p {
-  width: 100%;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  font-size: 15px;
-  font-weight: 300;
-  @include xxl {
-    font-size: 13px;
-  }
-  @include xl {
-    font-size: 13px;
-  }
-  @media screen and (max-width: 892px) {
-    font-size: 12px;
-    font-weight: 300;
-  }
-  @include md {
-    font-size: 12px;
-    font-weight: 300;
-  }
-  @include sm {
-    font-size: 12px;
-    font-weight: 300;
-  }
+   width: 100%;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+   font-size: 15px;
+   font-weight: 300;
+   @include xxl {
+      font-size: 13px;
+   }
+   @include xl {
+      font-size: 13px;
+   }
+   @media screen and (max-width: 892px) {
+      font-size: 12px;
+      font-weight: 300;
+   }
+   @include md {
+      font-size: 12px;
+      font-weight: 300;
+   }
+   @include sm {
+      font-size: 12px;
+      font-weight: 300;
+   }
 }
 
 .imageContainer {
-  height: 240px;
-  position: relative;
-  @include xxl {
-    height: 210px;
-  }
-  @include xl {
-    height: 180px;
-  }
-  @include lg {
-    height: 165px;
-  }
-  @include md {
-    height: 155px;
-  }
-  @include sm {
-    height: 147px;
-  }
+   height: 240px;
+   position: relative;
+   @include xxl {
+      height: 210px;
+   }
+   @include xl {
+      height: 180px;
+   }
+   @include lg {
+      height: 165px;
+   }
+   @include md {
+      height: 155px;
+   }
+   @include sm {
+      height: 147px;
+   }
 }
 
 .imageContainer img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  @include xxl {
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-  }
-  @include xl {
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-  @media screen and (max-width: 892px) {
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-  }
-  @include md {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
-  @include sm {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
+   object-fit: cover;
+   object-position: center;
+   width: 100%;
+   height: 100%;
+   border-top-left-radius: 16px;
+   border-top-right-radius: 16px;
+   @include xxl {
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+   }
+   @include xl {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+   }
+   @media screen and (max-width: 892px) {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+   }
+   @include md {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+   }
+   @include sm {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+   }
 }
 
 .imageContainer a svg {
-  border-top-right-radius: 6px;
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  fill: #fcfcfc;
-  width: 36px;
-  height: 36px;
-  @include xxl {
-    width: 30px;
-    height: 30px;
-  }
-  @include xl {
-    width: 29px;
-    height: 29px;
-  }
-  @media screen and (max-width: 892px) {
-    width: 24px;
-    height: 24px;
-  }
-  @include md {
-    width: 21px;
-    height: 21px;
-  }
-  @include sm {
-    width: 17px;
-    height: 17px;
-  }
+   border-top-right-radius: 6px;
+   left: 0;
+   bottom: 0;
+   position: absolute;
+   fill: #fcfcfc;
+   width: 36px;
+   height: 36px;
+   @include xxl {
+      width: 30px;
+      height: 30px;
+   }
+   @include xl {
+      width: 29px;
+      height: 29px;
+   }
+   @media screen and (max-width: 892px) {
+      width: 24px;
+      height: 24px;
+   }
+   @include md {
+      width: 21px;
+      height: 21px;
+   }
+   @include sm {
+      width: 17px;
+      height: 17px;
+   }
 }
 
 .imageContainer a:hover path {
-  fill: gold;
+   fill: gold;
 }
