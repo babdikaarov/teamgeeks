@@ -8,10 +8,10 @@ const BurgerBtn = () => {
 
    return (
       <button
-         className={isActiveMainPage ? styles.studioBtn : styles.bandBtn}
+         className={!isActiveMainPage ? styles.studioBtn : styles.bandBtn}
          onClick={() => navigate(!isActiveMainPage ? "/studio" : "/")}
       >
-         {isActiveMainPage ? "Cool Studio" : "Cool Band"}
+         {!isActiveMainPage ? "Cool Studio" : "Cool Band"}
       </button>
    );
 };

@@ -36,7 +36,7 @@
 
 .buttonBlue {
    display: block;
-   @include buttons($fill: $color_white, $color: $color_white, $background: $button_blue, $border: $button_blue);
+   @include buttons($fill: $color_white, $color: $color_white, $background: $color_blue, $border: $color_blue);
    align-self: end;
    justify-self: center;
    // margin: auto;

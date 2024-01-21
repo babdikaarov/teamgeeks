@@ -38,7 +38,7 @@ const OurStudents = () => {
    const mobileArray = concertImages.slice(0, 3);
 
    return (
-      <SectionWrapper header="Успехи наших студентов">
+      <SectionWrapper header="Успехи наших студентов" id="students">
          <div>
             <div className={styles.ConcertSlider}>
                {mobileWidth ? (

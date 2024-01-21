@@ -15,7 +15,7 @@ const AboutStudio: FC = () => {
    };
 
    return (
-      <SectionWrapper header={customHeader ? "О студии" : "Cool Studio"} className={styles.coolStudio}>
+      <SectionWrapper header={customHeader ? "О студии" : "Cool Studio"} className={styles.coolStudio} id="about">
          <div className={styles.AboutUsWrapper}>
             <div className={styles.TextWrapper}>
                <span>

@@ -5,6 +5,12 @@
    // FIX_ME scroll is not smooth animation
    transition-duration: 1.5s !important;
    height: 468px;
+   h2 {
+      margin-right: 20px;
+   }
+   @include sm {
+      height: 350px;
+   }
 }
 
 .collabSwiperContainer {
@@ -18,41 +24,53 @@
    transition: all 0.27s ease-in-out;
    width: 230px;
    min-height: 378px;
+   @include sm {
+      width: 164px;
+      min-height: 198px;
+      div p {
+         font-size: 14px;
+      }
+   }
 }
 .collabCardsContainer:hover {
    width: calc(230px + 30px);
+   @include sm {
+      width: calc(164px + 30px);
+   }
    div img {
       min-width: calc(230px + 30px);
       min-height: calc(296px + 30px);
+      @include sm {
+         min-width: calc(164px + 30px);
+         min-height: calc(198px + 30px);
+      }
    }
    div p {
       z-index: 5;
       font-size: 20px;
       font-weight: $bold;
       letter-spacing: 0.4px;
+      @include sm {
+         font-size: 18px;
+      }
    }
 }
 
-.buttonPrev {
-   display: none;
-   rotate: 180deg;
-   position: absolute;
-   z-index: 2;
-   left: -12px;
-   top: 50%;
-
-   @media screen and (max-width: 1024px) {
-      display: block;
-   }
-}
-
+.buttonPrev,
 .buttonNext {
    display: none;
    position: absolute;
    z-index: 2;
-   right: 8px;
    top: 50%;
    @media screen and (max-width: 1024px) {
       display: block;
    }
+}
+.buttonPrev {
+   rotate: 180deg;
+   left: -12px;
+}
+
+.buttonNext {
+   right: 8px;
 }

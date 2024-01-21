@@ -1,4 +1,5 @@
 @import "../../../scss/partials/variables";
+@import "../../../scss/partials/mixin";
 
 .cardContainer {
    text-align: center;
@@ -34,4 +35,10 @@
    min-height: 296px;
    border-radius: 16px;
    object-fit: cover;
+   @include sm {
+      max-width: 164px;
+      max-height: 198px;
+      min-width: 164px;
+      min-height: 198px;
+   }
 }

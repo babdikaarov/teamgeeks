@@ -1,6 +1,6 @@
 import { useRef, useCallback } from "react";
-import SwiperCore from "swiper";
-import { Swiper } from "swiper/react";
+// import SwiperCore from "swiper";
+// import { Swiper } from "swiper/react";
 
 const useSwiperNavigation = () => {
    const sliderRef = useRef(null);

@@ -1,8 +1,16 @@
 .blue {
    background-color: #5979fa;
+   color: #fcfcfc;
+   svg path {
+      fill: #fcfcfc;
+   }
 }
 .yellow {
    background-color: #fed102;
+   color: #151515;
+   svg path {
+      fill: #151515;
+   }
 }
 
 .label {
@@ -18,7 +26,6 @@
    font-weight: 700;
    line-height: 150%; /* 30px */
    letter-spacing: 0.4px;
-   color: #151515;
 }
 
 .input:checked {
@@ -39,8 +46,4 @@
 .label svg {
    position: absolute;
    left: 16px;
-}
-
-.label svg path {
-   fill: #151515;
 }
