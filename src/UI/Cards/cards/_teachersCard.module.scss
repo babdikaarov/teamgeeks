@@ -49,14 +49,14 @@
    }
    @include md {
       width: 170px;
-      background-color: #252525;
+      // background-color: #252525;
       border-radius: 3px;
    }
    @include sm {
       width: 154px;
       height: 227px;
       border-radius: 10px;
-      background-color: #252525;
+      // background-color: #252525;
    }
 }
 

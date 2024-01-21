@@ -33,39 +33,21 @@ const Teachers = () => {
                ref={sliderRef}
                loop={true}
                className={styles.teacherSwiper}
-               spaceBetween={"18px"}
+               slidesPerView={"auto"}
                breakpoints={{
-                  1440: {
-                     slidesPerView: 3.85,
-                  },
-                  1200: {
-                     slidesPerView: 3.9,
-                  },
                   1024: {
-                     slidesPerView: 3.95,
+                     spaceBetween: 53,
                   },
-                  892: {
-                     slidesPerView: 4,
+                  440: {
+                     spaceBetween: 20,
                   },
-                  768: {
-                     slidesPerView: 2.78,
-                  },
-                  658: {
-                     slidesPerView: 2.85,
-                  },
-                  576: {
-                     slidesPerView: 1.55,
-                  },
-                  482: {
-                     slidesPerView: 1.9,
-                  },
-                  390: {
-                     slidesPerView: 2,
+                  1: {
+                     spaceBetween: 16,
                   },
                }}
             >
                {getTeachersData.map((card, i) => (
-                  <SwiperSlide key={i} onClick={() => openModal(card)}>
+                  <SwiperSlide key={i} onClick={() => openModal(card)} className={styles.cardSwiperTeacher}>
                      <TeacherCard {...card} />
                   </SwiperSlide>
                ))}
