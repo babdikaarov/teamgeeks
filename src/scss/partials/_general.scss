@@ -45,7 +45,7 @@ main {
    flex-direction: column;
    gap: 150px;
    @include mix.xl {
-      margin: 55px auto 150px;
+      margin: 50px auto 150px;
       gap: 100px;
    }
    @include mix.sm {

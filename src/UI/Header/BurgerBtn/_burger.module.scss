@@ -1,0 +1,29 @@
+@import "../../../scss/partials/mixin";
+@import "../../../scss/partials/variables";
+
+.bandBtn,
+.studioBtn {
+   z-index: 1;
+   min-height: 34px;
+   width: 100%;
+}
+
+.studioBtn {
+   @include burgerButton(
+      $fill: $color_blue,
+      $color: $color_white,
+      $background: $color_blue,
+      $border: $color_blue,
+      $radius: 12px
+   );
+}
+
+.bandBtn {
+   @include burgerButton(
+      $fill: $color_yellow,
+      $color: $color_black,
+      $background: $color_yellow,
+      $border: $color_yellow,
+      $radius: 12px
+   );
+}

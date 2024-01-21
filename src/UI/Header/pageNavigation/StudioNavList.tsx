@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import styles from "../header/_NavList.module.scss";
+import styles from "./_NavList.module.scss";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
 
 const BandNavList = () => {

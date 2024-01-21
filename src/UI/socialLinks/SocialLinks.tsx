@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { socialIcons } from "./icons";
-import styles from "../Header/header/_socialLinks.module.scss";
+import styles from "./_socialLinks.module.scss";
 import { SocialLinksProps } from "./types";
 
 const SocialLinks: FC<SocialLinksProps> = ({ links }) => {

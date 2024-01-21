@@ -1,23 +1,19 @@
-import React from "react";
-import styles from "../_header.module.scss";
+import useStudioPath from "../../../app/hooks/useActiveMainPage";
+import styles from "./_burger.module.scss";
 import { useNavigate } from "react-router-dom";
 
-interface IPath {
-  pathname: string;
-}
-const BurgerBtn: React.FC<IPath> = ({ pathname }) => {
-  const navigate = useNavigate();
+const BurgerBtn = () => {
+   const navigate = useNavigate();
+   const isActiveMainPage = useStudioPath();
 
-  return (
-    <>
+   return (
       <button
-        className={pathname === "/" ? styles.studioBtn : styles.bandBtn}
-        onClick={() => navigate(pathname === "/" ? "/studio" : "/")}
+         className={isActiveMainPage ? styles.studioBtn : styles.bandBtn}
+         onClick={() => navigate(!isActiveMainPage ? "/studio" : "/")}
       >
-        {pathname === "/" ? "Cool Studio" : "Cool Band"}
+         {isActiveMainPage ? "Cool Studio" : "Cool Band"}
       </button>
-    </>
-  );
+   );
 };
 
 export default BurgerBtn;

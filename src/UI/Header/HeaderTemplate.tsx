@@ -1,61 +1,28 @@
-import { FC, useState } from "react";
 import Logo from "../Logo/Logo";
 import SocialLinks from "../socialLinks/SocialLinks";
 import TopButtons from "./topButtons/TopButtons";
 import styles from "./_header.module.scss";
-import styles2 from "./header/_NavList.module.scss";
-import { useLocation, useNavigate } from "react-router-dom";
 import BurgerBtn from "./BurgerBtn/BurgerBtn.tsx";
+import TopButton from "./topButtons/TopButton.tsx";
+import { HeaderTemplateProps } from "./types.ts";
+import { useState } from "react";
 
-type lyrics = {
-   lyrics: string;
-};
+const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ links, bandPage, lyrics, NavList }) => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-interface HeaderTemplateProps {
-   links: {
-      telegram: string;
-      whatsapp: string;
-      instagram: string;
-      youtube: string;
-      tiktok: string;
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
    };
-   bandPage: boolean;
-   lyrics: string;
-   NavList: FC<lyrics>;
-}
-
-const HeaderTemplate: FC<HeaderTemplateProps> = ({ links, bandPage, lyrics, NavList }) => {
-   const [menuActive, setMenuActive] = useState(false);
-   const { pathname } = useLocation();
-   const navigate = useNavigate();
 
    return (
       <>
-         <header className={pathname === "/" ? styles.header : styles.headerStudio}>
-            {pathname === "/" ? (
-               <span className={styles.textBand} onClick={() => navigate("/")}>
-                  Cool Show Band
-               </span>
-            ) : (
-               <span className={styles.textStudio} onClick={() => navigate("/studio")}>
-                  Cool Studio
-               </span>
-            )}
-            {pathname === "/" ? (
-               <span onClick={() => setMenuActive(true)} className={styles.yellow}></span>
-            ) : (
-               <span onClick={() => setMenuActive(true)} className={styles.white}></span>
-            )}
-            <nav className={menuActive ? [styles.menu, styles.active].join(" ") : styles.menu}>
+         <header className={styles.header}>
+            <TopButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            <nav className={styles.nav + " " + (isMenuOpen && styles.open)}>
                <Logo bandPage={bandPage} />
                <NavList lyrics={lyrics} />
-               {pathname === "/" ? (
-                  <span onClick={() => setMenuActive(false)} className={styles2.yellowClose}></span>
-               ) : (
-                  <span onClick={() => setMenuActive(false)} className={styles2.whiteClose}></span>
-               )}
                <SocialLinks links={links} />
-               <BurgerBtn pathname={pathname} />
+               <BurgerBtn />
             </nav>
             <TopButtons />
          </header>

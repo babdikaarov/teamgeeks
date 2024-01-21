@@ -1,0 +1,46 @@
+.blue {
+   background-color: #5979fa;
+}
+.yellow {
+   background-color: #fed102;
+}
+
+.label {
+   @media screen and (min-width: 1024px) {
+      display: none;
+   }
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   cursor: pointer;
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 150%; /* 30px */
+   letter-spacing: 0.4px;
+   color: #151515;
+}
+
+.input:checked {
+   width: 100%;
+   position: absolute;
+   content: " ";
+   background: black;
+   top: 50px;
+   height: 204vw;
+   opacity: 0.7;
+}
+
+.input {
+   appearance: none;
+   opacity: 0;
+   transition: opacity 0.5s ease-in;
+}
+.label svg {
+   position: absolute;
+   left: 16px;
+}
+
+.label svg path {
+   fill: #151515;
+}
