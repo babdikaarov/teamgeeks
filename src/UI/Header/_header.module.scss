@@ -31,6 +31,8 @@
    }
    @include mix.xl {
       transition: all 0.5s ease-in-out;
+      // FIX_ME check with designers
+      // top: 0;
       padding-top: 50px;
       padding-inline: 30px;
       align-items: flex-start;

@@ -33,15 +33,18 @@
    position: absolute;
    content: " ";
    background: black;
-   top: 50px;
+   top: 0;
+   // FIX_ME check with designers
+   // top: 50px;
    height: 204vw;
    opacity: 0.7;
 }
 
 .input {
    appearance: none;
+   margin: 0;
    opacity: 0;
-   transition: opacity 0.5s ease-in;
+   transition: opacity 0.5s ease-in-out;
 }
 .label svg {
    position: absolute;
