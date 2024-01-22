@@ -16,21 +16,39 @@
    @include sm {
       max-width: 358px;
       width: 100%;
-      height: 220px;
+      height: 240px;
    }
 }
 
-.StudentCard img {
+.thumbnail {
    width: 100%;
    height: 100%;
    object-fit: cover;
+   @include sm {
+      height: 180px;
+   }
+}
+
+.icon {
+   width: 60px;
+   height: 60px;
+   padding: 15px;
+   padding-left: 18px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 100px;
+   background: rgba(255, 255, 255, 0.25);
+   box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.4);
+   backdrop-filter: blur(10px);
 }
 
 .StudentCard h6 {
-   // FIX_ME for edge cases width
-   width: 80%;
+   padding-left: 5px;
    font-weight: 500;
    @include sm {
+      // FIX_ME font size overflowing
       font-size: 16px;
    }
 }

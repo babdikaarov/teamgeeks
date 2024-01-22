@@ -1,34 +1,26 @@
+import { useYouTubeData } from "../../modules/getYoutubeData";
 import styles from "./cards/_ourStudentsCard.module.scss";
-// import VideoImg from "../../assets/coolstudio/Frame 427319234.png";
+import icon from "../../assets/icons/play.svg";
 
 interface OurStudentsCardProps {
-   card: string;
+   url: string;
 }
 
-const OurStudentsCard: React.FC<OurStudentsCardProps> = (props) => {
-   // FIX_ME add >>>>
-   /* 
-   const getID= () => logic for getting ID backend return id
-const videoUrl = https://www.youtube.com/watch?v=${getVideoId()};
-const oEmbedUrl = https://www.youtube.com/oembed?url=${videoUrl}&format=json;
-const thumbnail = http://img.youtube.com/vi/${getID()}/mqdefault.jpg
-const getVideoTitle = (oEmbedUrl) = >  logic for getting title: return title;
-logic for getVideoTitle;
-fetch(oEmbedUrl)
-  .then(response => response.json())
-  .then(data => {
-    const videoTitle = data.title;
-    console.log("Video Title:", videoTitle);
-  }) */
+const OurStudentsCard: React.FC<OurStudentsCardProps> = ({ url }) => {
+   const youtubeUrl = url;
+
+   const { title, thumbnail } = useYouTubeData(youtubeUrl);
+   // FIX_ME make modal window to play a video
    return (
       <div className={styles.StudentCard}>
          <div>
-            <img src={props.card} alt="" />
+            <img src={thumbnail} alt="thumbnail" className={styles.thumbnail} />
          </div>
-         {/* <a href="https://www.youtube.com/watch?v=1BS5M20KeZk" target="_blank" className={styles.imag_wrap}>
-               <img className={styles.imag} src={VideoImg} alt="" />
-            </a> */}
-         <h6>Radisson Collection Paradise</h6>
+         <span className={styles.icon}>
+            <img src={icon} alt="play" />
+         </span>
+
+         <h6>{title}</h6>
       </div>
    );
 };
