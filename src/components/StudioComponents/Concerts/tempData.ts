@@ -11,14 +11,14 @@ import ConcertImg9 from "../../../assets/coolstudio/Concert.jpeg";
 export default [
    {
       img: ConcertImg1,
-      header: "Summer Fest",
+      header: "Summer airport dimanosd three",
       location: "Бишкек",
       month: "Декабрь",
    },
    {
       img: ConcertImg2,
       header: "Summer Fest",
-      location: "test",
+      location: "Moscow Russion ",
       month: "Декабрь",
    },
    {
