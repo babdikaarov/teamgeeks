@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "./_ourStudents.module.scss";
+import styles from "./_ourstudents.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import { useMediaQuery } from "../../../app/hooks/useMediaQuery";
 import OurStudentsCard from "../../../UI/Cards/OurStudentsCard";
