@@ -14,6 +14,9 @@
 .sliderEventsContainer {
    position: relative;
    overflow: hidden;
+   width: 100vw;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 .sliderEventsContainer::after,
