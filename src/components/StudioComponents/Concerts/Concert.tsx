@@ -1,35 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./_concerts.module.scss";
-import icon from "../Concerts/iconSwipe";
-import { Link } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import styles from "./_concerts.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import tempData from "./tempData";
 import { useMediaQuery } from "../../../app/hooks/useMediaQuery";
-interface CardProps {
-   img: string;
-   header: string;
-   location: string;
-   month: string;
-}
-[];
+import tempData from "./tempData";
+import ConcertCard from "../../../UI/Cards/ConcertCard";
+import icon from "../../../assets/icons/bigArrow";
 
-const ConcertCard = (props: CardProps) => {
-   return (
-      <div className={styles.ConcertsCard}>
-         <div className={styles.front}>
-            <img className={styles.concertImg} src={props.img} alt="" />
-            <p className={styles.Summer}>{props.header}</p>
-            <p className={styles.Bishkek}>{props.location}</p>
-            <p className={styles.december}>{props.month}</p>
-         </div>
-      </div>
-   );
-};
 const Concert = () => {
-   const mobileWidth = useMediaQuery("(max-width: 700px)");
+   const mobileWidth = useMediaQuery("(max-width: 576px)");
 
    const concertImages = tempData;
 
@@ -37,39 +18,37 @@ const Concert = () => {
 
    return (
       <SectionWrapper header="Отчетные концерты">
-         <div>
-            <div className={styles.ConcertSlider}>
-               {mobileWidth ? (
-                  mobileArray.map((card, i) => <ConcertCard key={i} {...card} />)
-               ) : (
-                  <>
-                     <Swiper
-                        spaceBetween={20}
-                        slidesPerView={3}
-                        navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
-                        modules={[Navigation]}
-                     >
-                        {concertImages.map((image, index) => (
-                           <SwiperSlide key={index}>
-                              <Link to={"/gallery/10"}>
-                                 <ConcertCard {...image} />
-                              </Link>
-                           </SwiperSlide>
-                        ))}
-                     </Swiper>
-                     <div id="btn2" className={styles.LeftSwip}>
-                        {icon}
-                     </div>
-                     <div id="btn1" className={styles.RightSwip}>
-                        {icon}
-                     </div>
-                  </>
-               )}
+         <div className={styles.ConcertSlider}>
+            {mobileWidth ? (
+               mobileArray.map((card, i) => <ConcertCard key={i} {...card} />)
+            ) : (
+               <>
+                  <Swiper
+                     spaceBetween={10}
+                     loop={true}
+                     slidesPerView={"auto"}
+                     navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
+                     modules={[Navigation]}
+                     className={styles.concertSwiper}
+                  >
+                     {concertImages.map((image, index) => (
+                        <SwiperSlide key={index} className={styles.concertsSwipeCard}>
+                           <ConcertCard {...image} />
+                        </SwiperSlide>
+                     ))}
+                  </Swiper>
+                  <button id="btn2" className={styles.LeftSwip}>
+                     {icon}
+                  </button>
+                  <button id="btn1" className={styles.RightSwip}>
+                     {icon}
+                  </button>
+               </>
+            )}
 
-               <a className={styles.watchmore} href="/gallery">
-                  Смотреть еще
-               </a>
-            </div>
+            <a className={styles.watchmore} href="/gallery">
+               Смотреть еще
+            </a>
          </div>
       </SectionWrapper>
    );

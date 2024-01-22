@@ -1,158 +1,125 @@
-* {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+@import "../../../scss/partials/mixin";
+
+.concertSwiper {
+   max-width: 1160px;
+   width: 100%;
 }
-
-
 
 .ConcertSlider {
    position: relative;
    margin: 0 auto;
-   width: 82%;
+   max-width: 1240px;
+   padding-inline: 30px;
+   @include sm {
+      padding-inline: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+   }
 }
 
-
-
-.concertImg {
-   width: 100%;
-   height: 200px;
-   border-radius: 10px;
-   object-fit: cover;
+.concertsSwipeCard {
+   max-width: 380px;
+   @include xl {
+      max-width: 295px;
+      height: 175px;
+   }
+   @include sm {
+      max-width: 358px;
+      width: 100%;
+      height: 200px;
+   }
 }
 
-
-
-.Summer {
-   color: #fff;
-
-   text-align: center;
-   font-family: Montserrat Alternates;
-   font-size: 24px;
-   font-style: normal;
-   font-weight: 600;
-   line-height: normal;
-   transform: translate(0px, -139px);
-}
-
-.Bishkek {
-   color: #fff;
-
-   text-align: center;
-   font-family: Montserrat Alternates;
-   font-size: 20px;
-   font-style: normal;
-   font-weight: 500;
-   line-height: normal;
-   transform: translate(0px, -139px);
-}
-
-.december {
-   color: #fff;
-
-   text-align: center;
-   font-family: Montserrat Alternates;
-   font-size: 20px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: normal;
-   transform: translate(0px, -120px);
-}
-
-.text1 {
-   color: #fff;
-   font-size: 32px;
-   font-style: normal;
-   font-weight: 700;
-   margin-bottom: 48px;
-   display: flex;
-   justify-content: center;
-   letter-spacing: 0.64px;
-}
-
-   
 .watchmore {
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   font-family: "Montserrat Alternates", sans-serif;
-   color: white;
-
+   display: block;
+   text-align: end;
+   margin-top: 10px;
    text-decoration: underline;
 }
 
 .LeftSwip {
    position: absolute;
-   padding: 20px;
-   top: 25%;
-   left: 30px;
-   z-index: 7;
-
-   transform: translateX(-130%);
+   z-index: 3;
+   left: 0;
+   bottom: 50%;
+   & svg {
+      width: 100%;
+      height: 100%;
+   }
+   @include xxl {
+      margin-right: 32px;
+      width: 15px;
+      height: 28px;
+   }
+   @include xl {
+      margin-right: 30px;
+   }
+   @media screen and (max-width: 892px) {
+      margin-right: 28px;
+   }
+   @include md {
+      margin-right: 26px;
+   }
+   @include sm {
+      width: 10px;
+      height: 20px;
+      margin-right: 24px;
+   }
 }
 
 .RightSwip {
    position: absolute;
-   padding: 20px;
-   top: 25%;
-   z-index: 7;
-   transform: translateX(-6%);
-   
+   right: 0;
+   bottom: 50%;
+   transform: scaleX(-1);
+   z-index: 5;
+   & svg {
+      width: 100%;
+      height: 100%;
+   }
+   @include xxl {
+      margin-left: 32px;
+      width: 15px;
+      height: 28px;
+   }
+   @include xl {
+      margin-left: 30px;
+   }
+   @media screen and (max-width: 892px) {
+      margin-left: 28px;
+   }
+   @include md {
+      margin-left: 26px;
+   }
+   @include sm {
+      width: 10px;
+      height: 20px;
+      margin-left: 24px;
+   }
 }
 
-// .LeftSwip {
-//    position: absolute;
-//    padding: 20px;
-//    top: 25%;
-//    left: 13px;
-//    transform: translateX(-130%);
+// @media only screen and (max-width: 540px) {
+//    .ConcertsCard {
+//       display: block !important;
+//    }
+//    .ConcertSlider {
+//       display: none !important;
+//    }
+
+//    .MobileConcerts {
+//       display: flex !important;
+//    }
 // }
 
-// .RightSwip {
-//      position: absolute;
-//   padding: 20px;
-//   top: 25%;
-//   left: 13px;
-//   transform: translateX(-6%);
+// @media only screen and (max-width: 540px) {
+//    .ConcertSlider {
+//       display: block !important;
+//       flex-direction: column;
+//    }
+//    .LeftSwip,
+//    .RightSwip {
+//       display: none !important;
+//    }
 // }
-
-
-.MobileConcerts {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.MobileConcerts img {
-   width: 80%;
-   margin-bottom: 20px;
-}
-.RightSwip {
-   left: 380px;
-
-   right: 0px;
-   rotate: 180deg;
-}
-
-@media only screen and (max-width: 540px) {
-   .ConcertsCard{
-      display: block !important;
-   }
-   .ConcertSlider {
-      display: none !important;
-   }
-
-   .MobileConcerts {
-      display: flex !important;
-   }
-}
-
-@media only screen and (max-width: 540px) {
-   .ConcertSlider {
-      display: block !important;
-      flex-direction: column;  
-   }
-   .LeftSwip, .RightSwip {
-      display: none !important; 
-   }
-}

@@ -28,3 +28,11 @@ export interface TeacherCardProps {
    instagram: string;
    description: string;
 }
+
+export interface CardProps {
+   img: string;
+   header: string;
+   location: string;
+   month: string;
+}
+[];

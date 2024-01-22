@@ -5,6 +5,7 @@
 }
 
 .teacherSwiper {
+   max-width: 1160px;
    width: 100%;
    overflow: scroll;
 }
@@ -14,6 +15,8 @@
 }
 
 .teacherContainer {
+   padding-inline: 30px;
+   position: relative;
    margin: auto;
    max-width: 1240px;
    display: flex;
@@ -23,8 +26,11 @@
 }
 
 .buttonPrev {
-   margin-right: 35px;
-   margin-bottom: 5%;
+   position: absolute;
+   z-index: 2;
+   left: 0;
+   bottom: 50%;
+
    & svg {
       width: 100%;
       height: 100%;
@@ -51,12 +57,14 @@
 }
 
 .buttonNext {
-   margin-left: 35px;
-   margin-bottom: 5%;
+   position: absolute;
+   z-index: 2;
+   right: 0;
+   bottom: 50%;
    & svg {
       width: 100%;
       height: 100%;
-      rotate: 180deg;
+      transform: scaleX(-1);
    }
    @include xxl {
       margin-left: 32px;

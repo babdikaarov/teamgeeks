@@ -5,7 +5,7 @@ import styles from "./_teacher.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useState, useCallback } from "react";
-import icon from "./bigArrow";
+import icon from "../../../assets/icons/bigArrow";
 import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
 import Modal from "./Modal";
 import { TeacherType } from "./types";
