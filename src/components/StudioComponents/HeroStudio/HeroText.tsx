@@ -1,21 +1,19 @@
 import { FC } from "react";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "../../../UI/Hero/_hero.module.scss";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 
 interface HeroTextProps {
-  header: string;
-  paragraph: string;
+   header: string;
 }
 
-const HeroText: FC<HeroTextProps> = ({ header, paragraph }) => {
-  return (
-    <SectionWrapper className={styles.heroStudio}>
-      <div className={styles.text}>
-        <h1 className={styles.heroH1}>{header}</h1>
-        <h6 className={styles.paragraph}>{paragraph}</h6>
-      </div>
-    </SectionWrapper>
-  );
+const HeroText: FC<HeroTextProps> = ({ header }) => {
+   return (
+      <SectionWrapper className={styles.heroStudio}>
+         <div className={styles.text}>
+            <h1 className={styles.heroH1}>{header}</h1>
+         </div>
+      </SectionWrapper>
+   );
 };
 
 export default HeroText;

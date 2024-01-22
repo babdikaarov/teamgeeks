@@ -1,6 +1,6 @@
-import styles from "./_hero.module.scss";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import HeroText from "./HeroText";
+import styles from "./_hero.module.scss";
 import { HeroTemplateProps } from "./types";
 
 const HeroTemplate: React.FC<HeroTemplateProps> = ({ video, text, children }) => {
@@ -9,7 +9,7 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({ video, text, children }) =>
          <video muted autoPlay loop id="videoTag">
             <source src={video.src} type={video.type} />
          </video>
-         {text && <HeroText header={text.header} paragraph={text.paragraph} className={styles.textPosition} />}
+         {text && <HeroText header={text.header} className={styles.textPosition} />}
          {children}
       </SectionWrapper>
    );
