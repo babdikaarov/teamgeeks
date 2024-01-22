@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import styles from "./_ourStudents.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
+import styles from "./_ourStudents.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import { useMediaQuery } from "../../../app/hooks/useMediaQuery";
 import OurStudentsCard from "../../../UI/Cards/OurStudentsCard";
