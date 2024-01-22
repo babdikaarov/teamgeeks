@@ -35,12 +35,12 @@ const OurStudents = () => {
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <div id="btn22" className={styles.LeftSwip}>
+                  <button id="btn22" className={styles.LeftSwip}>
                      {icon}
-                  </div>
-                  <div id="btn11" className={styles.RightSwip}>
+                  </button>
+                  <button id="btn11" className={styles.RightSwip}>
                      {icon}
-                  </div>
+                  </button>
                </>
             )}
             <a className={styles.watchmore} href="https://www.youtube.com/@coolstudiokg" target="_blank">

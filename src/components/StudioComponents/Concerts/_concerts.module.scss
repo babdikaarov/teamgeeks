@@ -33,8 +33,9 @@
 }
 
 .watchmore {
-   display: block;
-   text-align: end;
+   display: flex;
+   position: absolute;
+   right: 40px;
    margin-top: 10px;
    text-decoration: underline;
 }

@@ -1,13 +1,13 @@
-import card1 from "/src/assets/courses/basGuitar.svg";
-import card2 from "/src/assets/courses/guitar.svg";
-import card3 from "/src/assets/courses/electroG.svg";
-import card4 from "/src/assets/courses/ukelele.svg";
-import card5 from "/src/assets/courses/congo.svg";
-import card6 from "/src/assets/courses/piano.svg";
-import card7 from "/src/assets/courses/vocal.svg";
-import card8 from "/src/assets/courses/drums.svg";
-import card9 from "/src/assets/courses/dj.svg";
-import card10 from "/src/assets/courses/bits.svg";
+import card1 from "/courses/basGuitar.svg";
+import card2 from "/courses/guitar.svg";
+import card3 from "/courses/electroG.svg";
+import card4 from "/courses/ukelele.svg";
+import card5 from "/courses/congo.svg";
+import card6 from "/courses/piano.svg";
+import card7 from "/courses/vocal.svg";
+import card8 from "/courses/drums.svg";
+import card9 from "/courses/dj.svg";
+import card10 from "/courses/bits.svg";
 
 export default [
    {
