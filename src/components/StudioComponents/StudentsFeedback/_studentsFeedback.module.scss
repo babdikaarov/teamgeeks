@@ -1,7 +1,7 @@
 @import "../../../scss/partials/mixin";
 
 .feedbackContainer {
-   margin: auto; 
+   margin: auto;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -41,7 +41,7 @@
    @include xl {
       width: 790px;
    }
-   @media screen and (max-width: 892px){
+   @media screen and (max-width: 892px) {
       width: 660px;
    }
    @include md {

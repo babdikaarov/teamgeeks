@@ -16,7 +16,16 @@ const useCollageModal = (
          switch (target.id) {
             case "modal":
             case "modalClose":
-               modal.close();
+               modal.setAttribute("closing", "");
+               modal.addEventListener(
+                  "animationend",
+                  () => {
+                     modal.removeAttribute("closing");
+                     modal.close();
+                  },
+                  { once: true },
+               );
+
                break;
             default:
                break;

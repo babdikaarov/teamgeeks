@@ -19,10 +19,11 @@ const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ links, bandPage, lyrics
          <header className={styles.header}>
             <TopButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
             <nav className={styles.nav + " " + (isMenuOpen && styles.open)}>
+               <span className={styles.close} onClick={toggleMenu}></span>
                <Logo bandPage={bandPage} />
                <NavList lyrics={lyrics} />
                <SocialLinks links={links} />
-               <BurgerBtn />
+               <BurgerBtn toggleMenu={toggleMenu} />
             </nav>
             <TopButtons />
          </header>

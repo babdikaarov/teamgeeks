@@ -30,6 +30,7 @@
       padding-inline: 10px;
    }
    @include mix.xl {
+      height: 100%;
       transition: all 0.5s ease-in-out;
       top: 0;
       padding-top: 50px;
@@ -59,4 +60,49 @@
          }
       }
    }
+}
+
+.close {
+   position: absolute;
+   z-index: 1;
+   width: 30px;
+   height: 30px;
+   right: 20px;
+   top: 20px;
+   cursor: pointer;
+   opacity: 0.5;
+   display: none;
+   @include mix.xl {
+      display: block;
+   }
+}
+
+.close:before,
+.close:after {
+   content: "";
+   content: " ";
+   position: absolute;
+   z-index: 2;
+   top: 50%;
+   border-radius: 20px;
+   width: 24px;
+   height: 4px;
+   opacity: 1;
+   background-color: #fed102;
+   cursor: pointer;
+}
+
+.close:hover {
+   opacity: 1;
+}
+
+.close:before {
+   -webkit-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+   transform: rotate(45deg);
+}
+.close:after {
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   transform: rotate(-45deg);
 }

@@ -73,6 +73,9 @@
    text-wrap: nowrap;
    padding: 0;
    font-weight: $bold;
+   @media screen and (max-width: 700px) {
+      text-wrap: wrap;
+   }
 }
 .textContainer h3 {
    font-weight: $bold;

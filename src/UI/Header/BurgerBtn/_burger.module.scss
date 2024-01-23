@@ -6,6 +6,9 @@
    z-index: 1;
    min-height: 34px;
    width: 100%;
+   @include xl {
+      margin-top: 10px;
+   }
 }
 
 .studioBtn {

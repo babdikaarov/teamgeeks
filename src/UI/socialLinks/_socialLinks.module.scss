@@ -1,9 +1,18 @@
 @import "../../scss/partials/variables";
+@import "../../scss/partials/mixin";
 
 .socialLinks {
    display: flex;
+   position: relative;
    gap: 10px;
    height: 24px;
+   z-index: 1;
+   @include xl {
+      margin-top: -16px;
+   }
+   @include xl {
+      margin-top: -20px;
+   }
 }
 
 .socialLinks li a svg path {

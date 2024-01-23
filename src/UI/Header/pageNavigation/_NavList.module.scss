@@ -12,6 +12,10 @@
       flex-direction: column;
       gap: 14px;
    }
+   @include mix.sm {
+      flex-direction: column;
+      gap: 10px;
+   }
 }
 
 .navigation a {

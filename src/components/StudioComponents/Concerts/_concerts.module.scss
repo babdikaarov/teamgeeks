@@ -38,6 +38,9 @@
    right: 40px;
    margin-top: 10px;
    text-decoration: underline;
+   @include sm {
+      position: relative;
+   }
 }
 
 .LeftSwip {

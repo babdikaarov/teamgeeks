@@ -6,7 +6,7 @@ interface BackdropProps {
 }
 
 const Backdrop: FC<BackdropProps> = ({ onClick }) => {
-   return <div className={styles.backdrop} onClick={onClick}></div>;
+   return <span className={styles.backdrop} onClick={onClick}></span>;
 };
 
 export default Backdrop;

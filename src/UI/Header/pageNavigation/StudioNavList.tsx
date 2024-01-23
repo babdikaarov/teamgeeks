@@ -1,26 +1,26 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
-import Backdrop from "../Backdrop/Backdrop";
+// import Backdrop from "../Backdrop/Backdrop";
 import styles from "./_NavList.module.scss";
 
 const BandNavList = () => {
    const { pathname } = useLocation();
    const onStudio = pathname === "/studio";
-   const [isMenuOpen, setMenuOpen] = useState(false);
+   // const [isMenuOpen, setMenuOpen] = useState(false);
 
-   const toggleMenu = () => {
-      setMenuOpen(!isMenuOpen);
-   };
+   // const toggleMenu = () => {
+   //    setMenuOpen(!isMenuOpen);
+   // };
 
-   const closeMenu = () => {
-      setMenuOpen(false);
-   };
+   // const closeMenu = () => {
+   //    setMenuOpen(false);
+   // };
 
    return (
-      <div>
-         {isMenuOpen && <Backdrop onClick={closeMenu} />}
+      <>
+         {/* {isMenuOpen && <Backdrop onClick={closeMenu} />} */}
          <ul className={styles.navigation}>
             <li>
                <HashLink to={"/studio#about"} onClick={() => !onStudio && mainElementAnimation()}>
@@ -48,8 +48,8 @@ const BandNavList = () => {
                </HashLink>
             </li>
          </ul>
-         <button onClick={toggleMenu}></button>
-      </div>
+         {/* <button onClick={toggleMenu}>asdasdasd</button> */}
+      </>
    );
 };
 
