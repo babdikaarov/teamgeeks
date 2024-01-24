@@ -38,6 +38,12 @@
       width: 345px;
    }
 }
+.scroll {
+   display: flex;
+   @include md {
+      display: block;
+   }
+}
 
 .p {
    font-size: 16px;

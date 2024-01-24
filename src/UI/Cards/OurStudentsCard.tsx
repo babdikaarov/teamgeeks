@@ -3,6 +3,7 @@ import styles from "./cards/_ourStudentsCard.module.scss";
 import icon from "../../assets/icons/play.svg";
 import ModalYouTube from "../modal/ModalYouTube";
 import { useModalCotroller } from "../../modules/hooks/useModalCotroller";
+import { useState } from "react";
 
 interface OurStudentsCardProps {
    url: string;
@@ -11,6 +12,7 @@ interface OurStudentsCardProps {
 }
 
 const OurStudentsCard: React.FC<OurStudentsCardProps> = ({ url, addToID, allIDS }) => {
+   const [imageLoaded, setImageLoaded] = useState(false)
    const youtubeUrl = url;
    const { id, title, thumbnail } = useYouTubeData(youtubeUrl);
 
@@ -20,7 +22,17 @@ const OurStudentsCard: React.FC<OurStudentsCardProps> = ({ url, addToID, allIDS 
    return (
       <div className={styles.StudentCard} onClick={() => openModal(modalID)}>
          <div>
-            <img src={thumbnail} alt="thumbnail" className={styles.thumbnail} />
+            {!imageLoaded && (
+               <div className={styles.loadingBox}>
+               </div>
+            )}
+            <img 
+               src={thumbnail} 
+               alt="thumbnail" 
+               className={styles.thumbnail} 
+               onLoad={() => setImageLoaded(true)}
+               style={{ opacity: imageLoaded ? 1 : 0 }}
+            />
          </div>
          <span className={styles.icon}>
             <img src={icon} alt="play" />

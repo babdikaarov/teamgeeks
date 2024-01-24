@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FC } from "react";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import styles from "./_aboutTemplate.module.scss";
@@ -9,6 +10,8 @@ interface AboutTemplateProps {
 }
 
 const AboutTemplate: FC<AboutTemplateProps> = ({ header, poster, text }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <SectionWrapper className={styles.aboutBand} header={header} id="about">
       <div className={styles.about}>
@@ -21,7 +24,18 @@ const AboutTemplate: FC<AboutTemplateProps> = ({ header, poster, text }) => {
             ))}
           </div>
         </article>
-        <img src={poster} alt="About Poster" />
+        <div className={styles.imageContainer}>
+          {!imageLoaded && (
+            <div className={styles.loadingBox}>
+            </div>
+          )}
+          <img
+            src={poster}
+            alt="About Poster"
+            onLoad={() => setImageLoaded(true)}
+            style={{ opacity: imageLoaded ? 1 : 0 }}
+          />
+        </div>
       </div>
     </SectionWrapper>
   );

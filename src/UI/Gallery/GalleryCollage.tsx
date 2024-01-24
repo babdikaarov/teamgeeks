@@ -6,6 +6,7 @@ import usePagination from "../../modules/hooks/usePagination";
 import { useModalCotroller } from "../../modules/hooks/useModalCotroller";
 
 const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
    const [indexImage, setIndexImage] = useState<number>(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const perPage = getVisibleItems(items);
@@ -27,7 +28,15 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
                      onClick={() => handleOpen(i)}
                   >
                      <p>{i}</p>
-                     <img src={data?.src} alt={data?.alt} />
+                     {!imageLoaded && (
+                        <div className={styles.loadingBox}>
+                        </div>
+                     )}
+                     <img  
+                        src={data?.src} alt={data?.alt}
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ opacity: imageLoaded ? 1 : 0 }}
+                     />
                   </div>
                ))}
             <Modal
