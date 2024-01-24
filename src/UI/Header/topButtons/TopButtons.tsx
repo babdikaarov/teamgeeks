@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./_topButtons.module.scss";
 // import mainElementAnimation from "../../../modules/mainElementAnimation";
 import bodyElementAnimation from "../../../modules/bodyElementAnimation";
-import useStudioPath from "../../../app/hooks/useActiveMainPage";
+import useStudioPath from "../../../modules/hooks/useActiveMainPage";
 
 const TopButtons = () => {
    const isActiveMainPage = useStudioPath();

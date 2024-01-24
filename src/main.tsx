@@ -10,6 +10,6 @@ root.render(
    <Provider store={store}>
       <BrowserRouter>
          <App />
-      </BrowserRouter>,
-   </Provider>
+      </BrowserRouter>
+   </Provider>,
 );

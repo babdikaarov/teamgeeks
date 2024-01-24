@@ -1,7 +1,7 @@
 import styles from "./_topButton.module.scss";
 // import burgerIcon from "../../../assets/Vector.svg";
 import icon from "./icon";
-import useStudioPath from "../../../app/hooks/useActiveMainPage";
+import useStudioPath from "../../../modules/hooks/useActiveMainPage";
 
 interface TopButtonProps {
    isMenuOpen: boolean;

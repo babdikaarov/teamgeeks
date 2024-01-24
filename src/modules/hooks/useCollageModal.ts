@@ -13,23 +13,34 @@ const useCollageModal = (
       (event) => {
          const modal = event.currentTarget as HTMLDialogElement;
          const target = event.target as HTMLDialogElement;
-         switch (target.id) {
-            case "modal":
-            case "modalClose":
-               modal.setAttribute("closing", "");
-               modal.addEventListener(
-                  "animationend",
-                  () => {
-                     modal.removeAttribute("closing");
-                     modal.close();
-                  },
-                  { once: true },
-               );
-
-               break;
-            default:
-               break;
+         if (modal === target || target.id === "modalClose") {
+            modal.setAttribute("closing", "");
+            modal.addEventListener(
+               "animationend",
+               () => {
+                  modal.removeAttribute("closing");
+                  modal.close();
+               },
+               { once: true },
+            );
          }
+         // switch (target.id) {
+         //    case "modal":
+         //    case "modalClose":
+         //       modal.setAttribute("closing", "");
+         //       modal.addEventListener(
+         //          "animationend",
+         //          () => {
+         //             modal.removeAttribute("closing");
+         //             modal.close();
+         //          },
+         //          { once: true },
+         //       );
+
+         //       break;
+         //    default:
+         //       break;
+         // }
       },
       // eslint-disable-next-line react-hooks/exhaustive-deps
       [],

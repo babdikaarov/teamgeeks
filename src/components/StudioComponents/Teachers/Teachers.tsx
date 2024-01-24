@@ -9,7 +9,7 @@ import icon from "../../../assets/icons/bigArrow";
 import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
 import Modal from "./Modal";
 import { TeacherType } from "./types";
-import useSwiperNavigation from "../../../app/hooks/useSwiperNavigation";
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();

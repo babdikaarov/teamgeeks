@@ -3,7 +3,7 @@ import GalleryCollage from "../../../UI/Gallery/GalleryCollage";
 import getGalleryData from "../../../tempData/getGalleyData";
 import returnIcon from "../../../assets/icons/return";
 import styles from "./_collage.module.scss";
-import useResponsiveSorting from "../../../app/hooks/useResponsiveSorting";
+import useResponsiveSorting from "../../../modules/hooks/useResponsiveSorting";
 // FIXME add props to component from backend and types
 
 // interface CollageProps {

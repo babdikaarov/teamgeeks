@@ -19,7 +19,6 @@ export const useYouTubeData = (url: string) => {
       try {
          const response = await fetch(oEmbedUrl);
          const data = await response.json();
-         // console.log(data);
          return data.title;
       } catch (error) {
          console.error("Error fetching video title:", error);
@@ -44,7 +43,6 @@ export const useYouTubeData = (url: string) => {
          const id = extractYouTubeVideoId(url);
          const title = await getVideoTitle(url);
          const thumbnail = `http://img.youtube.com/vi/${id}/mqdefault.jpg`;
-
          setYouTubeData({
             id,
             title,

@@ -7,7 +7,7 @@ import "swiper/css";
 import icon from "../../../assets/icons/teamArrow.png";
 // FIX_ME scroll
 // import { Mousewheel } from "swiper/modules";
-import useSwiperNavigation from "../../../app/hooks/useSwiperNavigation";
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();

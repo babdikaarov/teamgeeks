@@ -4,21 +4,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./_ourstudents.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import { useMediaQuery } from "../../../app/hooks/useMediaQuery";
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import OurStudentsCard from "../../../UI/Cards/OurStudentsCard";
 import data from "./tempdata";
 import icon from "../../../assets/icons/bigArrow";
+import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
 
 const OurStudents = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
-
    const mobileArray = data.slice(0, 3);
+   const allIDS = extractAllYouTubeVideoID(data);
 
    return (
       <SectionWrapper header="Успехи наших студентов" id="students">
          <div className={styles.ourStudents}>
             {mobileWidth ? (
-               mobileArray.map((url, i) => <OurStudentsCard key={i} url={url} />)
+               mobileArray.map((url, index) => (
+                  <OurStudentsCard key={index} url={url} addToID={index} allIDS={allIDS} />
+               ))
             ) : (
                <>
                   <Swiper
@@ -31,7 +34,7 @@ const OurStudents = () => {
                   >
                      {[...data, ...data].map((url, index) => (
                         <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
-                           <OurStudentsCard url={url} />
+                           <OurStudentsCard url={url} addToID={index} allIDS={allIDS} />
                         </SwiperSlide>
                      ))}
                   </Swiper>

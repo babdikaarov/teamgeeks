@@ -1,4 +1,4 @@
-import useStudioPath from "../../../app/hooks/useActiveMainPage";
+import useStudioPath from "../../../modules/hooks/useActiveMainPage";
 // import bodyElementAnimation from "../../../modules/bodyElementAnimation";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_burger.module.scss";

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./_concerts.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import { useMediaQuery } from "../../../app/hooks/useMediaQuery";
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import tempData from "./tempData";
 import ConcertCard from "../../../UI/Cards/ConcertCard";
 import icon from "../../../assets/icons/bigArrow";

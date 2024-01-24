@@ -7,6 +7,7 @@ export interface ModalProps {
         }
       | undefined
    )[];
+   modalId: string;
    index: number;
    setIndexImage: React.Dispatch<React.SetStateAction<number>>;
    nextPage: () => void;

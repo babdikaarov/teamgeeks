@@ -2,17 +2,18 @@ import { FC, useState } from "react";
 import styles from "./gallery/_galleryCollage.module.scss";
 import Modal from "./modal/Modal";
 import { GalleryCollageProps } from "./types";
-import usePagination from "../../app/hooks/usePagination";
+import usePagination from "../../modules/hooks/usePagination";
+import { useModalCotroller } from "../../modules/hooks/useModalCotroller";
 
 const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
    const [indexImage, setIndexImage] = useState<number>(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const perPage = getVisibleItems(items);
-
+   const { openModal } = useModalCotroller();
+   const modalID = "collageModal";
    const handleOpen = (index: number) => {
-      const modal = document.getElementById("modal") as HTMLDialogElement;
       setIndexImage(index);
-      modal && modal.show();
+      openModal(modalID);
    };
 
    return (
@@ -29,7 +30,13 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
                      <img src={data?.src} alt={data?.alt} />
                   </div>
                ))}
-            <Modal images={perPage} index={indexImage} setIndexImage={setIndexImage} nextPage={nextPage} />
+            <Modal
+               modalId={modalID}
+               images={perPage}
+               index={indexImage}
+               setIndexImage={setIndexImage}
+               nextPage={nextPage}
+            />
          </div>
          <button className={styles.paginationButton} onClick={nextPage}>
             Далее

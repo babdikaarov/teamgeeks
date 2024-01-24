@@ -5,7 +5,6 @@ import { TeacherCardProps } from "./types";
 
 const TeacherCard: FC<TeacherCardProps> = (props) => {
    const { img, name, expertise, instagram, description } = props;
-   console.log(description.length);
    return (
       <div className={styles.cardContainer}>
          <div className={styles.imageContainer}>

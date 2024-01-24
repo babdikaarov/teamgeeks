@@ -7,7 +7,7 @@ import icon from "../../../assets/icons/teamArrow.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 // FIX_ME scroll smooth bug
 // import { Mousewheel } from "swiper/modules";
-import useSwiperNavigation from "../../../app/hooks/useSwiperNavigation";
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
