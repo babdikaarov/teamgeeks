@@ -1,21 +1,32 @@
 import "https://maps.api.2gis.ru/2.0/loader.js?pkg=basic";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import bandIcon from "/bandIcon.svg";
 import studioIcon from "/studioFav.svg";
+import styles from "./_twoGis.module.scss"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const DG: any;
+
 export default function TwoGis() {
    const { pathname } = useLocation();
+   const [mapLoaded, setMapLoaded] = useState(false);
 
    // FIXME the Location coordinates and link static attachment or backend provider
    const coolStudioLocation: number[] = [42.850329, 74.609962];
    const coolStudiolink: string = "https://2gis.kg/bishkek/firm/70000001066401992?m=74.609962%2C42.850329%2F16";
+
    useEffect(() => {
       if (DG) {
          initializeMap();
       }
    }, []);
+
+   useEffect(() => {
+      if (mapLoaded) {
+         // Handle map loading completion here
+         console.log("Map has been loaded!");
+      }
+   }, [mapLoaded]);
 
    function initializeMap() {
       let map: { on: (arg0: string, arg1: () => void) => void };
@@ -37,6 +48,10 @@ export default function TwoGis() {
             minZoom: 12,
             maxZoom: 18,
          });
+
+         // Set the map as loaded
+         setMapLoaded(true);
+
          map.on("click", function () {
             console.log("clicked");
             window.location.href = coolStudiolink;
@@ -73,5 +88,15 @@ export default function TwoGis() {
       });
    }
 
-   return <div id="map" className="map-container" style={{ width: "100%", height: "100%" }}></div>;
+   return (
+      <div id="map" className="map-container" style={{ width: "100%", height: "100%", position: "relative" }}>
+         {!mapLoaded && (
+            <div className={styles.loadingBox}>
+            </div>
+         )}
+      </div>
+   );
 }
+
+
+        

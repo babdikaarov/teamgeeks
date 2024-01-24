@@ -2,13 +2,25 @@ import { FC } from "react";
 import { socialIcons } from "../socialLinks/icons";
 import styles from "./cards/_teachersCard.module.scss";
 import { TeacherCardProps } from "./types";
+import { useState } from "react";
 
 const TeacherCard: FC<TeacherCardProps> = (props) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
    const { img, name, expertise, instagram, description } = props;
    return (
       <div className={styles.cardContainer}>
          <div className={styles.imageContainer}>
-            <img src={img} alt={name} />
+            {!imageLoaded && (
+               <div className={styles.loadingBox}>
+               </div>
+            )}
+            <img 
+               src={img} 
+               alt={name} 
+               onLoad={() => setImageLoaded(true)}
+               style={{ opacity: imageLoaded ? 1 : 0 }}
+            />
             <a href={instagram}>{socialIcons.instagram}</a>
          </div>
          <article>

@@ -4,6 +4,7 @@ import styles from "./gallery/_gallery.module.scss";
 import { GalleryTemplateProps } from "./types";
 
 const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
    const [events, setEvents] = useState(galleryData);
    useEffect(() => {
       if (galleryData) {
@@ -19,7 +20,16 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
                   {/* FIXME add a when backend will be ready */}
                   {/* <Link to={`/gallery/${event.eventID}`}> */}
                   <Link to={`/gallery/${i}`}>
-                     <img src={event.poster} alt={event.name} />
+                     {!imageLoaded && (
+                        <div className={styles.loadingBox}>
+                        </div>
+                     )}
+                     <img  
+                        src={event.poster} alt={event.name}
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ opacity: imageLoaded ? 1 : 0 }}
+                     />
+                     <img  />
                      <div className={styles.galleryCardsContent}>
                         <p>{event.date}</p>
                         <h4>{`Name ${i}`}</h4>

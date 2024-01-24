@@ -26,14 +26,16 @@ const Modal: React.FC<ModalProps> = ({ teacher, closeModal }) => {
             />
           </svg>
         </div>
-        <div>
-          <img className={styles.img} src={teacher.img} alt="" />
-        </div>
+        <div className={styles.scroll}>
+          <div>
+            <img className={styles.img} src={teacher.img} alt="" />
+          </div>
 
-        <div className={styles.block1}>
-          <h1 className={styles.title}>{teacher.name}</h1>
-          <p className={styles.p}>{teacher.description}</p>
-          <div className={styles.shadow}></div>
+          <div className={styles.block1}>
+            <h1 className={styles.title}>{teacher.name}</h1>
+            <p className={styles.p}>{teacher.description}</p>
+            <div className={styles.shadow}></div>
+          </div>
         </div>
       </div>
     </div>
