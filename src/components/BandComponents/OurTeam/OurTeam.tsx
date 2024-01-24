@@ -14,7 +14,7 @@ const OurTeam = () => {
 
    return (
       <SectionWrapper header={"Наша команда"} className={styles.teamWrapper}>
-         <div className={styles.teamCardsContainer}>
+         <div className={styles.teamContainer}>
             <button className={styles.buttonPrev} onClick={handlePrev}>
                <img src={icon} alt="icon" />
             </button>
@@ -26,6 +26,8 @@ const OurTeam = () => {
                // FIX_ME scroll smooth bug
                // mousewheel={true}
                // modules={[Mousewheel]}
+               freeMode
+               direction="horizontal"
                breakpoints={{
                   440: {
                      spaceBetween: 20,
@@ -36,8 +38,15 @@ const OurTeam = () => {
                }}
             >
                {cards.map((card, i) => (
-                  <SwiperSlide key={i} className={styles.teamSlider + " " + styles[card.view]}>
-                     <TeamCard video={card.video} img={card.img} role={card.role} name={card.name} view={card.view} />
+                  <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.view]}>
+                     <TeamCard
+                        key={i}
+                        video={card.video}
+                        img={card.img}
+                        role={card.role}
+                        name={card.name}
+                        view={card.view}
+                     />
                   </SwiperSlide>
                ))}
             </Swiper>

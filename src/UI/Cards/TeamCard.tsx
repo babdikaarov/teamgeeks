@@ -1,32 +1,25 @@
-import { FC } from "react";
 import styles from "./cards/_teamCard.module.scss";
 import { TeamCardProps } from "./types";
-import { useState } from "react";
+import { useMediaQuery } from "../../modules/hooks/useMediaQuery";
+import flipHanler from "../../modules/eventHandlers";
 
-const TeamCard: FC<TeamCardProps> = ({ img, role, name, video, view }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+const TeamCard: React.FC<TeamCardProps> = ({ img, role, name, video }) => {
+   const tabletSize = useMediaQuery("(max-width: 1024px)");
+   const touch = flipHanler.touchStartEnd(tabletSize);
+   const mouse = flipHanler.mouseOverLeave(tabletSize);
 
    return (
-      <div className={styles.teamCard + " " + styles[view]}>
-         <div className={styles.teamCardContent}>
-            <div className={styles.teamCardContentFront}>
-               <div className={styles.shadow}></div>
-               {!imageLoaded && (
-               <div className={styles.loadingBox}>
-               </div>
-               )}
-               <img 
-                  src={img} 
-                  alt={name}
-                  onLoad={() => setImageLoaded(true)}
-                  style={{ opacity: imageLoaded ? 1 : 0 }}
-               />
+      <div className={styles.card} {...touch} {...mouse}>
+         <div className={styles.front}>
+            <img src={img} alt={name} />
+            <div className={styles.text}>
                <h4>{name}</h4>
                <p>{role}</p>
             </div>
-            <div className={styles.teamCardContentBack + " " + styles[view]}>
-               <div className={styles.shadow}></div>
-               <video src={video} autoPlay muted loop></video>
+         </div>
+         <div className={styles.back}>
+            <video src={video} autoPlay muted loop></video>
+            <div className={styles.text}>
                <h4>{name}</h4>
                <p>{role}</p>
             </div>

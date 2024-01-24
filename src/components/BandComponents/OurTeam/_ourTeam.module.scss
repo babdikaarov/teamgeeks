@@ -6,18 +6,23 @@
 
    transition-duration: 1.5s !important;
 }
-.teamCardsContainer {
+.teamContainer {
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
    margin-left: 80px;
    @media screen and (max-width: 1024px) {
       margin-left: 0;
    }
+   height: 300px;
 }
 
-.teamSlider {
+.teamContainer::-webkit-scrollbar {
+   display: none;
+}
+
+.cardContainer {
    border-radius: 16px;
-   height: 340px;
+   overflow: hidden;
 }
 
 .portrait {
@@ -34,14 +39,6 @@
       max-width: 440px;
       max-height: 269px;
    }
-}
-
-.teamCardsContainer::-webkit-scrollbar {
-   display: none;
-}
-
-.lastCardPadding {
-   width: 100px;
 }
 
 .buttonPrev {
