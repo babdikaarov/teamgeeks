@@ -1,11 +1,15 @@
 .clientCard {
-   display: inline;
+   display: flex;
    border-radius: 15px;
+   width: 148px;
    height: 76px;
-}
-.png {
+   // FIXME check with designers
    object-fit: contain;
+   // object-fit: cover;
 }
-.NoPng {
-   object-fit: cover;
-}
+// .png {
+//    object-fit: contain;
+// }
+// .NoPng {
+//    object-fit: cover;
+// }

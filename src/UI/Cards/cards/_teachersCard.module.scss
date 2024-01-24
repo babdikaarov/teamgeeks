@@ -233,33 +233,36 @@
    }
 }
 
-.imageContainer a svg {
+.imageContainer a {
    border-top-right-radius: 6px;
    left: 0;
    bottom: 0;
    position: absolute;
-   fill: #fcfcfc;
-   width: 36px;
-   height: 36px;
-   @include xxl {
-      width: 30px;
-      height: 30px;
-   }
-   @include xl {
-      width: 29px;
-      height: 29px;
-   }
-   @media screen and (max-width: 892px) {
-      width: 24px;
-      height: 24px;
-   }
-   @include md {
-      width: 21px;
-      height: 21px;
-   }
-   @include sm {
-      width: 17px;
-      height: 17px;
+   z-index: 5;
+   svg {
+      fill: #fcfcfc;
+      width: 36px;
+      height: 36px;
+      @include xxl {
+         width: 30px;
+         height: 30px;
+      }
+      @include xl {
+         width: 29px;
+         height: 29px;
+      }
+      @media screen and (max-width: 892px) {
+         width: 24px;
+         height: 24px;
+      }
+      @include md {
+         width: 21px;
+         height: 21px;
+      }
+      @include sm {
+         width: 17px;
+         height: 17px;
+      }
    }
 }
 

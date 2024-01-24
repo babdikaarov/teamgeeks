@@ -10,7 +10,7 @@ const ClientCard: FC<ClientCardProps> = ({ card }) => {
 
    return (
       <a href={card.link} target="blank">
-         <img className={styles.clientCard + checkFileExtension(card.src)} src={card.src} alt={card.alt} />
+         <img className={styles.clientCard + " " + checkFileExtension(card.src)} src={card.src} alt={card.alt} />
       </a>
    );
 };
