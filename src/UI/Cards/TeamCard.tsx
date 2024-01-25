@@ -7,7 +7,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ img, role, name, video }) => {
    const tabletSize = useMediaQuery("(max-width: 1024px)");
    const touch = flipHanler.touchStartEnd(tabletSize);
    const mouse1v = flipHanler.mouseOverLeave(tabletSize);
-   const mouse2v = flipHanler.mouseDownUp(tabletSize);
+   // const mouse2v = flipHanler.mouseDownUp(tabletSize);
 
    return (
       <div className={styles.card} {...touch} {...mouse1v}>

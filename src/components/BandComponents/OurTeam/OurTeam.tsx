@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation } from "swiper/modules";
+// import { FreeMode, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import styles from "./_ourTeam.module.scss";
 import "swiper/css";
 import TeamCard from "../../../UI/Cards/TeamCard";
