@@ -50,6 +50,24 @@ export const mouseDownUp = (tabletSize: boolean) => {
    return { onMouseDown: mouseDown, onMouseUp: mouseUp };
 };
 
+// export const touchStartEnd = (tabletSize: boolean) => {
+//    const handleStart: React.TouchEventHandler<HTMLDivElement> = (e) => {
+//       if (tabletSize) {
+//          const card = e.currentTarget as HTMLDivElement;
+//          card.setAttribute("flipTouch", "");
+//       }
+//    };
+
+//    const handleEnd: React.TouchEventHandler<HTMLDivElement> = (e) => {
+//       if (tabletSize) {
+//          const card = e.currentTarget as HTMLDivElement;
+//          card.removeAttribute("flipTouch");
+//       }
+//    };
+
+//    return { onTouchStart: handleStart, onTouchEnd: handleEnd };
+// };
+
 export default {
    mouseOverLeave,
    touchStartEnd,
