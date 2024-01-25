@@ -33,8 +33,25 @@ export const mouseOverLeave = (tabletSize: boolean) => {
 
    return { onMouseEnter: mouseOver, onMouseLeave: mouseLeave };
 };
+export const mouseDownUp = (tabletSize: boolean) => {
+   const mouseDown: React.MouseEventHandler<HTMLDivElement> = (e) => {
+      if (!tabletSize) {
+         const card = e.currentTarget as HTMLDivElement;
+         card.setAttribute("flipMouse", "");
+      }
+   };
+
+   const mouseUp: React.MouseEventHandler<HTMLDivElement> = (e) => {
+      if (!tabletSize) {
+         const card = e.currentTarget as HTMLDivElement;
+         card.removeAttribute("flipMouse");
+      }
+   };
+   return { onMouseDown: mouseDown, onMouseUp: mouseUp };
+};
 
 export default {
    mouseOverLeave,
    touchStartEnd,
+   mouseDownUp,
 };

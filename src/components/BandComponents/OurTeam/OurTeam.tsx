@@ -1,12 +1,11 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation } from "swiper/modules";
 import styles from "./_ourTeam.module.scss";
 import "swiper/css";
 import TeamCard from "../../../UI/Cards/TeamCard";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import cards from "../../../tempData/getTeamList";
 import icon from "../../../assets/icons/teamArrow.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-// FIX_ME scroll smooth bug
-// import { Mousewheel } from "swiper/modules";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
 const OurTeam = () => {
@@ -20,14 +19,12 @@ const OurTeam = () => {
             </button>
             <Swiper
                ref={sliderRef}
-               loop={true}
-               slidesPerView={"auto"}
                spaceBetween={30}
-               // FIX_ME scroll smooth bug
-               // mousewheel={true}
-               // modules={[Mousewheel]}
-               freeMode
-               direction="horizontal"
+               slidesPerView={"auto"}
+               // freeMode={true}
+               loop
+               // modules={[FreeMode, Navigation]}
+               modules={[Navigation]}
                breakpoints={{
                   440: {
                      spaceBetween: 20,

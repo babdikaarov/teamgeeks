@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { FreeMode, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./_concerts.module.scss";
@@ -11,9 +11,7 @@ import icon from "../../../assets/icons/bigArrow";
 
 const Concert = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
-
    const concertImages = tempData;
-
    const mobileArray = concertImages.slice(0, 3);
 
    return (
@@ -25,10 +23,11 @@ const Concert = () => {
                <>
                   <Swiper
                      spaceBetween={10}
-                     loop={true}
-                     slidesPerView={"auto"}
+                     slidesPerView={3}
+                     freeMode={true}
+                     loop
+                     modules={[FreeMode, Navigation]}
                      navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
-                     modules={[Navigation]}
                      className={styles.concertSwiper}
                   >
                      {concertImages.map((image, index) => (
