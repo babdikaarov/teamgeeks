@@ -4,6 +4,11 @@ export const mouseOverLeave = (tabletSize: boolean) => {
 
       if (tabletSize) {
          const card = e.currentTarget as HTMLDivElement;
+         const grandparent = card.parentElement?.parentElement;
+         if (grandparent) {
+            const firstSibling = grandparent.childNodes[0].childNodes[0] as HTMLDivElement;
+            firstSibling.classList.remove("firstAnimate");
+         }
          card.setAttribute("flipMouse", "");
       }
    };
@@ -20,7 +25,7 @@ export const mouseOverLeave = (tabletSize: boolean) => {
    return { onMouseEnter: mouseOver, onMouseLeave: mouseLeave };
 };
 
-export const mouseTouchClickStart = (tabletSize: boolean) => {
+export const mouseClickOut = (tabletSize: boolean) => {
    const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
       if (tabletSize) {
          const card = e.currentTarget as HTMLDivElement;
@@ -28,6 +33,8 @@ export const mouseTouchClickStart = (tabletSize: boolean) => {
          const hasAttribute = card.hasAttribute("flipTouch");
          const grandparent = card.parentElement?.parentElement;
          if (grandparent) {
+            const firstSibling = grandparent.childNodes[0].childNodes[0] as HTMLDivElement;
+            firstSibling.classList.remove("firstAnimate");
             Array.from(grandparent.childNodes).forEach((child: Node) => {
                const sibling = child.childNodes[0] as HTMLDivElement;
                sibling.removeAttribute("flipTouch");
@@ -55,7 +62,7 @@ export const mouseTouchClickStart = (tabletSize: boolean) => {
 
 export default {
    mouseOverLeave,
-   mouseTouchClickStart,
+   mouseClickOut,
 };
 
 // export const touchStartEnd = (tabletSize: boolean) => {

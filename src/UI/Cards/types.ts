@@ -12,6 +12,7 @@ export interface TeamCardProps {
    role: string;
    name: string;
    view: string;
+   animate: boolean;
 }
 
 export interface CollabCardProps extends React.HTMLAttributes<HTMLDivElement> {

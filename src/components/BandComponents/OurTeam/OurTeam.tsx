@@ -35,7 +35,8 @@ const OurTeam = () => {
                {cards.map((card, i) => (
                   <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.view]}>
                      <TeamCard
-                        key={i}
+                        // key={i}
+                        animate={i === 0}
                         video={card.video}
                         img={card.img}
                         role={card.role}

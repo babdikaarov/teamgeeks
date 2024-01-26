@@ -37,6 +37,8 @@
    }
 }
 
+// animation rule for  firstAnimate is in generals.scss
+
 .card,
 .back,
 .front {
@@ -94,6 +96,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 16px;
    }
 }
 
