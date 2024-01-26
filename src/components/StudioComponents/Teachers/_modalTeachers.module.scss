@@ -18,26 +18,10 @@
       font-weight: 700;
       line-height: 20px;
       width: 100%;
-      text-align: center;      
+      text-align: center;
    }
 }
-.shadow {
-   position: absolute;
-   width: 700px;
-   height: 54px;
-   background: linear-gradient(0deg, #404040 0%, rgba(80, 80, 80, 0) 100%);
-   margin: -63px 0;
-   @include xl {
-      width: 600px;
-      margin: -61px 0;
-   }
-   @include lg {
-      width: 460px;
-   }
-   @include md {
-      width: 345px;
-   }
-}
+
 .scroll {
    display: flex;
    @include md {
@@ -54,9 +38,9 @@
    text-align: left;
    overflow: auto;
    margin: 10px 0;
-   
+
    &::-webkit-scrollbar {
-     width: 0;
+      width: 0;
    }
    @include xl {
       width: 568px;
@@ -102,10 +86,10 @@
 }
 @keyframes slideIn {
    from {
-     opacity: 0;
+      opacity: 0;
    }
    to {
-     opacity: 1;
+      opacity: 1;
    }
 }
 .modale {
@@ -140,10 +124,10 @@
 
 @keyframes fadeIn {
    from {
-     opacity: 0;
+      opacity: 0;
    }
    to {
-     opacity: 1;
+      opacity: 1;
    }
 }
 

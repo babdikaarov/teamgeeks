@@ -26,7 +26,7 @@ const OurStudents = () => {
                <>
                   <Swiper
                      slidesPerView={3}
-                     spaceBetween={30}
+                     spaceBetween={10}
                      freeMode={true}
                      loop
                      modules={[FreeMode, Navigation]}
