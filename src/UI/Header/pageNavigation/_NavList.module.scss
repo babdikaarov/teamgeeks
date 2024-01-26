@@ -28,8 +28,15 @@
 
 .navigation a:active {
    color: $hover_yellow;
+   transition: 0.5s;
 }
 
 .navigation a:hover {
    color: $hover_yellow;
+   transition: 0.5s;
+
+}
+.navigation a {
+   transition: 0.5s;
+
 }

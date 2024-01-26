@@ -30,8 +30,11 @@
    fill: $color_black;
    background: $color_yellow;
    box-shadow: -10px -12px 100px 4px rgba(255, 207, 0, 0.73);
+   transition: 0.5s;
 }
-
+.button button {
+   transition: 0.5s;
+}
 // studio button
 
 .buttonBlue {
@@ -60,6 +63,10 @@
 
 .buttonBlue:hover button {
    box-shadow: 0px -12px 150px 0px rgba(168, 208, 239, 0.63);
+   transition: 0.5s;
+}
+.buttonBlue button {
+   transition: 0.5s;
 }
 .buttonBlue:active button {
    border-color: $color_white;

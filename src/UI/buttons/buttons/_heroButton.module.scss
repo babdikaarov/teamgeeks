@@ -28,8 +28,10 @@
 .band:hover {
    color: $color_black;
    box-shadow: -10px -12px 100px 4px rgba(255, 207, 0, 0.73);
+   &:active{
+      @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
+   }
 }
-
 .studio {
    @include buttons($fill: $color_white, $color: $color_white, $background: $color_blue, $border: $color_blue);
    display: block;
@@ -53,6 +55,7 @@
 }
 
 .studio:hover {
+   transition: none;
    border: white 1px solid;
    border-radius: 16px;
 }

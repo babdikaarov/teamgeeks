@@ -73,6 +73,7 @@
     .footerLogos {
       order: 2;
     }
+    
 
     .footerHide {
       display: none;
@@ -131,8 +132,21 @@
   white-space: pre;
 }
 
-.footer a:hover {
+
+.footer a:hover{
   color: $hover_yellow;
+  transition: 0.5s;
+}
+.footer h4:hover{
+  color: $hover_yellow;
+  transition: 0.5s;
+}
+.footer h4{
+  transition: 0.5s;
+}
+
+.footer a{
+  transition: 0.5s;
 }
 
 .footerInfo {
