@@ -11,6 +11,7 @@
       margin-left: 0;
    }
    height: 300px;
+   user-select: none !important;
 }
 
 .teamContainer::-webkit-scrollbar {
@@ -23,23 +24,20 @@
 }
 
 .portrait {
+   min-width: 230px;
    max-width: 230px;
    @include sm {
+      min-width: 187px;
       max-width: 187px;
       max-height: 269px;
    }
 }
 
 .landscape {
-   // max-width: 230px;
-   // @include sm {
-   //    max-width: 187px;
-   //    max-height: 269px;
-   // }
-   min-width: 730px;
-   max-width: 730px;
+   min-width: calc(230px * 2);
+   max-width: calc(230px * 2);
    @include sm {
-      min-width: 440px;
+      min-width: calc(187px * 2);
       max-height: 269px;
    }
 }

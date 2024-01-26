@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { FreeMode, Navigation } from "swiper/modules";
 import { Navigation } from "swiper/modules";
 import styles from "./_ourTeam.module.scss";
 import "swiper/css";
@@ -22,9 +21,7 @@ const OurTeam = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
-               // freeMode={true}
                loop
-               // modules={[FreeMode, Navigation]}
                modules={[Navigation]}
                breakpoints={{
                   440: {
