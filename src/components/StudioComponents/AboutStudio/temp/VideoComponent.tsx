@@ -6,7 +6,7 @@ const VideoComponent = () => {
       <div>
          <iframe
             className={styles.video}
-            src={`${getCoolStudioData.video.youtubeUrl}&controls=0&showinfo=0`}
+            src={`${getCoolStudioData.video.youtubeUrl}`}
             title="YouTube video player"
          ></iframe>
       </div>
