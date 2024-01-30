@@ -40,3 +40,14 @@
 .pageLogo:hover .hoverStateBackground {
    opacity: 1;
 }
+
+.pageLogo .CoolIcons {
+   transform: translateX(0);
+   transition: transform 0.5s ease-in-out; 
+ }
+ 
+ .pageLogo:hover .CoolIcons {
+   transform: translateX(-3px); 
+ }
+
+ 

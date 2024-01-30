@@ -25,7 +25,7 @@ const Logo: FC<LogoProps> = ({ bandPage, footerHide }) => {
          className={styles.pageLogo + " " + footerHide}
       >
          <div className={`${styles.hoverStateBackground} ${!bandPage ? styles.studioLogo : styles.mainLogo}`}></div>
-         <img src={bandPage ? blogo : slogo} alt={bandPage ? "Cool Band" : "Cool Studio"} />
+         <img className={styles.CoolIcons} src={bandPage ? blogo : slogo} alt={bandPage ? "Cool Band" : "Cool Studio"} />
       </NavLink>
    );
 };

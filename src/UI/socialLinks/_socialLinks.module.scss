@@ -20,4 +20,8 @@
 }
 .socialLinks li a:hover svg path {
    fill: $hover_yellow;
+   transition: 0.5s;
+}
+.socialLinks li a svg path{
+   transition: 0.5s;
 }
