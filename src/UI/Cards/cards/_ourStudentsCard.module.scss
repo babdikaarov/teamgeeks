@@ -2,14 +2,14 @@
 
 .StudentCard {
    position: relative;
-   width: 380px;
+   max-width: 380px;
    height: 248px;
    border-radius: 10px;
    overflow: hidden;
    transition: all 0.3s ease-in-out;
    @include xl {
       background: #353535;
-      width: 295px;
+      max-width: 295px;
       height: 200px;
    }
    @include sm {

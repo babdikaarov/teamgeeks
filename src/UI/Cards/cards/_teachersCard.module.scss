@@ -187,6 +187,7 @@
 .imageContainer {
    height: 240px;
    position: relative;
+
    @include xxl {
       height: 210px;
    }

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useModalCotroller = () => {
    const dialogRef = useRef<HTMLDialogElement>(null);
-
+   const [isOpen, setIsOpen] = useState(false);
    const handleClose: EventListener = useCallback(
       (event) => {
          const modal = event.currentTarget as HTMLDialogElement;
@@ -14,6 +14,7 @@ export const useModalCotroller = () => {
                () => {
                   modal.removeAttribute("closing");
                   modal.close();
+                  setIsOpen(false);
                },
                { once: true },
             );
@@ -29,6 +30,7 @@ export const useModalCotroller = () => {
          modal.show();
       } else {
          // fixME from showModal() to show() bug apperance on students card
+         setIsOpen(true);
          modal.showModal();
       }
    }, []);
@@ -38,14 +40,16 @@ export const useModalCotroller = () => {
 
       if (dialogElement) {
          dialogElement.addEventListener("click", handleClose);
+         setIsOpen(true);
       }
 
       return () => {
          if (dialogElement) {
             dialogElement.removeEventListener("click", handleClose);
+            setIsOpen(false);
          }
       };
-   }, [dialogRef, handleClose]);
+   }, [dialogRef, handleClose, isOpen]);
 
-   return { dialogRef, openModal };
+   return { dialogRef, openModal, isOpen };
 };

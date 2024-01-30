@@ -2,17 +2,16 @@
 
 .ConcertsCard {
    position: relative;
-   width: 380px;
+   max-width: 380px;
    height: 220px;
    border-radius: 16px;
    overflow: hidden;
    @include xl {
-      width: 295px;
+      max-width: 295px;
       height: 175px;
    }
    @include sm {
       max-width: 358px;
-      width: 100%;
       height: 200px;
    }
 }
