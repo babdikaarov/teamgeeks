@@ -1,12 +1,11 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import styles from "./_ourTeam.module.scss";
 import "swiper/css";
 import TeamCard from "../../../UI/Cards/TeamCard";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import cards from "../../../tempData/getTeamList";
 import icon from "../../../assets/icons/teamArrow.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-// FIX_ME scroll smooth bug
-// import { Mousewheel } from "swiper/modules";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
 const OurTeam = () => {
@@ -20,14 +19,10 @@ const OurTeam = () => {
             </button>
             <Swiper
                ref={sliderRef}
-               loop={true}
-               slidesPerView={"auto"}
                spaceBetween={30}
-               // FIX_ME scroll smooth bug
-               // mousewheel={true}
-               // modules={[Mousewheel]}
-               freeMode
-               direction="horizontal"
+               slidesPerView={"auto"}
+               loop
+               modules={[Navigation]}
                breakpoints={{
                   440: {
                      spaceBetween: 20,
@@ -40,7 +35,8 @@ const OurTeam = () => {
                {cards.map((card, i) => (
                   <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.view]}>
                      <TeamCard
-                        key={i}
+                        // key={i}
+                        animate={i === 0}
                         video={card.video}
                         img={card.img}
                         role={card.role}

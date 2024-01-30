@@ -9,7 +9,7 @@ interface ModalYouTubeProps {
 }
 
 const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) => {
-   const { dialogRef } = useModalCotroller();
+   const { dialogRef, isOpen } = useModalCotroller();
    const youtubeParams = {
       playlist: allIDS,
       loop: 1,
@@ -20,13 +20,15 @@ const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) =>
 
    return (
       <dialog id={id} className={styles.modal} ref={dialogRef}>
-         <iframe
-            width="100%"
-            height="100%"
-            src={`https://www.youtube-nocookie.com/embed/${youTubeId}?${createParameterString(youtubeParams)}`}
-            title="YouTube video player"
-            allowFullScreen
-         ></iframe>
+         {isOpen && (
+            <iframe
+               width="100%"
+               height="100%"
+               src={`https://www.youtube-nocookie.com/embed/${youTubeId}?${createParameterString(youtubeParams)}`}
+               title="YouTube video player"
+               allowFullScreen
+            ></iframe>
+         )}
       </dialog>
       // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
    );

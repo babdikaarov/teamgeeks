@@ -84,6 +84,10 @@
       }
    }
    & .StudentsWord {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
       font-weight: 400;
       font-size: 15px;
       margin: 0 16px;

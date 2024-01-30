@@ -10,6 +10,7 @@ import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
 import Modal from "./Modal";
 import { TeacherType } from "./types";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+import contacts from "../../../tempData/contacts.json";
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
@@ -56,7 +57,7 @@ const Teachers = () => {
                {icon}
             </button>
          </div>
-         <StudioContactUsButton whatsapp={""} className={styles.marginAuto} />
+         <StudioContactUsButton whatsapp={contacts.studioNumber} className={styles.marginAuto} />
          {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
       </SectionWrapper>
    );

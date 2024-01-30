@@ -2,10 +2,8 @@
 
 .teamWrapper {
    margin-right: 0 !important;
-   // FIX_ME scroll is not smooth animation
-
-   transition-duration: 1.5s !important;
 }
+
 .teamContainer {
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
@@ -14,6 +12,7 @@
       margin-left: 0;
    }
    height: 300px;
+   user-select: none !important;
 }
 
 .teamContainer::-webkit-scrollbar {
@@ -26,17 +25,20 @@
 }
 
 .portrait {
+   min-width: 230px;
    max-width: 230px;
    @include sm {
+      min-width: 187px;
       max-width: 187px;
       max-height: 269px;
    }
 }
 
 .landscape {
-   max-width: 730px;
+   min-width: calc(230px * 2);
+   max-width: calc(230px * 2);
    @include sm {
-      max-width: 440px;
+      min-width: calc(187px * 2);
       max-height: 269px;
    }
 }

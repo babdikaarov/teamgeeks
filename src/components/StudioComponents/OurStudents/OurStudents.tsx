@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { FreeMode, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./_ourstudents.module.scss";
@@ -25,11 +25,12 @@ const OurStudents = () => {
             ) : (
                <>
                   <Swiper
+                     slidesPerView={3}
                      spaceBetween={10}
-                     slidesPerView={"auto"}
+                     freeMode={true}
+                     loop
+                     modules={[FreeMode, Navigation]}
                      navigation={{ nextEl: "#btn11", prevEl: "#btn22" }}
-                     modules={[Navigation]}
-                     loop={true}
                      className={styles.ourStudentsSwiper}
                   >
                      {[...data, ...data].map((url, index) => (
