@@ -5,13 +5,14 @@
    @include xl {
       font-size: 24px;
    }
+}
 
-   @include sm {
+@media screen and (max-width: 390px) {
+   .whyUs h2 {
       font-size: 16px;
       margin-bottom: 24px;
    }
 }
-
 .WhyUs {
    max-width: 1240px;
    margin: 0 auto;
