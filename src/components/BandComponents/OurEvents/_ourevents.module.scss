@@ -1,3 +1,49 @@
+.ourEvent {
+   position: relative;
+   overflow: hidden;
+   width: 100vw;
+   left: 50%;
+   transform: translateX(-50%);
+   margin-inline: 0;
+}
+
+.scroller[data-scroller="scroller"] {
+   max-width: 100%;
+}
+
+.scroller {
+   position: relative;
+   overflow: hidden;
+}
+
+.scrollerInner {
+   // adjust adnimation duration here
+   height: 400px;
+   display: flex;
+   gap: 16px;
+   width: max-content;
+   flex-wrap: nowrap;
+   animation: scroll 25s var(--_animation-direction, forwards) linear infinite;
+   @media screen and (max-width: 1024px) {
+      height: 216px;
+      gap: 8px;
+   }
+}
+
+.scroller[data-direction="right"] {
+   --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+   --_animation-direction: forwards;
+}
+
+@keyframes scroll {
+   to {
+      transform: translate(calc(-25% - 0.5rem));
+   }
+}
+
 @media screen and (max-width: 576px) {
    .ourEvent h6 {
       font-size: 14px;
@@ -11,16 +57,8 @@
    transform: rotate(0.5turn);
 }
 
-.sliderEventsContainer {
-   position: relative;
-   overflow: hidden;
-   width: 100vw;
-   left: 50%;
-   transform: translateX(-50%);
-}
-
-.sliderEventsContainer::after,
-.sliderEventsContainer::before {
+.scroller::after,
+.scroller::before {
    content: "";
    display: block;
    background: #151515;
@@ -37,48 +75,13 @@
    }
 }
 
-.sliderEventsContainer::after {
+.scroller::after {
    top: 0;
    left: 50%;
    transform: translate(-50%, -50%);
 }
-.sliderEventsContainer::before {
+.scroller::before {
    bottom: 0;
    left: 50%;
    transform: translate(-50%, 50%);
-}
-
-.sliderEvents {
-   height: 400px;
-   display: flex;
-   gap: 16px;
-   animation: scroll 13s linear infinite;
-   @media screen and (max-width: 1024px) {
-      height: 216px;
-      gap: 8px;
-   }
-}
-
-// FIXME checkedge cases if images more than 5 pc.
-@keyframes scroll {
-   0% {
-      transform: translateX(-130px);
-   }
-   100% {
-      transform: translateX(calc(-400px * 5));
-   }
-}
-
-@media screen and (max-width: 1024px) {
-   @keyframes scroll {
-      0% {
-         transform: translateX(-180px);
-      }
-      100% {
-         transform: translateX(calc(-400px * 3));
-      }
-   }
-}
-.our-events-container::-webkit-scrollbar {
-   display: none;
 }
