@@ -7,7 +7,7 @@
 }
 
 @mixin md {
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 778px) {
       @content;
    }
 }
