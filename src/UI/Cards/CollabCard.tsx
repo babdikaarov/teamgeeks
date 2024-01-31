@@ -1,6 +1,7 @@
 import styles from "./cards/_collabCard.module.scss";
 import { CollabCardProps } from "./types";
 
+
 const CollabCard: React.FC<CollabCardProps> = ({ src, alt, firstName, lastName, ...props }) => {
    return (
       <div className={styles.cardContainer} {...props}>
@@ -11,5 +12,6 @@ const CollabCard: React.FC<CollabCardProps> = ({ src, alt, firstName, lastName, 
       </div>
    );
 };
+
 
 export default CollabCard;

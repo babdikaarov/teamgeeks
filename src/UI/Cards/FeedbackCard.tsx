@@ -1,22 +1,18 @@
 import styles from "./cards/_feedbackCard.module.scss";
+import { FeedbackCardProps } from "./types";
 
-type CardProps = {
-   img: string;
-   name: string;
-   word: string;
-};
 
-const StudentsFeedbackCard = (card: CardProps) => {
-   // console.log(`${card.name} symbol # ${card.word.length}`);
+const StudentsFeedbackCard: React.FC<FeedbackCardProps> = ({img, name, word}) => {
    return (
       <div className={styles.StudentsFeedbackCard}>
-         <img src={card.img} />
+         <img src={img} />
          <div className={styles.StudentsText}>
-            <div className={styles.StudentsName}>{card.name}</div>
-            <div className={styles.StudentsWord}>{card.word}</div>
+            <div className={styles.StudentsName}>{name}</div>
+            <div className={styles.StudentsWord}>{word}</div>
          </div>
       </div>
    );
 };
+
 
 export default StudentsFeedbackCard;

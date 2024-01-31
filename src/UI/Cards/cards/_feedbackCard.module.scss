@@ -1,5 +1,6 @@
 @import "../../../scss/partials/mixin";
 
+
 .StudentsFeedbackCard {
    width: 360px;
    height: 525px;
@@ -80,7 +81,6 @@
       @include sm {
          font-weight: 500;
          font-size: 15px;
-         margin: 5px;
       }
    }
    & .StudentsWord {
@@ -109,7 +109,8 @@
       @include sm {
          font-weight: 400;
          font-size: 12px;
-         margin: 5px;
+         margin: 1px;
+         padding: 0px 10px;
       }
    }
 }

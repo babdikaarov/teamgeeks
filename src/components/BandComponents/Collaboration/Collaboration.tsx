@@ -1,42 +1,61 @@
-import styles from "./_collaboration.module.scss";
-import cardsData from "../../../tempData/getCollabData";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import CollabCard from "../../../UI/Cards/CollabCard";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
-import icon from "../../../assets/icons/teamArrow.png";
-// FIX_ME scroll
-// import { Mousewheel } from "swiper/modules";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import styles from "./_collaboration.module.scss";
+import CollabCard from "../../../UI/Cards/CollabCard";
+import cards from "../../../tempData/getCollabData";
+import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+
 
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
    return (
       <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id="collaboration">
-         <div className={styles.collabSwiperContainer}>
+         <div className={styles.collabContainer}>
             <button className={styles.buttonPrev} onClick={handlePrev}>
-               <img src={icon} alt="" />
+               {icon}
             </button>
             <Swiper
                ref={sliderRef}
-               loop={true}
-               slidesPerView={"auto"}
                spaceBetween={30}
-               // FIX_ME scroll is not smooth
-               // mousewheel={true}
-               // modules={[Mousewheel]}
+               slidesPerView={"auto"}
+               mousewheel
+               modules={[Mousewheel, Navigation]}
                breakpoints={{
-                  440: {
-                     spaceBetween: 20,
+                  1440: {
+                     spaceBetween: 30
+                  },
+                  1200: {
+                     spaceBetween: 30
+                  },
+                  1024: {
+                     spaceBetween: 16
+                  },
+                  892: {
+                     spaceBetween: 16
+                  },
+                  768: {
+                     spaceBetween: 16
+                  },
+                  576: {
+                     spaceBetween: 16
+                  },
+                  390: {
+                     spaceBetween: 10,
+                  },
+                  320: {
+                     spaceBetween: 10,
                   },
                   1: {
-                     spaceBetween: 16,
-                  },
+                     spaceBetween: 10,
+                  }
                }}
             >
                <div>
-                  {cardsData?.map((card, i) => (
+                  {cards?.map((card, i) => (
                      /* FIX_ME construct logic for partrait and landscape verify with team */
                      <SwiperSlide key={i} className={styles.collabCardsContainer}>
                         <CollabCard
@@ -44,17 +63,18 @@ const Collaboration = () => {
                            alt={card.alt}
                            firstName={card.firstName}
                            lastName={card.lastName}
-                        ></CollabCard>
+                        />
                      </SwiperSlide>
                   ))}
                </div>
             </Swiper>
             <button className={styles.buttonNext} onClick={handleNext}>
-               <img src={icon} alt="" />
+               {icon}
             </button>
          </div>
       </SectionWrapper>
    );
 };
+
 
 export default Collaboration;

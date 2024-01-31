@@ -5,12 +5,12 @@ import Murtaz4 from "./../assets/studentsFeedback/Murtaz4.png";
 import Asel5 from "./../assets/studentsFeedback/Asel5.png";
 import Saykal6 from "./../assets/studentsFeedback/Saykal6.png";
 
+
 const feedbackList = [
    {
       img: Damir1,
       name: "Дамир",
-      // word: "Для меня Coolstudio это способ проявить творчество. Мне нравится атмосфера и то, как проходят уроки",
-      word: "Для меня Coolstudio это способ проявить творчество. Мне нравится атмосфера и то, как проходят уроки Для меня Coolstudio это способ проявить творчество",
+      word: "Для меня Coolstudio это способ проявить творчество. Мне нравится атмосфера и то, как проходят уроки",
    },
    {
       img: Rustam2,
@@ -38,5 +38,6 @@ const feedbackList = [
       word: "Coolstudio - это самое лучшее, что происходило в моей жизни. Здесь всегда царит дружеский и крутой вайб",
    },
 ];
+
 
 export default feedbackList;
