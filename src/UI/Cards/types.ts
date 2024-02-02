@@ -30,6 +30,12 @@ export interface TeacherCardProps {
    description: string;
 }
 
+export interface FeedbackCardProps {
+   img: string;
+   name: string;
+   word: string;
+}
+
 export interface CardProps {
    img: string;
    header: string;

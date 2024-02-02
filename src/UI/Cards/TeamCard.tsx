@@ -3,6 +3,7 @@ import { TeamCardProps } from "./types";
 import { useMediaQuery } from "../../modules/hooks/useMediaQuery";
 import flipHanler from "../../modules/eventHandlers";
 
+
 const TeamCard: React.FC<TeamCardProps> = ({ img, role, name, video, animate }) => {
    const tabletSize = useMediaQuery("(max-width: 1024px)");
    const touch = flipHanler.mouseClickOut(tabletSize);
@@ -27,5 +28,6 @@ const TeamCard: React.FC<TeamCardProps> = ({ img, role, name, video, animate }) 
       </div>
    );
 };
+
 
 export default TeamCard;

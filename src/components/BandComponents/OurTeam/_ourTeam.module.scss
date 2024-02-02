@@ -1,5 +1,6 @@
 @import "../../../scss/partials/mixin";
 
+
 .teamWrapper {
    margin-right: 0 !important;
 }
@@ -8,11 +9,14 @@
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
    margin-left: 80px;
+   height: 340px;
+   user-select: none !important;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
    @media screen and (max-width: 1024px) {
       margin-left: 0;
    }
-   height: 300px;
-   user-select: none !important;
 }
 
 .teamContainer::-webkit-scrollbar {
@@ -43,26 +47,28 @@
    }
 }
 
-.buttonPrev {
+.buttonPrev,
+.buttonNext {
    display: none;
-   rotate: 180deg;
-   position: absolute;
-   z-index: 2;
-   left: -12px;
-   top: 50%;
-
+   margin-right: 20px;
    @media screen and (max-width: 1024px) {
       display: block;
+   }
+   @include sm {
+      display: block;
+      width: 10px;
+      height: 20px;
+      margin-right: 10px;
+   }
+   & svg {
+      @include sm {
+         width: 10px;
+         height: 20px;
+      }
    }
 }
 
 .buttonNext {
-   display: none;
-   position: absolute;
-   z-index: 2;
-   right: 8px;
-   top: 50%;
-   @media screen and (max-width: 1024px) {
-      display: block;
-   }
+   rotate: 180deg;
+   margin-left: 10px;
 }

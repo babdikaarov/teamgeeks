@@ -1,5 +1,6 @@
 @import "../../../scss/partials/mixin";
 
+
 .feedbackContainer {
    margin: auto;
    display: flex;
@@ -28,9 +29,13 @@
       position: relative;
       width: 320px;
    }
+   @media screen and (max-width: 390px) {
+      position: relative;
+      width: 290px;
+   }
 }
 
-.studentsSwiper {
+.feedbackSwiper {
    width: 1095px;
    @media screen and (max-width: 1440px) {
       width: 1040px;
@@ -52,6 +57,9 @@
    }
    @include sm {
       width: 320px;
+   }
+   @media screen and (max-width: 390px) {
+      width: 300px;
    }
 }
 
@@ -88,6 +96,9 @@
       background: rgba(255, 255, 255, 0.35);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(10px);
+   }
+   @media screen and (max-width: 390px) {
+      left: 10px;
    }
    & svg {
       width: 100%;
@@ -132,6 +143,9 @@
       background: rgba(255, 255, 255, 0.35);
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(10px);
+   }
+   @media screen and (max-width: 390px) {
+      right: 15px;
    }
    & svg {
       rotate: 180deg;
