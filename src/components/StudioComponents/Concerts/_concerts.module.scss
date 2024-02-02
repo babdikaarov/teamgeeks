@@ -12,11 +12,14 @@
    max-width: 1240px;
    padding-inline: 30px;
    @include sm {
+      // width: fit-content;
       padding-inline: 0;
       display: flex;
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      padding-inline: 0px;
+      max-width: 358px;
    }
 }
 
@@ -36,12 +39,11 @@
 .watchmore {
    display: flex;
    position: absolute;
-   right: 40px;
    margin-top: 10px;
    text-decoration: underline;
    @include sm {
       position: relative;
-      right: -110px;
+      align-self: flex-end;
       font-size: 14px;
       font-weight: 400;
       line-height: 21px;
