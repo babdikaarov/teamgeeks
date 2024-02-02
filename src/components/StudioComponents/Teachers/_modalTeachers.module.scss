@@ -21,6 +21,22 @@
       text-align: center;
    }
 }
+.shadow {
+   position: absolute;
+   height: 54px;
+   background: linear-gradient(0deg, #404040 0%, rgba(80, 80, 80, 0) 100%);
+   margin: -63px 0;
+   @include xl {
+      width: 600px;
+      margin: -61px 0;
+   }
+   @include lg {
+      width: 460px;
+   }
+   @include md {
+      width: 345px;
+   }
+}
 
 .scroll {
    display: flex;

@@ -25,7 +25,7 @@ const Teachers = () => {
    }, []);
 
    return (
-      <SectionWrapper header="Преподаватели" id="teachers">
+      <SectionWrapper header="Команда Cool  Studio" id="teachers">
          <div className={styles.teacherContainer}>
             <button className={styles.buttonPrev} onClick={handlePrev}>
                {icon}
