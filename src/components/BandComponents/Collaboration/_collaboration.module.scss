@@ -1,13 +1,13 @@
 @import "../../../scss/partials/mixin";
 
-
 .collabWrapper {
-   margin-right: 0;
    transition-duration: 1.5s !important;
+   --element-indent: calc(calc(55px * 2) - calc(20px * 2));
    height: 468px;
-   h2 {
-      margin-right: 20px;
+   @media (min-width: 1025) {
+      margin-right: 0 !important;
    }
+
    @include sm {
       height: 350px;
    }
@@ -17,8 +17,12 @@
    margin-left: 80px;
    display: flex;
    justify-content: space-between;
-   @media screen and (max-width: 1024px) {
-      margin-left: 0;
+   @media (max-width: 1024px) {
+      margin: auto;
+      max-width: calc(100% - var(--element-indent));
+   }
+   @media (max-width: 576px) {
+      --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));
    }
 }
 
@@ -36,14 +40,14 @@
 }
 
 .collabCardsContainer:hover {
-   @media screen and (min-width: 1200px){
+   @media screen and (min-width: 1200px) {
       width: calc(230px + 30px);
    }
    @include sm {
       width: 164px;
    }
    div img {
-      @media screen and (min-width: 1200px){
+      @media screen and (min-width: 1200px) {
          min-width: calc(230px + 30px);
          min-height: calc(296px + 30px);
       }
@@ -68,17 +72,15 @@
 .buttonPrev,
 .buttonNext {
    display: none;
-   margin-top: -100px;
-   margin-right: 20px;
+   z-index: 1;
+   top: 50%;
+   transform: translateX(-50%);
    @media screen and (max-width: 1024px) {
       display: block;
    }
    @include sm {
-      display: block;
       width: 10px;
       height: 20px;
-      margin-right: 10px;
-      margin-top: 70px;
    }
    & svg {
       @include sm {
@@ -88,7 +90,13 @@
    }
 }
 
+.buttonPrev {
+   position: absolute;
+   left: 0;
+}
+
 .buttonNext {
-   rotate: 180deg;
-   margin-left: 10px;
+   transform: scaleX(-1);
+   position: absolute;
+   right: 0;
 }

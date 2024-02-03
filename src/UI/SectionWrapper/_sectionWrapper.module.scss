@@ -3,10 +3,8 @@
 .sectionWrapper {
    position: relative;
    scroll-margin-top: 150px;
-   // FIX_ME check later
-   // scroll-margin-top: 200px;
    margin-inline: 20px;
-   @media screen and (max-width: 500px) {
+   @media screen and (max-width: 576px) {
       margin-inline: 16px;
    }
 }

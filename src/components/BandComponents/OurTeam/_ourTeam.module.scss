@@ -1,8 +1,11 @@
 @import "../../../scss/partials/mixin";
 
-
 .teamWrapper {
-   margin-right: 0 !important;
+   @media (min-width: 1025px) {
+      margin-right: 0 !important;
+   }
+
+   --element-indent: calc(calc(55px * 2) - calc(20px * 2));
 }
 
 .teamContainer {
@@ -14,8 +17,13 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   @media screen and (max-width: 1024px) {
-      margin-left: 0;
+
+   @media (max-width: 1024px) {
+      margin: auto;
+      max-width: calc(100% - var(--element-indent));
+   }
+   @media (max-width: 576px) {
+      --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));
    }
 }
 
@@ -50,15 +58,14 @@
 .buttonPrev,
 .buttonNext {
    display: none;
-   margin-right: 20px;
+   z-index: 1;
    @media screen and (max-width: 1024px) {
       display: block;
    }
    @include sm {
-      display: block;
       width: 10px;
       height: 20px;
-      margin-right: 10px;
+      // margin-right: 10px;
    }
    & svg {
       @include sm {
@@ -67,8 +74,13 @@
       }
    }
 }
+.buttonPrev {
+   position: absolute;
+   left: 0;
+}
 
 .buttonNext {
-   rotate: 180deg;
-   margin-left: 10px;
+   transform: scaleX(-1);
+   position: absolute;
+   right: 0;
 }
