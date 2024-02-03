@@ -1,14 +1,11 @@
 @import "../../scss/partials/variables";
 
 .mapContent {
-   // padding: 0 100px;
    max-width: 1240px;
    margin: 0 auto;
    display: grid;
    grid-template-columns: 1fr 1fr;
-   // flex-direction: row;
    gap: 20px;
-   // min-height: 410px;
 
    @media screen and (max-width: 1024px) {
       .textContainer {
@@ -19,12 +16,10 @@
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
       justify-items: center;
+      max-width: 458px;
       .textContainer {
          grid-template-columns: 1fr;
          gap: 60px;
-      }
-      .map {
-         max-width: 458px;
       }
       .text {
          gap: 20px;
@@ -68,7 +63,6 @@
 .map {
    width: 100%;
    min-height: 414px;
-   // max-width: 600px;
    border-radius: 16px;
    overflow: hidden;
 }
@@ -85,26 +79,15 @@
    font-weight: $bold;
 }
 .textContainer p {
-   max-width: 470px;
    font-size: 20px;
 }
-.textContainer a {
-   // margin-top: 100px;
-}
 .textContainer {
-   max-width: 470px;
    display: grid;
-   // grid-auto-flow: dense;
-   // align-items: flex-start;
-   // justify-content: space-between;
-   // flex-direction: column;
-   // grid-template-rows: auto auto;
 
    gap: 100px;
 }
 
 .text {
-   max-width: 470px;
    display: flex;
    flex-direction: column;
    gap: 43px;
