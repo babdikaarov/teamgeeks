@@ -41,7 +41,12 @@
    position: absolute;
    margin-top: 10px;
    text-decoration: underline;
+   right: 40px;
+   @include xl {
+      right: 30px;
+   }
    @include sm {
+      right: auto;
       position: relative;
       align-self: flex-end;
       font-size: 14px;
