@@ -7,6 +7,13 @@
    video {
       max-height: 677px;
       min-height: 500px;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
    }
    @media screen and (min-width: 1440px) {
       left: 50%;
