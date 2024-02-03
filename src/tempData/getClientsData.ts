@@ -1,9 +1,9 @@
 import client1 from "/src/assets/ClientsIcons/1.png";
-import client2 from "/src/assets/ClientsIcons/2.png";
+import client2 from "/src/assets/ClientsIcons/yandex.png";
 import client3 from "/src/assets/ClientsIcons/3.png";
 import client4 from "/src/assets/ClientsIcons/4.png";
-import client5 from "/src/assets/ClientsIcons/5.jpeg";
-import client6 from "/src/assets/ClientsIcons/6.jpeg";
+import client5 from "/src/assets/ClientsIcons/icon.png";
+import client6 from "/src/assets/ClientsIcons/optima.png";
 import client7 from "/src/assets/ClientsIcons/7.png";
 import client8 from "/src/assets/ClientsIcons/8.png";
 import client9 from "/src/assets/ClientsIcons/9.png";
@@ -17,7 +17,7 @@ export default [
    },
    {
       alt: "Yandex Go",
-      src: client2,
+      src: client5,
       link: "https://www.google.com/",
    },
    {
@@ -32,7 +32,7 @@ export default [
    },
    {
       alt: "MBulak finance",
-      src: client5,
+      src: client2,
       link: "https://www.google.com/",
    },
    {
