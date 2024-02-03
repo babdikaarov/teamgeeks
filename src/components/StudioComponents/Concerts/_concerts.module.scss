@@ -40,13 +40,14 @@
    display: flex;
    position: absolute;
    margin-top: 10px;
+   right: 40px;
    text-decoration: underline;
    right: 40px;
    @include xl {
       right: 30px;
    }
    @include sm {
-      right: auto;
+      right: 0;
       position: relative;
       align-self: flex-end;
       font-size: 14px;

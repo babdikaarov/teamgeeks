@@ -1,11 +1,11 @@
 import styles from "./cards/_feedbackCard.module.scss";
 import { FeedbackCardProps } from "./types";
-
+import ImageLoader from "../ImageLoader/ImageLoader";
 
 const StudentsFeedbackCard: React.FC<FeedbackCardProps> = ({img, name, word}) => {
    return (
       <div className={styles.StudentsFeedbackCard}>
-         <img src={img} />
+         <ImageLoader src={img} />
          <div className={styles.StudentsText}>
             <div className={styles.StudentsName}>{name}</div>
             <div className={styles.StudentsWord}>{word}</div>

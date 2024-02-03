@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import bandIcon from "/bandIcon.svg";
 import studioIcon from "/studioFav.svg";
-import styles from "./_twoGis.module.scss"
+// import styles from "./_twoGis.module.scss"
+import ImageLoader from "../ImageLoader/ImageLoader";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const DG: any;
 
@@ -90,10 +91,7 @@ export default function TwoGis() {
 
    return (
       <div id="map" className="map-container" style={{ width: "100%", height: "100%", position: "relative" }}>
-         {!mapLoaded && (
-            <div className={styles.loadingBox}>
-            </div>
-         )}
+         <ImageLoader/>
       </div>
    );
 }
