@@ -1,0 +1,7 @@
+.yarl__slide_image {
+   max-height: 800px !important;
+   @media (min-width: 1024px) {
+      max-width: 1032px !important;
+      max-height: 1032px !important;
+   }
+}

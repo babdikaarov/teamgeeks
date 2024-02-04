@@ -1,27 +1,44 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import styles from "./gallery/_galleryCollage.module.scss";
-import Modal from "./modal/Modal";
 import { GalleryCollageProps } from "./types";
 import usePagination from "../../modules/hooks/usePagination";
-import { useModalCotroller } from "../../modules/hooks/useModalCotroller";
+import { SlideImage } from "yet-another-react-lightbox";
+import LightBox from "./LightBox";
 import ImageLoader from "../ImageLoader/ImageLoader";
 
-const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
-   const [indexImage, setIndexImage] = useState<number>(0);
+/*
+ */
+const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
+   /*
+    */
+   const [open, setOpen] = useState(false);
+   const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
-   const perPage = getVisibleItems(items);
-   const { openModal } = useModalCotroller();
-   const modalID = "collageModal";
-   const handleOpen = (index: number) => {
-      setIndexImage(index);
-      openModal(modalID);
+   const images = getVisibleItems(items);
+
+   const handleOpen = (i: number) => {
+      setOpen(true);
+      setIndex(i);
+   };
+   // FIXME on API trafer convert logic to LightBox.tsx
+   const modalImages: SlideImage[] = images
+      .map((el) => (el ? { src: el.src } : null))
+      .filter((el): el is SlideImage => el !== null);
+
+   const lightBoxProps = {
+      index,
+      open,
+      setOpen,
+      setIndex,
+      images: modalImages,
+      nextPage,
    };
 
    return (
       <>
          <div className={styles.collage}>
-            {perPage &&
-               perPage.map((data, i) => (
+            {images &&
+               images.map((data, i) => (
                   <div
                      key={i}
                      className={data && styles.collageItem + " " + styles[data.view]}
@@ -31,13 +48,8 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
                      <ImageLoader src={data?.src} />
                   </div>
                ))}
-            <Modal
-               modalId={modalID}
-               images={perPage}
-               index={indexImage}
-               setIndexImage={setIndexImage}
-               nextPage={nextPage}
-            />
+
+            <LightBox {...lightBoxProps} />
          </div>
          <button className={styles.paginationButton} onClick={nextPage}>
             Далее
