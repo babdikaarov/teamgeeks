@@ -2,9 +2,9 @@ import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./gallery/_gallery.module.scss";
 import { GalleryTemplateProps } from "./types";
+import ImageLoader from "../ImageLoader/ImageLoader";
 
 const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
    const [events, setEvents] = useState(galleryData);
    useEffect(() => {
       if (galleryData) {
@@ -20,14 +20,8 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
                   {/* FIXME add a when backend will be ready */}
                   {/* <Link to={`/gallery/${event.eventID}`}> */}
                   <Link to={`/gallery/${i}`}>
-                     {!imageLoaded && (
-                        <div className={styles.loadingBox}>
-                        </div>
-                     )}
-                     <img  
-                        src={event.poster} alt={event.name}
-                        onLoad={() => setImageLoaded(true)}
-                        style={{ opacity: imageLoaded ? 1 : 0 }}
+                     <ImageLoader
+                        src={event.poster}
                      />
                      <img  />
                      <div className={styles.galleryCardsContent}>
