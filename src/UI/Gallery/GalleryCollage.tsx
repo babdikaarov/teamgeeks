@@ -28,9 +28,7 @@ const GalleryCollage: FC<GalleryCollageProps> = ({ items }) => {
                      onClick={() => handleOpen(i)}
                   >
                      <p>{i}</p>
-                     <ImageLoader
-                        src={data?.src}
-                     />
+                     <ImageLoader src={data?.src} />
                   </div>
                ))}
             <Modal
