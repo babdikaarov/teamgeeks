@@ -1,5 +1,11 @@
 @import "./variables";
 
+@mixin smx {
+   @media screen and (max-width: 450px) {
+      @content;
+   }
+}
+
 @mixin smm {
    @media screen and (max-width: 532px) {
       @content;

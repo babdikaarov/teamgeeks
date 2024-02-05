@@ -1,6 +1,7 @@
 import Header from "../../UI/Header/Header";
 import Footer from "../../UI/Footer/Footer";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
+import MadeBy from "../../UI/MadeBy/MadeBy.tsx";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
    return (
@@ -8,6 +9,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
          <Header />
          <main>{children}</main>
          <Footer />
+         <MadeBy />
       </>
    );
 };
