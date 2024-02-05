@@ -7,7 +7,7 @@ export const useModalCotroller = () => {
       (event) => {
          const modal = event.currentTarget as HTMLDialogElement;
          const target = event.target as HTMLDialogElement;
-         if (modal === target) {
+         if (modal === target || target.id === "closeBtn") {
             modal.setAttribute("closing", "");
             modal.addEventListener(
                "animationend",
