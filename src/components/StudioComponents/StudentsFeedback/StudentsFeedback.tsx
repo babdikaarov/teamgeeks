@@ -8,7 +8,6 @@ import cards from "../../../tempData/getFeedbackData";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
-
 const StudentsFeedback = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
@@ -73,16 +72,12 @@ const StudentsFeedback = () => {
                   320: {
                      slidesPerView: 1.3,
                      spaceBetween: -40,
-                  }
+                  },
                }}
             >
                {cards.map((card, i) => (
                   <SwiperSlide key={i}>
-                     <StudentsFeedbackCard
-                        img={card.img}
-                        name={card.name}
-                        word={card.word} 
-                     />
+                     <StudentsFeedbackCard img={card.img} name={card.name} word={card.word} />
                   </SwiperSlide>
                ))}
             </Swiper>
@@ -93,6 +88,5 @@ const StudentsFeedback = () => {
       </SectionWrapper>
    );
 };
-
 
 export default StudentsFeedback;

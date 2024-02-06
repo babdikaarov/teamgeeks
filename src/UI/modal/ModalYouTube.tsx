@@ -1,6 +1,6 @@
 import { createParameterString } from "../../modules/createParametrString";
 import { useModalCotroller } from "../../modules/hooks/useModalCotroller";
-import close from "../../assets/close_fill(1).svg"
+import close from "../../assets/close_fill(1).svg";
 import styles from "./_modalYouTube.module.scss";
 
 interface ModalYouTubeProps {
@@ -10,7 +10,7 @@ interface ModalYouTubeProps {
 }
 
 const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) => {
-   const { dialogRef, isOpen, handleClose} = useModalCotroller();
+   const { dialogRef, isOpen, handleClose } = useModalCotroller();
    const youtubeParams = {
       playlist: allIDS,
       loop: 1,
@@ -21,7 +21,7 @@ const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) =>
 
    return (
       <dialog id={id} className={styles.modal} ref={dialogRef}>
-         <img src={close} id="closeBtn" alt="close" className={styles.close} onClick={() => handleClose}/>
+         <img src={close} id="closeBtn" alt="close" className={styles.close} onClick={() => handleClose} />
          {isOpen && (
             <iframe
                width="100%"
@@ -37,4 +37,3 @@ const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) =>
 };
 
 export default ModalYouTube;
-

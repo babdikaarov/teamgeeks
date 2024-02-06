@@ -5,7 +5,7 @@ const teamList = [
       name: "Anarkin",
       role: "Вокал",
       view: "portrait",
-      video: "/ourTeam/Anarkin.mp4"
+      video: "/ourTeam/Anarkin.mp4",
    },
    {
       id: 2,
@@ -13,7 +13,7 @@ const teamList = [
       name: "Эрбол",
       role: "Гитара",
       view: "portrait",
-      video: "/ourTeam/Erbol.mp4"
+      video: "/ourTeam/Erbol.mp4",
    },
    {
       id: 3,
@@ -21,7 +21,7 @@ const teamList = [
       name: "Сулико",
       role: "Бас-Гитара/Вокал",
       view: "portrait",
-      video: "/ourTeam/Suliko.mp4"
+      video: "/ourTeam/Suliko.mp4",
    },
    {
       id: 4,
@@ -29,7 +29,7 @@ const teamList = [
       name: "Давлет",
       role: "Барабаны",
       view: "portrait",
-      video: "/ourTeam/Davlet.mp4"
+      video: "/ourTeam/Davlet.mp4",
    },
    {
       id: 5,
@@ -37,7 +37,7 @@ const teamList = [
       name: "Османи",
       role: "Перкуссия/Вокал",
       view: "portrait",
-      video: "/ourTeam/Osmany.mp4"
+      video: "/ourTeam/Osmany.mp4",
    },
    {
       id: 6,
@@ -45,7 +45,7 @@ const teamList = [
       name: "DJ Khan",
       role: "",
       view: "portrait",
-      video: "/ourTeam/Dj Khan.mp4"
+      video: "/ourTeam/Dj Khan.mp4",
    },
    {
       id: 7,
@@ -53,7 +53,7 @@ const teamList = [
       name: "DJ Olymp",
       role: "",
       view: "portrait",
-      video: "/ourTeam/Dj Olymp.mp4"
+      video: "/ourTeam/Dj Olymp.mp4",
    },
    {
       id: 8,
@@ -61,7 +61,7 @@ const teamList = [
       name: "Keno",
       role: "Звукорежиссер",
       view: "portrait",
-      video: "/ourTeam/Keno.mp4"
+      video: "/ourTeam/Keno.mp4",
    },
    {
       id: 9,
@@ -69,7 +69,7 @@ const teamList = [
       name: "Dance Show",
       role: "",
       view: "landscape",
-      video: "/ourTeam/danceshow.mp4"
+      video: "/ourTeam/danceshow.mp4",
    },
 ];
 

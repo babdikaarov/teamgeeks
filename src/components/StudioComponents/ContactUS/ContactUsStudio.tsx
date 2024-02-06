@@ -5,7 +5,6 @@ import staticData from "./staticData.json";
 // import createWhatsAppLink from "../../../modules/createWhatsAppLink";
 import contacts from "../../../tempData/contacts.json";
 
-
 const ContactUsStudio = () => {
    // const whatsapp = createWhatsAppLink(backendData.whatsapp.link, backendData.whatsapp.text);
 
@@ -13,10 +12,11 @@ const ContactUsStudio = () => {
       <ContactUsTemplate
          heading={staticData.heading}
          paragraph={staticData.paragraph}
-         button={<SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами"/>}
+         button={
+            <SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами" />
+         }
       />
    );
 };
-
 
 export default ContactUsStudio;

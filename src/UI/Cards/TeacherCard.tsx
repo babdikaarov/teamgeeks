@@ -4,12 +4,11 @@ import { TeacherCardProps } from "./types";
 import ImageLoader from "../ImageLoader/ImageLoader";
 
 const TeacherCard: React.FC<TeacherCardProps> = (props) => {
-
    const { img, name, expertise, instagram, description } = props;
    return (
       <div className={styles.cardContainer}>
          <div className={styles.imageContainer}>
-            <ImageLoader src={img}/>
+            <ImageLoader src={img} />
             {/* FIX_ME BUG upon anchor click modal window is opening   */}
             <a href={instagram} target="blank">
                {socialIcons.instagram}

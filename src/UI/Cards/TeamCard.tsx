@@ -29,5 +29,4 @@ const TeamCard: React.FC<TeamCardProps> = ({ img, role, name, video, animate }) 
    );
 };
 
-
 export default TeamCard;

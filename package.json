@@ -8,19 +8,22 @@
       "build": "tsc && vite build",
       "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
       "preview": "vite preview",
-      "format-all": "prettier --write .",
-      "prepare": "husky install"
-   },
-   "husky": {
-      "hooks": {
-         "pre-commit": "lint-staged"
-      }
+      "format": "prettier --write .",
+      "husky": "husky || true",
+      "try-husky": "chmod +x .husky/pre-commit",
+      "stage-files": "git add .",
+      "commit": "git commit -m ''"
    },
    "lint-staged": {
-      "**/*.{js,jsx,ts,tsx,css,scss}": [
-         "npm run format",
-         "git add"
+      "**/*.{js,jsx,ts,tsx,css,scss,json}": [
+         "echo 'running prettier'",
+         "npm run format"
       ]
+   },
+   "config": {
+      "commitizen": {
+         "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira"
+      }
    },
    "dependencies": {
       "@2gis/mapgl": "^1.42.0",

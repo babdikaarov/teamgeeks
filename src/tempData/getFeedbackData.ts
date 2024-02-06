@@ -5,7 +5,6 @@ import Murtaz4 from "./../assets/studentsFeedback/Murtaz4.png";
 import Asel5 from "./../assets/studentsFeedback/Asel5.png";
 import Saykal6 from "./../assets/studentsFeedback/Saykal6.png";
 
-
 const feedbackList = [
    {
       img: Damir1,
@@ -38,6 +37,5 @@ const feedbackList = [
       word: "Coolstudio - это самое лучшее, что происходило в моей жизни. Здесь всегда царит дружеский и крутой вайб",
    },
 ];
-
 
 export default feedbackList;

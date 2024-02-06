@@ -8,7 +8,6 @@ import cards from "../../../tempData/getTeamList";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
-
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
@@ -26,22 +25,22 @@ const OurTeam = () => {
                modules={[Mousewheel, Navigation]}
                breakpoints={{
                   1440: {
-                     spaceBetween: 30
+                     spaceBetween: 30,
                   },
                   1200: {
-                     spaceBetween: 30
+                     spaceBetween: 30,
                   },
                   1024: {
-                     spaceBetween: 20
+                     spaceBetween: 20,
                   },
                   892: {
-                     spaceBetween: 20
+                     spaceBetween: 20,
                   },
                   768: {
-                     spaceBetween: 20
+                     spaceBetween: 20,
                   },
                   576: {
-                     spaceBetween: 20
+                     spaceBetween: 20,
                   },
                   390: {
                      spaceBetween: 16,
@@ -51,7 +50,7 @@ const OurTeam = () => {
                   },
                   1: {
                      spaceBetween: 16,
-                  }
+                  },
                }}
             >
                {cards.map((card, i) => (
@@ -74,6 +73,5 @@ const OurTeam = () => {
       </SectionWrapper>
    );
 };
-
 
 export default OurTeam;

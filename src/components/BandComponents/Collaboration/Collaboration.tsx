@@ -8,7 +8,6 @@ import cards from "../../../tempData/getCollabData";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 
-
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
@@ -26,22 +25,22 @@ const Collaboration = () => {
                modules={[Mousewheel, Navigation]}
                breakpoints={{
                   1440: {
-                     spaceBetween: 30
+                     spaceBetween: 30,
                   },
                   1200: {
-                     spaceBetween: 30
+                     spaceBetween: 30,
                   },
                   1024: {
-                     spaceBetween: 16
+                     spaceBetween: 16,
                   },
                   892: {
-                     spaceBetween: 16
+                     spaceBetween: 16,
                   },
                   768: {
-                     spaceBetween: 16
+                     spaceBetween: 16,
                   },
                   576: {
-                     spaceBetween: 16
+                     spaceBetween: 16,
                   },
                   390: {
                      spaceBetween: 10,
@@ -51,19 +50,14 @@ const Collaboration = () => {
                   },
                   1: {
                      spaceBetween: 10,
-                  }
+                  },
                }}
             >
                <div>
                   {cards?.map((card, i) => (
                      /* FIX_ME construct logic for partrait and landscape verify with team */
                      <SwiperSlide key={i} className={styles.collabCardsContainer}>
-                        <CollabCard
-                           src={card.src}
-                           alt={card.alt}
-                           firstName={card.firstName}
-                           lastName={card.lastName}
-                        />
+                        <CollabCard src={card.src} alt={card.alt} firstName={card.firstName} lastName={card.lastName} />
                      </SwiperSlide>
                   ))}
                </div>
@@ -75,6 +69,5 @@ const Collaboration = () => {
       </SectionWrapper>
    );
 };
-
 
 export default Collaboration;

@@ -43,11 +43,9 @@
 
 .pageLogo .CoolIcons {
    transform: translateX(0);
-   transition: transform 0.5s ease-in-out; 
- }
- 
- .pageLogo:hover .CoolIcons {
-   transform: translateX(-3px); 
- }
+   transition: transform 0.5s ease-in-out;
+}
 
- 
+.pageLogo:hover .CoolIcons {
+   transform: translateX(-3px);
+}

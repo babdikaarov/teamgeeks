@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+npm run stage-files
+echo "added files to stage for linting"
+echo ""
+npx lint-staged
+echo ""
+echo "adding files to stage after prettier"
+npm run stage-files
+echo ""
+echo "Now you can put your commit msg"
+
+

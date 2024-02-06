@@ -12,7 +12,6 @@ import { TeacherType } from "./types";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import contacts from "../../../tempData/contacts.json";
 
-
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(null);
@@ -58,7 +57,7 @@ const Teachers = () => {
                {icon}
             </button>
          </div>
-         <SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами"/>
+         <SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами" />
          {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
       </SectionWrapper>
    );

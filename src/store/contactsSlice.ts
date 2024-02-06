@@ -13,7 +13,7 @@ const initialState: IContact = {
       longitude: "",
       latitude: "",
       city: "",
-      organizationId:"",
+      organizationId: "",
       address: "",
       bandNumber: "",
       studioNumber: "",
@@ -32,17 +32,17 @@ const contacts = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getContacts.pending, state => {
+      builder.addCase(getContacts.pending, (state) => {
          state.getLoading = true;
-      })
-      builder.addCase(getContacts.fulfilled, (state, {payload}) => {
+      });
+      builder.addCase(getContacts.fulfilled, (state, { payload }) => {
          state.getLoading = false;
          state.data = payload;
-      })
-      builder.addCase(getContacts.rejected, state => {
+      });
+      builder.addCase(getContacts.rejected, (state) => {
          state.getLoading = false;
-      })
-   }
-})
+      });
+   },
+});
 
 export const reducersContacts = contacts.reducer;
