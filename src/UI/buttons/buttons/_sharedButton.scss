@@ -1,7 +1,6 @@
 @import "../../../scss/partials/mixin";
 @import "../../../scss/partials/variables";
 
-
 .bandHeroButton {
    @include buttons($fill: $color_black, $color: $color_black, $background: $color_yellow, $border: $color_yellow);
    display: block;
@@ -17,7 +16,7 @@
       }
    }
    @media screen and (max-width: 424px) {
-      width: 358px;
+      max-width: 358px;
       height: 53px;
       button {
          font-size: 15px;
@@ -25,7 +24,7 @@
       }
    }
    @media screen and (max-width: 390px) {
-      width: 300px;
+      width: calc(100% - 32px);
       height: 53px;
       button {
          font-size: 15px;
@@ -37,7 +36,7 @@
 .bandHeroButton:hover {
    color: $color_black;
    box-shadow: -10px -12px 100px 4px rgba(255, 207, 0, 0.73);
-   &:active{
+   &:active {
       @include buttons($fill: $color_yellow, $color: $color_yellow, $background: $color_black, $border: $color_yellow);
    }
 }
@@ -88,7 +87,7 @@
       }
    }
    @media screen and (max-width: 530px) {
-      width: 358px;
+      max-width: 358px;
       height: 53px;
       button {
          font-size: 15px;
@@ -96,7 +95,7 @@
       }
    }
    @media screen and (max-width: 390px) {
-      width: 300px;
+      width: calc(100% - 32px);
       height: 53px;
       button {
          font-size: 14px;
