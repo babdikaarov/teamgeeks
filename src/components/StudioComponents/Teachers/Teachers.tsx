@@ -6,11 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useState, useCallback } from "react";
 import icon from "../../../assets/icons/bigArrow";
-import StudioContactUsButton from "../../../UI/buttons/StudioContactUsButton";
+import SharedButton from "../../../UI/buttons/SharedButton";
 import Modal from "./Modal";
 import { TeacherType } from "./types";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import contacts from "../../../tempData/contacts.json";
+
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
@@ -57,7 +58,7 @@ const Teachers = () => {
                {icon}
             </button>
          </div>
-         <StudioContactUsButton whatsapp={contacts.studioNumber} className={styles.marginAuto} />
+         <SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами"/>
          {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
       </SectionWrapper>
    );

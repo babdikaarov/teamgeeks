@@ -1,13 +1,16 @@
 import { getHeroData } from "../../../tempData/getHeroData";
 import HeroTemplate from "../../../UI/Hero/HeroTemplate";
-import StudioHeroButton from "../../../UI/buttons/StudioHeroButton";
+import SharedButton from "../../../UI/buttons/SharedButton";
 import contacts from "../../../tempData/contacts.json";
+
+
 const Hero = () => {
    return (
       <HeroTemplate {...getHeroData.studioHero}>
-         <StudioHeroButton whatsapp={contacts.studioNumber} />
+         <SharedButton whatsapp={contacts.studioNumber} classname="studioHeroButton" text="Записаться на пробный урок"/>
       </HeroTemplate>
    );
 };
+
 
 export default Hero;
