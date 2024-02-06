@@ -71,8 +71,8 @@ const FooterTemplate: FC<FooterTemplateProps> = ({ bandPage, backendData }) => {
          <div className={styles.footerSocialPositoin}>
             <SocialLinks links={tempLinks} />
          </div> */}
-      </footer>
-   );
+       </footer>
+);
 };
 
 export default FooterTemplate;
