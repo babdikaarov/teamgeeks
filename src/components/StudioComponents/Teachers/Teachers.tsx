@@ -41,6 +41,9 @@ const Teachers = () => {
                loop={true}
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
+               mousewheel={{
+                  forceToAxis: true,
+               }}
                breakpoints={{
                   1024: {
                      spaceBetween: 53,

@@ -7,9 +7,22 @@ import TeamCard from "../../../UI/Cards/TeamCard";
 import cards from "../../../tempData/getTeamList";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useEffect, useState } from "react";
+import { getOurTeam } from "../../../store/ourTeamThunk";
+import { IGetOurTeam } from "../../../types";
 
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
+   const [team, setTeam] = useState<IGetOurTeam[]>();
+
+   const dispatch = useAppDispatch();
+   const data = useAppSelector((state) => state.getOurTeam.data)!;
+   useEffect(() => {
+      dispatch(getOurTeam());
+      setTeam(data);
+   }, [team]);
+   console.log(team, "Team");
 
    return (
       <SectionWrapper
@@ -28,7 +41,9 @@ const OurTeam = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
-               mousewheel
+               mousewheel={{
+                  forceToAxis: true,
+               }}
                modules={[Mousewheel, Navigation]}
                breakpoints={{
                   1440: {

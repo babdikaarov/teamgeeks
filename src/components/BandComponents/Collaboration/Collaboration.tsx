@@ -28,7 +28,9 @@ const Collaboration = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
-               mousewheel
+               mousewheel={{
+                  forceToAxis: true,
+               }}
                modules={[Mousewheel, Navigation]}
                breakpoints={{
                   1440: {
