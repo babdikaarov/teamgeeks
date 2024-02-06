@@ -20,7 +20,6 @@ import useResponsiveSorting from "../../../modules/hooks/useResponsiveSorting";
 // }
 
 const Collage = () => {
-
    window.scroll(0, 0);
    const navigate = useNavigate();
    const { id } = useParams();

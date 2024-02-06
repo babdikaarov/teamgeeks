@@ -42,7 +42,7 @@ function multi(
       items: { alt: string; src: string; view: string }[];
    }[],
 ) {
-   for (let i = 0; i < 4; i++) {
+   for (let i = 0; i < 2; i++) {
       data.push(...data);
    }
    return data;

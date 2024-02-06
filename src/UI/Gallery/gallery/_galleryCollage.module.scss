@@ -93,6 +93,7 @@
    object-fit: contain;
    overflow: hidden;
    transition: all 1s ease-in-out;
+   min-width: 100%;
 }
 
 .collageItem:hover {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 
 interface ImageLoaderProps {
-   src: string;
+   src?: string;
    bluer?: string;
 }
 
@@ -12,6 +12,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = defaultValue }) 
    const [loaded, setLoaded] = useState(false);
 
    useEffect(() => {
+      if (!src) return;
       const img = new Image();
       img.onload = () => {
          setLoaded(true);
