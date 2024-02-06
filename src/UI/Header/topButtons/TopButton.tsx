@@ -14,7 +14,12 @@ const TopButton: React.FC<TopButtonProps> = ({ isMenuOpen, toggleMenu }) => {
       <>
          <label className={styles.label + " " + (isActiveMainPage ? styles.blue : styles.yellow)}>
             {!isActiveMainPage ? "Cool Band" : "Cool Studio"}
-            <input type="checkbox" checked={isMenuOpen} onChange={toggleMenu} className={styles.input}></input>
+            <input
+               type="checkbox"
+               checked={isMenuOpen}
+               onChange={toggleMenu}
+               className={styles.input}
+            ></input>
             {icon}
          </label>
       </>

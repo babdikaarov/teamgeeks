@@ -13,7 +13,13 @@ const ContactUs = () => {
          heading={staticData.heading}
          paragraph={staticData.paragraph}
          secondHeading={staticData.secondHeading}
-         button={<SharedButton whatsapp={contact.bandNumber} classname="bandContactButton" text="Связаться с нами" />}
+         button={
+            <SharedButton
+               whatsapp={contact.bandNumber}
+               classname="bandContactButton"
+               text="Связаться с нами"
+            />
+         }
       />
    );
 };

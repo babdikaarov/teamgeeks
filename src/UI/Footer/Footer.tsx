@@ -14,7 +14,12 @@ const Footer = () => {
          setBandPage(false);
       }
    }, [pathname]);
-   return <FooterTemplate backendData={backendData} bandPage={bandPage} />;
+   return (
+      <FooterTemplate
+         backendData={backendData}
+         bandPage={bandPage}
+      />
+   );
 };
 
 export default Footer;

@@ -17,12 +17,24 @@ const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ links, bandPage, lyrics
    return (
       <>
          <header className={styles.header}>
-            <TopButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            <TopButton
+               isMenuOpen={isMenuOpen}
+               toggleMenu={toggleMenu}
+            />
             <nav className={styles.nav + " " + (isMenuOpen && styles.open)}>
-               <span className={styles.close} onClick={toggleMenu}></span>
+               <span
+                  className={styles.close}
+                  onClick={toggleMenu}
+               ></span>
                <Logo bandPage={bandPage} />
-               <NavList lyrics={lyrics} {...{ setIsMenuOpen }} />
-               <SocialLinks links={links} {...{ setIsMenuOpen }} />
+               <NavList
+                  lyrics={lyrics}
+                  {...{ setIsMenuOpen }}
+               />
+               <SocialLinks
+                  links={links}
+                  {...{ setIsMenuOpen }}
+               />
                <BurgerBtn toggleMenu={toggleMenu} />
             </nav>
             <TopButtons />

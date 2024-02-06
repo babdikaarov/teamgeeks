@@ -18,7 +18,12 @@ const Concert = () => {
       <SectionWrapper header="Отчетные концерты">
          <div className={styles.ConcertSlider}>
             {mobileWidth ? (
-               mobileArray.map((card, i) => <ConcertCard key={i} {...card} />)
+               mobileArray.map((card, i) => (
+                  <ConcertCard
+                     key={i}
+                     {...card}
+                  />
+               ))
             ) : (
                <>
                   <Swiper
@@ -31,21 +36,33 @@ const Concert = () => {
                      className={styles.concertSwiper}
                   >
                      {concertImages.map((image, index) => (
-                        <SwiperSlide key={index} className={styles.concertsSwipeCard}>
+                        <SwiperSlide
+                           key={index}
+                           className={styles.concertsSwipeCard}
+                        >
                            <ConcertCard {...image} />
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <button id="btn2" className={styles.LeftSwip}>
+                  <button
+                     id="btn2"
+                     className={styles.LeftSwip}
+                  >
                      {icon}
                   </button>
-                  <button id="btn1" className={styles.RightSwip}>
+                  <button
+                     id="btn1"
+                     className={styles.RightSwip}
+                  >
                      {icon}
                   </button>
                </>
             )}
 
-            <a className={styles.watchmore} href="/gallery">
+            <a
+               className={styles.watchmore}
+               href="/gallery"
+            >
                Смотреть еще
             </a>
          </div>

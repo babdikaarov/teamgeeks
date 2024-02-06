@@ -13,7 +13,11 @@ const ContactUsStudio = () => {
          heading={staticData.heading}
          paragraph={staticData.paragraph}
          button={
-            <SharedButton whatsapp={contacts.studioNumber} classname="studioTeachersButton" text="Связаться с нами" />
+            <SharedButton
+               whatsapp={contacts.studioNumber}
+               classname="studioTeachersButton"
+               text="Связаться с нами"
+            />
          }
       />
    );

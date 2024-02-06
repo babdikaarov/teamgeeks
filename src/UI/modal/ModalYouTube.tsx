@@ -20,8 +20,18 @@ const ModalYouTube: React.FC<ModalYouTubeProps> = ({ id, youTubeId, allIDS }) =>
    // FIXME bug if modal open students card is moveable and some card's modal losing its z-index
 
    return (
-      <dialog id={id} className={styles.modal} ref={dialogRef}>
-         <img src={close} id="closeBtn" alt="close" className={styles.close} onClick={() => handleClose} />
+      <dialog
+         id={id}
+         className={styles.modal}
+         ref={dialogRef}
+      >
+         <img
+            src={close}
+            id="closeBtn"
+            alt="close"
+            className={styles.close}
+            onClick={() => handleClose}
+         />
          {isOpen && (
             <iframe
                width="100%"

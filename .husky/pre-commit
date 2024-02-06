@@ -10,6 +10,4 @@ echo ""
 echo "adding files to stage after prettier"
 npm run stage-files
 echo ""
-echo "Now you can put your commit msg"
-
-
+echo "Now you can put your commit msg"echo 'hello'

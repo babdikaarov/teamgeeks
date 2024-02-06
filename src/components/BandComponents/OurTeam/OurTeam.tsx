@@ -12,9 +12,16 @@ const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
    return (
-      <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id="ourteam">
+      <SectionWrapper
+         header={"Наша команда"}
+         className={styles.teamWrapper}
+         id="ourteam"
+      >
          <div className={styles.teamContainer}>
-            <button className={styles.buttonPrev} onClick={handlePrev}>
+            <button
+               className={styles.buttonPrev}
+               onClick={handlePrev}
+            >
                {icon}
             </button>
             <Swiper
@@ -54,7 +61,10 @@ const OurTeam = () => {
                }}
             >
                {cards.map((card, i) => (
-                  <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.view]}>
+                  <SwiperSlide
+                     key={i}
+                     className={styles.cardContainer + " " + styles[card.view]}
+                  >
                      <TeamCard
                         animate={i === 0}
                         video={card.video}
@@ -66,7 +76,10 @@ const OurTeam = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button className={styles.buttonNext} onClick={handleNext}>
+            <button
+               className={styles.buttonNext}
+               onClick={handleNext}
+            >
                {icon}
             </button>
          </div>

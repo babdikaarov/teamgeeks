@@ -51,7 +51,10 @@ const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
 
             <LightBox {...lightBoxProps} />
          </div>
-         <button className={styles.paginationButton} onClick={nextPage}>
+         <button
+            className={styles.paginationButton}
+            onClick={nextPage}
+         >
             Далее
          </button>
       </>

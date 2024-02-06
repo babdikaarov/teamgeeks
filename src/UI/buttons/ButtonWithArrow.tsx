@@ -10,7 +10,10 @@ interface ButtonWithArrowProps extends LinkProps {
 
 const ButtonWithArrow: FC<ButtonWithArrowProps> = ({ text, ...props }) => {
    return (
-      <Link {...props} className={styles.a}>
+      <Link
+         {...props}
+         className={styles.a}
+      >
          <h6 className={styles.h6}>
             {text}
             {arrow}

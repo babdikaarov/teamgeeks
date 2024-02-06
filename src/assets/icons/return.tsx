@@ -1,6 +1,15 @@
 export default (
-   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g id="arrow_left_circle_fill" clipPath="url(#clip0_561_2732)">
+   <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+   >
+      <g
+         id="arrow_left_circle_fill"
+         clipPath="url(#clip0_561_2732)"
+      >
          <g id="Group">
             <path
                id="Vector"
@@ -13,7 +22,11 @@ export default (
       </g>
       <defs>
          <clipPath id="clip0_561_2732">
-            <rect width="24" height="24" fill="white" />
+            <rect
+               width="24"
+               height="24"
+               fill="white"
+            />
          </clipPath>
       </defs>
    </svg>

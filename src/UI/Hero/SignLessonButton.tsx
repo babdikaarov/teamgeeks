@@ -9,7 +9,10 @@ type whatsapp = {
 const SignLesson: FC<whatsapp> = (whatsapp) => {
    return (
       <button className={styles.SignLessonButton}>
-         <a href={`${whatsapp}`} target="blank">
+         <a
+            href={`${whatsapp}`}
+            target="blank"
+         >
             Записаться на пробный урок {iconPhone}
          </a>
       </button>

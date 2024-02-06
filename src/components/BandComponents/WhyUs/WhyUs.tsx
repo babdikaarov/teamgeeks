@@ -4,7 +4,11 @@ import styles from "./_whyus.module.scss";
 
 const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) => (
    <div className={styles.InfoBlock}>
-      <img className={styles.icon} src={icon} alt="Icon" />
+      <img
+         className={styles.icon}
+         src={icon}
+         alt="Icon"
+      />
       <div className={styles.textWrapper}>
          <h4 className={styles.textWhyUs}>{title}</h4>
          <p className={styles.text}>{text}</p>
@@ -14,7 +18,10 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
 
 const WhyUs: React.FC = () => {
    return (
-      <SectionWrapper header="Почему выбирают нас?" className={styles.whyUs}>
+      <SectionWrapper
+         header="Почему выбирают нас?"
+         className={styles.whyUs}
+      >
          <div className={styles.WhyUs}>
             <InfoBlock
                title="Профессионалы своего дела"

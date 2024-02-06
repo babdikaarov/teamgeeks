@@ -10,7 +10,10 @@ const TeacherCard: React.FC<TeacherCardProps> = (props) => {
          <div className={styles.imageContainer}>
             <ImageLoader src={img} />
             {/* FIX_ME BUG upon anchor click modal window is opening   */}
-            <a href={instagram} target="blank">
+            <a
+               href={instagram}
+               target="blank"
+            >
                {socialIcons.instagram}
             </a>
          </div>

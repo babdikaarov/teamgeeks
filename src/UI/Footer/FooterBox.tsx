@@ -11,7 +11,10 @@ const FooterBox: FC<FooterBoxProps> = (props) => {
          <ul>
             {items.map((item, i: number) => (
                <li key={i}>
-                  <HashLink to={item.link as string} target={target}>
+                  <HashLink
+                     to={item.link as string}
+                     target={target}
+                  >
                      {item.text}
                   </HashLink>
                </li>

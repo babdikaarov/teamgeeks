@@ -5,10 +5,17 @@ import styles from "./_courses.module.scss";
 
 const Courses = () => {
    return (
-      <SectionWrapper header="Направления" id="courses">
+      <SectionWrapper
+         header="Направления"
+         id="courses"
+      >
          <div className={styles.courses_flex}>
             {coursesData.map((course, index) => (
-               <CoursesCard key={index} src={course.src} title={course.title} />
+               <CoursesCard
+                  key={index}
+                  src={course.src}
+                  title={course.title}
+               />
             ))}
          </div>
       </SectionWrapper>

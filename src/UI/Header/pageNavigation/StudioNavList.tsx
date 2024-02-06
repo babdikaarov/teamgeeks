@@ -34,27 +34,42 @@ const BandNavList: FC<BandNavListProps> = ({ setIsMenuOpen }) => {
          {/* {isMenuOpen && <Backdrop onClick={closeMenu} />} */}
          <ul className={styles.navigation}>
             <li>
-               <HashLink to={"/studio#about"} onClick={handleFunction}>
+               <HashLink
+                  to={"/studio#about"}
+                  onClick={handleFunction}
+               >
                   О студии
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/studio#courses"} onClick={handleFunction}>
+               <HashLink
+                  to={"/studio#courses"}
+                  onClick={handleFunction}
+               >
                   Направления
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/studio#teachers"} onClick={handleFunction}>
+               <HashLink
+                  to={"/studio#teachers"}
+                  onClick={handleFunction}
+               >
                   Преподаватели
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/studio#students"} onClick={handleFunction}>
+               <HashLink
+                  to={"/studio#students"}
+                  onClick={handleFunction}
+               >
                   Ученики
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/studio/gallery"} onClick={handleFunction}>
+               <HashLink
+                  to={"/studio/gallery"}
+                  onClick={handleFunction}
+               >
                   Концерты
                </HashLink>
             </li>

@@ -52,8 +52,14 @@ const Collage = () => {
          <div className={styles.collage}>
             <h3 onClick={() => navigate("/gallery")}>Exit</h3>
             {data.map((every, i) => (
-               <div className={styles.pics} key={i}>
-                  <img src={every.src} alt="#" />
+               <div
+                  className={styles.pics}
+                  key={i}
+               >
+                  <img
+                     src={every.src}
+                     alt="#"
+                  />
                </div>
             ))}
          </div>

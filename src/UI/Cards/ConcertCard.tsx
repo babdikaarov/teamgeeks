@@ -5,7 +5,11 @@ const ConcertCard = (props: CardProps) => {
    return (
       /* FIX_ME add onClick to idImage "./studio/gallery/{$id}" */
       <div className={styles.ConcertsCard}>
-         <img className={styles.concertImg} src={props.img} alt="" />
+         <img
+            className={styles.concertImg}
+            src={props.img}
+            alt=""
+         />
          <div className={styles.concertText}>
             <span>
                <h4>{props.header}</h4>

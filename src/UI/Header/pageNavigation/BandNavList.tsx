@@ -24,27 +24,44 @@ const BandNavList: FC<BandNavListProps> = ({ lyrics, setIsMenuOpen }) => {
          {/* {isMenuOpen && <Backdrop onClick={closeMenu} />} */}
          <ul className={styles.navigation}>
             <li>
-               <HashLink to={"/#home"} onClick={handleFunction} className={onBand ? styles.active : ""}>
+               <HashLink
+                  to={"/#home"}
+                  onClick={handleFunction}
+                  className={onBand ? styles.active : ""}
+               >
                   Главная
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/#about"} onClick={handleFunction}>
+               <HashLink
+                  to={"/#about"}
+                  onClick={handleFunction}
+               >
                   О нас
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/gallery"} onClick={handleFunction} className={!onBand ? styles.active : ""}>
+               <HashLink
+                  to={"/gallery"}
+                  onClick={handleFunction}
+                  className={!onBand ? styles.active : ""}
+               >
                   Галерея
                </HashLink>
             </li>
             <li>
-               <HashLink to={"/#collaboration"} onClick={handleFunction}>
+               <HashLink
+                  to={"/#collaboration"}
+                  onClick={handleFunction}
+               >
                   Коллаборация
                </HashLink>
             </li>
             <li>
-               <a href={lyrics} target="blank">
+               <a
+                  href={lyrics}
+                  target="blank"
+               >
                   Репертуар
                </a>
             </li>

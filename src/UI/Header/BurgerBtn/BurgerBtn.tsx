@@ -18,7 +18,10 @@ const BurgerBtn: React.FC<BurgerBtnProps> = ({ toggleMenu }) => {
       navigate(!isActiveMainPage ? "/studio" : "/");
    };
    return (
-      <button className={!isActiveMainPage ? styles.studioBtn : styles.bandBtn} onClick={handleClick}>
+      <button
+         className={!isActiveMainPage ? styles.studioBtn : styles.bandBtn}
+         onClick={handleClick}
+      >
          {!isActiveMainPage ? "Cool Studio" : "Cool Band"}
       </button>
    );

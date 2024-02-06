@@ -24,27 +24,47 @@ const SocialLinks: FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
    return (
       <ul className={styles.socialLinks}>
          <li id="telegram">
-            <a href={getLinks.telegram} target="blank" onClick={handleFunction}>
+            <a
+               href={getLinks.telegram}
+               target="blank"
+               onClick={handleFunction}
+            >
                {socialIcons.telegram}
             </a>
          </li>
          <li id="whatsapp">
-            <a href={getLinks.whatsapp} target="blank" onClick={handleFunction}>
+            <a
+               href={getLinks.whatsapp}
+               target="blank"
+               onClick={handleFunction}
+            >
                {socialIcons.whatsapp}
             </a>
          </li>
          <li id="instagram">
-            <a href={getLinks.instagram} target="blank" onClick={handleFunction}>
+            <a
+               href={getLinks.instagram}
+               target="blank"
+               onClick={handleFunction}
+            >
                {socialIcons.instagram}
             </a>
          </li>
          <li id="youtube">
-            <a href={getLinks.youtube} target="blank" onClick={handleFunction}>
+            <a
+               href={getLinks.youtube}
+               target="blank"
+               onClick={handleFunction}
+            >
                {socialIcons.youtube}
             </a>
          </li>
          <li id="tiktok">
-            <a href={getLinks.tiktok} target="blank" onClick={handleFunction}>
+            <a
+               href={getLinks.tiktok}
+               target="blank"
+               onClick={handleFunction}
+            >
                {socialIcons.tiktok}
             </a>
          </li>

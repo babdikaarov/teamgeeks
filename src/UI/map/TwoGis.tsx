@@ -90,7 +90,11 @@ export default function TwoGis() {
    }
 
    return (
-      <div id="map" className="map-container" style={{ width: "100%", height: "100%", position: "relative" }}>
+      <div
+         id="map"
+         className="map-container"
+         style={{ width: "100%", height: "100%", position: "relative" }}
+      >
          {/* FIXME finish the logic on map loaded and provide hashbluer generated from map screenshot */}
          {/* <ImageLoader/> */}
       </div>

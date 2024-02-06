@@ -8,7 +8,10 @@ interface CoursesCardProps {
 const CoursesCard: FC<CoursesCardProps> = ({ src, title }) => {
    return (
       <div className={styles.courseCardContainer}>
-         <img src={src} alt={title} />
+         <img
+            src={src}
+            alt={title}
+         />
          <h6>{title}</h6>
       </div>
    );

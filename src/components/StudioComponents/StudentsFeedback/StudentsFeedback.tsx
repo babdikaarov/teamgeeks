@@ -14,7 +14,10 @@ const StudentsFeedback = () => {
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
-            <button className={styles.buttonPrev} onClick={handlePrev}>
+            <button
+               className={styles.buttonPrev}
+               onClick={handlePrev}
+            >
                {icon}
             </button>
             <Swiper
@@ -77,11 +80,18 @@ const StudentsFeedback = () => {
             >
                {cards.map((card, i) => (
                   <SwiperSlide key={i}>
-                     <StudentsFeedbackCard img={card.img} name={card.name} word={card.word} />
+                     <StudentsFeedbackCard
+                        img={card.img}
+                        name={card.name}
+                        word={card.word}
+                     />
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button className={styles.buttonNext} onClick={handleNext}>
+            <button
+               className={styles.buttonNext}
+               onClick={handleNext}
+            >
                {icon}
             </button>
          </div>

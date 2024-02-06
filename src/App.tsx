@@ -13,13 +13,34 @@ const App = () => {
    return (
       <Layout>
          <Routes>
-            <Route path="/" element={<CoolBand />} />
-            <Route path="/studio" element={<CoolStudio />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/gallery/:id" element={<CollagePage />} />
-            <Route path="/studio" element={<CoolStudio />} />
-            <Route path="/studio/gallery" element={<GalleryPage />} />
-            <Route path="/studio/gallery/:id" element={<CollagePage />} />
+            <Route
+               path="/"
+               element={<CoolBand />}
+            />
+            <Route
+               path="/studio"
+               element={<CoolStudio />}
+            />
+            <Route
+               path="/gallery"
+               element={<GalleryPage />}
+            />
+            <Route
+               path="/gallery/:id"
+               element={<CollagePage />}
+            />
+            <Route
+               path="/studio"
+               element={<CoolStudio />}
+            />
+            <Route
+               path="/studio/gallery"
+               element={<GalleryPage />}
+            />
+            <Route
+               path="/studio/gallery/:id"
+               element={<CollagePage />}
+            />
          </Routes>
       </Layout>
    );

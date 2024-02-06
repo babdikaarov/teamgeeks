@@ -23,15 +23,32 @@ const OurEvents = () => {
    }, []);
 
    return (
-      <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
-         <div className={styles.scroller} data-scroller="outter" data-direction="left">
-            <div className={styles.scrollerInner} data-scroller_inner="inner">
+      <SectionWrapper
+         header={"Наши мероприятия"}
+         className={styles.ourEvent}
+      >
+         <div
+            className={styles.scroller}
+            data-scroller="outter"
+            data-direction="left"
+         >
+            <div
+               className={styles.scrollerInner}
+               data-scroller_inner="inner"
+            >
                {getEventCards.map((card, i) => (
-                  <img key={i} src={card.src} alt={card.alt} />
+                  <img
+                     key={i}
+                     src={card.src}
+                     alt={card.alt}
+                  />
                ))}
             </div>
          </div>
-         <ButtonWithArrow text="Подробнее" to={"/gallery"} />
+         <ButtonWithArrow
+            text="Подробнее"
+            to={"/gallery"}
+         />
       </SectionWrapper>
    );
 };

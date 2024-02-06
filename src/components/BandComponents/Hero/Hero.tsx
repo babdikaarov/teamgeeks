@@ -6,7 +6,11 @@ import SharedButton from "../../../UI/buttons/SharedButton";
 const Hero = () => {
    return (
       <HeroTeamplate {...getHeroData.bandHero}>
-         <SharedButton whatsapp={contacts.bandNumber} classname="bandHeroButton" text="Заказать Cool Band" />
+         <SharedButton
+            whatsapp={contacts.bandNumber}
+            classname="bandHeroButton"
+            text="Заказать Cool Band"
+         />
       </HeroTeamplate>
    );
 };

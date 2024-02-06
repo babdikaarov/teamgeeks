@@ -12,9 +12,16 @@ const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
    return (
-      <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id="collaboration">
+      <SectionWrapper
+         header={"Коллаборации"}
+         className={styles.collabWrapper}
+         id="collaboration"
+      >
          <div className={styles.collabContainer}>
-            <button className={styles.buttonPrev} onClick={handlePrev}>
+            <button
+               className={styles.buttonPrev}
+               onClick={handlePrev}
+            >
                {icon}
             </button>
             <Swiper
@@ -56,13 +63,24 @@ const Collaboration = () => {
                <div>
                   {cards?.map((card, i) => (
                      /* FIX_ME construct logic for partrait and landscape verify with team */
-                     <SwiperSlide key={i} className={styles.collabCardsContainer}>
-                        <CollabCard src={card.src} alt={card.alt} firstName={card.firstName} lastName={card.lastName} />
+                     <SwiperSlide
+                        key={i}
+                        className={styles.collabCardsContainer}
+                     >
+                        <CollabCard
+                           src={card.src}
+                           alt={card.alt}
+                           firstName={card.firstName}
+                           lastName={card.lastName}
+                        />
                      </SwiperSlide>
                   ))}
                </div>
             </Swiper>
-            <button className={styles.buttonNext} onClick={handleNext}>
+            <button
+               className={styles.buttonNext}
+               onClick={handleNext}
+            >
                {icon}
             </button>
          </div>

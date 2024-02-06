@@ -16,11 +16,19 @@ const OurStudents = () => {
    const allIDS = extractAllYouTubeVideoID(data);
 
    return (
-      <SectionWrapper header="Успехи наших студентов" id="students">
+      <SectionWrapper
+         header="Успехи наших студентов"
+         id="students"
+      >
          <div className={styles.ourStudents}>
             {mobileWidth ? (
                mobileArray.map((url, index) => (
-                  <OurStudentsCard key={index} url={url} addToID={index} allIDS={allIDS} />
+                  <OurStudentsCard
+                     key={index}
+                     url={url}
+                     addToID={index}
+                     allIDS={allIDS}
+                  />
                ))
             ) : (
                <>
@@ -34,20 +42,37 @@ const OurStudents = () => {
                      className={styles.ourStudentsSwiper}
                   >
                      {[...data, ...data].map((url, index) => (
-                        <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
-                           <OurStudentsCard url={url} addToID={index} allIDS={allIDS} />
+                        <SwiperSlide
+                           key={index}
+                           className={styles.ourStudentsSwipeCard}
+                        >
+                           <OurStudentsCard
+                              url={url}
+                              addToID={index}
+                              allIDS={allIDS}
+                           />
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <button id="btn22" className={styles.LeftSwip}>
+                  <button
+                     id="btn22"
+                     className={styles.LeftSwip}
+                  >
                      {icon}
                   </button>
-                  <button id="btn11" className={styles.RightSwip}>
+                  <button
+                     id="btn11"
+                     className={styles.RightSwip}
+                  >
                      {icon}
                   </button>
                </>
             )}
-            <a className={styles.watchmore} href="https://www.youtube.com/@coolstudiokg" target="_blank">
+            <a
+               className={styles.watchmore}
+               href="https://www.youtube.com/@coolstudiokg"
+               target="_blank"
+            >
                Больше видео
             </a>
          </div>
