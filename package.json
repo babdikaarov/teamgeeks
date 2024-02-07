@@ -10,13 +10,13 @@
       "lint:fix": "eslint --fix .",
       "preview": "vite preview",
       "format": "prettier --write .",
-      "husky": "husky || true",
-      "try-husky": "chmod +x .husky/pre-commit",
-      "stage-files": "git add .",
-      "commit": "git commit -m ''"
+      "prepare": "husky || true",
+      "test": "npx lint-staged && npm run build",
+      "commit": "npx cz"
    },
    "lint-staged": {
       "**/*.{js,jsx,ts,tsx,css,scss,json}": [
+         "eslint --fix .",
          "prettier --write ."
       ]
    },
