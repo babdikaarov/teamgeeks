@@ -14,3 +14,10 @@ export interface IGetContacts {
    youtube: string;
    tiktok: string;
 }
+export interface GetCoolStudioVideo {
+   id: number;
+   image: string;
+   orientation: string;
+   bluer: string;
+   youtubeUrl: string;
+}

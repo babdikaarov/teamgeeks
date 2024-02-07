@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { reducersCoolStudio } from "../store/aboutStudioSlice.ts";
 import { reducersContacts } from "../store/contactsSlice.ts";
 
 export const store = configureStore({
    reducer: {
       getContacts: reducersContacts,
+      getCoolStudioVideo: reducersCoolStudio,
    },
 });
 
