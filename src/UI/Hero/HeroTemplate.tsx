@@ -10,25 +10,25 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({ video, text, children }) =>
    useEffect(() => {
       const videoElement = videoRef.current;
       videoElement?.setAttribute("muted", "true");
-      videoElement?.setAttribute("muted", "");
-      const handleClick = (e: Event) => {
-         e.preventDefault();
-         e.stopPropagation();
-      };
+      // videoElement?.setAttribute("muted", "");
+      // const handleClick = (e: Event) => {
+      //    e.preventDefault();
+      //    e.stopPropagation();
+      // };
 
-      const handleTouch = (e: Event) => {
-         e.preventDefault();
-         e.stopPropagation();
-      };
+      // const handleTouch = (e: Event) => {
+      //    e.preventDefault();
+      //    e.stopPropagation();
+      // };
 
-      videoElement?.addEventListener("click", handleClick);
-      videoElement?.addEventListener("touchstart", handleTouch);
-      videoElement?.play();
+      // videoElement?.addEventListener("click", handleClick);
+      // videoElement?.addEventListener("touchstart", handleTouch);
+      // videoElement?.play();
 
-      return () => {
-         videoElement?.removeEventListener("click", handleClick);
-         videoElement?.removeEventListener("touchstart", handleTouch);
-      };
+      // return () => {
+      //    videoElement?.removeEventListener("click", handleClick);
+      //    videoElement?.removeEventListener("touchstart", handleTouch);
+      // };
    }, []);
 
    return (
@@ -39,12 +39,8 @@ const HeroTemplate: React.FC<HeroTemplateProps> = ({ video, text, children }) =>
             loop
             playsInline
             ref={videoRef}
-         >
-            <source
-               src={video.src}
-               type={video.type}
-            />
-         </video>
+            src={video}
+         ></video>
          {text && (
             <HeroText
                header={text.header}
