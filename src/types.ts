@@ -31,16 +31,16 @@ export interface IGetOurTeam {
    orientation: string;
    bluer: string;
 }
+export interface IHeroStudio {
+   id: number;
+   title: string;
+   video: string;
+   text: string;
+   orientation: string;
+}
+
 export interface IHeroBand {
    id: number;
    video: string;
    orientation: string;
-}
-
-export interface IHeroStudio {
-   id: number;
-   video: string;
-   orientation: string;
-   text: string;
-   title: string;
 }

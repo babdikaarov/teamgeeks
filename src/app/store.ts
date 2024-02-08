@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { reducersCoolStudio } from "../store/aboutStudioSlice.ts";
 import { reducersContacts } from "../store/contactsSlice.ts";
 import { reducersOurTeam } from "../store/ourTeamSlice.ts";
-import { reducersHeroBand } from "../store/herobandSlice.ts";
 import { reducersHeroStudio } from "../store/heroStudioSlice.ts";
+import { reducersHeroBand } from "../store/herobandSlice.ts";
 
 export const store = configureStore({
    reducer: {
