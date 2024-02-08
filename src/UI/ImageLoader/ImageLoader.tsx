@@ -20,24 +20,23 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = defaultValue }) 
       img.src = src;
    }, [src]);
 
-   return (
-      <>
-         <div style={{ display: loaded ? "none" : "inline", width: "100%", height: "100%", borderRadius: "16px" }}>
-            <Blurhash
-               hash={bluer}
-               width="100%"
-               height="100%"
-               resolutionX={32}
-               resolutionY={32}
-               punch={1}
-            />
-         </div>
-         <img
-            src={src}
-            alt=""
-            style={{ display: !loaded ? "none" : "inline" }}
+   return !loaded ? (
+      <div style={{ display: "inline", width: "100%", height: "100%", borderRadius: "16px" }}>
+         <Blurhash
+            hash={bluer.length < 14 ? defaultValue : bluer}
+            width="100%"
+            height="100%"
+            resolutionX={32}
+            resolutionY={32}
+            punch={1}
          />
-      </>
+      </div>
+   ) : (
+      <img
+         src={src}
+         alt=""
+         style={{ display: "inline" }}
+      />
    );
 };
 

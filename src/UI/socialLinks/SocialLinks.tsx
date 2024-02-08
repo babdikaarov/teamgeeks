@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
 import { getContacts } from "../../store/contactsThunk.ts";
 import styles from "./_socialLinks.module.scss";
 import { socialIcons } from "./icons";
+import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
 
 interface SocialLinksProps {
    lyrics: string;
@@ -16,6 +17,8 @@ const SocialLinks: FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
    useEffect(() => {
       dispatch(getContacts());
    }, [dispatch]);
+
+   const whatsApp = createWhatsAppLink(getLinks.whatsapp, "whatsapp");
 
    const handleFunction = () => {
       setIsMenuOpen(false);
@@ -34,7 +37,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
          </li>
          <li id="whatsapp">
             <a
-               href={getLinks.whatsapp}
+               href={whatsApp}
                target="blank"
                onClick={handleFunction}
             >

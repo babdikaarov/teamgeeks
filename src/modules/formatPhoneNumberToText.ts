@@ -1,4 +1,4 @@
-export default function (phoneNumber: number): string {
+export default function (phoneNumber: string) {
    const phoneNumberString = phoneNumber.toString();
    const numericPhoneNumber = phoneNumberString.replace(/\D/g, "");
    const formattedPhoneNumber = `+${numericPhoneNumber.slice(0, 3)} ${numericPhoneNumber.slice(

@@ -2,16 +2,9 @@ type Text = {
    header: string;
    paragraph?: string;
 };
+
 export interface HeroTemplateProps {
-   contacts?: string;
-   video: {
-      src: string;
-      type: string;
-   };
-   image: {
-      src: string;
-      alt: string;
-   };
+   video: string;
    text?: Text;
    children: React.ReactNode;
 }
