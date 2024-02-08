@@ -17,8 +17,8 @@ const OurTeam = () => {
    const data = useAppSelector((state) => state.getOurTeam.data)!;
    useEffect(() => {
       dispatch(getOurTeam());
-   }, []);
-
+   }, [dispatch]);
+   console.log(data);
    return (
       <SectionWrapper
          header={"Наша команда"}
@@ -59,11 +59,7 @@ const OurTeam = () => {
                   >
                      <TeamCard
                         animate={i === 0}
-                        video={card.video}
-                        img={card.image}
-                        role={card.instrument}
-                        name={card.name}
-                        view={card.orientation}
+                        {...card}
                      />
                   </SwiperSlide>
                ))}

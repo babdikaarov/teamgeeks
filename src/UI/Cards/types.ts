@@ -8,11 +8,12 @@ export interface ClientCardProps {
 
 export interface TeamCardProps {
    video: string;
-   img: string;
-   role: string;
+   image: string;
+   instrument: string;
    name: string;
-   view: string;
+   orientation: string;
    animate: boolean;
+   bluer: string;
 }
 
 export interface CollabCardProps extends React.HTMLAttributes<HTMLDivElement> {
