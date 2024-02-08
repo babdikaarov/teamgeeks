@@ -21,3 +21,13 @@ export interface GetCoolStudioVideo {
    bluer: string;
    youtubeUrl: string;
 }
+
+export interface IGetOurTeam {
+   id: number;
+   name: string;
+   image: string;
+   video: string;
+   instrument: string;
+   orientation: string;
+   bluer: string;
+}

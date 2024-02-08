@@ -4,12 +4,20 @@ import "swiper/css";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "./_ourTeam.module.scss";
 import TeamCard from "../../../UI/Cards/TeamCard";
-import cards from "../../../tempData/getTeamList";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useEffect } from "react";
+import { getOurTeam } from "../../../store/ourTeamThunk";
 
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
+
+   const dispatch = useAppDispatch();
+   const data = useAppSelector((state) => state.getOurTeam.data)!;
+   useEffect(() => {
+      dispatch(getOurTeam());
+   }, []);
 
    return (
       <SectionWrapper
@@ -28,50 +36,34 @@ const OurTeam = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
-               mousewheel
+               mousewheel={{
+                  forceToAxis: true,
+               }}
                modules={[Mousewheel, Navigation]}
                breakpoints={{
-                  1440: {
-                     spaceBetween: 30,
-                  },
                   1200: {
                      spaceBetween: 30,
                   },
-                  1024: {
-                     spaceBetween: 20,
-                  },
-                  892: {
-                     spaceBetween: 20,
-                  },
-                  768: {
-                     spaceBetween: 20,
-                  },
                   576: {
                      spaceBetween: 20,
-                  },
-                  390: {
-                     spaceBetween: 16,
-                  },
-                  320: {
-                     spaceBetween: 16,
                   },
                   1: {
                      spaceBetween: 16,
                   },
                }}
             >
-               {cards.map((card, i) => (
+               {data.map((card, i) => (
                   <SwiperSlide
                      key={i}
-                     className={styles.cardContainer + " " + styles[card.view]}
+                     className={styles.cardContainer + " " + styles[card.orientation.toLowerCase()]}
                   >
                      <TeamCard
                         animate={i === 0}
                         video={card.video}
-                        img={card.img}
-                        role={card.role}
+                        img={card.image}
+                        role={card.instrument}
                         name={card.name}
-                        view={card.view}
+                        view={card.orientation}
                      />
                   </SwiperSlide>
                ))}

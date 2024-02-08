@@ -28,32 +28,16 @@ const Collaboration = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
-               mousewheel
+               mousewheel={{
+                  forceToAxis: true,
+               }}
                modules={[Mousewheel, Navigation]}
                breakpoints={{
-                  1440: {
-                     spaceBetween: 30,
-                  },
                   1200: {
                      spaceBetween: 30,
                   },
-                  1024: {
-                     spaceBetween: 16,
-                  },
-                  892: {
-                     spaceBetween: 16,
-                  },
-                  768: {
-                     spaceBetween: 16,
-                  },
                   576: {
                      spaceBetween: 16,
-                  },
-                  390: {
-                     spaceBetween: 10,
-                  },
-                  320: {
-                     spaceBetween: 10,
                   },
                   1: {
                      spaceBetween: 10,
