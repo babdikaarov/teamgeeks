@@ -4,6 +4,7 @@ import { reducersContacts } from "../store/contactsSlice.ts";
 import { reducersOurTeam } from "../store/ourTeamSlice.ts";
 import { reducersHeroStudio } from "../store/heroStudioSlice.ts";
 import { reducersHeroBand } from "../store/herobandSlice.ts";
+import { reducerActiveNavigation } from "../store/activeNavigationSlice.ts";
 
 export const store = configureStore({
    reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
       getOurTeam: reducersOurTeam,
       getHeroBand: reducersHeroBand,
       getHeroStudio: reducersHeroStudio,
+      getActiveNavigationState: reducerActiveNavigation,
    },
 });
 

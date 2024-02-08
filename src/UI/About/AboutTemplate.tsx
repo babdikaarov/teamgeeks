@@ -1,7 +1,8 @@
-import { FC } from "react";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import styles from "./_aboutTemplate.module.scss";
 import ImageLoader from "../ImageLoader/ImageLoader";
+import { EBlockID } from "../../types";
+import useToggleActiveNavigation from "../../modules/hooks/useToggleActiveNavigation";
 
 interface AboutTemplateProps {
    header: string;
@@ -9,14 +10,19 @@ interface AboutTemplateProps {
    poster: string;
 }
 
-const AboutTemplate: FC<AboutTemplateProps> = ({ header, poster, text }) => {
+const AboutTemplate: React.FC<AboutTemplateProps> = ({ header, poster, text }) => {
+   const { ref } = useToggleActiveNavigation(EBlockID.About);
+
    return (
       <SectionWrapper
          className={styles.aboutBand}
          header={header}
-         id="about"
+         id={EBlockID.About}
       >
-         <div className={styles.about}>
+         <div
+            ref={ref}
+            className={styles.about}
+         >
             <article className={styles.article}>
                <div className={styles.truncate}>
                   {text.split(/(?<=[.!?])\s+/).map((newLine, i) => (

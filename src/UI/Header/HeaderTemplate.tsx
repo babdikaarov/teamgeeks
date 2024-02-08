@@ -7,7 +7,7 @@ import TopButton from "./topButtons/TopButton.tsx";
 import TopButtons from "./topButtons/TopButtons";
 import { HeaderTemplateProps } from "./types.ts";
 
-const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ links, bandPage, lyrics, NavList }) => {
+const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ bandPage, lyrics, NavList }) => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    const toggleMenu = () => {
@@ -31,10 +31,7 @@ const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ links, bandPage, lyrics
                   lyrics={lyrics}
                   {...{ setIsMenuOpen }}
                />
-               <SocialLinks
-                  links={links}
-                  {...{ setIsMenuOpen }}
-               />
+               <SocialLinks {...{ setIsMenuOpen }} />
                <BurgerBtn toggleMenu={toggleMenu} />
             </nav>
             <TopButtons />

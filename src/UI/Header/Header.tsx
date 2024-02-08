@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { lyrics, tempLinks } from "../../tempData/getHeaderData";
+import { lyrics } from "../../tempData/getHeaderData";
 import BandNavList from "./pageNavigation/BandNavList";
 import StudioNavList from "./pageNavigation/StudioNavList";
 import HeaderTemplate from "./HeaderTemplate";
@@ -19,7 +19,6 @@ const Header = () => {
       <HeaderTemplate
          bandPage={bandPage}
          lyrics={lyrics}
-         links={tempLinks}
          NavList={bandPage ? BandNavList : StudioNavList}
       />
    );

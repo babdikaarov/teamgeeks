@@ -1,32 +1,24 @@
 @use "../../scss/partials/mixin" as mix;
 
 .made {
-   display: block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
    font-size: 14px;
    position: relative;
-   margin: 20px 0 35px 0;
-   text-align: center;
+   margin-top: 100px;
+   @include mix.lg {
+      margin-block: 50px;
+   }
 }
 
 .made::after {
    content: "";
-   position: absolute;
+   display: block;
+   position: relative;
    background: url("../../assets/geeks.svg") no-repeat 50% 50%;
    width: 35px;
    height: 36px;
-   display: block;
-   top: -5px;
-   right: 41.5%;
-   @include mix.lg {
-      right: 35%;
-   }
-   @include mix.md {
-      right: 30%;
-   }
-   @include mix.sm {
-      right: 25%;
-   }
-   @include mix.smx {
-      right: 15%;
-   }
+  
 }

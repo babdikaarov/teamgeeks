@@ -9,18 +9,24 @@ import OurStudentsCard from "../../../UI/Cards/OurStudentsCard";
 import data from "./tempdata";
 import icon from "../../../assets/icons/bigArrow";
 import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { EBlockID } from "../../../types";
 
 const OurStudents = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(data);
+   const { ref } = useToggleActiveNavigation(EBlockID.Students);
 
    return (
       <SectionWrapper
          header="Успехи наших студентов"
          id="students"
       >
-         <div className={styles.ourStudents}>
+         <div
+            ref={ref}
+            className={styles.ourStudents}
+         >
             {mobileWidth ? (
                mobileArray.map((url, index) => (
                   <OurStudentsCard
@@ -48,6 +54,7 @@ const OurStudents = () => {
                         >
                            <OurStudentsCard
                               url={url}
+                              key={index}
                               addToID={index}
                               allIDS={allIDS}
                            />

@@ -1,12 +1,15 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "./_aboutStudio.module.scss";
 import VideoComponent from "./temp/VideoComponent";
+import { EBlockID } from "../../../types";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 
-const AboutStudio: FC = () => {
+const AboutStudio: React.FC = () => {
    const [expanded, setExpanded] = useState(false);
    const [customHeader, setCustomHeader] = useState(false);
    const [points, setPoints] = useState(false);
+   const { ref } = useToggleActiveNavigation(EBlockID.AboutStudio);
 
    const toggleExpand = () => {
       setExpanded(!expanded);
@@ -20,7 +23,10 @@ const AboutStudio: FC = () => {
          className={styles.coolStudio}
          id="about"
       >
-         <div className={styles.AboutUsWrapper}>
+         <div
+            ref={ref}
+            className={styles.AboutUsWrapper}
+         >
             <div className={styles.TextWrapper}>
                <span>
                   В сентябре 2022 года наша студия открыла свои двери для всех желающих научиться игре на музыкальных

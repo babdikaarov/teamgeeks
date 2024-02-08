@@ -1,11 +1,17 @@
 import React, { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./gallery/_gallery.module.scss";
-import { GalleryTemplateProps } from "./types";
-import ImageLoader from "../ImageLoader/ImageLoader";
+import { Link, useLocation } from "react-router-dom";
+import styles from "./_gallery.module.scss";
+import { GalleryTemplateProps } from "../types";
+import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { EBlockID } from "../../../types";
 
 const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
    const [events, setEvents] = useState(galleryData);
+   const { pathname } = useLocation();
+   const onStudio = pathname.match("studio");
+   const { ref } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
+
    useEffect(() => {
       if (galleryData) {
          setEvents(galleryData);
@@ -13,7 +19,10 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
    }, [galleryData]);
 
    return (
-      <div className={styles.gallery}>
+      <div
+         ref={ref}
+         className={styles.gallery}
+      >
          {events.map((event, i) => (
             <React.Fragment key={event.eventID + i}>
                <div className={styles.galleryCards}>
