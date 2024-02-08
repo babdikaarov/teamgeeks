@@ -1,10 +1,13 @@
 import { useState } from "react";
-import styles from "./gallery/_galleryCollage.module.scss";
-import { GalleryCollageProps } from "./types";
-import usePagination from "../../modules/hooks/usePagination";
+import styles from "./_galleryCollage.module.scss";
+import { GalleryCollageProps } from "../types";
+import usePagination from "../../../modules/hooks/usePagination";
 import { SlideImage } from "yet-another-react-lightbox";
 import LightBox from "./LightBox";
-import ImageLoader from "../ImageLoader/ImageLoader";
+import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+import { useLocation } from "react-router-dom";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { EBlockID } from "../../../types";
 
 /*
  */
@@ -15,6 +18,9 @@ const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const images = getVisibleItems(items);
+   const { pathname } = useLocation();
+   const onStudio = pathname.match("studio");
+   const { ref } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
 
    const handleOpen = (i: number) => {
       setOpen(true);
@@ -36,7 +42,10 @@ const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
 
    return (
       <>
-         <div className={styles.collage}>
+         <div
+            className={styles.collage}
+            ref={ref}
+         >
             {images &&
                images.map((data, i) => (
                   <div

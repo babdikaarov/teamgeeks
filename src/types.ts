@@ -44,3 +44,17 @@ export interface IHeroBand {
    video: string;
    orientation: string;
 }
+
+export enum EBlockID {
+   Main = "main",
+   About = "about",
+   AboutStudio = "aboutStudio",
+   Teachers = "teachers",
+   Students = "students",
+   GalleryStudio = "galleryStudio",
+   Gallery = "gallery",
+   Concert = "concert",
+   Courses = "courses",
+   Collab = "collaboration",
+   None = "",
+}

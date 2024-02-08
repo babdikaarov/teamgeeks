@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
 import { getContacts } from "../../store/contactsThunk.ts";
 import styles from "./_socialLinks.module.scss";
@@ -6,11 +6,10 @@ import { socialIcons } from "./icons";
 import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
 
 interface SocialLinksProps {
-   lyrics: string;
    setIsMenuOpen: (isOpen: boolean) => void;
 }
 
-const SocialLinks: FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
    const dispatch = useAppDispatch();
    const getLinks = useAppSelector((state) => state.getContacts.data)!;
 

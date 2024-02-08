@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { useMediaQuery } from "../../modules/hooks/useMediaQuery";
-import "./gallery/yarl.scss";
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
+import "./yarl.scss";
 /*
  */
 interface ILightBoxProp {

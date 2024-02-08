@@ -11,10 +11,13 @@ import Modal from "./Modal";
 import { TeacherType } from "./types";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import contacts from "../../../tempData/contacts.json";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { EBlockID } from "../../../types";
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(null);
+   const { ref } = useToggleActiveNavigation(EBlockID.Teachers);
 
    const openModal = useCallback((teacher: TeacherType) => {
       setSelectedTeacher(teacher);
@@ -29,7 +32,10 @@ const Teachers = () => {
          header="Команда Cool  Studio"
          id="teachers"
       >
-         <div className={styles.teacherContainer}>
+         <div
+            ref={ref}
+            className={styles.teacherContainer}
+         >
             <button
                className={styles.buttonPrev}
                onClick={handlePrev}

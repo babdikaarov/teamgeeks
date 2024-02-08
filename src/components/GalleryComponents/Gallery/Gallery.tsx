@@ -1,4 +1,4 @@
-import GalleryTemplate from "../../../UI/Gallery/GalleryTemplate";
+import GalleryTemplate from "./GalleryTemplate";
 import getGalleryData from "../../../tempData/getGalleyData";
 // interface GalleryProps {
 //   galleryData: {

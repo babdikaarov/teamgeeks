@@ -12,6 +12,9 @@ const App = () => {
    useTitle();
    return (
       <Layout>
+         {/* <div style={{margin: "25% 0px 25% 0px", background:"white", opacity: "0.7", position: "fixed", width: "100%",
+      height: "100vw", transform: "translate(-50%, -50%)", left:"50%", top: "50%"
+      }}></div> */}
          <Routes>
             <Route
                path="/"

@@ -8,15 +8,22 @@ import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import tempData from "./tempData";
 import ConcertCard from "../../../UI/Cards/ConcertCard";
 import icon from "../../../assets/icons/bigArrow";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { EBlockID } from "../../../types";
 
 const Concert = () => {
+   const { ref } = useToggleActiveNavigation(EBlockID.Concert);
+
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const concertImages = tempData;
    const mobileArray = concertImages.slice(0, 3);
 
    return (
       <SectionWrapper header="Отчетные концерты">
-         <div className={styles.ConcertSlider}>
+         <div
+            className={styles.ConcertSlider}
+            ref={ref}
+         >
             {mobileWidth ? (
                mobileArray.map((card, i) => (
                   <ConcertCard

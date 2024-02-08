@@ -7,17 +7,23 @@ import CollabCard from "../../../UI/Cards/CollabCard";
 import cards from "../../../tempData/getCollabData";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+import { EBlockID } from "../../../types";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
+   const { ref } = useToggleActiveNavigation(EBlockID.Collab);
 
    return (
       <SectionWrapper
          header={"Коллаборации"}
          className={styles.collabWrapper}
-         id="collaboration"
+         id={EBlockID.Collab}
       >
-         <div className={styles.collabContainer}>
+         <div
+            ref={ref}
+            className={styles.collabContainer}
+         >
             <button
                className={styles.buttonPrev}
                onClick={handlePrev}
