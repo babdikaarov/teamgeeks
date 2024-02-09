@@ -5,7 +5,7 @@ import OurEvents from "../../components/BandComponents/OurEvents/OurEvents.tsx";
 import Collaboration from "../../components/BandComponents/Collaboration/Collaboration.tsx";
 import Hero from "../../components/BandComponents/Hero/Hero.tsx";
 import ContactUs from "../../components/BandComponents/ContactUS/ContactUs.tsx";
-import About from "../../components/BandComponents/About/About.tsx";
+import About from "../../components/BandComponents/About/AboutBand.tsx";
 
 const CoolBand = () => {
    return (

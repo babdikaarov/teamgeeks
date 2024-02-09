@@ -18,7 +18,6 @@ const OurTeam = () => {
    useEffect(() => {
       dispatch(getOurTeam());
    }, [dispatch]);
-   console.log(data);
    return (
       <SectionWrapper
          header={"Наша команда"}
