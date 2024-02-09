@@ -1,18 +1,21 @@
 @import "../../../scss/partials/mixin";
 
-.experiment {
-   left: 1000px;
-   transition: left 1s;
-}
+@media (min-width: 1024px) {
+   .experiment {
+      position: relative;
+      transform: translateX(1000px);
+      transition: transform 1s;
+   }
 
-.experiment[draw-out="true"] {
-   left: 0px;
+   .experiment[draw-out="true"] {
+      transform: translateX(0);
+   }
 }
 
 .collabWrapper {
    transition-duration: 1.5s !important;
    --element-indent: calc(calc(55px * 2) - calc(20px * 2));
-   @media (min-width: 1025) {
+   @media (min-width: 1025px) {
       margin-right: 0 !important;
    }
 

@@ -28,7 +28,7 @@ export const useYouTubeData = (url: string) => {
 
    const extractYouTubeVideoId = (url: string) => {
       const videoIdRegex =
-         /(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+         /(?:youtu\.be\/|youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
       const match = url.match(videoIdRegex);
 
       if (match && match[1]) {
