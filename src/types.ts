@@ -58,3 +58,10 @@ export enum EBlockID {
    Collab = "collaboration",
    None = "",
 }
+
+export interface IAboutData {
+   id: number;
+   image: string;
+   orientation: string;
+   bluer: string;
+}

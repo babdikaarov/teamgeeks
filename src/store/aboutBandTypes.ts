@@ -1,7 +1,6 @@
 export interface AboutUsBandData {
    id: number;
    image: string;
-   orientation: 'PORTRAIT';
+   orientation: "PORTRAIT";
    bluer: string;
- }
- 
+}

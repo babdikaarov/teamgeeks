@@ -5,11 +5,11 @@ import { reducersOurTeam } from "../store/ourTeamSlice.ts";
 import { reducersHeroStudio } from "../store/heroStudioSlice.ts";
 import { reducersHeroBand } from "../store/herobandSlice.ts";
 import { reducerActiveNavigation } from "../store/activeNavigationSlice.ts";
-import { coolBandReducer } from '../store/aboutBandSlice.ts';
+import { reducersAboutBand } from "../store/aboutBandSlice.ts";
 
 export const store = configureStore({
    reducer: {
-      coolBand: coolBandReducer,
+      getAboutBand: reducersAboutBand,
       getContacts: reducersContacts,
       getCoolStudioVideo: reducersCoolStudio,
       getOurTeam: reducersOurTeam,

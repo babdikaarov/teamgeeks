@@ -60,7 +60,11 @@ const StudioNavList: React.FC<StudioNavListProps> = ({ setIsMenuOpen }) => {
             <HashLink
                to={"/studio/gallery"}
                onClick={handleFunction}
-               className={activeNavigation.focusOn === EBlockID.GalleryStudio || activeNavigation.focusOn === EBlockID.Concert ? styles.active : ""}
+               className={
+                  activeNavigation.focusOn === EBlockID.GalleryStudio || activeNavigation.focusOn === EBlockID.Concert
+                     ? styles.active
+                     : ""
+               }
             >
                Концерты
             </HashLink>
