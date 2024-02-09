@@ -21,6 +21,7 @@ const useTitle = () => {
          document.title = "Cool Band";
          updateFavicon("/bandIcon.svg");
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [pathname]);
 };
 

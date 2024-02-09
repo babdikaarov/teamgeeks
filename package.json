@@ -11,13 +11,12 @@
       "preview": "vite preview",
       "format": "prettier --write .",
       "prepare": "husky || true",
-      "test": "npx lint-staged && npm run build",
+      "test": "npx lint-staged && npm run build && prettier --write .",
       "commit": "npx cz"
    },
    "lint-staged": {
-      "**/*.{js,jsx,ts,tsx,css,scss,json}": [
-         "eslint --fix .",
-         "prettier --write ."
+      "**/*.{js,jsx,ts,tsx}": [
+         "eslint --fix ."
       ]
    },
    "config": {

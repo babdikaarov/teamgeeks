@@ -31,6 +31,7 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
       return () => {
          window.removeEventListener("resize", handleResize);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [initialItemsPerPage]);
 
    const getVisibleItems = (items: (Item | undefined)[]) => {

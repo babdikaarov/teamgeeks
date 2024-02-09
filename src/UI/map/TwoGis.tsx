@@ -20,6 +20,7 @@ export default function TwoGis() {
       if (DG) {
          initializeMap();
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    useEffect(() => {

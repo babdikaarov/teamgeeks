@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Params = (params: { [s: string]: any } | ArrayLike<string | number | boolean>) => string;
 
 export const createParameterString: Params = (params) => {

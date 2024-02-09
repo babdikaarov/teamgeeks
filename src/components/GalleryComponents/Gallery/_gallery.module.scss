@@ -3,6 +3,7 @@
 .gallery::-webkit-scrollbar {
    display: none;
 }
+
 .loadingBox {
    border-radius: 16px;
    background-color: #fff;
@@ -89,14 +90,6 @@
    overflow: hidden;
    border-radius: 16px;
    transition: all 1s ease-in-out;
-}
-@keyframes slideIn {
-   from {
-      transform: translateX(-500%);
-   }
-   to {
-      transform: translateX(0px);
-   }
 }
 
 @keyframes fadeOut {

@@ -7,12 +7,14 @@ const useSwiperNavigation = () => {
 
    const handlePrev = useCallback(() => {
       if (!sliderRef.current) return;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       sliderRef.current.swiper.slidePrev();
    }, []);
 
    const handleNext = useCallback(() => {
       if (!sliderRef.current) return;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       sliderRef.current.swiper.slideNext();
    }, []);
