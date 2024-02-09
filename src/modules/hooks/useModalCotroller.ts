@@ -51,5 +51,5 @@ export const useModalCotroller = () => {
       };
    }, [dialogRef, handleClose, isOpen]);
 
-   return { dialogRef, openModal, isOpen };
+   return { dialogRef, openModal, isOpen, handleClose };
 };

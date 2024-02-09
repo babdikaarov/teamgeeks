@@ -11,7 +11,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ image, instrument, name, video, ani
 
    return (
       <div
-         className={`${styles.card} ${animate ? "firstAnimate" : ""}`}
+         className={`${styles.card}`}
+         data-animate={animate}
          {...touch}
          {...mouse}
       >

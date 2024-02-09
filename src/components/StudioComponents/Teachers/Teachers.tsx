@@ -17,7 +17,7 @@ import { EBlockID } from "../../../types";
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(null);
-   const { ref } = useToggleActiveNavigation(EBlockID.Teachers);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.Teachers);
 
    const openModal = useCallback((teacher: TeacherType) => {
       setSelectedTeacher(teacher);
@@ -33,7 +33,7 @@ const Teachers = () => {
          id="teachers"
       >
          <div
-            ref={ref}
+            ref={refToogle}
             className={styles.teacherContainer}
          >
             <button

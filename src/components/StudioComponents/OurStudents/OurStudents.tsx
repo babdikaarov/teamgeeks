@@ -16,7 +16,7 @@ const OurStudents = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(data);
-   const { ref } = useToggleActiveNavigation(EBlockID.Students);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.Students);
 
    return (
       <SectionWrapper
@@ -24,7 +24,7 @@ const OurStudents = () => {
          id="students"
       >
          <div
-            ref={ref}
+            ref={refToogle}
             className={styles.ourStudents}
          >
             {mobileWidth ? (

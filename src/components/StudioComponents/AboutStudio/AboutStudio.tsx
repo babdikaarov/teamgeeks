@@ -9,7 +9,7 @@ const AboutStudio: React.FC = () => {
    const [expanded, setExpanded] = useState(false);
    const [customHeader, setCustomHeader] = useState(false);
    const [points, setPoints] = useState(false);
-   const { ref } = useToggleActiveNavigation(EBlockID.AboutStudio);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.AboutStudio);
 
    const toggleExpand = () => {
       setExpanded(!expanded);
@@ -24,7 +24,7 @@ const AboutStudio: React.FC = () => {
          id="about"
       >
          <div
-            ref={ref}
+            ref={refToogle}
             className={styles.AboutUsWrapper}
          >
             <div className={styles.TextWrapper}>

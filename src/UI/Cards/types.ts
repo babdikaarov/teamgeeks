@@ -16,13 +16,6 @@ export interface TeamCardProps {
    bluer: string;
 }
 
-export interface CollabCardProps extends React.HTMLAttributes<HTMLDivElement> {
-   src: string;
-   alt: string;
-   firstName: string;
-   lastName: string;
-}
-
 export interface TeacherCardProps {
    img: string;
    name: string;

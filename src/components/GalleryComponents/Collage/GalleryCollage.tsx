@@ -20,7 +20,7 @@ const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
    const images = getVisibleItems(items);
    const { pathname } = useLocation();
    const onStudio = pathname.match("studio");
-   const { ref } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
+   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
 
    const handleOpen = (i: number) => {
       setOpen(true);
@@ -44,7 +44,7 @@ const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
       <>
          <div
             className={styles.collage}
-            ref={ref}
+            ref={refToogle}
          >
             {images &&
                images.map((data, i) => (
