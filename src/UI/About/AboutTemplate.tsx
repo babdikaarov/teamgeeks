@@ -1,44 +1,39 @@
-import SectionWrapper from "../SectionWrapper/SectionWrapper";
-import styles from "./_aboutTemplate.module.scss";
-import ImageLoader from "../ImageLoader/ImageLoader";
-import { EBlockID } from "../../types";
-import useToggleActiveNavigation from "../../modules/hooks/useToggleActiveNavigation";
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import SectionWrapper from '../SectionWrapper/SectionWrapper';
+import styles from './_aboutTemplate.module.scss';
+import ImageLoader from '../ImageLoader/ImageLoader';
+import { fetchAboutUsBand, selectCoolBand } from '../../store/aboutBandSlice';
 
 interface AboutTemplateProps {
-   header: string;
-   text: string;
-   poster: string;
+  text: string;
+  header: string;
 }
 
-const AboutTemplate: React.FC<AboutTemplateProps> = ({ header, poster, text }) => {
-   const { ref } = useToggleActiveNavigation(EBlockID.About);
+const AboutTemplate: FC<AboutTemplateProps> = ({ header, text }) => {
+  const dispatch = useDispatch();
+  const { data } = useSelector(selectCoolBand);
 
-   return (
-      <SectionWrapper
-         className={styles.aboutBand}
-         header={header}
-         id={EBlockID.About}
-      >
-         <div
-            ref={ref}
-            className={styles.about}
-         >
-            <article className={styles.article}>
-               <div className={styles.truncate}>
-                  {text.split(/(?<=[.!?])\s+/).map((newLine, i) => (
-                     <p
-                        key={i}
-                        className={styles.text}
-                     >
-                        {newLine}
-                     </p>
-                  ))}
-               </div>
-            </article>
-            <ImageLoader src={poster} />
-         </div>
-      </SectionWrapper>
-   );
+  useEffect(() => {
+    dispatch(fetchAboutUsBand());
+  }, [dispatch]);
+
+  return (
+    <SectionWrapper className={styles.aboutBand} header={header} id="about">
+      <div className={styles.about}>
+        <article className={styles.article}>
+          <div className={styles.truncate}>
+          {text.split(/(?<=[.!?])\s+/).map((newLine, i) => (
+              <p key={i} className={styles.text}>
+                {newLine}
+              </p>
+          ))}
+          </div>
+        </article>
+        <ImageLoader src={data?.image} bluer={data?.bluer}/>
+      </div>
+    </SectionWrapper>
+  );
 };
 
 export default AboutTemplate;
