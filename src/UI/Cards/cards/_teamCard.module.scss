@@ -70,6 +70,19 @@
    }
 }
 
+.card[data-animate="true"] {
+   // first elements animtation
+   animation: preview 2s ease-in-out infinite;
+}
+@keyframes preview {
+   70% {
+      transform: rotateY(0.35turn);
+   }
+   to {
+      transform: rotateY(0turn);
+   }
+}
+
 .back {
    transform: rotateY(0.5turn);
 }

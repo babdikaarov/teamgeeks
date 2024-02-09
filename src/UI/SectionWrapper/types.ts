@@ -1,6 +1,5 @@
-import { ReactNode } from "react";
-
 export interface SectionWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
    header?: string;
-   children: ReactNode;
+   children: React.ReactNode;
+   forwardedRef?: React.ForwardedRef<HTMLElement>;
 }

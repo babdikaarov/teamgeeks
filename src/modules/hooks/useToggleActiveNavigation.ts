@@ -24,7 +24,7 @@ const useToggleActiveNavigation = (blockId: EBlockID) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [inView, dispatch]);
 
-   return { inView, ref };
+   return { inView, refToogle: ref };
 };
 
 export default useToggleActiveNavigation;

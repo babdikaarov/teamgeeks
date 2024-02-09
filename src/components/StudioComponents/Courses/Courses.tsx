@@ -6,7 +6,7 @@ import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNav
 import { EBlockID } from "../../../types";
 
 const Courses = () => {
-   const { ref } = useToggleActiveNavigation(EBlockID.Courses);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.Courses);
 
    return (
       <SectionWrapper
@@ -14,7 +14,7 @@ const Courses = () => {
          id="courses"
       >
          <div
-            ref={ref}
+            ref={refToogle}
             className={styles.courses_flex}
          >
             {coursesData.map((course, index) => (

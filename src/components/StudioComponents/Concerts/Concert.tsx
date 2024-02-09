@@ -12,7 +12,7 @@ import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNav
 import { EBlockID } from "../../../types";
 
 const Concert = () => {
-   const { ref } = useToggleActiveNavigation(EBlockID.Concert);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.Concert);
 
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const concertImages = tempData;
@@ -22,7 +22,7 @@ const Concert = () => {
       <SectionWrapper header="Отчетные концерты">
          <div
             className={styles.ConcertSlider}
-            ref={ref}
+            ref={refToogle}
          >
             {mobileWidth ? (
                mobileArray.map((card, i) => (

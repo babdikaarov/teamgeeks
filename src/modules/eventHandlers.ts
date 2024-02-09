@@ -7,7 +7,7 @@ export const mouseOverLeave = (tabletSize: boolean) => {
          const grandparent = card.parentElement?.parentElement;
          if (grandparent) {
             const firstSibling = grandparent.childNodes[0].childNodes[0] as HTMLDivElement;
-            firstSibling.classList.remove("firstAnimate");
+            firstSibling.removeAttribute("data-animate");
          }
          card.setAttribute("flipMouse", "");
       }
@@ -34,7 +34,7 @@ export const mouseClickOut = (tabletSize: boolean) => {
          const grandparent = card.parentElement?.parentElement;
          if (grandparent) {
             const firstSibling = grandparent.childNodes[0].childNodes[0] as HTMLDivElement;
-            firstSibling.classList.remove("firstAnimate");
+            firstSibling.removeAttribute("data-animate");
             Array.from(grandparent.childNodes).forEach((child: Node) => {
                const sibling = child.childNodes[0] as HTMLDivElement;
                sibling.removeAttribute("flipTouch");

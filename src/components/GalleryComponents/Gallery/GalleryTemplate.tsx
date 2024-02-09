@@ -10,7 +10,7 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
    const [events, setEvents] = useState(galleryData);
    const { pathname } = useLocation();
    const onStudio = pathname.match("studio");
-   const { ref } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
+   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
 
    useEffect(() => {
       if (galleryData) {
@@ -20,7 +20,7 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
 
    return (
       <div
-         ref={ref}
+         ref={refToogle}
          className={styles.gallery}
       >
          {events.map((event, i) => (
