@@ -1,7 +1,7 @@
 @use "../../scss/partials/mixin" as mix;
 
 .hero {
-   margin-inline: 0;
+   padding-inline: 0;
    position: relative;
    width: 100%;
    video {
@@ -15,11 +15,11 @@
       -ms-user-select: none;
       user-select: none;
    }
-   @media screen and (min-width: 1440px) {
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-   }
+   // @media screen and (min-width: 1440px) {
+   //    left: 50%;
+   //    transform: translateX(-50%);
+   //    width: 100%;
+   // }
 }
 .hero video {
    @include mix.xl {

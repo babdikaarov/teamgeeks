@@ -16,7 +16,7 @@
    transition-duration: 1.5s !important;
    --element-indent: calc(calc(55px * 2) - calc(20px * 2));
    @media (min-width: 1025px) {
-      margin-right: 0 !important;
+      padding-right: 0 !important;
    }
 
    @include sm {
@@ -25,12 +25,16 @@
 }
 
 .collabContainer {
-   margin-left: 80px;
+   max-width: 1440px;
+   margin: auto;
+   padding-left: 100px;
    display: flex;
    justify-content: space-between;
+   border-start-start-radius: 15px;
+   border-end-start-radius: 15px;
    height: 430px;
    @media (max-width: 1024px) {
-      margin: auto;
+      padding: 0px;
       max-width: calc(100% - var(--element-indent));
    }
    @media (max-width: 576px) {

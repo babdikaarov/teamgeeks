@@ -39,9 +39,9 @@ li {
 }
 
 main {
-   max-width: $desktop_width;
    margin: 110px auto 150px;
    display: flex;
+   align-items: center;
    flex-direction: column;
    gap: 150px;
    @include mix.xl {

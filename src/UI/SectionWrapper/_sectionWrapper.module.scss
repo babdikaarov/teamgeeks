@@ -1,11 +1,15 @@
 @import "../../scss/partials/variables";
 
 .sectionWrapper {
+   width: 100%;
    position: relative;
    scroll-margin-top: 150px;
-   margin-inline: 20px;
+   // margin-inline: 20px;
+   @media screen and (max-width: 1440px) {
+      padding-inline: 20px;
+   }
    @media screen and (max-width: 576px) {
-      margin-inline: 16px;
+      padding-inline: 16px;
    }
 }
 
