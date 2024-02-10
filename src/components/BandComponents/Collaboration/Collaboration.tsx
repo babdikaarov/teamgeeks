@@ -21,7 +21,7 @@ const Collaboration = () => {
       if (inView) {
          drawer.setAttribute("draw-out", "true");
       } else {
-         drawer.setAttribute("draw-out", "false");
+         drawer.setAttribute("draw-out", "true");
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [inView]);
