@@ -28,7 +28,10 @@ const GalleryTemplate: FC<GalleryTemplateProps> = ({ galleryData }) => {
                <div className={styles.galleryCards}>
                   {/* FIXME add a when backend will be ready */}
                   {/* <Link to={`/gallery/${event.eventID}`}> */}
-                  <Link to={`/gallery/${i}`} className={styles.image_container}>
+                  <Link
+                     to={`/gallery/${i}`}
+                     className={styles.image_container}
+                  >
                      <ImageLoader src={event.poster} />
                      <div className={styles.galleryCardsContent}>
                         <p>{event.date}</p>

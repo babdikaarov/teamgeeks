@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Navigation } from "swiper/modules";
+import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "./_ourTeam.module.scss";
@@ -35,10 +35,12 @@ const OurTeam = () => {
                ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
+               freeMode
+               loop
                mousewheel={{
                   forceToAxis: true,
                }}
-               modules={[Mousewheel, Navigation]}
+               modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1200: {
                      spaceBetween: 30,

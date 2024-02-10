@@ -1,52 +1,41 @@
 @import "../../../scss/partials/mixin";
 
-.loadingBox {
-   border-radius: 16px;
-   background-color: #fff;
-   width: 100%;
-   height: 100%;
-   opacity: 0.3;
-   animation: fadeInOut 2s infinite;
-}
-
-@keyframes fadeInOut {
-   0% {
-      opacity: 0.3;
-   }
-   50% {
-      opacity: 1;
-   }
-   100% {
-      opacity: 0;
-   }
-}
 .cardContainer:hover {
-   transition: 0.5s;
    border-radius: 10px;
    background-color: #404040;
+   a {
+      background-color: #404040;
+   }
    cursor: pointer;
 }
-.cardContainer {
+.cardContainer,
+.cardContainer * {
    transition: 0.5s;
 }
 .cardContainer:active {
    cursor: grab;
 }
 // FIXME checkanimation of insta icon and verify
-.cardContainer:hover svg {
-   background: linear-gradient(0deg, rgba(64, 64, 64, 1) 1%, transparent);
-   animation: fadeInOut 2s infinite;
+.cardContainer:hover svg path {
+   fill: url(#gradient);
+   animation: fadeInOut 1.2s infinite;
+}
+
+.imageContainer a:hover path {
+   fill: gold;
+   opacity: 1 !important;
+   animation: none;
 }
 
 @keyframes fadeInOut {
    0% {
-      background-color: rgba(64, 64, 64, 0.1);
+      opacity: 1;
    }
    50% {
-      background-color: rgba(64, 64, 64, 1);
+      opacity: 0.3;
    }
    100% {
-      background-color: rgba(64, 64, 64, 0.1);
+      opacity: 1;
    }
 }
 
@@ -270,8 +259,4 @@
          height: 17px;
       }
    }
-}
-
-.imageContainer a:hover path {
-   fill: gold;
 }

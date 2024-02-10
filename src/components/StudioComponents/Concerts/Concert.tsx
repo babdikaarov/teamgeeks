@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation } from "swiper/modules";
+import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./_concerts.module.scss";
@@ -36,9 +36,12 @@ const Concert = () => {
                   <Swiper
                      spaceBetween={10}
                      slidesPerView={3}
-                     freeMode={true}
+                     freeMode
                      loop
-                     modules={[FreeMode, Navigation]}
+                     mousewheel={{
+                        forceToAxis: true,
+                     }}
+                     modules={[Mousewheel, Navigation, FreeMode]}
                      navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
                      className={styles.concertSwiper}
                   >

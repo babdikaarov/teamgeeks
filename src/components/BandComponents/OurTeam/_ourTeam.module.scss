@@ -2,16 +2,18 @@
 
 .teamWrapper {
    @media (min-width: 1025px) {
-      margin-right: 0 !important;
+      padding-right: 0 !important;
    }
 
    --element-indent: calc(calc(55px * 2) - calc(20px * 2));
 }
 
 .teamContainer {
+   max-width: 1440px;
+   margin: auto;
+   padding-left: 100px;
    border-start-start-radius: 15px;
    border-end-start-radius: 15px;
-   margin-left: 80px;
    height: 340px;
    user-select: none !important;
    display: flex;
@@ -19,8 +21,10 @@
    align-items: center;
 
    @media (max-width: 1024px) {
-      margin: auto;
-      max-width: calc(100% - var(--element-indent));
+      padding-inline: 30px;
+      // max-width: calc(100% - var(--element-indent));
+      margin: unset;
+      position: relative;
    }
    @media (max-width: 576px) {
       --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));

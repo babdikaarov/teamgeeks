@@ -45,9 +45,9 @@ const Collaboration = () => {
                {icon}
             </button>
             <Swiper
-               className={styles.experiment}
+               className={styles.swiperWrapper}
                ref={sliderRef}
-               spaceBetween={30}
+               spaceBetween={0}
                slidesPerView={"auto"}
                freeMode
                loop
@@ -55,17 +55,6 @@ const Collaboration = () => {
                   forceToAxis: true,
                }}
                modules={[Mousewheel, Navigation, FreeMode]}
-               breakpoints={{
-                  1200: {
-                     spaceBetween: 30,
-                  },
-                  576: {
-                     spaceBetween: 16,
-                  },
-                  1: {
-                     spaceBetween: 10,
-                  },
-               }}
             >
                {cards?.map((card, i) => (
                   <SwiperSlide

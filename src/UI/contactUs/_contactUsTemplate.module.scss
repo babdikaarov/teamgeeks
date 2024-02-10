@@ -1,6 +1,7 @@
 @import "../../scss/partials/variables";
 
 .mapContent {
+   user-select: none;
    max-width: 1240px;
    margin: 0 auto;
    display: grid;

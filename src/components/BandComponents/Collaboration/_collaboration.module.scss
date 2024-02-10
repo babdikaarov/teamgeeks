@@ -1,22 +1,35 @@
 @import "../../../scss/partials/mixin";
 
 @media (min-width: 1024px) {
-   .experiment {
+   .swiperWrapper {
       position: relative;
       transform: translateX(1000px);
       transition: transform 1s;
    }
 
-   .experiment[draw-out="true"] {
+   .swiperWrapper[draw-out="true"] {
       transform: translateX(0);
    }
 }
 
+.swiperWrapper {
+   div {
+      gap: 30px;
+      @media (max-width: 1024px) {
+         gap: 16px;
+      }
+      @media (max-width: 576px) {
+         gap: 10px;
+      }
+   }
+}
+
 .collabWrapper {
+   overflow: hidden;
    transition-duration: 1.5s !important;
    --element-indent: calc(calc(55px * 2) - calc(20px * 2));
    @media (min-width: 1025px) {
-      margin-right: 0 !important;
+      padding-right: 0 !important;
    }
 
    @include sm {
@@ -25,20 +38,33 @@
 }
 
 .collabContainer {
-   margin-left: 80px;
+   max-width: 1440px;
+   margin: auto;
+   padding-left: 100px;
    display: flex;
    justify-content: space-between;
-   height: 430px;
+   border-start-start-radius: 15px;
+   border-end-start-radius: 15px;
+   height: 450px;
    @media (max-width: 1024px) {
-      margin: auto;
-      max-width: calc(100% - var(--element-indent));
+      padding-inline: 30px;
+      position: relative;
+      // max-width: calc(100% - var(--element-indent));
+      margin: unset;
+      height: 400px;
    }
    @media (max-width: 576px) {
+      height: unset;
       --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));
    }
 }
 
+.card:active {
+   cursor: grabbing;
+}
+
 .card {
+   cursor: pointer;
    transition: all 0.27s ease-in-out;
    width: 230px;
    height: 378px;
@@ -55,6 +81,7 @@
       object-fit: cover;
    }
    p {
+      user-select: none;
       transition: all 0.27s ease-in-out;
       height: min-content;
       @include sm {
@@ -89,8 +116,8 @@
 .buttonNext {
    display: none;
    z-index: 1;
-   top: 50%;
-   transform: translateX(-50%);
+   top: 30%;
+
    @media screen and (max-width: 1024px) {
       display: block;
    }

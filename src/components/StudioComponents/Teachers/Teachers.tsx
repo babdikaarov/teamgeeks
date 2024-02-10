@@ -13,6 +13,7 @@ import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import contacts from "../../../tempData/contacts.json";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { EBlockID } from "../../../types";
+import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
@@ -44,12 +45,14 @@ const Teachers = () => {
             </button>
             <Swiper
                ref={sliderRef}
-               loop={true}
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
+               freeMode
+               loop
                mousewheel={{
                   forceToAxis: true,
                }}
+               modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1024: {
                      spaceBetween: 53,

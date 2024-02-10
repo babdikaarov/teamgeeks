@@ -1,5 +1,5 @@
 .image {
- border-radius: 16px;
+   border-radius: 16px;
    z-index: -1;
    display: inline;
    position: absolute;
@@ -10,13 +10,13 @@
 }
 
 .loaded {
-    transition: all 1s ease;
+   transition: all 1s ease;
    z-index: 1;
    opacity: 1;
 }
 
 .div {
-    border-radius: 16px;
-    overflow: hidden;
-    position: absolute !important;
+   border-radius: 16px;
+   overflow: hidden;
+   position: absolute !important;
 }

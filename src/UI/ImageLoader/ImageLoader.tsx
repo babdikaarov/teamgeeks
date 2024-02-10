@@ -26,22 +26,20 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = "" }) => {
 
    return (
       <>
-        
-            <Blurhash
-               hash={hash}
-               width="100%"
-               height="100%"
-               className={styles.div}
-               resolutionX={32}
-               resolutionY={32}
-               punch={1}
-            />
-         
+         <Blurhash
+            hash={hash}
+            width="100%"
+            height="100%"
+            className={styles.div}
+            resolutionX={32}
+            resolutionY={32}
+            punch={1}
+         />
+
          <img
             className={`${styles.image} ${loaded ? styles.loaded : ""}`}
             src={src}
             alt="Poster About"
-           
          />
       </>
    );
