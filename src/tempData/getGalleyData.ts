@@ -28,7 +28,7 @@ const galleryTemp = [
       date: "12.31.23",
       description: "somewhere",
       poster: "/gallery/event1/1.jpg",
-      items: [...events1(Array(28).fill(1)), ...events2(Array(21).fill(1))],
+      items: [...events1(Array(8).fill(1)), ...events2(Array(10).fill(1))],
    },
 ];
 

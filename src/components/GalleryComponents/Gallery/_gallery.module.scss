@@ -49,9 +49,6 @@
       gap: 40px;
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
-      .galleryCards {
-         animation: fadeOut 1s ease-in-out;
-      }
    }
    @media screen and (max-width: 1024px) {
       margin-inline: 20px;
@@ -72,10 +69,13 @@
       }
    }
    @media screen and (max-width: 440px) {
-      overflow-y: scroll;
-
       .galleryCards {
          width: calc(100% - 16px);
+         height: calc(270px - 50px);
+      }
+   }
+   @media screen and (max-width: 360px) {
+      .galleryCards {
          height: calc(270px - 90px);
       }
    }
@@ -101,14 +101,14 @@
    }
 }
 
-.galleryCards img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-}
-
 .galleryCardsContent {
    position: relative;
    transform: translate(7%, -130%);
    z-index: 5;
+}
+.image_container {
+   display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
