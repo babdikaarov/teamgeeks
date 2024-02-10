@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "./_studentsFeedback.module.scss";
@@ -20,15 +20,13 @@ const StudentsFeedback = () => {
             >
                {icon}
             </button>
-            {/* <Swiper
+            <Swiper
                ref={sliderRef}
                className={styles.feedbackSwiper}
                effect={"coverflow"}
                grabCursor
                centeredSlides
                loop
-               slidesPerView={3}
-               spaceBetween={6}
                initialSlide={2}
                coverflowEffect={{
                   rotate: 0,
@@ -36,19 +34,64 @@ const StudentsFeedback = () => {
                   depth: 100,
                   modifier: 2.5,
                }}
-               modules={[EffectCoverflow]}
-               
+               freeMode
+               mousewheel={{
+                  forceToAxis: true,
+               }}
+               modules={[Mousewheel, Navigation, FreeMode, EffectCoverflow]}
+               breakpoints={{
+                  1440: {
+                     slidesPerView: 3.5,
+                     spaceBetween: -66,
+                  },
+                  1200: {
+                     slidesPerView: 3.3,
+                     spaceBetween: -35,
+                  },
+                  1024: {
+                     slidesPerView: 3.35,
+                     spaceBetween: -75,
+                  },
+                  892: {
+                     slidesPerView: 3.3,
+                     spaceBetween: -85,
+                  },
+                  768: {
+                     slidesPerView: 2.8,
+                     spaceBetween: -55,
+                  },
+                  658: {
+                     slidesPerView: 2.3,
+                     spaceBetween: -30,
+                  },
+                  576: {
+                     slidesPerView: 2.3,
+                     spaceBetween: -90,
+                  },
+                  482: {
+                     slidesPerView: 1.5,
+                     spaceBetween: -50,
+                  },
+                  390: {
+                     slidesPerView: 1.5,
+                     spaceBetween: -50,
+                  },
+                  320: {
+                     slidesPerView: 1.3,
+                     spaceBetween: -40,
+                  },
+               }}
             >
                {cards.map((card, i) => (
-                  <SwiperSlide key={i}> */}
+                  <SwiperSlide key={i}>
                      <StudentsFeedbackCard
-                        img={cards[1].img}
-                        name={cards[1].name}
-                        word={cards[1].word}
+                        img={card.img}
+                        name={card.name}
+                        word={card.word}
                      />
-                  {/* </SwiperSlide>
+                  </SwiperSlide>
                ))}
-            </Swiper> */}
+            </Swiper>
             <button
                className={styles.buttonNext}
                onClick={handleNext}

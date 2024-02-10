@@ -21,8 +21,10 @@
    align-items: center;
 
    @media (max-width: 1024px) {
-      padding: 0px;
-      max-width: calc(100% - var(--element-indent));
+      padding-inline: 30px;
+      // max-width: calc(100% - var(--element-indent));
+      margin: unset;
+      position: relative;
    }
    @media (max-width: 576px) {
       --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));

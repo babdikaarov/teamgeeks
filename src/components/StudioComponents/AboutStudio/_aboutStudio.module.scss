@@ -1,21 +1,5 @@
 @import "../../../scss//partials/mixin";
 
-.coolStudio h2 {
-   font-weight: 700;
-   margin-bottom: 48px;
-   display: flex;
-   justify-content: center;
-   @include xl {
-      font-size: 24px;
-   }
-   @include md {
-      margin-bottom: 30px;
-   }
-   @include sm {
-      font-size: 16px;
-   }
-}
-
 .AboutUsWrapper {
    max-width: 1240px;
    margin: 0 auto;

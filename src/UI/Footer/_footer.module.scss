@@ -2,6 +2,7 @@
 @import "../../scss/partials/mixin";
 
 .footer {
+   user-select: none;
    max-width: 1240px;
    gap: 20px;
    margin: 60px auto;

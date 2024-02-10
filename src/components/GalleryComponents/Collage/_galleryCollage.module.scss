@@ -21,12 +21,12 @@
 
       grid-template-columns: repeat(2, 0.65fr);
       .portrait {
-         min-height: calc(2 * (229px ));
-         max-height: calc(2 * (229px ));
+         min-height: calc(2 * (229px));
+         max-height: calc(2 * (229px));
       }
       .landscape {
-         max-height: calc(229px );
-         min-height: calc(229px );
+         max-height: calc(229px);
+         min-height: calc(229px);
       }
    }
    @media screen and (max-width: 650px) {
@@ -61,7 +61,6 @@
    }
 }
 
-
 .paginationButton {
    color: #fcfcfc;
    margin: 30px auto 0;
@@ -92,11 +91,13 @@
 
 .portrait {
    max-height: 478px;
+   min-height: 478px;
    height: 100%;
    grid-row: span 2;
 }
 .landscape {
    max-height: 229px;
+   min-height: 229px;
    height: 100%;
 }
 

@@ -2,6 +2,7 @@
 @import "../../../scss/partials/variables";
 
 .ourClients {
+   user-select: none;
    max-width: 1240px;
    margin: 0 auto;
    display: flex;

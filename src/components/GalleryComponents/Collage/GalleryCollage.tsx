@@ -9,9 +9,7 @@ import { useLocation } from "react-router-dom";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { EBlockID } from "../../../types";
 
-
 const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
-  
    const [open, setOpen] = useState(false);
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);

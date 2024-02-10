@@ -26,6 +26,7 @@
 }
 .gallery {
    max-width: 1240px;
+   width: 100%;
    margin: 80px auto 0;
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -45,13 +46,13 @@
    }
 
    @media screen and (max-width: 1280px) {
-      margin-inline: 40px;
+      padding-inline: 40px;
       gap: 40px;
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
    }
    @media screen and (max-width: 1024px) {
-      margin-inline: 20px;
+      padding-inline: 20px;
    }
    @media screen and (max-width: 924px) {
       gap: 16px;
@@ -85,7 +86,8 @@
    color: $color_yellow;
    font-size: 30px;
    aspect-ratio: 400/270;
-
+   width: 100%;
+   height: 100%;
    gap: 4px;
    overflow: hidden;
    border-radius: 16px;
@@ -108,7 +110,7 @@
 }
 .image_container {
    display: block;
-    height: 100%;
-    width: 100%;
-    position: relative;
+   height: 100%;
+   width: 100%;
+   position: relative;
 }
