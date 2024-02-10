@@ -38,6 +38,7 @@
       max-width: calc(100% - var(--element-indent));
    }
    @media (max-width: 576px) {
+      height: unset;
       --element-indent: calc(calc(37.5px * 2) - calc(16px * 2));
    }
 }
