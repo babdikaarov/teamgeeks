@@ -6,18 +6,20 @@ import styles from "./_ourTeam.module.scss";
 import TeamCard from "../../../UI/Cards/TeamCard";
 import icon from "../../../assets/icons/bigArrow";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { useEffect } from "react";
-import { getOurTeam } from "../../../store/ourTeamThunk";
+import addAvailableVideo from "../../../tempData/getTeamList";
+// import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+// import { useEffect } from "react";
+// import { getOurTeam } from "../../../store/ourTeamThunk";
 
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
 
-   const dispatch = useAppDispatch();
-   const data = useAppSelector((state) => state.getOurTeam.data)!;
-   useEffect(() => {
-      dispatch(getOurTeam());
-   }, [dispatch]);
+   // const dispatch = useAppDispatch();
+   // const data = useAppSelector((state) => state.getOurTeam.data)!;
+   // useEffect(() => {
+   //    dispatch(getOurTeam());
+   // }, [dispatch]);
+
    return (
       <SectionWrapper
          header={"Наша команда"}
@@ -53,7 +55,7 @@ const OurTeam = () => {
                   },
                }}
             >
-               {data.map((card, i) => (
+               {addAvailableVideo.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      className={styles.cardContainer + " " + styles[card.orientation.toLowerCase()]}
