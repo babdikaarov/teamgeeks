@@ -5,10 +5,11 @@ import { useEffect } from "react";
 import { getHeroBand } from "../../../store/herobandThunk.ts";
 import formatPhoneNumberToText from "../../../modules/formatPhoneNumberToText.ts";
 import { getContacts } from "../../../store/contactsThunk.ts";
+import video from "/public/hero/heroVideo.mp4";
 
 const Hero = () => {
    const dispatch = useAppDispatch();
-   const dataBand = useAppSelector((state) => state.getHeroBand.data)!;
+   // const dataBand = useAppSelector((state) => state.getHeroBand.data)!;
    const dataContact = useAppSelector((state) => state.getContacts.data)!;
 
    useEffect(() => {
@@ -19,7 +20,7 @@ const Hero = () => {
    const number = formatPhoneNumberToText(dataContact.bandNumber);
 
    return (
-      <HeroTeamplate video={dataBand.video}>
+      <HeroTeamplate video={video}>
          <SharedButton
             whatsapp={number}
             classname="bandHeroButton"

@@ -43,7 +43,9 @@ const BandNavList: React.FC<BandNavListProps> = ({ lyrics, setIsMenuOpen }) => {
          <li>
             <HashLink
                to={"/gallery"}
-               onClick={handleFunction}
+               onClick={() => {
+                  handleFunction(), window.scroll(0, 0);
+               }}
                className={activeNavigation.focusOn === EBlockID.Gallery ? styles.active : ""}
             >
                Галерея

@@ -8,25 +8,34 @@ import { getHeroStudio } from "../../../store/heroStudioThunk.ts";
 
 const Hero = () => {
    const dispatch = useAppDispatch();
-   const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
+   // const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
    const dataContact = useAppSelector((state) => state.getContacts.data)!;
 
    useEffect(() => {
       dispatch(getHeroStudio());
       dispatch(getContacts());
    }, [dispatch]);
+   const localData = {
+      video: "/hero/HeroStudio.mp4",
+      text: {
+         paragraph: "",
+         header: "Откройте двери в мир музыки с Coolstudio",
+      },
+   };
 
    const number = formatPhoneNumberToText(dataContact.studioNumber);
 
-   const texts = {
-      header: dataStudio.title,
-      paragraph: dataStudio.text,
-   };
+   // const texts = {
+   //    header: dataStudio.title,
+   //    paragraph: dataStudio.text,
+   // };
 
    return (
       <HeroTemplate
-         video={dataStudio.video}
-         text={texts}
+         video={localData.video}
+         // video={dataStudio.video}
+         text={localData.text}
+         // text={texts}
       >
          <SharedButton
             whatsapp={number}

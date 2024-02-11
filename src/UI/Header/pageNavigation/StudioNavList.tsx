@@ -59,7 +59,9 @@ const StudioNavList: React.FC<StudioNavListProps> = ({ setIsMenuOpen }) => {
          <li>
             <HashLink
                to={"/studio/gallery"}
-               onClick={handleFunction}
+               onClick={() => {
+                  handleFunction(), window.scroll(0, 0);
+               }}
                className={
                   activeNavigation.focusOn === EBlockID.GalleryStudio || activeNavigation.focusOn === EBlockID.Concert
                      ? styles.active
