@@ -40,7 +40,7 @@
    overflow: hidden;
 }
 
-.portrait {
+.PORTRAIT {
    min-width: 230px;
    max-width: 230px;
    @include sm {
@@ -50,7 +50,7 @@
    }
 }
 
-.landscape {
+.LANDSCAPE {
    min-width: calc(230px * 2);
    max-width: calc(230px * 2);
    @include sm {

@@ -62,7 +62,7 @@ const OurTeam = () => {
                {addAvailableVideo.map((card, i) => (
                   <SwiperSlide
                      key={i}
-                     className={styles.cardContainer + " " + styles[card.orientation.toLowerCase()]}
+                     className={styles.cardContainer + " " + styles[card.orientation]}
                   >
                      <TeamCard
                         animate={i === 0}

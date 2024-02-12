@@ -11,7 +11,7 @@ import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import styles from "./_aboutBand.module.scss";
 // static data
 import staticText from "./staticData.json";
-import image from "../../../tempData/gallery/event1/23.jpg"; // FIX_ME remove static image and provide backEnd when ready
+import image from "../../../tempData/about/about.jpg"; // FIX_ME remove static image and provide backEnd when ready
 
 const AboutBand: React.FC = () => {
    // const dispatch = useAppDispatch();

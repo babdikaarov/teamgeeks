@@ -2,9 +2,9 @@ const events1 = (arr: number[]) => {
    return arr.map((el, i) => {
       return {
          alt: `${el}`,
-         src: `/gallery/event1/${i + 1}.jpg`,
-         view: "portrait",
-         // view: `${i % 3 == 0 ? "portrait" : "landscape"}`,
+         src: `/tempGallary/${i + 1}.jpg`,
+         view: "PORTRAIT",
+         // view: `${i % 3 == 0 ? "PORTRAIT" : "LANDSCAPE"}`,
       };
    });
 };
@@ -12,9 +12,9 @@ const events2 = (arr: number[]) => {
    return arr.map((el, i) => {
       return {
          alt: `${el}`,
-         src: `/gallery/event1/${i + 1}.jpg`,
-         // view: `${i % 1 == 0 ? "portrait" : "landscape"}`,
-         view: "landscape",
+         src: `/tempGallary/${i + 1}.jpg`,
+         // view: `${i % 1 == 0 ? "PORTRAIT" : "LANDSCAPE"}`,
+         view: "LANDSCAPE",
       };
    });
 };
@@ -27,7 +27,7 @@ const galleryTemp = [
       name: "event 1",
       date: "12.31.23",
       description: "somewhere",
-      poster: "/gallery/event1/1.jpg",
+      poster: "/tempGallary/1.jpg",
       items: [...events1(Array(8).fill(1)), ...events2(Array(10).fill(1))],
    },
 ];

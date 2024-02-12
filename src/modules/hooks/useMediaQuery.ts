@@ -12,7 +12,6 @@ export const useMediaQuery = (query: string) => {
 
       mediaQuery.addEventListener("change", handleChange);
 
-      // Cleanup function to remove the event listener when the component unmounts
       return () => {
          mediaQuery.removeEventListener("change", handleChange);
       };

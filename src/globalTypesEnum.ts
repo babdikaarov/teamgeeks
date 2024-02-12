@@ -16,6 +16,11 @@ export const Target = {
    blank: "blank",
    noBlank: "",
 };
+export const Orientation = {
+   LANDSCAPE: "LANDSCAPE",
+   PORTRAIT: "PORTRAIT",
+};
 
 export type EBlockIDType = (typeof EBlockID)[keyof typeof EBlockID];
 export type TargetType = (typeof Target)[keyof typeof Target];
+export type OrientationType = (typeof Orientation)[keyof typeof Orientation];
