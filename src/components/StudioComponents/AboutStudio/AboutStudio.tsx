@@ -1,15 +1,21 @@
+// modules
 import { useState } from "react";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import styles from "./_aboutStudio.module.scss";
-import VideoComponent from "./temp/VideoComponent";
-import { EBlockID } from "../../../types";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+// components
+import VideoComponent from "./VideoComponent";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+// styles
+import styles from "./_aboutStudio.module.scss";
+// static
+import staticText from "./staticData.json";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
 
 const AboutStudio: React.FC = () => {
    const [expanded, setExpanded] = useState(false);
    const [customHeader, setCustomHeader] = useState(false);
    const [points, setPoints] = useState(false);
-   const { refToogle } = useToggleActiveNavigation(EBlockID.AboutStudio);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUTSTUDIO);
 
    const toggleExpand = () => {
       setExpanded(!expanded);
@@ -29,29 +35,24 @@ const AboutStudio: React.FC = () => {
          >
             <div className={styles.TextWrapper}>
                <span>
-                  В сентябре 2022 года наша студия открыла свои двери для всех желающих научиться игре на музыкальных
-                  инструментах.
+                  {staticText.text1}
                   <br />
                </span>
                <span>
                   <br />
-                  Изначально все задумывалась как простые барабанные курсы, но благодаря поддержке единомышленников и
-                  сплочённой работе команды, студия разрослась в полноценное музыкальное сообщество, где профессионалы
-                  делятся со студентами своим бесценным опытом.{points ? "" : ".."}
+                  {staticText.text2}
+                  {points ? "" : ".."}
                </span>
                {expanded && (
                   <div className={`${styles.ExpandedText} ${expanded ? styles.expanded : ""}`}>
                      <span>
                         <br />
-                        Команда CoolStudio верит, что музыка делает мир лучше, поэтому мы продолжаем работать над тем,
-                        чтобы сделать ее доступной для всех. Мы создаем пространство, где наши студенты чувствуют себя
-                        комфортно и уверенно, чтобы максимально раскрыть творческий потенциал каждого.
+                        {staticText.text3}
                         <br />
                      </span>
                      <span>
                         <br />
-                        Cool Studio - это место, где в тебя верят, где ты можешь быть собой, где ты можешь творить и
-                        мечтать. Нам уже 1 год, и это только начало
+                        {staticText.text4}
                      </span>
                   </div>
                )}

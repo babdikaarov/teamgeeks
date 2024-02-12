@@ -16,8 +16,8 @@ const useResponsiveSorting = (arr: Input[]): (Input | undefined)[] => {
          const width = window.innerWidth;
 
          if (width < 850) {
-            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "portrait");
-            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "landscape");
+            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "PORTRAIT");
+            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "LANDSCAPE");
             while (portraitObjects.length || landscapeObjects.length) {
                landscapeObjects.length && newSortedArray.push(landscapeObjects.shift());
                portraitObjects.length && newSortedArray.push(portraitObjects.shift());
@@ -28,23 +28,23 @@ const useResponsiveSorting = (arr: Input[]): (Input | undefined)[] => {
             setSortedArray(newSortedArray);
          } else {
             sequence = [
-               "portrait",
-               "landscape",
-               "landscape",
-               "landscape",
-               "portrait",
-               "portrait",
-               "portrait",
-               "landscape",
+               "PORTRAIT",
+               "LANDSCAPE",
+               "LANDSCAPE",
+               "LANDSCAPE",
+               "PORTRAIT",
+               "PORTRAIT",
+               "PORTRAIT",
+               "LANDSCAPE",
             ];
 
-            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "portrait");
-            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "landscape");
+            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "PORTRAIT");
+            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "LANDSCAPE");
             let currentIndex = 0;
             while (portraitObjects.length || landscapeObjects.length) {
-               if (sequence[currentIndex] === "portrait" && portraitObjects.length) {
+               if (sequence[currentIndex] === "PORTRAIT" && portraitObjects.length) {
                   newSortedArray.push(portraitObjects.shift());
-               } else if (sequence[currentIndex] === "landscape" && landscapeObjects.length) {
+               } else if (sequence[currentIndex] === "LANDSCAPE" && landscapeObjects.length) {
                   newSortedArray.push(landscapeObjects.shift());
                }
 

@@ -1,12 +1,16 @@
-import coursesData from "./getCoursesList";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import CoursesCard from "../../../UI/Cards/CoursesCard";
-import styles from "./_courses.module.scss";
+// modules
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
+// components
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import CoursesCard from "./CoursesCard";
+// styles
+import styles from "./_courses.module.scss";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
+import coursesData from "../../../tempData/getCoursesList"; //FIX_ME replace with backend
 
 const Courses = () => {
-   const { refToogle } = useToggleActiveNavigation(EBlockID.Courses);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.COURSES);
 
    return (
       <SectionWrapper

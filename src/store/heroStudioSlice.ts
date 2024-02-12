@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IHeroStudio } from "../types.ts";
 import { getHeroStudio } from "./heroStudioThunk.ts";
 
-interface IHero {
-   data: IHeroStudio | undefined;
-   getLoading: boolean;
-}
-
-const initialState: IHero = {
+const initialState: Slice.IHeroStudio = {
    data: {
       id: 0,
       video: "",

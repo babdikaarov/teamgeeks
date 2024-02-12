@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetCoolStudioVideo } from "../types.ts";
 import { getCoolStudio } from "./aboutStudioThunk.ts";
 
-interface CoolStudio {
-   data: GetCoolStudioVideo | undefined;
-   getLoading: boolean;
-}
-
-const initialState: CoolStudio = {
+const initialState: Slice.CoolStudio = {
    data: {
       id: 0,
       image: "string",
@@ -37,5 +31,5 @@ const coolStudio = createSlice({
 });
 
 export const reducersCoolStudio = coolStudio.reducer;
-export const selectCoolStudio = (state: { coolStudio: CoolStudio }) => state.coolStudio;
-export const selectCoolStudioData = (state: { coolStudio: CoolStudio }) => state.coolStudio.data;
+export const selectCoolStudio = (state: { coolStudio: Slice.CoolStudio }) => state.coolStudio;
+export const selectCoolStudioData = (state: { coolStudio: Slice.CoolStudio }) => state.coolStudio.data;

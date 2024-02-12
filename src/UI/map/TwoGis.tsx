@@ -1,8 +1,8 @@
 import "https://maps.api.2gis.ru/2.0/loader.js?pkg=basic";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import bandIcon from "/bandIcon.svg";
-import studioIcon from "/studioFav.svg";
+import bandIcon from "/bandFavicon.svg";
+import studioIcon from "/studioFavicon.svg";
 // import styles from "./_twoGis.module.scss";
 // import ImageLoader from "../ImageLoader/ImageLoader";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

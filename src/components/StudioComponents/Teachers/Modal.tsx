@@ -1,8 +1,7 @@
-import styles from "./_modalTeachers.module.scss";
 import { useEffect } from "react";
-import { ModalProps } from "./types";
+import styles from "./_modalTeachers.module.scss";
 
-const Modal: React.FC<ModalProps> = ({ teacher, closeModal }) => {
+const Modal: React.FC<Prop.Teachers.ModalProps> = ({ teacher, closeModal }) => {
    useEffect(() => {
       document.body.style.overflow = "hidden";
 

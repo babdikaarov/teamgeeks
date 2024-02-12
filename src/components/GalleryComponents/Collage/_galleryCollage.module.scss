@@ -7,11 +7,11 @@
    font-size: 60px;
    transition: all 0.1s ease-in-out;
    @media screen and (max-width: 1024px) {
-      .portrait {
+      .PORTRAIT {
          max-height: calc(2 * (229px - 30px));
          min-height: calc(2 * (229px - 30px));
       }
-      .landscape {
+      .LANDSCAPE {
          max-height: calc(229px - 40px);
          min-height: calc(229px - 40px);
       }
@@ -20,11 +20,11 @@
       gap: 16px;
 
       grid-template-columns: repeat(2, 0.65fr);
-      .portrait {
+      .PORTRAIT {
          min-height: calc(2 * (229px));
          max-height: calc(2 * (229px));
       }
-      .landscape {
+      .LANDSCAPE {
          max-height: calc(229px);
          min-height: calc(229px);
       }
@@ -36,23 +36,23 @@
 
    @media screen and (max-width: 560px) {
       grid-template-columns: repeat(2, 1fr);
-      .portrait {
+      .PORTRAIT {
          max-height: calc(2 * (229px - 90px));
          min-height: calc(2 * (229px - 90px));
       }
-      .landscape {
+      .LANDSCAPE {
          max-height: calc(229px - 100px);
          min-height: calc(229px - 100px);
       }
    }
    @media screen and (max-width: 340px) {
       grid-template-columns: 1fr;
-      .portrait {
+      .PORTRAIT {
          height: calc(2 * (229px - 80px));
          max-width: 100%;
          min-width: none;
       }
-      .landscape {
+      .LANDSCAPE {
          min-width: none;
          max-width: 100%;
          max-height: calc(229px - 60px);
@@ -89,13 +89,13 @@
    object-fit: cover;
 }
 
-.portrait {
+.PORTRAIT {
    max-height: 478px;
    min-height: 478px;
    height: 100%;
    grid-row: span 2;
 }
-.landscape {
+.LANDSCAPE {
    max-height: 229px;
    min-height: 229px;
    height: 100%;

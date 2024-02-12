@@ -1,8 +1,12 @@
-import { FC } from "react";
 import styles from "./_sectionWrapper.module.scss";
-import { SectionWrapperProps } from "./types";
 
-const SectionWrapper: FC<SectionWrapperProps> = ({ header = "", className = "", id = "", children, forwardedRef }) => {
+const SectionWrapper: React.FC<Prop.SectionWrapper> = ({
+   header = "",
+   className = "",
+   id = "",
+   children,
+   forwardedRef,
+}) => {
    return (
       <section
          ref={forwardedRef}

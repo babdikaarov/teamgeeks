@@ -1,15 +1,19 @@
+// modules
+// import { useEffect } from "react";
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+// import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+// import { getOurTeam } from "../../../store/ourTeamThunk";
+// swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import styles from "./_ourTeam.module.scss";
-import TeamCard from "../../../UI/Cards/TeamCard";
+import TeamCard from "./TeamCard";
 import icon from "../../../assets/icons/bigArrow";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
-import addAvailableVideo from "../../../tempData/getTeamList";
-// import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-// import { useEffect } from "react";
-// import { getOurTeam } from "../../../store/ourTeamThunk";
+// styles
+import styles from "./_ourTeam.module.scss";
+import addAvailableVideo from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
 
 const OurTeam = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
@@ -58,7 +62,7 @@ const OurTeam = () => {
                {addAvailableVideo.map((card, i) => (
                   <SwiperSlide
                      key={i}
-                     className={styles.cardContainer + " " + styles[card.orientation.toLowerCase()]}
+                     className={styles.cardContainer + " " + styles[card.orientation]}
                   >
                      <TeamCard
                         animate={i === 0}

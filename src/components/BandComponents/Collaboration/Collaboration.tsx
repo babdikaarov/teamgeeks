@@ -1,19 +1,23 @@
+// modules
+import { useEffect } from "react";
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { useInView } from "react-intersection-observer";
+import { EBlockID } from "../../../globalTypesEnum";
+// swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+// styles
 import styles from "./_collaboration.module.scss";
-import cards from "../../../tempData/getCollabData";
-import icon from "../../../assets/icons/bigArrow";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
-import { EBlockID } from "../../../types";
-import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+// components
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import Icon from "../../../assets/icons/bigArrow";
+import cards from "../../../tempData/getCollabData"; // FIX_ME {cards} replace with backend
 
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
-   const { refToogle } = useToggleActiveNavigation(EBlockID.Collab);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
    const { ref, inView } = useInView();
 
    useEffect(() => {
@@ -30,7 +34,7 @@ const Collaboration = () => {
       <SectionWrapper
          header={"Коллаборации"}
          className={styles.collabWrapper}
-         id={EBlockID.Collab}
+         id={EBlockID.COLLAB}
          forwardedRef={ref}
       >
          <div
@@ -42,7 +46,7 @@ const Collaboration = () => {
                className={styles.buttonPrev}
                onClick={handlePrev}
             >
-               {icon}
+               {Icon}
             </button>
             <Swiper
                className={styles.swiperWrapper}
@@ -73,7 +77,7 @@ const Collaboration = () => {
                className={styles.buttonNext}
                onClick={handleNext}
             >
-               {icon}
+               {Icon}
             </button>
          </div>
       </SectionWrapper>

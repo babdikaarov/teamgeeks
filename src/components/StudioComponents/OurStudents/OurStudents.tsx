@@ -1,22 +1,27 @@
+// modules
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
+import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+// swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "./_ourstudents.module.scss";
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
-import OurStudentsCard from "../../../UI/Cards/OurStudentsCard";
-import data from "./tempdata";
+import OurStudentsCard from "./OurStudentsCard";
 import icon from "../../../assets/icons/bigArrow";
-import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
-import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
+// styles
+import styles from "./_ourstudents.module.scss";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
+import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
 
 const OurStudents = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(data);
-   const { refToogle } = useToggleActiveNavigation(EBlockID.Students);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
 
    return (
       <SectionWrapper

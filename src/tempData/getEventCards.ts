@@ -1,8 +1,8 @@
-import card from "/src/assets/events/Card.jpg";
-import card2 from "/src/assets/events/Card(1).jpg";
-import card3 from "/src/assets/events/Card(2).jpg";
-import card4 from "/src/assets/events/Card(3).jpg";
-import card5 from "/src/assets/events/Card(4).jpg";
+import card from "./events/Card.jpg";
+import card2 from "./events/Card(1).jpg";
+import card3 from "./events/Card(2).jpg";
+import card4 from "./events/Card(3).jpg";
+import card5 from "./events/Card(4).jpg";
 
 export default [
    {

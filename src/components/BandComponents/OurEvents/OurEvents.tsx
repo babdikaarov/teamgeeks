@@ -1,8 +1,12 @@
-import getEventCards from "../../../tempData/getEventCards";
-import styles from "./_ourevents.module.scss";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import ButtonWithArrow from "../../../UI/buttons/ButtonWithArrow";
+// modules
 import { useEffect } from "react";
+// styles
+import styles from "./_ourevents.module.scss";
+// components
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import ButtonWithArrow from "../../../UI/Buttons/ButtonWithArrow";
+import getEventCards from "../../../tempData/getEventCards"; //FIX_ME replace wit hbackend
+
 const OurEvents = () => {
    useEffect(() => {
       const scrollers = document.querySelectorAll('[data-scroller="outter"]');

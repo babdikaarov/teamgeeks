@@ -2,9 +2,8 @@ import { useEffect, useRef } from "react";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import HeroText from "./HeroText";
 import styles from "./_hero.module.scss";
-import { HeroTemplateProps } from "./types";
 
-const HeroTemplate: React.FC<HeroTemplateProps> = ({ video, text, children }) => {
+const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
    const videoRef = useRef<HTMLVideoElement>(null);
 
    useEffect(() => {

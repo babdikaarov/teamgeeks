@@ -1,26 +1,31 @@
-import TeacherCard from "../../../UI/Cards/TeacherCard";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import getTeachersData from "../../../tempData/getTeachersData";
-import styles from "./_teacher.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// modules
 import { useState, useCallback } from "react";
-import icon from "../../../assets/icons/bigArrow";
-import SharedButton from "../../../UI/buttons/SharedButton";
-import Modal from "./Modal";
-import { TeacherType } from "./types";
 import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
-import contacts from "../../../tempData/contacts.json";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
+// SWIPER.JS
+import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
+import "swiper/css";
+// Components
+import SharedButton from "../../../UI/Buttons/SharedButton";
+import Modal from "./Modal";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import TeacherCard from "./TeacherCard";
+import icon from "../../../assets/icons/bigArrow";
+// styles
+import styles from "./_teacher.module.scss";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
+// FIX_ME replace staticData when backend ready
+import getTeachersData from "../../../tempData/getTeachersData";
+import contacts from "../../../tempData/contacts.json";
 
 const Teachers = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
-   const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(null);
-   const { refToogle } = useToggleActiveNavigation(EBlockID.Teachers);
+   const [selectedTeacher, setSelectedTeacher] = useState<Prop.Teachers.TeacherType | null>(null);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
 
-   const openModal = useCallback((teacher: TeacherType) => {
+   const openModal = useCallback((teacher: Prop.Teachers.TeacherType) => {
       setSelectedTeacher(teacher);
    }, []);
 

@@ -1,31 +1,34 @@
+// modules
 import { useState } from "react";
-import styles from "./_galleryCollage.module.scss";
-import { GalleryCollageProps } from "../types";
-import usePagination from "../../../modules/hooks/usePagination";
+import { useLocation } from "react-router-dom";
 import { SlideImage } from "yet-another-react-lightbox";
+import usePagination from "../../../modules/hooks/usePagination";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+// components
 import LightBox from "./LightBox";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
-import { useLocation } from "react-router-dom";
-import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
+// styles
+import styles from "./_galleryCollage.module.scss";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
 
-const GalleryCollage: React.FC<GalleryCollageProps> = ({ items }) => {
+const GalleryCollage: React.FC<Prop.Collage.Props> = ({ items }) => {
    const [open, setOpen] = useState(false);
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const images = getVisibleItems(items);
    const { pathname } = useLocation();
    const onStudio = pathname.match("studio");
-   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GalleryStudio : EBlockID.Gallery);
+   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
    const handleOpen = (i: number) => {
       setOpen(true);
       setIndex(i);
    };
-   // FIXME on API trafer convert logic to LightBox.tsx
+
    const modalImages: SlideImage[] = images
       .map((el) => (el ? { src: el.src } : null))
-      .filter((el): el is SlideImage => el !== null);
+      .filter((el): el is SlideImage => el !== null); // FIXME on API implement logic inside LightBox.tsx
 
    const lightBoxProps = {
       index,

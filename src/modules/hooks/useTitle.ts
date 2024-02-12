@@ -11,10 +11,10 @@ const useTitle = () => {
    useEffect(() => {
       if (pathname.match(studioPath)) {
          document.title = "Cool Studio";
-         updateFavicon("/studioFav.svg");
+         updateFavicon("/studioFavicon.svg");
       } else {
          document.title = "Cool Band";
-         updateFavicon("/bandIcon.svg");
+         updateFavicon("/bandFavicon.svg");
       }
 
       return () => {
