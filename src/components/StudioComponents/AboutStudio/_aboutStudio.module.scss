@@ -17,6 +17,11 @@
       gap: 14px;
    }
 }
+.AboutUsWrapper {
+   @media screen and (max-width: 1200px) {
+      gap: 110px;
+   }
+}
 
 .TextWrapper {
    font-size: 19px;

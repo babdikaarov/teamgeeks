@@ -1,21 +1,15 @@
-// modules
-import { useEffect, useRef, useState  } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { getCoolStudio } from "../../../store/aboutStudioThunk";
-// import { extractYouTubeVideoId } from "../../../../modules/extractAllYouTubeVideoID";
-// styles
-import styles from "./_videoComponent.module.scss";
-
-
-
-
-
+import { useEffect, useRef, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { extractYouTubeVideoId } from "../../../../modules/extractAllYouTubeVideoID";
+import { getCoolStudio } from "../../../../store/aboutStudioThunk";
+import styles from "../temp/_videoComponent.module.scss";
 
 const VideoComponent = () => {
    const dispatch = useAppDispatch();
    const coolStudioData = useAppSelector((state) => state.getCoolStudioVideo.data);
    const videoRef = useRef<HTMLIFrameElement | null>(null);
-      const [userPlayedVideo, setUserPlayedVideo] = useState(false);
+   const [userPlayedVideo, setUserPlayedVideo] = useState(false);
+
    useEffect(() => {
       dispatch(getCoolStudio());
    }, [dispatch]);
@@ -49,7 +43,6 @@ const VideoComponent = () => {
       };
    }, [userPlayedVideo]);
 
-
    const handleUserPlay = () => {
       setUserPlayedVideo(true);
       videoRef.current?.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', "*");
@@ -58,15 +51,16 @@ const VideoComponent = () => {
    if (!coolStudioData) {
       return <div>Loading...</div>;
    }
-   // const videoId = extractYouTubeVideoId(coolStudioData.youtubeUrl);
+
+   const videoId = extractYouTubeVideoId(coolStudioData.youtubeUrl);
+
    return (
       <div>
-          <div onClick={handleUserPlay}></div>
+         <div onClick={handleUserPlay}></div>
          <iframe
-         ref={videoRef}
+            ref={videoRef}
             className={styles.video}
-            src={`https://www.youtube.com/embed/uy-nFAuzFf4`} //FIX_ME remove and uncomment below after backend
-            // src={`https://www.youtube.com/embed/${videoId}`}
+            src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
             title="YouTube video player"
             allow="autoplay; encrypted-media"
             sandbox="allow-scripts allow-same-origin"
