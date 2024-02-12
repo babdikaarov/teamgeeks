@@ -4,6 +4,13 @@ import styles from "./_teachersCard.module.scss";
 
 const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
    const { img, name, expertise, instagram, description } = props;
+
+   const handleInstagramClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.open(instagram, '_blank');
+   };
+
    return (
       <div className={styles.cardContainer}>
          <div className={styles.imageContainer}>
@@ -12,6 +19,7 @@ const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
             <a
                href={instagram}
                target="blank"
+               onClick={handleInstagramClick}
             >
                {socialIcons.instagram}
             </a>
