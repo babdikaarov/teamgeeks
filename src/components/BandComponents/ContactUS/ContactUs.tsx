@@ -1,5 +1,5 @@
 // components
-import ContactUsTemplate from "../../../UI/ContactUs/ContactUsTemplate";
+import ContactUsTemplate from "../../../UI/Contact/ContactUsTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton";
 // staticData
 import staticText from "./staticData.json";

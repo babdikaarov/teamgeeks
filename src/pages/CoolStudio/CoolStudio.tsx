@@ -11,7 +11,6 @@ const CoolStudio = () => {
    return (
       <>
          <Hero />
-         {/* <HeroStudio /> */}
          <AboutStudio />
          <Courses />
          <Teachers />

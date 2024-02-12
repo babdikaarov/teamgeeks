@@ -28,7 +28,7 @@ const GalleryCollage: React.FC<Prop.Collage.Props> = ({ items }) => {
 
    const modalImages: SlideImage[] = images
       .map((el) => (el ? { src: el.src } : null))
-      .filter((el): el is SlideImage => el !== null); // FIXME on API implement logic inside LightBox.tsx
+      .filter((el): el is SlideImage => el !== null); // FIX_ME on API implement logic inside LightBox.tsx
 
    const lightBoxProps = {
       index,

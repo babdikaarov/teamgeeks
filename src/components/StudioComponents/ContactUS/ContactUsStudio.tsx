@@ -1,6 +1,6 @@
 // modules
 import SharedButton from "../../../UI/Buttons/SharedButton";
-import ContactUsTemplate from "../../../UI/ContactUs/ContactUsTemplate";
+import ContactUsTemplate from "../../../UI/Contact/ContactUsTemplate";
 // static
 import staticData from "./staticData.json";
 import backendData from "./backendData.json"; // FIX_ME remove backendData.json replace with backend

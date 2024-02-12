@@ -101,6 +101,4 @@ export const teamList = [
    },
 ];
 
-const addAvailableVideo = teamList.map((el) => Object.assign(el));
-
-export default addAvailableVideo;
+export default teamList;

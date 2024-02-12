@@ -2,13 +2,7 @@ import "./buttons/_sharedButton.scss";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 import phone from "../../assets/icons/phone";
 
-interface ISharedProps {
-   whatsapp: string;
-   classname: string;
-   text: string;
-}
-
-const SharedButton: React.FC<ISharedProps> = ({ whatsapp, classname, text }) => {
+const SharedButton: React.FC<Prop.ISharedProps> = ({ whatsapp, classname, text }) => {
    const whatsappText = createWhatsAppLink(whatsapp, text);
 
    return (

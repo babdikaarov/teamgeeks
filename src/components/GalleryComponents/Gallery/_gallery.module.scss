@@ -1,5 +1,18 @@
 @import "../../../scss/partials/variables";
 
+.galleryWrapper {
+   max-width: 1240px;
+}
+
+.navigation {
+   position: relative;
+   top: 28px;
+}
+
+.navigation:hover path {
+   fill: #fed102;
+}
+
 .gallery::-webkit-scrollbar {
    display: none;
 }

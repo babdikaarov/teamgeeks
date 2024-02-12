@@ -7,6 +7,7 @@ import GalleryCollage from "./GalleryCollage";
 import styles from "./_collage.module.scss";
 import getGalleryData from "../../../tempData/getGalleyData"; // FIX_ME replace with backend
 import bigArrow from "../../../assets/icons/bigArrow";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 
 const Collage = () => {
    window.scroll(0, 0);
@@ -16,7 +17,7 @@ const Collage = () => {
    const sortedData = useResponsiveSorting(sorted.items);
 
    return (
-      <section className={styles.section}>
+      <SectionWrapper className={styles.section}>
          <div className={styles.collageInfo}>
             <button onClick={() => navigate(-1)}>{bigArrow}</button>
             <div>
@@ -25,7 +26,7 @@ const Collage = () => {
             </div>
          </div>
          <GalleryCollage items={sortedData} />
-      </section>
+      </SectionWrapper>
    );
 };
 

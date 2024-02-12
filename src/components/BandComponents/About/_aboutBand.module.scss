@@ -64,16 +64,16 @@
    height: 362px;
    flex-basis: 400px;
 
-   @include xl {
-      min-height: 320px;
-   }
    @include md {
       max-width: 720px;
+   }
+   @include sm {
+      max-height: 320px;
    }
 }
 @media (max-width: 390px) {
    .image {
       max-width: 358px;
-      min-height: 185px;
+      max-height: 185px;
    }
 }

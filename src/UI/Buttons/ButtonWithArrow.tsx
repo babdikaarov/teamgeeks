@@ -3,11 +3,7 @@ import styles from "./buttons/_buttonWithArrow.module.scss";
 import mainElementAnimation from "../../modules/mainElementAnimation";
 import arrow_right_circle_fill from "../../assets/icons/arrow_right_circle_fill";
 
-interface ButtonWithArrowProps extends LinkProps {
-   text: string;
-}
-
-const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({ text, ...props }) => {
+const ButtonWithArrow: React.FC<Prop.ButtonWithArrowProps & LinkProps> = ({ text, ...props }) => {
    return (
       <Link
          {...props}

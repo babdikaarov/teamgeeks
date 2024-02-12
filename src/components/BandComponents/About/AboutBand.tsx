@@ -22,6 +22,7 @@ const AboutBand: React.FC = () => {
    //    dispatch(getAboutBand());
    // }, [dispatch]);
    // console.log(data)
+
    return (
       <SectionWrapper
          className={styles.aboutBand}
