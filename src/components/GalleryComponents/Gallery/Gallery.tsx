@@ -1,18 +1,22 @@
 // modules
 import { Fragment, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // components
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+import bigArrow from "../../../assets/icons/bigArrow";
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 // styles
 import styles from "./_gallery.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
+
 import getGalleryData from "../../../tempData/getGalleyData"; //FIX_ME replace with backend
 
 const Gallery: React.FC = () => {
    const [events, setEvents] = useState(getGalleryData);
    const { pathname } = useLocation();
+   const navigate = useNavigate();
    const onStudio = pathname.match("studio");
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
@@ -23,29 +27,39 @@ const Gallery: React.FC = () => {
    }, []);
 
    return (
-      <section
-         ref={refToogle}
-         className={styles.gallery}
-      >
-         {events.map((event, i) => (
-            <Fragment key={event.eventID + i}>
-               <div className={styles.galleryCards}>
-                  {/* FIXME add at backend stage */}
-                  {/* <Link to={`/gallery/${event.eventID}`}> */}
-                  <Link
-                     to={`/gallery/${i}`}
-                     className={styles.image_container}
-                  >
-                     <ImageLoader src={event.poster} />
-                     <div className={styles.galleryCardsContent}>
-                        <p>{event.date}</p>
-                        <h4>{`Name ${i}`}</h4>
+      <>
+         <SectionWrapper
+            forwardedRef={refToogle}
+            className={styles.galleryWrapper}
+         >
+            <button
+               onClick={() => navigate(-1)}
+               className={styles.navigation}
+            >
+               {bigArrow}
+            </button>
+            <div className={styles.gallery}>
+               {events.map((event, i) => (
+                  <Fragment key={event.eventID + i}>
+                     <div className={styles.galleryCards}>
+                        {/* FIX_ME add at backend stage */}
+                        {/* <Link to={`/gallery/${event.eventID}`}> */}
+                        <Link
+                           to={`/gallery/${i}`}
+                           className={styles.image_container}
+                        >
+                           <ImageLoader src={event.poster} />
+                           <div className={styles.galleryCardsContent}>
+                              <p>{event.date}</p>
+                              <h4>{`Name ${i}`}</h4>
+                           </div>
+                        </Link>
                      </div>
-                  </Link>
-               </div>
-            </Fragment>
-         ))}
-      </section>
+                  </Fragment>
+               ))}
+            </div>
+         </SectionWrapper>
+      </>
    );
 };
 

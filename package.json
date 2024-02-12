@@ -11,7 +11,7 @@
       "preview": "vite preview",
       "format": "prettier --write .",
       "prepare": "husky || true",
-      "test": "npx lint-staged && npm run build && prettier --write .",
+      "test": "git add . && eslint --fix . && npm run build && prettier --write . && git add .",
       "commit": "npx cz"
    },
    "lint-staged": {

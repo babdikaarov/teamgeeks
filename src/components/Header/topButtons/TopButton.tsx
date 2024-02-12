@@ -2,7 +2,7 @@ import styles from "./_topButton.module.scss";
 import icon from "./icon";
 import useStudioPath from "../../../modules/hooks/useActiveMainPage";
 
-// TO_DO try to animate burger icon
+// FIX_ME try to animate burger icon
 
 const TopButton: React.FC<Prop.Header.TopButtonProps> = ({ isMenuOpen, toggleMenu }) => {
    const isActiveMainPage = useStudioPath();

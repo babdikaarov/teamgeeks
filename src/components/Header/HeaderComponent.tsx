@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Logo from "../../UI/Logo/Logo.tsx";
-import SocialLinks from "../../UI/socialLinks/SocialLinks.tsx";
+import SocialLinks from "../../UI/Social/SocialLinks.tsx";
 import BurgerBtn from "./BurgerBtn/BurgerBtn.tsx";
 import styles from "./_header.module.scss";
 import TopButton from "./topButtons/TopButton.tsx";

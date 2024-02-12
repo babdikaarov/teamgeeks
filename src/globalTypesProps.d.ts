@@ -1,4 +1,12 @@
 declare namespace Prop {
+   export interface ButtonWithArrowProps {
+      text: string;
+   }
+   export interface ISharedProps {
+      whatsapp: string;
+      classname: string;
+      text: string;
+   }
    export namespace Teachers {
       export type TeacherType = {
          // refactor on backend

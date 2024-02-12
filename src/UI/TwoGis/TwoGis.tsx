@@ -12,7 +12,7 @@ export default function TwoGis() {
    const { pathname } = useLocation();
    const [mapLoaded, setMapLoaded] = useState(false);
 
-   // FIXME the Location coordinates and link static attachment or backend provider
+   // FIX_ME the Location coordinates and link static attachment or backend provider
    const coolStudioLocation: number[] = [42.850329, 74.609962];
    const coolStudiolink: string = "https://2gis.kg/bishkek/firm/70000001066401992?m=74.609962%2C42.850329%2F16";
 
@@ -76,12 +76,12 @@ export default function TwoGis() {
          if (mapElement) {
             // mapElement.onmouseout = () => marker.closePopup;
             // mapElement.onmouseover = () => marker.openPopup;
-            // FIXME check with team hover beahvior
+            // FIX_ME check with team hover beahvior
             mapElement.onmouseover = () => marker.openPopup();
             mapElement.onmouseout = () => marker.closePopup();
          }
 
-         // FIXME violation. somtimes warning poping up sometimes not
+         // FIX_ME violation. somtimes warning poping up sometimes not
          /* script.basic.js:16543 [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952 */
          // if (mapElement) {
          //   DG.DomEvent.on(mapElement, "mouseover", marker.openPopup, { passive: true });
@@ -96,7 +96,7 @@ export default function TwoGis() {
          className="map-container"
          style={{ width: "100%", height: "100%", position: "relative" }}
       >
-         {/* FIXME finish the logic on map loaded and provide hashbluer generated from map screenshot */}
+         {/* FIX_ME finish the logic on map loaded and provide hashbluer generated from map screenshot */}
          {/* <ImageLoader/> */}
       </div>
    );
