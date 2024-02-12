@@ -49,7 +49,6 @@ const Modal: React.FC<Prop.Teachers.ModalProps> = ({ teacher, closeModal }) => {
                <div className={styles.block1}>
                   <h1 className={styles.title}>{teacher.name}</h1>
                   <p className={styles.p}>{teacher.description}</p>
-                  <div className={styles.shadow}></div>
                </div>
             </div>
          </div>
