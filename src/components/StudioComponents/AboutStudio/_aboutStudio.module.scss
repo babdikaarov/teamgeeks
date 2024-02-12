@@ -10,6 +10,9 @@
       gap: 60px;
    }
 
+   @media (max-width: 1250px) and (min-width: 1200px) {
+      gap: 110px;
+   }
    @include md {
       flex-direction: column-reverse;
    }
