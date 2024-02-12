@@ -10,16 +10,14 @@
       gap: 60px;
    }
 
+   @media (max-width: 1250px) and (min-width: 1200px) {
+      gap: 110px;
+   }
    @include md {
       flex-direction: column-reverse;
    }
    @include sm {
       gap: 14px;
-   }
-}
-.AboutUsWrapper {
-   @media screen and (max-width: 1200px) {
-      gap: 110px;
    }
 }
 
