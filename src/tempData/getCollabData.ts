@@ -1,12 +1,12 @@
-import card1 from "/src/assets/collaborationImages/1.jpeg";
-import card2 from "/src/assets/collaborationImages/2.jpeg";
-import card3 from "/src/assets/collaborationImages/3.jpeg";
-import card4 from "/src/assets/collaborationImages/4.jpeg";
-import card5 from "/src/assets/collaborationImages/5.jpeg";
-import card6 from "/src/assets/collaborationImages/6.jpeg";
-import card7 from "/src/assets/collaborationImages/7.jpeg";
-import card8 from "/src/assets/collaborationImages/8.jpeg";
-import card9 from "/src/assets/collaborationImages/9.jpeg";
+import card1 from "./collaborationImages/1.jpeg";
+import card2 from "./collaborationImages/2.jpeg";
+import card3 from "./collaborationImages/3.jpeg";
+import card4 from "./collaborationImages/4.jpeg";
+import card5 from "./collaborationImages/5.jpeg";
+import card6 from "./collaborationImages/6.jpeg";
+import card7 from "./collaborationImages/7.jpeg";
+import card8 from "./collaborationImages/8.jpeg";
+import card9 from "./collaborationImages/9.jpeg";
 
 export default [
    {

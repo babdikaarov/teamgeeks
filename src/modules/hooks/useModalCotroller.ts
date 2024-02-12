@@ -29,7 +29,6 @@ export const useModalCotroller = () => {
       if (id === "collageModal") {
          modal.show();
       } else {
-         // fixME from showModal() to show() bug apperance on students card
          setIsOpen(true);
          modal.showModal();
       }

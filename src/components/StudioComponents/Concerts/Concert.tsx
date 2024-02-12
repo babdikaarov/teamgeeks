@@ -1,18 +1,23 @@
+// modules
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+// ^^^ SWIPER.JS
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "./_concerts.module.scss";
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
-import tempData from "./tempData";
-import ConcertCard from "../../../UI/Cards/ConcertCard";
+import ConcertCard from "./ConcertCard";
 import icon from "../../../assets/icons/bigArrow";
-import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
+// styles
+import styles from "./_concerts.module.scss";
+// ENUMS
+import { EBlockID } from "../../../globalTypesEnum";
+import tempData from "../../../tempData/getConcertData"; //FIX_ME replace with backend
 
 const Concert = () => {
-   const { refToogle } = useToggleActiveNavigation(EBlockID.Concert);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.CONCERT);
 
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const concertImages = tempData;

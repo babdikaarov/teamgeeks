@@ -1,21 +1,19 @@
-import ContactUsTemplate from "../../../UI/contactUs/ContactUsTemplate";
-import SharedButton from "../../../UI/buttons/SharedButton";
-import staticData from "./staticData.json";
-import contact from "../../../tempData/contacts.json";
-// import backendData from "./backendData.json";
-// import createWhatsAppLink from "../../../modules/createWhatsAppLink";
+// components
+import ContactUsTemplate from "../../../UI/ContactUs/ContactUsTemplate";
+import SharedButton from "../../../UI/Buttons/SharedButton";
+// staticData
+import staticText from "./staticData.json";
+import backendData from "./backendData.json"; // FIX_ME remove backendData.json and add backendData when ready
 
 const ContactUs = () => {
-   // const whatsapp = createWhatsAppLink(backendData.whatsapp.link, backendData.whatsapp.text);
-
    return (
       <ContactUsTemplate
-         heading={staticData.heading}
-         paragraph={staticData.paragraph}
-         secondHeading={staticData.secondHeading}
+         heading={staticText.heading}
+         paragraph={staticText.paragraph}
+         secondHeading={staticText.secondHeading}
          button={
             <SharedButton
-               whatsapp={contact.bandNumber}
+               whatsapp={backendData.whatsapp.link.toString()}
                classname="bandContactButton"
                text="Связаться с нами"
             />

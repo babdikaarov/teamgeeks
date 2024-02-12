@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IAboutData } from "../types.ts";
 import { getAboutBand } from "./aboutBandThunk.ts";
 
-interface IAboutBand {
-   data: IAboutData | undefined;
-   getLoading: boolean;
-}
-
-const initialState: IAboutBand = {
+const initialState: Slice.IAboutBand = {
    data: {
       id: 0,
       image: "",

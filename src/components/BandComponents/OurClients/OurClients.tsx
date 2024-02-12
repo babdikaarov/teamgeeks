@@ -1,19 +1,22 @@
-import data from "../../../tempData/getClientsData";
-import styles from "./_ourClient.module.scss";
-import ClientCard from "../../../UI/Cards/ClientCard";
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import staticData from "./staticData.json";
+import ClientCard from "./ClientCard";
+// styles
+import styles from "./_ourClient.module.scss";
+// static
+import staticText from "./staticData.json";
+import data from "../../../tempData/getClientsData"; //FIX-ME resplce with backend
 
 const OurClients = () => {
    return (
       <SectionWrapper
-         header={staticData.header}
-         id={staticData.scrollID}
+         header={staticText.header}
+         id={staticText.scrollID}
          className={styles.ourClients}
       >
          <article className={styles.clientsArticle}>
-            <h2>{staticData.h2}</h2>
-            <h4>{staticData.h4}</h4>
+            <h2>{staticText.h2}</h2>
+            <h4>{staticText.h4}</h4>
          </article>
          <div className={styles.clientsCards}>
             {data.map((card, i: number) => (

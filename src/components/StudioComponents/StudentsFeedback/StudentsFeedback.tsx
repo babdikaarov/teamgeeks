@@ -1,12 +1,16 @@
+// modules
+import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+// swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import styles from "./_studentsFeedback.module.scss";
-import StudentsFeedbackCard from "../../../UI/Cards/FeedbackCard";
-import cards from "../../../tempData/getFeedbackData";
+import StudentsFeedbackCard from "./FeedbackCard";
 import icon from "../../../assets/icons/bigArrow";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
+// styles
+import styles from "./_studentsFeedback.module.scss";
+import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
 
 const StudentsFeedback = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();

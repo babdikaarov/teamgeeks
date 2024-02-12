@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getOurTeam } from "./ourTeamThunk.ts";
-import { IGetOurTeam } from "../types.ts";
 
-interface IOurTeam {
-   data: IGetOurTeam[] | undefined;
-   getLoading: boolean;
-}
-
-const initialState: IOurTeam = {
+const initialState: Slice.IOurTeam = {
    data: [
       {
          id: 0,

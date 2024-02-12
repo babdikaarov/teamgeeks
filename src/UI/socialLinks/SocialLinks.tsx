@@ -2,14 +2,10 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
 import { getContacts } from "../../store/contactsThunk.ts";
 import styles from "./_socialLinks.module.scss";
-import { socialIcons } from "./icons";
+import { socialIcons } from "../../assets/icons/socialIcons.tsx";
 import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
 
-interface SocialLinksProps {
-   setIsMenuOpen: (isOpen: boolean) => void;
-}
-
-const SocialLinks: React.FC<SocialLinksProps> = ({ setIsMenuOpen }) => {
+const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
    const dispatch = useAppDispatch();
    const getLinks = useAppSelector((state) => state.getContacts.data)!;
 

@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getContacts } from "./contactsThunk.ts";
-import { IGetContacts } from "../types.ts";
 
-interface IContact {
-   data: IGetContacts | undefined;
-   getLoading: boolean;
-}
-
-const initialState: IContact = {
+const initialState: Slice.IContact = {
    data: {
       id: 0,
       longitude: "",

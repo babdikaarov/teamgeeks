@@ -1,19 +1,15 @@
+// modules
 import { useEffect } from "react";
+import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
+// yarl
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import "./yarl.scss";
-/*
- */
-interface ILightBoxProp {
-   index: number;
-   open: boolean;
-   setOpen: (arg: boolean) => void;
-   setIndex: (arg: number) => void;
+
+interface ISlideImage {
    images: SlideImage[];
-   nextPage: () => void;
 }
-const LightBox: React.FC<ILightBoxProp> = (props) => {
+const LightBox: React.FC<Prop.Collage.ILightBoxProp & ISlideImage> = (props) => {
    const { index, open, setOpen, setIndex, images, nextPage } = props;
    const mobileSize = useMediaQuery("(max-width: 576px)");
    // FIX_ME when api transfer covertation logic here refer to higher order component

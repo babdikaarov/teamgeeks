@@ -1,9 +1,8 @@
-import Header from "../../UI/Header/Header";
-import Footer from "../../UI/Footer/Footer";
-import React, { PropsWithChildren } from "react";
+import Header from "../Header/Header.tsx";
+import Footer from "../Footer/Footer.tsx";
 import MadeBy from "../../UI/MadeBy/MadeBy.tsx";
 
-const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
    return (
       <>
          <Header />

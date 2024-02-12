@@ -1,13 +1,13 @@
-import client1 from "/src/assets/ClientsIcons/1.png";
-import client2 from "/src/assets/ClientsIcons/yandex.png";
-import client3 from "/src/assets/ClientsIcons/3.png";
-import client4 from "/src/assets/ClientsIcons/4.png";
-import client5 from "/src/assets/ClientsIcons/icon.png";
-import client6 from "/src/assets/ClientsIcons/optima.png";
-import client7 from "/src/assets/ClientsIcons/7.png";
-import client8 from "/src/assets/ClientsIcons/8.png";
-import client9 from "/src/assets/ClientsIcons/9.png";
-import client10 from "/src/assets/ClientsIcons/10.png";
+import client1 from "./ClientsIcons/1.png";
+import client2 from "./ClientsIcons/yandex.png";
+import client3 from "./ClientsIcons/3.png";
+import client4 from "./ClientsIcons/4.png";
+import client5 from "./ClientsIcons/icon.png";
+import client6 from "./ClientsIcons/optima.png";
+import client7 from "./ClientsIcons/7.png";
+import client8 from "./ClientsIcons/8.png";
+import client9 from "./ClientsIcons/9.png";
+import client10 from "./ClientsIcons/10.png";
 
 export default [
    {

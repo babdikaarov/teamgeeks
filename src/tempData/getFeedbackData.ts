@@ -1,9 +1,9 @@
-import Damir1 from "./../assets/studentsFeedback/Damir1.png";
-import Rustam2 from "./../assets/studentsFeedback/Rustam2.png";
-import Alice3 from "./../assets/studentsFeedback/Alice3.png";
-import Murtaz4 from "./../assets/studentsFeedback/Murtaz4.png";
-import Asel5 from "./../assets/studentsFeedback/Asel5.png";
-import Saykal6 from "./../assets/studentsFeedback/Saykal6.png";
+import Damir1 from "./studentsFeedback/Damir1.png";
+import Rustam2 from "./studentsFeedback/Rustam2.png";
+import Alice3 from "./studentsFeedback/Alice3.png";
+import Murtaz4 from "./studentsFeedback/Murtaz4.png";
+import Asel5 from "./studentsFeedback/Asel5.png";
+import Saykal6 from "./studentsFeedback/Saykal6.png";
 
 const feedbackList = [
    {

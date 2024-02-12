@@ -11,7 +11,7 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
    const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
 
    const handleResize = () => {
-      // TODO keep it just incase
+      // FIX_ME check with Kanykei
 
       // const width = window.innerWidth;
       // if (width < 850 && width >= 500) {
@@ -27,7 +27,6 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
 
       window.addEventListener("resize", handleResize);
 
-      // Cleanup the event listener on component unmount
       return () => {
          window.removeEventListener("resize", handleResize);
       };
@@ -35,13 +34,10 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
    }, [initialItemsPerPage]);
 
    const getVisibleItems = (items: (Item | undefined)[]) => {
-      // TODO verify behavior with designers if uncomments and delete 0
-      // const startItemIndex = (currentPage - 1) * itemsPerPage;
       const startItemIndex = 0;
       const endItemIndex = currentPage * itemsPerPage;
       return items.slice(startItemIndex, endItemIndex);
    };
-   // FIXME handle edge cases
    const nextPage = () => {
       setCurrentPage((prevPage) => prevPage + 1);
    };

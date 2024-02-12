@@ -1,20 +1,23 @@
+// modules
 // import { useEffect } from "react";
-import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import styles from "./_aboutBand.module.scss";
-import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { EBlockID } from "../../../types";
-import image from "/gallery/event1/23.jpg";
+import { EBlockID } from "../../../globalTypesEnum";
 // import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 // import { getAboutBand } from "../../../store/aboutBandThunk";
+// components
+import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
+import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+// styles
+import styles from "./_aboutBand.module.scss";
+// static data
+import staticText from "./staticData.json";
+import image from "../../../tempData/gallery/event1/23.jpg"; // FIX_ME remove static image and provide backEnd when ready
 
 const AboutBand: React.FC = () => {
    // const dispatch = useAppDispatch();
    // const data = useAppSelector((state) => state.getAboutBand.data);
-   const { refToogle } = useToggleActiveNavigation(EBlockID.About);
+   const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUT);
 
-   const text =
-      "Coolband- яркая команда настоящих профессионалов, состоящая из инструментального кавер-бэнда, танцевально-интерактивного коллектива и огненных диджеев, которые зажгут любое мероприятие своим виртуозным исполнением, драйвовым шоу, и качественным звуком. Мы дарим своим слушателям незабываемую возможность насладиться шедеврами отечественных и мировых исполнителей в живом звучании. Мы дарим своим слушателям незабываемую возможность насладиться шедеврами отечественных и мировых исполнителей в живом звучании.";
    // useEffect(() => {
    //    dispatch(getAboutBand());
    // }, [dispatch]);
@@ -23,21 +26,16 @@ const AboutBand: React.FC = () => {
       <SectionWrapper
          className={styles.aboutBand}
          header={"Cool band"}
-         id={EBlockID.About}
+         id={EBlockID.ABOUT}
       >
          <div
             className={styles.about}
             ref={refToogle}
          >
             <article className={styles.article}>
-               {text.split(/(?<=[.!?])\s+/).map((newLine, i) => (
-                  <p
-                     key={i}
-                     className={styles.text}
-                  >
-                     {newLine}
-                  </p>
-               ))}
+               <p>{staticText.text1}</p>
+               <p>{staticText.text2}</p>
+               <p>{staticText.text3}</p>
             </article>
             <div className={styles.image}>
                <ImageLoader

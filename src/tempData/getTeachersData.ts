@@ -1,9 +1,9 @@
-import card1 from "../assets/teachers/anara.jpeg";
-import card2 from "../assets/teachers/ilyaz.jpeg";
-import card3 from "../assets/teachers/erbol.jpeg";
-import card4 from "../assets/teachers/sultan.jpeg";
-import card5 from "../assets/teachers/aizada.jpeg";
-import card6 from "../assets/teachers/davlet.jpeg";
+import card1 from "./teachers/anara.jpeg";
+import card2 from "./teachers/ilyaz.jpeg";
+import card3 from "./teachers/erbol.jpeg";
+import card4 from "./teachers/sultan.jpeg";
+import card5 from "./teachers/aizada.jpeg";
+import card6 from "./teachers/davlet.jpeg";
 
 export default [
    {

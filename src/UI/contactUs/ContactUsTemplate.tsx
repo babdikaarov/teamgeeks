@@ -1,10 +1,8 @@
-import { FC } from "react";
 import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import TwoGis from "../map/TwoGis";
 import styles from "./_contactUsTemplate.module.scss";
-import { ContactUsTemplateProps } from "./types";
 
-const ContactUsTemplate: FC<ContactUsTemplateProps> = ({ heading, secondHeading, paragraph, button }) => {
+const ContactUsTemplate: React.FC<Prop.ContactUsTemplate> = ({ heading, secondHeading, paragraph, button }) => {
    return (
       <SectionWrapper>
          <div className={styles.mapContent}>

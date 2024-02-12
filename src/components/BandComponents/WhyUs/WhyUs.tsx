@@ -1,12 +1,15 @@
+// components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import icon from "../../../assets/Tick.png";
+// styles
 import styles from "./_whyus.module.scss";
+// static
+import staticText from "./staticData.json";
 
 const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) => (
    <div className={styles.InfoBlock}>
       <img
          className={styles.icon}
-         src={icon}
+         src={"/icons/checkbox.svg"}
          alt="Icon"
       />
       <div className={styles.textWrapper}>
@@ -23,22 +26,10 @@ const WhyUs: React.FC = () => {
          className={styles.whyUs}
       >
          <div className={styles.WhyUs}>
-            <InfoBlock
-               title="Профессионалы своего дела"
-               text="Большой опыт всех участников коллектива, ответственность и креатив"
-            />
-            <InfoBlock
-               title="Индивидуальный подход"
-               text="Поможем реализовать любое пожелание к исполняемым композициям и жанру"
-            />
-            <InfoBlock
-               title="Фирменный стиль и айдентика"
-               text="Оригинальная подача и особая энергетика вкупе со сценическим образом, соответствующим вашему событию"
-            />
-            <InfoBlock
-               title="Техническое сопровождение"
-               text="Профессиональная настройка каждого инструмента, зажигательные ритмы, красочный и объемный звук"
-            />
+            <InfoBlock {...staticText.block1} />
+            <InfoBlock {...staticText.block2} />
+            <InfoBlock {...staticText.block3} />
+            <InfoBlock {...staticText.block4} />
          </div>
       </SectionWrapper>
    );

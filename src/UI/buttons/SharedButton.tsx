@@ -1,6 +1,6 @@
 import "./buttons/_sharedButton.scss";
-import phone from "../../assets/icons/phone";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
+import phone from "../../assets/icons/phone";
 
 interface ISharedProps {
    whatsapp: string;

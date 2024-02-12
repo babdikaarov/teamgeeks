@@ -1,15 +1,13 @@
 import { Link, LinkProps } from "react-router-dom";
-// import arrow from "../../assets/icons/arrow";
-import arrow from "../../assets/icons/return";
 import styles from "./buttons/_buttonWithArrow.module.scss";
-import { FC } from "react";
 import mainElementAnimation from "../../modules/mainElementAnimation";
+import arrow_right_circle_fill from "../../assets/icons/arrow_right_circle_fill";
 
 interface ButtonWithArrowProps extends LinkProps {
    text: string;
 }
 
-const ButtonWithArrow: FC<ButtonWithArrowProps> = ({ text, ...props }) => {
+const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({ text, ...props }) => {
    return (
       <Link
          {...props}
@@ -17,8 +15,7 @@ const ButtonWithArrow: FC<ButtonWithArrowProps> = ({ text, ...props }) => {
          onClick={mainElementAnimation}
       >
          <h6 className={styles.h6}>
-            {text}
-            {arrow}
+            {text} {arrow_right_circle_fill}
          </h6>
       </Link>
    );
