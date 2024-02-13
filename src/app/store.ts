@@ -6,6 +6,7 @@ import { reducersHeroStudio } from "../store/heroStudioSlice.ts";
 import { reducersHeroBand } from "../store/herobandSlice.ts";
 import { reducerActiveNavigation } from "../store/activeNavigationSlice.ts";
 import { reducersAboutBand } from "../store/aboutBandSlice.ts";
+import { reducerdrawerCollabSlice, reducerdrawerTeamSlice } from "../store/drawerSlice.ts";
 
 export const store = configureStore({
    reducer: {
@@ -16,6 +17,8 @@ export const store = configureStore({
       getHeroBand: reducersHeroBand,
       getHeroStudio: reducersHeroStudio,
       getActiveNavigationState: reducerActiveNavigation,
+      drawerCollab: reducerdrawerCollabSlice,
+      drawerTeam: reducerdrawerTeamSlice,
    },
 });
 

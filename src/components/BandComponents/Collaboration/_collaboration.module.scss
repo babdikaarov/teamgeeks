@@ -7,7 +7,7 @@
       transition: transform 1s;
    }
 
-   .swiperWrapper[draw-out="true"] {
+   .swiperWrapper[data-draw-out="true"] {
       transform: translateX(0);
    }
 }

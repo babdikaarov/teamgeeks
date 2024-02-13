@@ -3,8 +3,8 @@
 .sectionWrapper {
    width: 100%;
    position: relative;
-   scroll-margin-top: 150px;
-   // margin-inline: 20px;
+   scroll-margin-top: 150px !important;
+   // FIX_ME scrol-margin-top not working on id #collaboration
    @media screen and (max-width: 1440px) {
       padding-inline: 20px;
    }

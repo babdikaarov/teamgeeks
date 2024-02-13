@@ -14,21 +14,21 @@ import styles from "./_collaboration.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import Icon from "../../../assets/icons/bigArrow";
 import cards from "../../../tempData/getCollabData"; // FIX_ME {cards} replace with backend
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { setDrawerCollabSlice } from "../../../store/drawerSlice";
 
 const Collaboration = () => {
    const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
    const { ref, inView } = useInView();
+   const dispatch = useAppDispatch();
+   const hasSetDrawerAttribute = useAppSelector((state) => state.drawerCollab.dataDrawer);
 
    useEffect(() => {
-      const drawer = sliderRef.current as unknown as HTMLElement;
-      if (inView) {
-         drawer.setAttribute("draw-out", "true");
-      } else {
-         drawer.setAttribute("draw-out", "false");
+      if (inView && !hasSetDrawerAttribute) {
+         dispatch(setDrawerCollabSlice());
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [inView]);
+   }, [inView, hasSetDrawerAttribute, dispatch]);
 
    return (
       <SectionWrapper
@@ -49,6 +49,7 @@ const Collaboration = () => {
                {Icon}
             </button>
             <Swiper
+               data-draw-out={hasSetDrawerAttribute}
                className={styles.swiperWrapper}
                ref={sliderRef}
                spaceBetween={0}
