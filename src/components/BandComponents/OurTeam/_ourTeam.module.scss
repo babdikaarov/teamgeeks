@@ -1,5 +1,17 @@
 @import "../../../scss/partials/mixin";
 
+@media (min-width: 1024px) {
+   .swiperWrapper {
+      position: relative;
+      transform: translateX(1000px);
+      transition: transform 1s;
+   }
+
+   .swiperWrapper[data-draw-out="true"] {
+      transform: translateX(0);
+   }
+}
+
 .teamWrapper {
    @media (min-width: 1025px) {
       padding-right: 0 !important;

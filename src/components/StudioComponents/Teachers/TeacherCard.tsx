@@ -8,7 +8,7 @@ const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
    const handleInstagramClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
       e.stopPropagation();
-      window.open(instagram, '_blank');
+      window.open(instagram, "_blank");
    };
 
    return (
