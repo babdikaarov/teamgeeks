@@ -55,7 +55,7 @@ const VideoComponent = () => {
             // src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
             title="YouTube video player"
             allow="autoplay; encrypted-media"
-            sandbox="allow-scripts allow-same-origin"
+            sandbox="allow-scripts allow-same-origin allow-presentation"
          ></iframe>
       </div>
    );
