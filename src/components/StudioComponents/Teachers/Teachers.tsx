@@ -1,6 +1,5 @@
 // modules
 import { useState, useCallback } from "react";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // SWIPER.JS
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,7 +20,6 @@ import getTeachersData from "../../../tempData/getTeachersData";
 import contacts from "../../../tempData/contacts.json";
 
 const Teachers = () => {
-   const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const [selectedTeacher, setSelectedTeacher] = useState<Prop.Teachers.TeacherType | null>(null);
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
 
@@ -44,12 +42,11 @@ const Teachers = () => {
          >
             <button
                className={styles.buttonPrev}
-               onClick={handlePrev}
+               id="btn32"
             >
                {icon}
             </button>
             <Swiper
-               ref={sliderRef}
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
                freeMode
@@ -57,6 +54,7 @@ const Teachers = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
+               navigation={{ nextEl: "#btn31", prevEl: "#btn32" }}
                modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1024: {
@@ -82,7 +80,7 @@ const Teachers = () => {
             </Swiper>
             <button
                className={styles.buttonNext}
-               onClick={handleNext}
+               id="btn31"
             >
                {icon}
             </button>

@@ -17,7 +17,7 @@ import vid8 from "./ourTeam/Keno.mp4";
 import img9 from "./ourTeam/danceshow.jpg";
 import vid9 from "./ourTeam/danceshow.mp4";
 
-export const teamList = [
+export default [
    {
       id: 1,
       image: img1,
@@ -100,5 +100,3 @@ export const teamList = [
       bluer: "",
    },
 ];
-
-export default teamList;

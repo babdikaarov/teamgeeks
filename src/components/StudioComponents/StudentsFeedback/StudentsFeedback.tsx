@@ -1,5 +1,4 @@
 // modules
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -13,19 +12,16 @@ import styles from "./_studentsFeedback.module.scss";
 import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
 
 const StudentsFeedback = () => {
-   const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
-
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
             <button
                className={styles.buttonPrev}
-               onClick={handlePrev}
+               id="btn42"
             >
                {icon}
             </button>
             <Swiper
-               ref={sliderRef}
                className={styles.feedbackSwiper}
                effect={"coverflow"}
                grabCursor
@@ -42,6 +38,7 @@ const StudentsFeedback = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
+               navigation={{ nextEl: "#btn41", prevEl: "#btn42" }}
                modules={[Mousewheel, Navigation, FreeMode, EffectCoverflow]}
                breakpoints={{
                   1440: {
@@ -98,7 +95,7 @@ const StudentsFeedback = () => {
             </Swiper>
             <button
                className={styles.buttonNext}
-               onClick={handleNext}
+               id="btn41"
             >
                {icon}
             </button>

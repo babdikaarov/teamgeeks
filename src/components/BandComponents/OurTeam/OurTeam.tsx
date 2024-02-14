@@ -1,6 +1,5 @@
 // modules
 // import { useEffect } from "react";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 // import { getOurTeam } from "../../../store/ourTeamThunk";
 // swiper.js
@@ -13,13 +12,12 @@ import TeamCard from "./TeamCard";
 import icon from "../../../assets/icons/bigArrow";
 // styles
 import styles from "./_ourTeam.module.scss";
-import addAvailableVideo from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
+import teamList from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { setDrawerTeamSlice } from "../../../store/drawerSlice";
 
 const OurTeam = () => {
-   const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const dispatch = useAppDispatch();
    const hasSetDrawerAttribute = useAppSelector((state) => state.drawerTeam.dataDrawer);
    const { ref, inView } = useInView();
@@ -45,14 +43,13 @@ const OurTeam = () => {
          <div className={styles.teamContainer}>
             <button
                className={styles.buttonPrev}
-               onClick={handlePrev}
+               id="btn12"
             >
                {icon}
             </button>
             <Swiper
                className={styles.swiperWrapper}
                data-draw-out={hasSetDrawerAttribute}
-               ref={sliderRef}
                spaceBetween={30}
                slidesPerView={"auto"}
                freeMode
@@ -60,6 +57,7 @@ const OurTeam = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
+               navigation={{ nextEl: "#btn11", prevEl: "#btn12" }}
                modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1200: {
@@ -73,7 +71,7 @@ const OurTeam = () => {
                   },
                }}
             >
-               {addAvailableVideo.map((card, i) => (
+               {teamList.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      className={styles.cardContainer + " " + styles[card.orientation]}
@@ -87,7 +85,7 @@ const OurTeam = () => {
             </Swiper>
             <button
                className={styles.buttonNext}
-               onClick={handleNext}
+               id="btn11"
             >
                {icon}
             </button>

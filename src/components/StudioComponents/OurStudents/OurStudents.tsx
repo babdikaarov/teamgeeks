@@ -52,7 +52,7 @@ const OurStudents = () => {
                         forceToAxis: true,
                      }}
                      modules={[Mousewheel, Navigation, FreeMode]}
-                     navigation={{ nextEl: "#btn11", prevEl: "#btn22" }}
+                     navigation={{ nextEl: "#btn51", prevEl: "#btn52" }}
                      className={styles.ourStudentsSwiper}
                   >
                      {[...data, ...data].map((url, index) => (
@@ -70,13 +70,13 @@ const OurStudents = () => {
                      ))}
                   </Swiper>
                   <button
-                     id="btn22"
+                     id="btn52"
                      className={styles.LeftSwip}
                   >
                      {icon}
                   </button>
                   <button
-                     id="btn11"
+                     id="btn51"
                      className={styles.RightSwip}
                   >
                      {icon}

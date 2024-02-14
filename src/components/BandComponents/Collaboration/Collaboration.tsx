@@ -1,6 +1,5 @@
 // modules
 import { useEffect } from "react";
-import useSwiperNavigation from "../../../modules/hooks/useSwiperNavigation";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { useInView } from "react-intersection-observer";
 import { EBlockID } from "../../../globalTypesEnum";
@@ -18,7 +17,6 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { setDrawerCollabSlice } from "../../../store/drawerSlice";
 
 const Collaboration = () => {
-   const { sliderRef, handlePrev, handleNext } = useSwiperNavigation();
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
    const { ref, inView } = useInView();
    const dispatch = useAppDispatch();
@@ -44,14 +42,13 @@ const Collaboration = () => {
          >
             <button
                className={styles.buttonPrev}
-               onClick={handlePrev}
+               id="btn22"
             >
                {Icon}
             </button>
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
                className={styles.swiperWrapper}
-               ref={sliderRef}
                spaceBetween={0}
                slidesPerView={"auto"}
                freeMode
@@ -59,6 +56,7 @@ const Collaboration = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
+               navigation={{ nextEl: "#btn21", prevEl: "#btn22" }}
                modules={[Mousewheel, Navigation, FreeMode]}
             >
                {cards?.map((card, i) => (
@@ -76,7 +74,7 @@ const Collaboration = () => {
             </Swiper>
             <button
                className={styles.buttonNext}
-               onClick={handleNext}
+               id="btn21"
             >
                {Icon}
             </button>
