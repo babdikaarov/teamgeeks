@@ -47,7 +47,7 @@ const Concert = () => {
                         forceToAxis: true,
                      }}
                      modules={[Mousewheel, Navigation, FreeMode]}
-                     navigation={{ nextEl: "#btn1", prevEl: "#btn2" }}
+                     navigation={{ nextEl: "#btn61", prevEl: "#btn62" }}
                      className={styles.concertSwiper}
                   >
                      {concertImages.map((image, index) => (
@@ -60,13 +60,13 @@ const Concert = () => {
                      ))}
                   </Swiper>
                   <button
-                     id="btn2"
+                     id="btn62"
                      className={styles.LeftSwip}
                   >
                      {icon}
                   </button>
                   <button
-                     id="btn1"
+                     id="btn61"
                      className={styles.RightSwip}
                   >
                      {icon}
