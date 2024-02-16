@@ -1,6 +1,6 @@
 import styles from "./_twoGis.module.scss";
 const TwoGis = () => {
-   const organizationCode = "70000001036220100";
+   const organizationCode = "70000001066401992";
    const organizationLatitude = "38.174018";
    const organizationLongitude = "73.9140";
 
