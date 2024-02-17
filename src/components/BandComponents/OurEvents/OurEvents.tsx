@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import styles from "./_ourevents.module.scss";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import ButtonWithArrow from "../../../UI/Buttons/ButtonWithArrow";
+import ButtonWithArrow from "./ButtonWithArrow";
 import getEventCards from "../../../tempData/getEventCards"; //FIX_ME replace wit hbackend
 
 const OurEvents = () => {
