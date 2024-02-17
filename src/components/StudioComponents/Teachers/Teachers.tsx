@@ -10,7 +10,7 @@ import SharedButton from "../../../UI/Buttons/SharedButton";
 import Modal from "./Modal";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import TeacherCard from "./TeacherCard";
-import icon from "../../../assets/icons/bigArrow";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_teacher.module.scss";
 // ENUMS
@@ -40,12 +40,7 @@ const Teachers = () => {
             ref={refToogle}
             className={styles.teacherContainer}
          >
-            <button
-               className={styles.buttonPrev}
-               id="btn32"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="TeachersPrev"/>
             <Swiper
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
@@ -54,7 +49,7 @@ const Teachers = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
-               navigation={{ nextEl: "#btn31", prevEl: "#btn32" }}
+               navigation={{ nextEl: "#TeachersNext", prevEl: "#TeachersPrev" }}
                modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1024: {
@@ -78,12 +73,7 @@ const Teachers = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button
-               className={styles.buttonNext}
-               id="btn31"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="TeachersNext"/>
          </div>
          <SharedButton
             whatsapp={contacts.studioNumber}

@@ -1,5 +1,5 @@
-@import "../../../scss/partials/mixin";
-@import "../../../scss/partials/variables";
+@import "../../scss//partials/mixin";
+@import "../../scss/partials/variables";
 
 .bandHeroButton {
    @include buttons($fill: $color_black, $color: $color_black, $background: $color_yellow, $border: $color_yellow);

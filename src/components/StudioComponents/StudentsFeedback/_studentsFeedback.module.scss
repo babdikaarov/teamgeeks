@@ -1,11 +1,6 @@
 @import "../../../scss/partials/mixin";
 
 .feedbackContainer {
-   // position: relative;
-   // margin: 0 auto;
-   // max-width: 1240px;
-   // padding-inline: 30px;
-   // display: flex;
    margin: auto;
    display: flex;
    justify-content: space-between;
@@ -64,100 +59,5 @@
    }
    @media screen and (max-width: 390px) {
       width: 300px;
-   }
-}
-
-.buttonPrev {
-   margin-top: -5%;
-   margin-left: 0px;
-   @media screen and (max-width: 1440px) {
-      margin-left: 0px;
-   }
-   @include xxl {
-      margin-left: 0px;
-      width: 15px;
-      height: 28px;
-   }
-   @include xl {
-      margin-left: 0px;
-   }
-   @media screen and (max-width: 892px) {
-      margin-left: 0px;
-   }
-   @include md {
-      margin-left: 0px;
-   }
-   @include sm {
-      position: absolute;
-      z-index: 5;
-      width: 45px;
-      height: 45px;
-      border-radius: 100%;
-      display: grid;
-      justify-content: center;
-      align-content: center;
-      left: 20px;
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(10px);
-   }
-   @media screen and (max-width: 390px) {
-      left: 10px;
-   }
-   & svg {
-      width: 100%;
-      height: 100%;
-      @include sm {
-         width: 10px;
-         height: 17px;
-      }
-   }
-}
-
-.buttonNext {
-   margin-top: -5%;
-   margin-right: 0px;
-   @media screen and (max-width: 1440px) {
-      margin-right: 0px;
-   }
-   @include xxl {
-      margin-right: 0px;
-      width: 15px;
-      height: 28px;
-   }
-   @include xl {
-      margin-right: 0px;
-   }
-   @media screen and (max-width: 892px) {
-      margin-right: 0px;
-   }
-   @include md {
-      margin-right: 0px;
-   }
-   @include sm {
-      position: absolute;
-      z-index: 5;
-      width: 45px;
-      height: 45px;
-      border-radius: 100%;
-      display: grid;
-      justify-content: center;
-      align-content: center;
-      right: 25px;
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(10px);
-   }
-   @media screen and (max-width: 390px) {
-      right: 15px;
-   }
-   & svg {
-      rotate: 180deg;
-      width: 100%;
-      height: 100%;
-      @include sm {
-         width: 10px;
-         height: 17px;
-      }
    }
 }

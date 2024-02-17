@@ -112,34 +112,3 @@
       }
    }
 }
-.buttonPrev,
-.buttonNext {
-   display: none;
-   z-index: 1;
-   top: 30%;
-
-   @media screen and (max-width: 1024px) {
-      display: block;
-   }
-   @include sm {
-      width: 10px;
-      height: 20px;
-   }
-   & svg {
-      @include sm {
-         width: 10px;
-         height: 20px;
-      }
-   }
-}
-
-.buttonPrev {
-   position: absolute;
-   left: 0;
-}
-
-.buttonNext {
-   transform: scaleX(-1);
-   position: absolute;
-   right: 0;
-}
