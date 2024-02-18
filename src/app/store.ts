@@ -9,9 +9,11 @@ import { reducerActiveNavigation } from "../store/activeNavigationSlice.ts";
 import { reducersAboutBand } from "../store/aboutBandSlice.ts";
 import { reducerdrawerCollabSlice, reducerdrawerTeamSlice } from "../store/drawerSlice.ts";
 import { reducerStudentSuccess } from "../store/studentSuccessSlice.ts";
+import { reducersStudentReviwe } from "../store/studentsFeedbackSlice.ts"
 
 export const store = configureStore({
    reducer: {
+      getStudentReviwes: reducersStudentReviwe,
       getAboutBand: reducersAboutBand,
       getContacts: reducersContacts,
       getCoolStudioVideo: reducersCoolStudio,

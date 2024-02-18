@@ -9,9 +9,26 @@ import StudentsFeedbackCard from "./FeedbackCard";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_studentsFeedback.module.scss";
-import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
+// import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useEffect } from "react";
+import { getStudentReviwes } from "../../../store/studentsFeedbackThunk";
+type Students = {
+   id: number,
+   name: string,
+   image: string,
+   bluer: string,
+   reviews: string,
+   orientation: string,
+}
 
 const StudentsFeedback = () => {
+   const dispatch = useAppDispatch()
+   const data:Students[] = useAppSelector(state => state.getStudentReviwes.data)!
+   useEffect(() => {
+      dispatch(getStudentReviwes())
+   }, []) 
+   
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
@@ -78,12 +95,12 @@ const StudentsFeedback = () => {
                   }
                }}
             >
-               {cards.map((card, i) => (
+               {data.map((card, i) => (
                   <SwiperSlide key={i}>
                      <StudentsFeedbackCard
-                        img={card.img}
+                        img={card.image}
                         name={card.name}
-                        word={card.word}
+                        word={card.reviews}
                      />
                   </SwiperSlide>
                ))}
