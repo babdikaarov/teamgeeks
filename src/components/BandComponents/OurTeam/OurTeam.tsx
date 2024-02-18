@@ -40,7 +40,7 @@ const OurTeam = () => {
          forwardedRef={ref}
       >
          <div className={styles.teamContainer}>
-            <NavigationButton id="TeamPrev"/>
+            <NavigationButton id="TeamPrev" />
             <Swiper
                className={styles.swiperWrapper}
                data-draw-out={hasSetDrawerAttribute}
@@ -77,7 +77,7 @@ const OurTeam = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="TeamNext"/>
+            <NavigationButton id="TeamNext" />
          </div>
       </SectionWrapper>
    );

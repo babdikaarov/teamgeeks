@@ -8,10 +8,10 @@ const initialState: Slice.Courses.IGetCourses = {
          image: "",
          name: "",
          bluer: "",
-         orientation: ""
+         orientation: "",
       },
    ],
-   getLoading: false
+   getLoading: false,
 };
 
 const courses = createSlice({
@@ -20,8 +20,8 @@ const courses = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getCourses.fulfilled, (state, { payload }) => {
-         state.data = payload; 
-      });      
+         state.data = payload;
+      });
    },
 });
 

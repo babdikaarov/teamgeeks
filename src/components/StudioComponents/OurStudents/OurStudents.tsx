@@ -17,7 +17,6 @@ import styles from "./_ourstudents.module.scss";
 import { EBlockID } from "../../../globalTypesEnum";
 import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
 
-
 const OurStudents = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
@@ -70,8 +69,8 @@ const OurStudents = () => {
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <NavigationButton id="StudentsPrev"/>
-                  <NavigationButton id="StudentsNext"/>
+                  <NavigationButton id="StudentsPrev" />
+                  <NavigationButton id="StudentsNext" />
                </>
             )}
             <a

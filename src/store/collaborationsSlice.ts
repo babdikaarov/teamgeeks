@@ -8,10 +8,10 @@ const initialState: Slice.ICollaborations = {
          name: "",
          image: "",
          bluer: "",
-         orientation: ""
+         orientation: "",
       },
    ],
-   getLoading: false
+   getLoading: false,
 };
 
 const collaborations = createSlice({
