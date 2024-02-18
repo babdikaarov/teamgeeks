@@ -7,27 +7,18 @@ import formatPhoneNumberToText from "../../../modules/formatPhoneNumberToText.ts
 // components
 import HeroTemplate from "../../../UI/Hero/HeroTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
-// import video from "../../../tempData/hero/HeroStudio.mp4"; // FIX_ME replace static media to backend when ready
 
 const Hero = () => {
-   // FIX_ME dispatch getContacts on App.tsx after mounting  and here use only selector
    const dispatch = useAppDispatch();
    const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
-   const dataContact = useAppSelector((state) => state.getContacts.data)!;
+   const studioNumber = useAppSelector((state) => state.getContacts.data?.studioNumber)!;
 
    useEffect(() => {
       dispatch(getHeroStudio());
       dispatch(getContacts());
    }, [dispatch]);
-   // const localData = {
-   //    video: video,
-   //    text: {
-   //       paragraph: "",
-   //       header: "Откройте двери в мир музыки с Coolstudio",
-   //    },
-   // }; // FIX_ME replace static media to backend when ready
 
-   const number = formatPhoneNumberToText(dataContact.studioNumber);
+   const number = formatPhoneNumberToText(studioNumber);
 
    const texts = {
       header: dataStudio.title,
@@ -36,9 +27,7 @@ const Hero = () => {
 
    return (
       <HeroTemplate
-         // video={localData.video}
          video={dataStudio.video}
-         // text={localData.text}
          text={texts}
       >
          <SharedButton

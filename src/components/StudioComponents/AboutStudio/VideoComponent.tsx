@@ -1,7 +1,7 @@
 // modules
 import { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-// import { extractYouTubeVideoId } from "../../../modules/extractAllYouTubeVideoID";
+import { extractYouTubeVideoId } from "../../../modules/extractAllYouTubeVideoID";
 import { getCoolStudio } from "../../../store/aboutStudioThunk";
 // styles
 import styles from "./_videoComponent.module.scss";
@@ -45,15 +45,14 @@ const VideoComponent = () => {
       return <div>Loading...</div>;
    }
 
-   // const videoId = extractYouTubeVideoId(coolStudioData.youtubeUrl);
+   const videoId = extractYouTubeVideoId(coolStudioData.youtubeUrl);
 
    return (
       <div>
          <iframe
             ref={videoRef}
             className={styles.video}
-            src={`https://www.youtube.com/embed/uy-nFAuzFf4?enablejsapi=1`} //FIX_ME remove and uncomment below after backend
-            // src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
+            src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
             title="YouTube video player"
             allow="autoplay; encrypted-media"
             sandbox="allow-scripts allow-same-origin allow-presentation"

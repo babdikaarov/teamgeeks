@@ -1,4 +1,17 @@
 declare namespace Slice {
+   export namespace Courses {
+      export interface IGetCourses {
+         data: ICursesData[] | undefined,
+         getLoading: boolean;
+      }
+      export interface ICursesData {
+         id: number;
+         image: string;
+         name: string;
+         bluer: string;
+         orientation: string;
+      }
+   }
    export namespace StudentsFeedback {
       export interface IStudentsFeedBackState {
          data: IStudentsFeedbackData[] | undefined,
