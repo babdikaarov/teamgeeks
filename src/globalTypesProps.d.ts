@@ -22,7 +22,7 @@ declare namespace Prop {
       };
 
       export interface ModalProps {
-         teacher: TeacherType;
+         teacher: Slice.ITeacherData;
          closeModal: () => void;
       }
    }

@@ -14,7 +14,6 @@ import { reducersCourses } from "../store/coursesSlice.ts";
 import { reducersClients } from "../store/ourclientsSlice.ts";
 import { reducersGetTeachers } from "../store/teachersSlice.ts";
 
-
 export const store = configureStore({
    reducer: {
       getAboutBand: reducersAboutBand,
@@ -32,7 +31,6 @@ export const store = configureStore({
       getStudentReviwes: reducersStudentReviwe,
       getCollaborations: reducersCollaborations,
       getTeachers: reducersGetTeachers,
-
    },
 });
 

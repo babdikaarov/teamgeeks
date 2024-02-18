@@ -1,8 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTeachers } from "./teachersThunk.ts";
 
-const initialState = {
-   data: [],
+const initialState: Slice.ITeacherState = {
+   data: [
+      {
+         id: 0,
+         name: "",
+         image: "",
+         bluer: "",
+         urlInstagram: "",
+         position: "",
+         description: "",
+         orientation: "",
+      },
+   ],
    getLoading: false,
 };
 

@@ -148,4 +148,18 @@ declare namespace Slice {
       data: IClients[] | undefined;
       getLoading: boolean;
    }
+   export interface ITeacherData {
+      id: 0;
+      name: string;
+      image: string;
+      bluer: string;
+      urlInstagram: string;
+      position: string;
+      description: string;
+      orientation: string;
+   }
+   export interface ITeacherState {
+      data: ITeacherData[] | undefined;
+      getLoading: boolean;
+   }
 }
