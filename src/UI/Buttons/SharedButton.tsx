@@ -1,4 +1,4 @@
-import "./buttons/_sharedButton.scss";
+import "./SharedButton.scss";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 import phone from "../../assets/icons/phone";
 

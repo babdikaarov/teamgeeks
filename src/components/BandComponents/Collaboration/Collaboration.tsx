@@ -11,10 +11,10 @@ import "swiper/css";
 import styles from "./_collaboration.module.scss";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import Icon from "../../../assets/icons/bigArrow";
 import cards from "../../../tempData/getCollabData"; // FIX_ME {cards} replace with backend
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { setDrawerCollabSlice } from "../../../store/drawerSlice";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 
 const Collaboration = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
@@ -40,12 +40,7 @@ const Collaboration = () => {
             className={styles.collabContainer}
             data-animate={true}
          >
-            <button
-               className={styles.buttonPrev}
-               id="btn22"
-            >
-               {Icon}
-            </button>
+            <NavigationButton id="CollabPrev"/>
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
                className={styles.swiperWrapper}
@@ -56,7 +51,7 @@ const Collaboration = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
-               navigation={{ nextEl: "#btn21", prevEl: "#btn22" }}
+               navigation={{ nextEl: "#CollabNext", prevEl: "#CollabPrev" }}
                modules={[Mousewheel, Navigation, FreeMode]}
             >
                {cards?.map((card, i) => (
@@ -72,12 +67,7 @@ const Collaboration = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button
-               className={styles.buttonNext}
-               id="btn21"
-            >
-               {Icon}
-            </button>
+            <NavigationButton id="CollabNext"/>
          </div>
       </SectionWrapper>
    );

@@ -9,7 +9,7 @@ import "swiper/css";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import TeamCard from "./TeamCard";
-import icon from "../../../assets/icons/bigArrow";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_ourTeam.module.scss";
 import teamList from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
@@ -41,12 +41,7 @@ const OurTeam = () => {
          forwardedRef={ref}
       >
          <div className={styles.teamContainer}>
-            <button
-               className={styles.buttonPrev}
-               id="btn12"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="TeamPrev"/>
             <Swiper
                className={styles.swiperWrapper}
                data-draw-out={hasSetDrawerAttribute}
@@ -57,7 +52,7 @@ const OurTeam = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
-               navigation={{ nextEl: "#btn11", prevEl: "#btn12" }}
+               navigation={{ nextEl: "#TeamNext", prevEl: "#TeamPrev" }}
                modules={[Mousewheel, Navigation, FreeMode]}
                breakpoints={{
                   1200: {
@@ -83,12 +78,7 @@ const OurTeam = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button
-               className={styles.buttonNext}
-               id="btn11"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="TeamNext"/>
          </div>
       </SectionWrapper>
    );

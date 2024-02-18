@@ -6,7 +6,7 @@ import "swiper/css";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import StudentsFeedbackCard from "./FeedbackCard";
-import icon from "../../../assets/icons/bigArrow";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_studentsFeedback.module.scss";
 import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
@@ -15,12 +15,7 @@ const StudentsFeedback = () => {
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
-            <button
-               className={styles.buttonPrev}
-               id="btn42"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="FeedbackPrev"/>
             <Swiper
                className={styles.feedbackSwiper}
                effect={"coverflow"}
@@ -38,7 +33,7 @@ const StudentsFeedback = () => {
                mousewheel={{
                   forceToAxis: true,
                }}
-               navigation={{ nextEl: "#btn41", prevEl: "#btn42" }}
+               navigation={{ nextEl: "#FeedbackNext", prevEl: "#FeedbackPrev" }}
                modules={[Mousewheel, Navigation, FreeMode, EffectCoverflow]}
                breakpoints={{
                   1440: {
@@ -77,10 +72,10 @@ const StudentsFeedback = () => {
                      slidesPerView: 1.5,
                      spaceBetween: -50,
                   },
-                  320: {
+                  1: {
                      slidesPerView: 1.3,
                      spaceBetween: -40,
-                  },
+                  }
                }}
             >
                {cards.map((card, i) => (
@@ -93,12 +88,7 @@ const StudentsFeedback = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <button
-               className={styles.buttonNext}
-               id="btn41"
-            >
-               {icon}
-            </button>
+            <NavigationButton id="FeedbackNext"/>
          </div>
       </SectionWrapper>
    );

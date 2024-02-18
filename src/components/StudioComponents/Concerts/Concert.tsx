@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ConcertCard from "./ConcertCard";
-import icon from "../../../assets/icons/bigArrow";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_concerts.module.scss";
 // ENUMS
@@ -47,7 +47,7 @@ const Concert = () => {
                         forceToAxis: true,
                      }}
                      modules={[Mousewheel, Navigation, FreeMode]}
-                     navigation={{ nextEl: "#btn61", prevEl: "#btn62" }}
+                     navigation={{ nextEl: "#ConcertNext", prevEl: "#ConcertPrev" }}
                      className={styles.concertSwiper}
                   >
                      {concertImages.map((image, index) => (
@@ -59,18 +59,8 @@ const Concert = () => {
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <button
-                     id="btn62"
-                     className={styles.LeftSwip}
-                  >
-                     {icon}
-                  </button>
-                  <button
-                     id="btn61"
-                     className={styles.RightSwip}
-                  >
-                     {icon}
-                  </button>
+                  <NavigationButton id="ConcertPrev"/>
+                  <NavigationButton id="ConcertNext"/>
                </>
             )}
 

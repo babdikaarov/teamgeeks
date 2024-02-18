@@ -7,6 +7,9 @@ declare namespace Prop {
       classname: string;
       text: string;
    }
+   export interface INavigationProps {
+      id: string;
+   }
    export namespace Teachers {
       export type TeacherType = {
          // refactor on backend

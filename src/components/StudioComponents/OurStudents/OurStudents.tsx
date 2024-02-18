@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import OurStudentsCard from "./OurStudentsCard";
-import icon from "../../../assets/icons/bigArrow";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_ourstudents.module.scss";
 // ENUMS
@@ -52,7 +52,7 @@ const OurStudents = () => {
                         forceToAxis: true,
                      }}
                      modules={[Mousewheel, Navigation, FreeMode]}
-                     navigation={{ nextEl: "#btn51", prevEl: "#btn52" }}
+                     navigation={{ nextEl: "#btn51", prevEl: "#StudentsPrev" }}
                      className={styles.ourStudentsSwiper}
                   >
                      {[...data, ...data].map((url, index) => (
@@ -69,18 +69,8 @@ const OurStudents = () => {
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <button
-                     id="btn52"
-                     className={styles.LeftSwip}
-                  >
-                     {icon}
-                  </button>
-                  <button
-                     id="btn51"
-                     className={styles.RightSwip}
-                  >
-                     {icon}
-                  </button>
+                  <NavigationButton id="StudentsPrev"/>
+                  <NavigationButton id="StudentsNext"/>
                </>
             )}
             <a
