@@ -59,8 +59,8 @@ const Concert = () => {
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <NavigationButton id="ConcertPrev"/>
-                  <NavigationButton id="ConcertNext"/>
+                  <NavigationButton id="ConcertPrev" />
+                  <NavigationButton id="ConcertNext" />
                </>
             )}
 

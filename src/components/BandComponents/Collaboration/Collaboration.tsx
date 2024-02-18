@@ -45,7 +45,7 @@ const Collaboration = () => {
             className={styles.collabContainer}
             data-animate={true}
          >
-            <NavigationButton id="CollabPrev"/>
+            <NavigationButton id="CollabPrev" />
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
                className={styles.swiperWrapper}
@@ -72,7 +72,7 @@ const Collaboration = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="CollabNext"/>
+            <NavigationButton id="CollabNext" />
          </div>
       </SectionWrapper>
    );

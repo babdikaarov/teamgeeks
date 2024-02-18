@@ -10,10 +10,7 @@ const TwoGis = () => {
       org: organizationCode,
    });
 
-   const twoGisIframeURL = encodeURI(
-      `https://widgets.2gis.com/widget?type=firmsonmap&options=${options}`,
-   );
-
+   const twoGisIframeURL = encodeURI(`https://widgets.2gis.com/widget?type=firmsonmap&options=${options}`);
 
    return (
       <>
@@ -21,8 +18,7 @@ const TwoGis = () => {
             className={styles.map}
             frameBorder="no"
             src={twoGisIframeURL}
-         >
-         </iframe>
+         ></iframe>
       </>
    );
 };

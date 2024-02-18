@@ -40,7 +40,7 @@ const Teachers = () => {
             ref={refToogle}
             className={styles.teacherContainer}
          >
-            <NavigationButton id="TeachersPrev"/>
+            <NavigationButton id="TeachersPrev" />
             <Swiper
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
@@ -73,7 +73,7 @@ const Teachers = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="TeachersNext"/>
+            <NavigationButton id="TeachersNext" />
          </div>
          <SharedButton
             whatsapp={contacts.studioNumber}

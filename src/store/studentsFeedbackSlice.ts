@@ -10,10 +10,10 @@ const initialState: Slice.StudentsFeedback.IStudentsFeedBackState = {
          bluer: "",
          reviews: "",
          orientation: "",
-      }
+      },
    ],
-      getLoading: false,
-   };
+   getLoading: false,
+};
 
 const studentsReviwe = createSlice({
    name: "studentReviws",

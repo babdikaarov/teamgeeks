@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getClients } from "./ourclientsThunk.ts";
 
-const initialState = {
+const initialState: Slice.IClientsData = {
    data: [],
    getLoading: false,
 };

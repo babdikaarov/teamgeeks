@@ -1,24 +1,22 @@
+// modules
+import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
+import { useEffect } from "react";
+import { getClients } from "../../../store/ourclientsThunk.ts";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import ClientCard from "./ClientCard";
 // styles
 import styles from "./_ourClient.module.scss";
 // static
 import staticText from "./staticData.json";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
-import { useEffect, useState } from "react";
-import { getClients } from "../../../store/ourclientsThunk.ts"; //FIX-ME resplce with backend
 
 const OurClients = () => {
-
    const dispatch = useAppDispatch();
-   const data2 = useAppSelector(state => state.getOurClients.data)!;
-   const [array, setArray] = useState<Slice.IClients[]>([]);
+   const data = useAppSelector((state) => state.getOurClients.data)!;
 
    useEffect(() => {
       dispatch(getClients());
-      setArray(data2);
-   }, []);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -31,13 +29,14 @@ const OurClients = () => {
             <h4>{staticText.h4}</h4>
          </article>
          <div className={styles.clientsCards}>
-            {array.map((every) => (
-               <ClientCard
+            {data.map((every) => (
+               <img
                   key={every.id}
-                  image={every.image}
-                  url={every.url}
-                  bluer={every.bluer}
-                  id={every.id}/>
+                  className={styles.clientCard}
+                  src={every.image}
+                  alt={every.url}
+                  title={every.url}
+               />
             ))}
          </div>
       </SectionWrapper>

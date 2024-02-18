@@ -1,7 +1,7 @@
-import "./NavigationButton.scss"
-import icon from "../../assets/icons/bigArrow"
+import "./NavigationButton.scss";
+import icon from "../../assets/icons/bigArrow";
 
-const NavigationButton: React.FC<Prop.INavigationProps> = ({id}) => {
+const NavigationButton: React.FC<Prop.INavigationProps> = ({ id }) => {
    return (
       <button
          aria-label="navigation"
@@ -9,7 +9,7 @@ const NavigationButton: React.FC<Prop.INavigationProps> = ({id}) => {
       >
          {icon}
       </button>
-   )
-}
+   );
+};
 
-export default NavigationButton
+export default NavigationButton;

@@ -1,6 +1,14 @@
 @use "../../../scss/partials/mixin" as mix;
 @import "../../../scss/partials/variables";
 
+.clientCard {
+   display: flex;
+   border-radius: 15px;
+   width: 148px;
+   height: 76px;
+   object-fit: contain;
+}
+
 .ourClients {
    user-select: none;
    max-width: 1240px;

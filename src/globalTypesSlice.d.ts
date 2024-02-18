@@ -1,7 +1,7 @@
 declare namespace Slice {
    export namespace Courses {
       export interface IGetCourses {
-         data: ICursesData[] | undefined,
+         data: ICursesData[] | undefined;
          getLoading: boolean;
       }
       export interface ICursesData {
@@ -14,28 +14,28 @@ declare namespace Slice {
    }
    export namespace StudentsFeedback {
       export interface IStudentsFeedBackState {
-         data: IStudentsFeedbackData[] | undefined,
+         data: IStudentsFeedbackData[] | undefined;
          getLoading: boolean;
       }
       export interface IStudentsFeedbackData {
-         id: number,
-         name: string,
-         image: string,
-         bluer: string,
-         reviews: string,
-         orientation: string,
+         id: number;
+         name: string;
+         image: string;
+         bluer: string;
+         reviews: string;
+         orientation: string;
       }
    }
-      export namespace StudentSuccess {
-         export interface getStudentSuccessData {
-            id: number;
-            url: string;
-         }
+   export namespace StudentSuccess {
+      export interface getStudentSuccessData {
+         id: number;
+         url: string;
+      }
 
-         export interface StudentSuccessState {
+      export interface StudentSuccessState {
          data: getStudentSuccessData | undefined;
          getLoading: boolean;
-         }
+      }
    }
    export interface AboutUsBandData {
       id: number;
@@ -143,5 +143,9 @@ declare namespace Slice {
       image: string;
       bluer: string;
       url: string;
+   }
+   export interface IClientsData {
+      data: IClients[] | undefined;
+      getLoading: boolean;
    }
 }

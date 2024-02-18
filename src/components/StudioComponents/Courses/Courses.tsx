@@ -14,17 +14,17 @@ import { EBlockID } from "../../../globalTypesEnum";
 const Courses = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COURSES);
    const dispatch = useAppDispatch();
-   const {data}  = useAppSelector((state) => state.getCourses);
+   const { data } = useAppSelector((state) => state.getCourses);
    useEffect(() => {
       dispatch(getCourses());
    }, [dispatch]);
 
    return (
-      <SectionWrapper 
+      <SectionWrapper
          header="Направления"
          id="courses"
       >
-         <div 
+         <div
             ref={refToogle}
             className={styles.courses_flex}
          >

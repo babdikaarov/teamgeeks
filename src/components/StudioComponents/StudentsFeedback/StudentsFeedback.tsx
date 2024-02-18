@@ -13,22 +13,21 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_studentsFeedback.module.scss";
 
-
 const StudentsFeedback = () => {
    const [initialSlide, setInitialSlide] = useState<number>(1);
-   const dispatch = useAppDispatch()
-   const data = useAppSelector(state => state.getStudentReviwes.data)!
+   const dispatch = useAppDispatch();
+   const data = useAppSelector((state) => state.getStudentReviwes.data)!;
    useEffect(() => {
-      dispatch(getStudentReviwes())
-      setInitialSlide(Math.floor(data.length / 2))
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [dispatch]) 
+      dispatch(getStudentReviwes());
+      setInitialSlide(Math.floor(data.length / 2));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [dispatch]);
    // console.log(data)
 
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
-            <NavigationButton id="FeedbackPrev"/>
+            <NavigationButton id="FeedbackPrev" />
             <Swiper
                className={styles.feedbackSwiper}
                effect={"coverflow"}
@@ -89,7 +88,7 @@ const StudentsFeedback = () => {
                   1: {
                      slidesPerView: 1.3,
                      spaceBetween: -40,
-                  }
+                  },
                }}
             >
                {data.map((card, i) => (
@@ -102,7 +101,7 @@ const StudentsFeedback = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="FeedbackNext"/>
+            <NavigationButton id="FeedbackNext" />
          </div>
       </SectionWrapper>
    );
