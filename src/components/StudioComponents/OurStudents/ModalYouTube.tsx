@@ -43,6 +43,8 @@ const ModalYouTube: React.FC<Prop.ModalYouTube> = ({ id, youTubeId, allIDS }) =>
                src={`https://www.youtube-nocookie.com/embed/${youTubeId}?${createParameterString(youtubeParams)}`}
                title="YouTube video player"
                allowFullScreen
+               allow="encrypted-media"
+               sandbox="allow-scripts allow-same-origin allow-presentation"
             ></iframe>
          )}
       </dialog>
