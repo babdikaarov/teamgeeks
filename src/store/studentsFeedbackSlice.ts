@@ -1,10 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getStudentReviwes } from "./studentsFeedbackThunk";
 
-const initialState = {
-   data: [],
-   getLoading: false,
-};
+const initialState: Slice.StudentsFeedback.IStudentsFeedBackState = {
+   data: [
+      {
+         id: 0,
+         name: "",
+         image: "",
+         bluer: "",
+         reviews: "",
+         orientation: "",
+      }
+   ],
+      getLoading: false,
+   };
 
 const studentsReviwe = createSlice({
    name: "studentReviws",

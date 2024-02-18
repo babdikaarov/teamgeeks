@@ -1,4 +1,7 @@
 // modules
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { getStudentReviwes } from "../../../store/studentsFeedbackThunk";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -9,25 +12,14 @@ import StudentsFeedbackCard from "./FeedbackCard";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_studentsFeedback.module.scss";
-// import cards from "../../../tempData/getFeedbackData"; //FIX_ME replace with backend
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { useEffect } from "react";
-import { getStudentReviwes } from "../../../store/studentsFeedbackThunk";
-type Students = {
-   id: number,
-   name: string,
-   image: string,
-   bluer: string,
-   reviews: string,
-   orientation: string,
-}
+
 
 const StudentsFeedback = () => {
    const dispatch = useAppDispatch()
-   const data:Students[] = useAppSelector(state => state.getStudentReviwes.data)!
+   const data = useAppSelector(state => state.getStudentReviwes.data)!
    useEffect(() => {
       dispatch(getStudentReviwes())
-   }, []) 
+   }, [dispatch]) 
    
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
