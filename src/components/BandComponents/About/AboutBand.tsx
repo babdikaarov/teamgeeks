@@ -1,9 +1,9 @@
 // modules
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { EBlockID } from "../../../globalTypesEnum";
-// import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-// import { getAboutBand } from "../../../store/aboutBandThunk";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { getAboutBand } from "../../../store/aboutBandThunk";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
@@ -11,17 +11,16 @@ import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import styles from "./_aboutBand.module.scss";
 // static data
 import staticText from "./staticData.json";
-import image from "../../../tempData/about/about.jpg"; // FIX_ME remove static image and provide backEnd when ready
 
 const AboutBand: React.FC = () => {
-   // const dispatch = useAppDispatch();
-   // const data = useAppSelector((state) => state.getAboutBand.data);
+   const dispatch = useAppDispatch();
+   const data = useAppSelector((state) => state.getAboutBand.data);
    const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUT);
 
-   // useEffect(() => {
-   //    dispatch(getAboutBand());
-   // }, [dispatch]);
-   // console.log(data)
+   useEffect(() => {
+      dispatch(getAboutBand());
+   }, [dispatch]);
+
 
    return (
       <SectionWrapper
@@ -40,10 +39,8 @@ const AboutBand: React.FC = () => {
             </article>
             <div className={styles.image}>
                <ImageLoader
-                  // src={data?.image}
-                  src={image}
-                  // bluer={data?.bluer && data.bluer}
-                  bluer={""}
+                  src={data?.image}
+                  bluer={data?.bluer && data.bluer}
                />
             </div>
          </div>

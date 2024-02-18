@@ -1,5 +1,5 @@
 // modules
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { getStudentReviwes } from "../../../store/studentsFeedbackThunk";
 // swiper.js
@@ -15,12 +15,16 @@ import styles from "./_studentsFeedback.module.scss";
 
 
 const StudentsFeedback = () => {
+   const [initialSlide, setInitialSlide] = useState<number>(1);
    const dispatch = useAppDispatch()
    const data = useAppSelector(state => state.getStudentReviwes.data)!
    useEffect(() => {
       dispatch(getStudentReviwes())
+      setInitialSlide(Math.floor(data.length / 2))
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [dispatch]) 
-   
+   // console.log(data)
+
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
@@ -30,8 +34,9 @@ const StudentsFeedback = () => {
                effect={"coverflow"}
                grabCursor
                centeredSlides
+               initialSlide={initialSlide}
+               // initialSlide={2}
                loop
-               initialSlide={2}
                coverflowEffect={{
                   rotate: 0,
                   stretch: 0,

@@ -1,7 +1,9 @@
 // modules
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-// import { getOurTeam } from "../../../store/ourTeamThunk";
+import { getOurTeam } from "../../../store/ourTeamThunk";
+import { useInView } from "react-intersection-observer";
+import { setDrawerTeamSlice } from "../../../store/drawerSlice";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -12,10 +14,7 @@ import TeamCard from "./TeamCard";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_ourTeam.module.scss";
-import teamList from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { setDrawerTeamSlice } from "../../../store/drawerSlice";
+// import teamList from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
 
 const OurTeam = () => {
    const dispatch = useAppDispatch();
@@ -28,10 +27,10 @@ const OurTeam = () => {
       }
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
-   // const data = useAppSelector((state) => state.getOurTeam.data)!;
-   // useEffect(() => {
-   //    dispatch(getOurTeam());
-   // }, [dispatch]);
+   const data = useAppSelector((state) => state.getOurTeam.data)!;
+   useEffect(() => {
+      dispatch(getOurTeam());
+   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -66,7 +65,7 @@ const OurTeam = () => {
                   },
                }}
             >
-               {teamList.map((card, i) => (
+               {data.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      className={styles.cardContainer + " " + styles[card.orientation]}

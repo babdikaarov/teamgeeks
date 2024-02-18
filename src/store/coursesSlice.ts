@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCourses } from "./coursesThank";
 
-const initialState = {
+const initialState: Slice.Courses.IGetCourses = {
    data: [
       {
          id: 0,
@@ -10,7 +10,8 @@ const initialState = {
          bluer: "",
          orientation: ""
       },
-   ],  
+   ],
+   getLoading: false
 };
 
 const courses = createSlice({
