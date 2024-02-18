@@ -11,10 +11,10 @@ import "swiper/css";
 import styles from "./_collaboration.module.scss";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import cards from "../../../tempData/getCollabData"; // FIX_ME {cards} replace with backend
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { setDrawerCollabSlice } from "../../../store/drawerSlice";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
+import { getCollaborations } from "../../../store/collaborationsThunk";
 
 const Collaboration = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
@@ -27,6 +27,11 @@ const Collaboration = () => {
          dispatch(setDrawerCollabSlice());
       }
    }, [inView, hasSetDrawerAttribute, dispatch]);
+
+   const data = useAppSelector((state) => state.getCollaborations.data)!;
+   useEffect(() => {
+      dispatch(getCollaborations());
+   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -54,16 +59,16 @@ const Collaboration = () => {
                navigation={{ nextEl: "#CollabNext", prevEl: "#CollabPrev" }}
                modules={[Mousewheel, Navigation, FreeMode]}
             >
-               {cards?.map((card, i) => (
+               {data?.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      className={styles.card}
                   >
                      <img
-                        src={card.src}
+                        src={card.image}
                         alt="Card Image"
                      />
-                     <p>{`${card.firstName} ${card.lastName}`}</p>
+                     <p>{card.name}</p>
                   </SwiperSlide>
                ))}
             </Swiper>

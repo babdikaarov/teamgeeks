@@ -65,6 +65,19 @@ declare namespace Slice {
       bluer: string;
    }
 
+   export interface ICollaborations {
+      data: IGetCollaborations[] | undefined;
+      getLoading: boolean;
+   }
+
+   export interface IGetCollaborations {
+      id: number;
+      name: string;
+      image: string;
+      bluer: string;
+      orientation: string;
+   }
+
    export interface IHeroBandData {
       id: number;
       video: string;
