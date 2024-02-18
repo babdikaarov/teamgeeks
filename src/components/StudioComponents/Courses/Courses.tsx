@@ -7,23 +7,35 @@ import CoursesCard from "./CoursesCard";
 import styles from "./_courses.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-import coursesData from "../../../tempData/getCoursesList"; //FIX_ME replace with backend
+import coursesData from "../../../tempData/getCoursesList";
+// import { useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { getCourses } from "../../../store/coursesThank";
+// import { useAppSelector } from "../../../app/hooks";
 
 const Courses = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COURSES);
+   // const dispatch = useDispatch();
+   // const { data } = useAppSelector((state) => state.getCourses);
+   // useEffect(() => {
+   //    dispatch(getCourses());
+   // }, [dispatch]);
 
    return (
-      <SectionWrapper
+      <SectionWrapper 
          header="Направления"
          id="courses"
       >
-         <div
+         <div 
             ref={refToogle}
             className={styles.courses_flex}
          >
             {coursesData.map((course, index) => (
                <CoursesCard
-                  key={index}
+                  // key={course.id}
+                  // src={course.image}
+                  // title={course.name}
+                  key={index} 
                   src={course.src}
                   title={course.title}
                />

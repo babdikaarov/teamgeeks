@@ -10,22 +10,24 @@ import { reducersAboutBand } from "../store/aboutBandSlice.ts";
 import { reducerdrawerCollabSlice, reducerdrawerTeamSlice } from "../store/drawerSlice.ts";
 import { reducerStudentSuccess } from "../store/studentSuccessSlice.ts";
 import { reducersStudentReviwe } from "../store/studentsFeedbackSlice.ts"
+import { reducersCourses } from "../store/coursesSlice.ts"
 
 export const store = configureStore({
-   reducer: {
-      getStudentReviwes: reducersStudentReviwe,
-      getAboutBand: reducersAboutBand,
-      getContacts: reducersContacts,
-      getCoolStudioVideo: reducersCoolStudio,
-      getOurTeam: reducersOurTeam,
-      getCollaborations: reducersCollaborations,
-      getHeroBand: reducersHeroBand,
-      getHeroStudio: reducersHeroStudio,
-      getStudentSuccess: reducerStudentSuccess,
-      getActiveNavigationState: reducerActiveNavigation,
-      drawerCollab: reducerdrawerCollabSlice,
-      drawerTeam: reducerdrawerTeamSlice,
-   },
+      reducer: {
+         getCourses: reducersCourses,
+         getStudentReviwes: reducersStudentReviwe,
+         getAboutBand: reducersAboutBand,
+         getContacts: reducersContacts,
+         getCoolStudioVideo: reducersCoolStudio,
+         getOurTeam: reducersOurTeam,
+         getCollaborations: reducersCollaborations,
+         getHeroBand: reducersHeroBand,
+         getHeroStudio: reducersHeroStudio,
+         getStudentSuccess: reducerStudentSuccess,
+         getActiveNavigationState: reducerActiveNavigation,
+         drawerCollab: reducerdrawerCollabSlice,
+         drawerTeam: reducerdrawerTeamSlice,
+      },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
