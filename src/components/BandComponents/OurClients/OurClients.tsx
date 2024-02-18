@@ -5,9 +5,21 @@ import ClientCard from "./ClientCard";
 import styles from "./_ourClient.module.scss";
 // static
 import staticText from "./staticData.json";
-import data from "../../../tempData/getClientsData"; //FIX-ME resplce with backend
+import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
+import { useEffect, useState } from "react";
+import { getClients } from "../../../store/ourclientsThunk.ts"; //FIX-ME resplce with backend
 
 const OurClients = () => {
+
+   const dispatch = useAppDispatch();
+   const data2 = useAppSelector(state => state.getOurClients.data)!;
+   const [array, setArray] = useState<Slice.IClients[]>([]);
+
+   useEffect(() => {
+      dispatch(getClients());
+      setArray(data2);
+   }, []);
+
    return (
       <SectionWrapper
          header={staticText.header}
@@ -19,11 +31,13 @@ const OurClients = () => {
             <h4>{staticText.h4}</h4>
          </article>
          <div className={styles.clientsCards}>
-            {data.map((card, i: number) => (
+            {array.map((every) => (
                <ClientCard
-                  key={i}
-                  card={card}
-               />
+                  key={every.id}
+                  image={every.image}
+                  url={every.url}
+                  bluer={every.bluer}
+                  id={every.id}/>
             ))}
          </div>
       </SectionWrapper>

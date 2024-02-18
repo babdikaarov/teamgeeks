@@ -137,4 +137,11 @@ declare namespace Slice {
       data: IAboutData | undefined;
       getLoading: boolean;
    }
+
+   export interface IClients {
+      id: number;
+      image: string;
+      bluer: string;
+      url: string;
+   }
 }
