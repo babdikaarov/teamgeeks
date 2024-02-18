@@ -12,6 +12,8 @@ import { reducerStudentSuccess } from "../store/studentSuccessSlice.ts";
 import { reducersStudentReviwe } from "../store/studentsFeedbackSlice.ts";
 import { reducersCourses } from "../store/coursesSlice.ts";
 import { reducersClients } from "../store/ourclientsSlice.ts";
+import { reducersGetTeachers } from "../store/teachersSlice.ts";
+
 
 export const store = configureStore({
    reducer: {
@@ -29,6 +31,8 @@ export const store = configureStore({
       getCourses: reducersCourses,
       getStudentReviwes: reducersStudentReviwe,
       getCollaborations: reducersCollaborations,
+      getTeachers: reducersGetTeachers,
+
    },
 });
 

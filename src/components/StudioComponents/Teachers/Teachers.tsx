@@ -1,5 +1,5 @@
 // modules
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // SWIPER.JS
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,12 +16,24 @@ import styles from "./_teacher.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 // FIX_ME replace staticData when backend ready
-import getTeachersData from "../../../tempData/getTeachersData";
 import contacts from "../../../tempData/contacts.json";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
+import { getTeachers } from "../../../store/teachersThunk.ts";
+
+type Teacher = {
+   name: string;
+   position: string;
+   urlInstagram: string;
+   description: string;
+   image: string;
+}
 
 const Teachers = () => {
+   const dispatch = useAppDispatch();
+   const data = useAppSelector(state => state.getTeachers.data)!;
    const [selectedTeacher, setSelectedTeacher] = useState<Prop.Teachers.TeacherType | null>(null);
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
+   const [teachers, setTeachers] = useState<Teacher[]>([]);
 
    const openModal = useCallback((teacher: Prop.Teachers.TeacherType) => {
       setSelectedTeacher(teacher);
@@ -29,6 +41,11 @@ const Teachers = () => {
 
    const closeModal = useCallback(() => {
       setSelectedTeacher(null);
+   }, []);
+
+   useEffect(() => {
+      dispatch(getTeachers());
+      setTeachers(data);
    }, []);
 
    return (
@@ -63,13 +80,18 @@ const Teachers = () => {
                   },
                }}
             >
-               {getTeachersData.map((card, i) => (
+               {teachers.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      onClick={() => openModal(card)}
                      className={styles.cardSwiperTeacher}
                   >
-                     <TeacherCard {...card} />
+                     <TeacherCard img={card.image}
+                                  name={card.name}
+                                  description={card.description}
+                                  instagram={card.urlInstagram}
+                                  expertise={card.position}
+                     />
                   </SwiperSlide>
                ))}
             </Swiper>

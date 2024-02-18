@@ -41,7 +41,7 @@ const Modal: React.FC<Prop.Teachers.ModalProps> = ({ teacher, closeModal }) => {
                <div>
                   <img
                      className={styles.img}
-                     src={teacher.img}
+                     src={teacher.image}
                      alt=""
                   />
                </div>
