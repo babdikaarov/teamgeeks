@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
 import { getContacts } from "../../../store/contactsThunk.ts";
 import { getHeroStudio } from "../../../store/heroStudioThunk.ts";
-import formatPhoneNumberToText from "../../../modules/formatPhoneNumberToText.ts";
 // components
 import HeroTemplate from "../../../UI/Hero/HeroTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
@@ -11,14 +10,12 @@ import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
 const Hero = () => {
    const dispatch = useAppDispatch();
    const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
-   const studioNumber = useAppSelector((state) => state.getContacts.data?.studioNumber)!;
+   const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
 
    useEffect(() => {
       dispatch(getHeroStudio());
       dispatch(getContacts());
    }, [dispatch]);
-
-   const number = formatPhoneNumberToText(studioNumber);
 
    const texts = {
       header: dataStudio.title,
@@ -31,7 +28,7 @@ const Hero = () => {
          text={texts}
       >
          <SharedButton
-            whatsapp={number}
+            whatsapp={studioNumber}
             classname="studioHeroButton"
             text="Записаться на пробный урок"
          />

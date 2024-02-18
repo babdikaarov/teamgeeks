@@ -14,7 +14,7 @@ declare namespace Prop {
       export type TeacherType = {
          // refactor on backend
          id: number;
-         img: string;
+         image: string;
          name: string;
          expertise: string;
          instagram: string;
@@ -22,7 +22,7 @@ declare namespace Prop {
       };
 
       export interface ModalProps {
-         teacher: TeacherType;
+         teacher: Slice.ITeacherData;
          closeModal: () => void;
       }
    }

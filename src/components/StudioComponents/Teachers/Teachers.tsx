@@ -1,6 +1,8 @@
 // modules
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
+import { getTeachers } from "../../../store/teachersThunk.ts";
 // SWIPER.JS
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -16,20 +18,25 @@ import styles from "./_teacher.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 // FIX_ME replace staticData when backend ready
-import getTeachersData from "../../../tempData/getTeachersData";
-import contacts from "../../../tempData/contacts.json";
 
 const Teachers = () => {
-   const [selectedTeacher, setSelectedTeacher] = useState<Prop.Teachers.TeacherType | null>(null);
+   const [selectedTeacher, setSelectedTeacher] = useState<Slice.ITeacherData | null>(null);
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
+   const dispatch = useAppDispatch();
+   const data = useAppSelector((state) => state.getTeachers.data)!;
+   const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
 
-   const openModal = useCallback((teacher: Prop.Teachers.TeacherType) => {
+   const openModal = useCallback((teacher: Slice.ITeacherData) => {
       setSelectedTeacher(teacher);
    }, []);
 
    const closeModal = useCallback(() => {
       setSelectedTeacher(null);
    }, []);
+
+   useEffect(() => {
+      dispatch(getTeachers());
+   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -63,20 +70,26 @@ const Teachers = () => {
                   },
                }}
             >
-               {getTeachersData.map((card, i) => (
+               {data.map((card, i) => (
                   <SwiperSlide
                      key={i}
                      onClick={() => openModal(card)}
                      className={styles.cardSwiperTeacher}
                   >
-                     <TeacherCard {...card} />
+                     <TeacherCard
+                        img={card.image}
+                        name={card.name}
+                        description={card.description}
+                        instagram={card.urlInstagram}
+                        expertise={card.position}
+                     />
                   </SwiperSlide>
                ))}
             </Swiper>
             <NavigationButton id="TeachersNext" />
          </div>
          <SharedButton
-            whatsapp={contacts.studioNumber}
+            whatsapp={studioNumber}
             classname="studioTeachersButton"
             text="Связаться с нами"
          />
