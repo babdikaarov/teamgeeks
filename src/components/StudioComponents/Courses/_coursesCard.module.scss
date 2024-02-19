@@ -33,7 +33,11 @@
 
 .courseCardContainer img {
    aspect-ratio: 1/1;
-   height: 35%;
+   max-height: 60px;
+   max-width: 80px;
+   @media (max-width: 400px) {
+      max-height: 40px;
+   }
 }
 .courseCardContainer h6 {
    font-weight: $bold;

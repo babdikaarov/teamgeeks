@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getStudentSuccess } from "./studentSuccessThunk";
 
-const initialState: Slice.StudentSuccess.StudentSuccessState = {
-   data: {
-      id: 0,
-      url: "",
-   },
+const initialState: Slice.StudentSuccessState = {
+   data: [
+      {
+         id: 0,
+         url: "",
+      },
+   ],
    getLoading: false,
 };
 

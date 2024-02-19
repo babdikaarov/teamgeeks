@@ -2,19 +2,21 @@
 import { useEffect } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { useInView } from "react-intersection-observer";
-import { EBlockID } from "../../../globalTypesEnum";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { setDrawerCollabSlice } from "../../../store/drawerSlice";
+import NavigationButton from "../../../UI/Buttons/NavigationButton";
+import { getCollaborations } from "../../../store/collaborationsThunk";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css";
 // styles
 import styles from "./_collaboration.module.scss";
+// Enums
+import { EBlockID } from "../../../globalTypesEnum";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { setDrawerCollabSlice } from "../../../store/drawerSlice";
-import NavigationButton from "../../../UI/Buttons/NavigationButton";
-import { getCollaborations } from "../../../store/collaborationsThunk";
+import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 
 const Collaboration = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
@@ -64,10 +66,12 @@ const Collaboration = () => {
                      key={i}
                      className={styles.card}
                   >
-                     <img
-                        src={card.image}
-                        alt="Card Image"
-                     />
+                     <div>
+                        <ImageLoader
+                           src={card.image}
+                           bluer={card.bluer}
+                        />
+                     </div>
                      <p>{card.name}</p>
                   </SwiperSlide>
                ))}

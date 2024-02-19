@@ -26,16 +26,14 @@ declare namespace Slice {
          orientation: string;
       }
    }
-   export namespace StudentSuccess {
-      export interface getStudentSuccessData {
-         id: number;
-         url: string;
-      }
+   export interface getStudentSuccessData {
+      id: number;
+      url: string;
+   }
 
-      export interface StudentSuccessState {
-         data: getStudentSuccessData | undefined;
-         getLoading: boolean;
-      }
+   export interface StudentSuccessState {
+      data: getStudentSuccessData[] | undefined;
+      getLoading: boolean;
    }
    export interface AboutUsBandData {
       id: number;
