@@ -16,7 +16,9 @@
 }
 
 .div {
-   border-radius: 16px;
-   overflow: hidden;
+   width: 100% !important;
+   height: 100% !important;
+   border-radius: 16px !important;
+   overflow: hidden !important;
    position: absolute !important;
 }

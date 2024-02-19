@@ -9,7 +9,7 @@ interface ImageLoaderProps {
 }
 
 const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = "" }) => {
-   const [hash, setHash] = useState("LEHLk~WB2yk8pyo0adR*.7kCMdnj");
+   const [hash, setHash] = useState<string | null>(null);
    const [loaded, setLoaded] = useState(false);
 
    useEffect(() => {
@@ -26,15 +26,15 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = "" }) => {
 
    return (
       <>
-         <Blurhash
-            hash={hash}
-            width="100%"
-            height="100%"
-            className={styles.div}
-            resolutionX={32}
-            resolutionY={32}
-            punch={1}
-         />
+         {hash && (
+            <Blurhash
+               hash={hash}
+               className={styles.div}
+               resolutionX={32}
+               resolutionY={32}
+               punch={1}
+            />
+         )}
 
          <img
             className={`${styles.image} ${loaded ? styles.loaded : ""}`}

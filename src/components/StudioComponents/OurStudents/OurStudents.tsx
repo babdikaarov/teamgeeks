@@ -2,6 +2,7 @@
 import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+import { getStudentSuccess } from "../../../store/studentSuccessThunk";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -15,13 +16,23 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 import styles from "./_ourstudents.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
+// import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useEffect } from "react";
 
 const OurStudents = () => {
+   let data = useAppSelector((state) => state.getStudentSuccess.data)!;
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
-   const allIDS = extractAllYouTubeVideoID(data);
+   const allIDS = extractAllYouTubeVideoID(data.map((el) => el.url));
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
+   const dispatch = useAppDispatch();
+   if (data.length <= 4) {
+      data = [...data, ...data];
+   }
+   useEffect(() => {
+      dispatch(getStudentSuccess());
+   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -36,7 +47,7 @@ const OurStudents = () => {
                mobileArray.map((url, index) => (
                   <OurStudentsCard
                      key={index}
-                     url={url}
+                     url={url.url}
                      addToID={index}
                      allIDS={allIDS}
                   />
@@ -55,15 +66,14 @@ const OurStudents = () => {
                      navigation={{ nextEl: "#btn51", prevEl: "#StudentsPrev" }}
                      className={styles.ourStudentsSwiper}
                   >
-                     {[...data, ...data].map((url, index) => (
+                     {data.map((url, index) => (
                         <SwiperSlide
                            key={index}
                            className={styles.ourStudentsSwipeCard}
                         >
                            <OurStudentsCard
-                              url={url}
-                              key={index}
-                              addToID={index}
+                              url={url.url}
+                              addToID={url.id}
                               allIDS={allIDS}
                            />
                         </SwiperSlide>
