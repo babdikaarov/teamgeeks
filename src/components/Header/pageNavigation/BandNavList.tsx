@@ -1,12 +1,10 @@
-// modules
+import { useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
 import { useAppSelector } from "../../../app/hooks";
-// styles
-import styles from "./_NavList.module.scss";
-// ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
+import styles from "./_NavList.module.scss";
 
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen }) => {
    const { pathname } = useLocation();
@@ -14,10 +12,12 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
 
    const onBand = pathname === "/";
 
-   const handleFunction = () => {
-      !onBand && mainElementAnimation();
+   const handleFunction = useCallback(() => {
+      if (!onBand) {
+         mainElementAnimation();
+      }
       setIsMenuOpen(false);
-   };
+   }, [onBand, setIsMenuOpen]);
 
    return (
       <ul className={styles.navigation}>
@@ -46,7 +46,8 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
             <HashLink
                to={"/gallery"}
                onClick={() => {
-                  handleFunction(), window.scroll(0, 0);
+                  handleFunction();
+                  window.scroll(0, 0);
                }}
                className={activeNavigation.focusOn === EBlockID.GALLERY ? styles.active : ""}
             >
@@ -65,7 +66,8 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
          <li>
             <a
                href={lyrics}
-               target="blank"
+               target="_blank"
+               rel="noopener noreferrer"
             >
                Репертуар
             </a>

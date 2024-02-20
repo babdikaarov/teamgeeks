@@ -1,13 +1,13 @@
 // modules
 // FIX_ME implement below 3 modules logic inside FooterBox.tsx
-import formatPhoneNumberToText from "../../modules/formatPhoneNumberToText";
 import createMailtoLink from "../../modules/createMailtoLink";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
+import formatPhoneNumberToText from "../../modules/formatPhoneNumberToText";
 // styles
 import styles from "./_footer.module.scss";
 // components
-import FooterBox from "./FooterBox";
 import Logo from "../../UI/Logo/Logo";
+import FooterBox from "./FooterBox";
 // static
 import staticData from "./staticData.json";
 // ENUMS
