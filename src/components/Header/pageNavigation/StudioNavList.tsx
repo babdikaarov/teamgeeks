@@ -2,12 +2,10 @@
 // import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
 import { useAppSelector } from "../../../app/hooks";
-// styles
-import styles from "./_NavList.module.scss";
-// ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
+import styles from "./_NavList.module.scss";
 
 const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
@@ -61,7 +59,8 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
             <HashLink
                to={"/studio/gallery"}
                onClick={() => {
-                  handleFunction(), window.scroll(0, 0);
+                  handleFunction();
+                  window.scroll(0, 0);
                }}
                className={
                   activeNavigation.focusOn === EBlockID.GALLERYSTUDIO || activeNavigation.focusOn === EBlockID.CONCERT
