@@ -39,6 +39,7 @@ export const useYouTubeData = (url: string) => {
    };
 
    useEffect(() => {
+      if (!url) return;
       const fetchData = async () => {
          const id = extractYouTubeVideoId(url);
          const title = await getVideoTitle(url);

@@ -3,10 +3,17 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 // components
 import FooterComponent from "./FooterComponent";
-import backendData from "./backend.json"; //FIX_ME replace with backend
+import { useAppSelector } from "../../app/hooks";
 
 const Footer = () => {
    const [bandPage, setBandPage] = useState<boolean>(true);
+   const coursesListData = useAppSelector((state) => state.getCourses.data)!;
+   const contactDetailsData = useAppSelector((state) => state.getContacts.data)!;
+   const data = {
+      coursesList: coursesListData.map((el) => el.name),
+      contactDetails: contactDetailsData,
+   };
+
    const { pathname } = useLocation();
    useEffect(() => {
       if (pathname === "/") {
@@ -17,7 +24,7 @@ const Footer = () => {
    }, [pathname]);
    return (
       <FooterComponent
-         backendData={backendData}
+         backendData={data}
          bandPage={bandPage}
       />
    );

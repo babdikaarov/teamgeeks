@@ -61,23 +61,12 @@ declare namespace Prop {
       }
    }
    export namespace Footer {
-      export type ItemObject = { text: string; link: string | number };
-      export type ItemsOfObjects = ItemObject[];
-      export interface FooterBox extends React.HTMLAttributes<HTMLDivElement> {
-         header: string;
-         items: ItemsOfObjects;
-         target: Target;
-      }
+      export type TFooterCourses = string[];
+
       export interface FooterComponent {
-         backendData?: {
-            address: {
-               text: string;
-               link: string;
-            }[];
-            contacts: {
-               text: string;
-               link: string | number;
-            }[];
+         backendData: {
+            coursesList: TFooterCourses;
+            contactDetails: Slice.IGetContacts;
          };
          bandPage: boolean;
       }

@@ -75,6 +75,7 @@ const useLocationDispatch = () => {
          !bandTeam.getLoading && dispatch(getOurTeam());
          !bandCollab.getLoading && dispatch(getCollaborations());
          !bandPartners.getLoading && dispatch(getClients());
+         !studioCourses.getLoading && dispatch(getCourses());
       }
    }, [
       dispatch,
@@ -84,6 +85,7 @@ const useLocationDispatch = () => {
       bandTeam.getLoading,
       bandCollab.getLoading,
       bandPartners.getLoading,
+      studioCourses.getLoading,
    ]);
 };
 
