@@ -18,7 +18,7 @@ const OurClients = () => {
       >
          <article className={styles.clientsArticle}>
             <h2>{staticText.h2}</h2>
-            <h4>{staticText.h4}</h4>
+            <div className={styles.h4}>{staticText.h4}</div>
          </article>
          <div className={styles.clientsCards}>
             {data.map((every) => (

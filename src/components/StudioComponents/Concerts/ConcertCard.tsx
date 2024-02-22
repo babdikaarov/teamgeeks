@@ -11,10 +11,10 @@ const ConcertCard = (props: Card.ConcertCardProps) => {
          />
          <div className={styles.concertText}>
             <span>
-               <h4>{props.header}</h4>
-               <h6>{props.location}</h6>
+               <div className={styles.h4}>{props.header}</div>
+               <div className={styles.h6}>{props.location}</div>
             </span>
-            <h6>{props.month}</h6>
+            <div className={styles.h6}>{props.month}</div>
          </div>
       </div>
    );

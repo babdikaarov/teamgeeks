@@ -22,17 +22,17 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
 
          <div className={styles.footerInfo}>
             <div className={styles.footerBoxEdu}>
-               <h4>Обучение:</h4>
+               <div className={styles.h4}>Обучение:</div>
                <ul>
                   {backendData.coursesList.map((item, i) => (
                      <li key={i}>
-                        <HashLink to="/studio/#courses">{item}</HashLink>
+                        <HashLink to="/studio/#courses" aria-label="link">{item}</HashLink>
                      </li>
                   ))}
                </ul>
             </div>
             <div className={styles.footerBoxAddress}>
-               <h4>Адрес:</h4>
+               <div className={styles.h4}>Адрес:</div>
                <ul>
                   <li>
                      <Link
@@ -45,7 +45,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                </ul>
             </div>
             <div className={styles.footerBoxContacts}>
-               <h4>Контакты:</h4>
+               <div className={styles.h4}>Контакты:</div>
                <ul>
                   <li>
                      <Link

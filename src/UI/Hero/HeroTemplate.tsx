@@ -39,7 +39,9 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
             playsInline
             ref={videoRef}
             src={video}
-         ></video>
+         >
+            <track kind="captions"></track>
+         </video>
          {text && (
             <HeroText
                header={text.header}

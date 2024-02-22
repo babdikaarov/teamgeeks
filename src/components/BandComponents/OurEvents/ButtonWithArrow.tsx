@@ -10,9 +10,9 @@ const ButtonWithArrow: React.FC<Prop.ButtonWithArrowProps & LinkProps> = ({ text
          className={styles.a}
          onClick={mainElementAnimation}
       >
-         <h6 className={styles.h6}>
+         <div className={styles.h6}>
             {text} {arrow_right_circle_fill}
-         </h6>
+         </div>
       </Link>
    );
 };

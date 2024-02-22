@@ -13,7 +13,7 @@ const InfoBlock: React.FC<{ title: string; text: string }> = ({ title, text }) =
          alt="Icon"
       />
       <div className={styles.textWrapper}>
-         <h4 className={styles.textWhyUs}>{title}</h4>
+         <div className={styles.textWhyUs}>{title}</div>
          <p className={styles.text}>{text}</p>
       </div>
    </div>

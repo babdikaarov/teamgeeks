@@ -18,7 +18,7 @@
    @media screen and (max-width: 1024px) {
       width: calc(100% - 40px);
 
-      h4 {
+      .h4 {
          font-size: 20px;
       }
 
@@ -32,7 +32,7 @@
    }
 
    @media screen and (max-width: 400px) {
-      h4 {
+      .h4 {
          font-size: 15px;
       }
 
@@ -64,7 +64,11 @@
    }
 }
 
-.footer h4 {
+.footer .h4 {
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 30px;
+   letter-spacing: 0.02em;
    padding-bottom: 10px;
 }
 

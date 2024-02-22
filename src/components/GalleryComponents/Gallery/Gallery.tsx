@@ -33,6 +33,7 @@ const Gallery: React.FC = () => {
             className={styles.galleryWrapper}
          >
             <button
+               aria-label="button"
                onClick={() => navigate(-1)}
                className={styles.navigation}
             >

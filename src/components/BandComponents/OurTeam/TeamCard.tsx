@@ -24,7 +24,7 @@ const TeamCard: React.FC<Card.TeamCardProps> = ({ image, instrument, name, video
                bluer={bluer}
             />
             <div className={styles.text}>
-               <h4>{name}</h4>
+               <div className={styles.h4}>{name}</div>
                <p>{instrument}</p>
             </div>
          </div>
@@ -35,9 +35,11 @@ const TeamCard: React.FC<Card.TeamCardProps> = ({ image, instrument, name, video
                muted
                loop
                playsInline
-            ></video>
+            >
+               <track kind="captions"></track>
+            </video>
             <div className={styles.text}>
-               <h4>{name}</h4>
+               <div className={styles.h4}>{name}</div>
                <p>{instrument}</p>
             </div>
          </div>

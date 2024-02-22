@@ -35,7 +35,7 @@ const OurStudentsCard: React.FC<Card.OurStudentsCardProps> = ({ url, addToID, al
                alt="play"
             />
          </span>
-         <h6>{title}</h6>
+         <div className={styles.h6}>{title}</div>
          <ModalYouTube
             id={modalID}
             youTubeId={id}

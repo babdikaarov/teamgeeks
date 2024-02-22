@@ -5,7 +5,7 @@ const HeroText: React.FC<Prop.Hero.TextProps> = ({ header = "", paragraph = "", 
    return (
       <div className={className}>
          <h1>{header}</h1>
-         <h6>{paragraph}</h6>
+         <div>{paragraph}</div>
       </div>
    );
 };
