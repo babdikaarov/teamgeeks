@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getOurTeam } from "./ourTeamThunk.ts";
+import { getOurTeam } from "./thunkCollection.ts";
 
 const initialState: Slice.IOurTeam = {
    data: [
@@ -21,11 +21,8 @@ const ourTeam = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getOurTeam.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getOurTeam.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getOurTeam.rejected, (state) => {

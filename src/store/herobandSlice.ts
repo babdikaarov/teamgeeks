@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getHeroBand } from "./herobandThunk.ts";
+import { getHeroBand } from "./thunkCollection.ts";
 
 const initialState: Slice.IHeroBand = {
    data: {
@@ -15,11 +15,8 @@ const heroBand = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getHeroBand.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getHeroBand.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getHeroBand.rejected, (state) => {

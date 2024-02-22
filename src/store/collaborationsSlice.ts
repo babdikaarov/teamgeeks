@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCollaborations } from "./collaborationsThunk";
+import { getCollaborations } from "./thunkCollection.ts";
 
 const initialState: Slice.ICollaborations = {
    data: [
@@ -19,11 +19,8 @@ const collaborations = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getCollaborations.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getCollaborations.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getCollaborations.rejected, (state) => {

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCoolStudio } from "./aboutStudioThunk.ts";
+import { getCoolStudio } from "./thunkCollection.ts";
 
 const initialState: Slice.CoolStudio = {
    data: {
@@ -17,11 +17,8 @@ const coolStudio = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getCoolStudio.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getCoolStudio.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getCoolStudio.rejected, (state) => {

@@ -1,7 +1,6 @@
 // modules
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { getOurTeam } from "../../../store/ourTeamThunk";
 import { useInView } from "react-intersection-observer";
 import { setDrawerTeamSlice } from "../../../store/drawerSlice";
 // swiper.js
@@ -14,7 +13,6 @@ import TeamCard from "./TeamCard";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_ourTeam.module.scss";
-// import teamList from "../../../tempData/getTeamList"; // FIX_ME remove static data add backend when ready
 
 const OurTeam = () => {
    const dispatch = useAppDispatch();
@@ -28,9 +26,6 @@ const OurTeam = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const data = useAppSelector((state) => state.getOurTeam.data)!;
-   useEffect(() => {
-      dispatch(getOurTeam());
-   }, [dispatch]);
 
    return (
       <SectionWrapper

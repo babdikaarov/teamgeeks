@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAboutBand } from "./aboutBandThunk.ts";
+import { getAboutBand } from "./thunkCollection.ts";
 
 const initialState: Slice.IAboutBand = {
    data: {
@@ -16,11 +16,8 @@ const aboutBand = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getAboutBand.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getAboutBand.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getAboutBand.rejected, (state) => {

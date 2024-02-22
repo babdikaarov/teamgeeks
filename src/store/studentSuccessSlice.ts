@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getStudentSuccess } from "./studentSuccessThunk";
+import { getStudentSuccess } from "./thunkCollection.ts";
 
 const initialState: Slice.StudentSuccessState = {
    data: [
@@ -16,11 +16,8 @@ const studentSuccessSlice = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getStudentSuccess.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getStudentSuccess.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getStudentSuccess.rejected, (state) => {

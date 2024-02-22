@@ -1,21 +1,12 @@
 // modules
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
-import { getContacts } from "../../../store/contactsThunk.ts";
-import { getHeroStudio } from "../../../store/heroStudioThunk.ts";
+import { useAppSelector } from "../../../app/hooks.ts";
 // components
 import HeroTemplate from "../../../UI/Hero/HeroTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
 
 const Hero = () => {
-   const dispatch = useAppDispatch();
    const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
    const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
-
-   useEffect(() => {
-      dispatch(getHeroStudio());
-      dispatch(getContacts());
-   }, [dispatch]);
 
    const texts = {
       header: dataStudio.title,

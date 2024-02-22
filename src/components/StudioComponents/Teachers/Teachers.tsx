@@ -1,8 +1,7 @@
 // modules
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
-import { getTeachers } from "../../../store/teachersThunk.ts";
+import { useAppSelector } from "../../../app/hooks.ts";
 // SWIPER.JS
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -17,12 +16,10 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 import styles from "./_teacher.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-// FIX_ME replace staticData when backend ready
 
 const Teachers = () => {
    const [selectedTeacher, setSelectedTeacher] = useState<Slice.ITeacherData | null>(null);
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
-   const dispatch = useAppDispatch();
    const data = useAppSelector((state) => state.getTeachers.data)!;
    const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
 
@@ -33,10 +30,6 @@ const Teachers = () => {
    const closeModal = useCallback(() => {
       setSelectedTeacher(null);
    }, []);
-
-   useEffect(() => {
-      dispatch(getTeachers());
-   }, [dispatch]);
 
    return (
       <SectionWrapper
@@ -82,6 +75,7 @@ const Teachers = () => {
                         description={card.description}
                         instagram={card.urlInstagram}
                         expertise={card.position}
+                        bluer={card.bluer}
                      />
                   </SwiperSlide>
                ))}

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getStudentReviwes } from "./studentsFeedbackThunk";
+import { getStudentReviwes } from "./thunkCollection.ts";
 
 const initialState: Slice.StudentsFeedback.IStudentsFeedBackState = {
    data: [
@@ -20,11 +20,8 @@ const studentsReviwe = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getStudentReviwes.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getStudentReviwes.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getStudentReviwes.rejected, (state) => {

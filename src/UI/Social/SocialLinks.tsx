@@ -1,17 +1,10 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
-import { getContacts } from "../../store/contactsThunk.ts";
+import { useAppSelector } from "../../app/hooks.ts";
 import styles from "./_socialLinks.module.scss";
 import { socialIcons } from "../../assets/icons/socialIcons.tsx";
 import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
 
 const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
-   const dispatch = useAppDispatch();
    const getLinks = useAppSelector((state) => state.getContacts.data)!;
-
-   useEffect(() => {
-      dispatch(getContacts());
-   }, [dispatch]);
 
    const whatsApp = createWhatsAppLink(getLinks.whatsapp, "whatsapp");
 

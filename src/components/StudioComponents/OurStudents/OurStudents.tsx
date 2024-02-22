@@ -2,7 +2,6 @@
 import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
 import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
-import { getStudentSuccess } from "../../../store/studentSuccessThunk";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -17,8 +16,7 @@ import styles from "./_ourstudents.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 // import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { useEffect } from "react";
+import { useAppSelector } from "../../../app/hooks";
 
 const OurStudents = () => {
    let data = useAppSelector((state) => state.getStudentSuccess.data)!;
@@ -26,13 +24,10 @@ const OurStudents = () => {
    const mobileArray = data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(data.map((el) => el.url));
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
-   const dispatch = useAppDispatch();
+
    if (data.length <= 4) {
       data = [...data, ...data];
    }
-   useEffect(() => {
-      dispatch(getStudentSuccess());
-   }, [dispatch]);
 
    return (
       <SectionWrapper

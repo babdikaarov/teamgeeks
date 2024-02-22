@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { setDrawerCollabSlice } from "../../../store/drawerSlice";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
-import { getCollaborations } from "../../../store/collaborationsThunk";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Navigation } from "swiper/modules";
@@ -31,9 +30,6 @@ const Collaboration = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const data = useAppSelector((state) => state.getCollaborations.data)!;
-   useEffect(() => {
-      dispatch(getCollaborations());
-   }, [dispatch]);
 
    return (
       <SectionWrapper

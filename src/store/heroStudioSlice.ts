@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getHeroStudio } from "./heroStudioThunk.ts";
+import { getHeroStudio } from "./thunkCollection.ts";
 
 const initialState: Slice.IHeroStudio = {
    data: {
@@ -17,11 +17,8 @@ const heroStudio = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getHeroStudio.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getHeroStudio.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getHeroStudio.rejected, (state) => {

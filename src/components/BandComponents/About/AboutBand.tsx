@@ -1,9 +1,7 @@
 // modules
-import { useEffect } from "react";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 import { EBlockID } from "../../../globalTypesEnum";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { getAboutBand } from "../../../store/aboutBandThunk";
+import { useAppSelector } from "../../../app/hooks";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
@@ -13,13 +11,8 @@ import styles from "./_aboutBand.module.scss";
 import staticText from "./staticData.json";
 
 const AboutBand: React.FC = () => {
-   const dispatch = useAppDispatch();
    const data = useAppSelector((state) => state.getAboutBand.data);
    const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUT);
-
-   useEffect(() => {
-      dispatch(getAboutBand());
-   }, [dispatch]);
 
    return (
       <SectionWrapper

@@ -1,7 +1,5 @@
 // modules
-import { useEffect } from "react";
-import { getCourses } from "../../../store/coursesThank";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useAppSelector } from "../../../app/hooks";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
@@ -13,11 +11,7 @@ import { EBlockID } from "../../../globalTypesEnum";
 
 const Courses = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COURSES);
-   const dispatch = useAppDispatch();
    const { data } = useAppSelector((state) => state.getCourses);
-   useEffect(() => {
-      dispatch(getCourses());
-   }, [dispatch]);
 
    return (
       <SectionWrapper

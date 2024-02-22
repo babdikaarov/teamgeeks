@@ -32,6 +32,7 @@ declare namespace Card {
       expertise: string;
       instagram: string;
       description: string;
+      bluer: string;
    }
 
    export interface FeedbackCardProps {
