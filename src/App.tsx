@@ -6,18 +6,11 @@ import GalleryPage from "./pages/Gallery/GalleryPage.tsx";
 import CollagePage from "./pages/Collage/CollagePage.tsx";
 import "./scss/partials/_variables.scss";
 import useTitle from "./modules/hooks/useTitle.ts";
-import { useAppDispatch } from "./app/hooks.ts";
-import { useEffect } from "react";
-import { getContacts } from "./store/contactsThunk.ts";
+import useLocationDispatch from "./modules/hooks/useLocationDispatch.ts";
 
 const App = () => {
    useTitle();
-
-   // FIX_ME create custom hook
-   const dispatch = useAppDispatch();
-   useEffect(() => {
-      dispatch(getContacts());
-   }, [dispatch]);
+   useLocationDispatch();
 
    return (
       <Layout>

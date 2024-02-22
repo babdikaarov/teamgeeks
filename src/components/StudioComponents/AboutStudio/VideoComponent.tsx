@@ -1,20 +1,14 @@
 // modules
 import { useEffect, useRef, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useAppSelector } from "../../../app/hooks";
 import { extractYouTubeVideoId } from "../../../modules/extractAllYouTubeVideoID";
-import { getCoolStudio } from "../../../store/aboutStudioThunk";
 // styles
 import styles from "./_videoComponent.module.scss";
 
 const VideoComponent = () => {
-   const dispatch = useAppDispatch();
    const coolStudioData = useAppSelector((state) => state.getCoolStudioVideo.data);
    const videoRef = useRef<HTMLIFrameElement | null>(null);
    const [userPlayedVideo] = useState(false);
-
-   useEffect(() => {
-      dispatch(getCoolStudio());
-   }, [dispatch]);
 
    useEffect(() => {
       const handleVisibilityChange = (entries: IntersectionObserverEntry[]) => {

@@ -1,7 +1,5 @@
 // modules
-import { useAppDispatch, useAppSelector } from "../../../app/hooks.ts";
-import { useEffect } from "react";
-import { getClients } from "../../../store/ourclientsThunk.ts";
+import { useAppSelector } from "../../../app/hooks.ts";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 // styles
@@ -10,13 +8,7 @@ import styles from "./_ourClient.module.scss";
 import staticText from "./staticData.json";
 
 const OurClients = () => {
-   const dispatch = useAppDispatch();
    const data = useAppSelector((state) => state.getOurClients.data)!;
-
-   useEffect(() => {
-      dispatch(getClients());
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [dispatch]);
 
    return (
       <SectionWrapper

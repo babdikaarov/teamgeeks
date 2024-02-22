@@ -107,7 +107,7 @@ declare namespace Prop {
       };
 
       export interface Props {
-         video: string;
+         video: string | undefined;
          text?: Text;
          children: React.ReactNode;
       }

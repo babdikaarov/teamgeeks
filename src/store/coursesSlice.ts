@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCourses } from "./coursesThank";
+import { getCourses } from "./thunkCollection.ts";
 
 const initialState: Slice.Courses.IGetCourses = {
    data: [
@@ -20,7 +20,11 @@ const courses = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getCourses.fulfilled, (state, { payload }) => {
+         state.getLoading = true;
          state.data = payload;
+      });
+      builder.addCase(getCourses.rejected, (state) => {
+         state.getLoading = false;
       });
    },
 });

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTeachers } from "./teachersThunk.ts";
+import { getTeachers } from "./thunkCollection.ts";
 
 const initialState: Slice.ITeacherState = {
    data: [],
@@ -11,11 +11,8 @@ const getTeachersSlice = createSlice({
    initialState,
    reducers: {},
    extraReducers: (builder) => {
-      builder.addCase(getTeachers.pending, (state) => {
-         state.getLoading = true;
-      });
       builder.addCase(getTeachers.fulfilled, (state, { payload }) => {
-         state.getLoading = false;
+         state.getLoading = true;
          state.data = payload;
       });
       builder.addCase(getTeachers.rejected, (state) => {
@@ -23,7 +20,5 @@ const getTeachersSlice = createSlice({
       });
    },
 });
-
-// export const { setVideos, setLoading } = studentSuccessSlice.actions;
 
 export const reducersGetTeachers = getTeachersSlice.reducer;
