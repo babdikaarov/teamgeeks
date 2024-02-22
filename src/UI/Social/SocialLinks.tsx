@@ -17,7 +17,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="telegram">
             <a
                aria-label="link"
-               href={getLinks.telegram}
+               href={`https://t.me/${getLinks.telegram}`}
                target="blank"
                onClick={handleFunction}
             >

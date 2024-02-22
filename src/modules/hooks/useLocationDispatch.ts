@@ -42,14 +42,16 @@ const useLocationDispatch = () => {
    // const studioGalleryAlbums = useAppSelector((state) => state);
    // const bandAlbumPhotos = useAppSelector((state) => state);
    // const studioAlbumPhotos = useAppSelector((state) => state);
+   // initial page load
    useEffect(() => {
       !contacts.getLoading && dispatch(getContacts());
-   }, [pathname, contacts.getLoading, dispatch]);
+      !bandHero.getLoading && dispatch(getHeroBand());
+      !studioHero.getLoading && dispatch(getHeroStudio());
+   }, [pathname, contacts.getLoading, dispatch, bandHero.getLoading, studioHero.getLoading]);
 
    useEffect(() => {
       // on Studio Page
       if (pathname === "/studio") {
-         !studioHero.getLoading && dispatch(getHeroStudio());
          !studioAbout.getLoading && dispatch(getCoolStudio());
          !studioCourses.getLoading && dispatch(getCourses());
          !studioTeachers.getLoading && dispatch(getTeachers());
@@ -64,13 +66,12 @@ const useLocationDispatch = () => {
       studioTeachers.getLoading,
       studioTestimonial.getLoading,
       studioStudents.getLoading,
-      studioHero.getLoading,
+      // studioHero.getLoading,
    ]);
 
    useEffect(() => {
       // on band page
       if (pathname === "/") {
-         !bandHero.getLoading && dispatch(getHeroBand());
          !bandAbout.getLoading && dispatch(getAboutBand());
          !bandTeam.getLoading && dispatch(getOurTeam());
          !bandCollab.getLoading && dispatch(getCollaborations());
@@ -81,7 +82,7 @@ const useLocationDispatch = () => {
       dispatch,
       pathname,
       bandAbout.getLoading,
-      bandHero.getLoading,
+      // bandHero.getLoading,
       bandTeam.getLoading,
       bandCollab.getLoading,
       bandPartners.getLoading,
