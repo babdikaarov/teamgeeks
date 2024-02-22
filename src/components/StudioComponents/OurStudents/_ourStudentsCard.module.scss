@@ -3,7 +3,7 @@
 .StudentCard {
    position: relative;
    max-width: 380px;
-   height: 248px;
+   height: 266px;
    border-radius: 10px;
    overflow: hidden;
    transition: all 0.3s ease-in-out;
@@ -81,9 +81,12 @@
    backdrop-filter: blur(10px);
 }
 
-.StudentCard h6 {
-   padding-left: 5px;
+.StudentCard .h6 {
    font-weight: 500;
+   font-size: 20px;
+   line-height: 24px;
+   letter-spacing: 0.4px;
+   padding-left: 5px;
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 2;
@@ -92,32 +95,3 @@
       font-size: 16px;
    }
 }
-
-// .concertImg {
-// }
-
-// .concertText {
-//    z-index: 3;
-//    position: absolute;
-//    left: 50%;
-//    top: 65%;
-//    transform: translate(-50%, -50%);
-//    text-align: center;
-//    display: flex;
-//    flex-direction: column;
-//    gap: 30px;
-//    h4 {
-//       font-weight: 600;
-//       @include xl {
-//          font-size: 20px;
-//       }
-//    }
-//    h6 {
-//       @include xl {
-//          font-size: 16px;
-//       }
-//    }
-//    span h6 {
-//       font-weight: 500;
-//    }
-// }

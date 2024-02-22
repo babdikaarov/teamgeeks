@@ -57,7 +57,10 @@
       width: 100%;
       font-weight: 700;
    }
-   h6 {
+   div {
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.4px;
       padding-top: 30px;
       max-width: 485px;
    }
@@ -72,7 +75,7 @@
          letter-spacing: 0.64px;
       }
 
-      h6 {
+      div {
          padding-top: 30px;
          max-width: 485px;
          font-size: 16px;
@@ -88,7 +91,7 @@
          font-size: 20px;
          letter-spacing: 0.4px;
       }
-      h6 {
+      div {
          padding-top: 20px;
          max-width: 340px;
 

@@ -19,7 +19,7 @@ const Collage = () => {
    return (
       <SectionWrapper className={styles.section}>
          <div className={styles.collageInfo}>
-            <button onClick={() => navigate(-1)}>{bigArrow}</button>
+            <button onClick={() => navigate(-1)} aria-label="gallery-collage-button">{bigArrow}</button>
             <div>
                <p>{sorted?.date}</p>
                <h3> {sorted?.name} </h3>

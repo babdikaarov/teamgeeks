@@ -7,7 +7,7 @@ const CoursesCard: React.FC<Card.CoursesCard> = ({ src, title }) => {
             src={src}
             alt={title}
          />
-         <h6>{title}</h6>
+         <div className={styles.h6}>{title}</div>
       </div>
    );
 };

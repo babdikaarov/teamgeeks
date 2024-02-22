@@ -18,6 +18,7 @@ const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
                bluer={bluer}
             />
             <a
+               aria-label="instagram"
                href={instagram}
                target="blank"
                onClick={handleInstagramClick}
@@ -26,8 +27,8 @@ const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
             </a>
          </div>
          <article>
-            <h5>{name}</h5>
-            <h6>{expertise}</h6>
+            <div className={styles.h5}>{name}</div>
+            <div className={styles.h6}>{expertise}</div>
             <p>{description}</p>
          </article>
       </div>

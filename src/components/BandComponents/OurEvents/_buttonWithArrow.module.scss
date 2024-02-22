@@ -9,11 +9,17 @@
    justify-content: center;
    align-items: center;
    gap: 8px;
+   font-size: 20px;
+   line-height: 150%;
+   letter-spacing: 0.4px;
+   &:hover {
+      color: $color_yellow;
+   }
+   &:hover path {
+      fill: $color_yellow;
+   }
+   & svg {
+      scale: (-1);
+   }
 }
 
-.h6:hover {
-   color: $color_yellow;
-}
-.h6:hover path {
-   fill: $color_yellow;
-}

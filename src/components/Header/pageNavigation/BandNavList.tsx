@@ -23,7 +23,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
       <ul className={styles.navigation}>
          <li>
             <HashLink
-               to={"/#home"}
+               to="/"
                onClick={() => {
                   handleFunction();
                   window.scroll(0, 0);
