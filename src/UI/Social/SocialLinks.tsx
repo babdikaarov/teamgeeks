@@ -5,9 +5,7 @@ import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
 
 const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
    const getLinks = useAppSelector((state) => state.getContacts.data)!;
-
-   const whatsApp = createWhatsAppLink(getLinks.whatsapp, "whatsapp");
-
+   const whatsApp = createWhatsAppLink(getLinks.whatsapp, "Заказать Cool Band");
    const handleFunction = () => {
       setIsMenuOpen(false);
    };

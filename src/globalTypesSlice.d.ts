@@ -1,4 +1,40 @@
 declare namespace Slice {
+   export interface IBandImagesSlice {
+      data: IGetBandImages[] | undefined;
+      getLoading: boolean;
+   }
+   export interface IGetBandImages {
+      id: number;
+      albumId: number;
+      name: string;
+      image: string;
+      originalImage: string;
+      orientation: string;
+      bluer: string;
+      coverImage: boolean;
+   }
+   export interface IGetStudioAlbum {
+      id: number;
+      coverImage: string;
+      date: string;
+      name: string;
+      location: string;
+   }
+   export interface IStudioAlbumSlice {
+      data: IGetStudioAlbum[];
+      getLoading: boolean;
+   }
+   export interface IGetBandAlbum {
+      id: number;
+      coverImage: string;
+      date: string;
+      name: string;
+      orientation: string;
+   }
+   export interface IBandAlbumSlice {
+      data: IGetBandAlbum[];
+      getLoading: boolean;
+   }
    export namespace Courses {
       export interface IGetCourses {
          data: ICursesData[] | undefined;

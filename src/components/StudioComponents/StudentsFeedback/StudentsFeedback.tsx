@@ -90,7 +90,7 @@ const StudentsFeedback = () => {
                   },
                }}
             >
-               {data?.map((card, i) => (
+               {(data.length < 5 ? [...data, ...data] : data).map((card, i) => (
                   <SwiperSlide key={i}>
                      <StudentsFeedbackCard
                         img={card.image}

@@ -26,7 +26,12 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                <ul>
                   {backendData.coursesList.map((item, i) => (
                      <li key={i}>
-                        <HashLink to="/studio/#courses" aria-label="link">{item}</HashLink>
+                        <HashLink
+                           to="/studio/#courses"
+                           aria-label="link"
+                        >
+                           {item}
+                        </HashLink>
                      </li>
                   ))}
                </ul>

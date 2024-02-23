@@ -1,28 +1,22 @@
 import { useState, useEffect } from "react";
 
-type Input = {
-   alt: string;
-   src: string;
-   view: string;
-};
-
-const useResponsiveSorting = (arr: Input[]): (Input | undefined)[] => {
-   const [sortedArray, setSortedArray] = useState<(Input | undefined)[]>(arr);
+const useResponsiveSorting = (arr: Slice.IGetBandImages[]): Slice.IGetBandImages[] => {
+   const [sortedArray, setSortedArray] = useState<Slice.IGetBandImages[]>(arr);
 
    useEffect(() => {
       const handleResize = () => {
          let sequence: string[];
-         const newSortedArray = [];
+         const newSortedArray: Slice.IGetBandImages[] = [];
          const width = window.innerWidth;
 
          if (width < 850) {
-            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "PORTRAIT");
-            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "LANDSCAPE");
+            const portraitObjects = arr.filter((obj: { orientation: string }) => obj.orientation === "PORTRAIT");
+            const landscapeObjects = arr.filter((obj: { orientation: string }) => obj.orientation === "LANDSCAPE");
             while (portraitObjects.length || landscapeObjects.length) {
-               landscapeObjects.length && newSortedArray.push(landscapeObjects.shift());
-               portraitObjects.length && newSortedArray.push(portraitObjects.shift());
-               portraitObjects.length && newSortedArray.push(portraitObjects.shift());
-               landscapeObjects.length && newSortedArray.push(landscapeObjects.shift());
+               landscapeObjects.length && newSortedArray.push(landscapeObjects.shift()!);
+               portraitObjects.length && newSortedArray.push(portraitObjects.shift()!);
+               portraitObjects.length && newSortedArray.push(portraitObjects.shift()!);
+               landscapeObjects.length && newSortedArray.push(landscapeObjects.shift()!);
             }
 
             setSortedArray(newSortedArray);
@@ -38,14 +32,14 @@ const useResponsiveSorting = (arr: Input[]): (Input | undefined)[] => {
                "LANDSCAPE",
             ];
 
-            const portraitObjects = arr.filter((obj: { view: string }) => obj.view === "PORTRAIT");
-            const landscapeObjects = arr.filter((obj: { view: string }) => obj.view === "LANDSCAPE");
+            const portraitObjects = arr.filter((obj: { orientation: string }) => obj.orientation === "PORTRAIT");
+            const landscapeObjects = arr.filter((obj: { orientation: string }) => obj.orientation === "LANDSCAPE");
             let currentIndex = 0;
             while (portraitObjects.length || landscapeObjects.length) {
                if (sequence[currentIndex] === "PORTRAIT" && portraitObjects.length) {
-                  newSortedArray.push(portraitObjects.shift());
+                  newSortedArray.push(portraitObjects.shift()!);
                } else if (sequence[currentIndex] === "LANDSCAPE" && landscapeObjects.length) {
-                  newSortedArray.push(landscapeObjects.shift());
+                  newSortedArray.push(landscapeObjects.shift()!);
                }
 
                currentIndex = (currentIndex + 1) % sequence.length;

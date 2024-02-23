@@ -1,30 +1,13 @@
+import { useAppSelector } from "../../../app/hooks";
 // modules
-import { useEffect } from "react";
 // styles
 import styles from "./_ourevents.module.scss";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ButtonWithArrow from "./ButtonWithArrow";
-import getEventCards from "../../../tempData/getEventCards"; //FIX_ME replace wit hbackend
 
 const OurEvents = () => {
-   useEffect(() => {
-      const scrollers = document.querySelectorAll('[data-scroller="outter"]');
-      addAnimation();
-      function addAnimation() {
-         scrollers.forEach((scroller) => {
-            const scrollerInner = scroller.querySelector('[data-scroller_inner="inner"]');
-            if (!scrollerInner) return;
-            const scrollerContent = Array.from(scrollerInner.children);
-
-            scrollerContent.concat(scrollerContent, scrollerContent).forEach((item) => {
-               const duplicatedItem = item.cloneNode(true) as HTMLElement;
-               duplicatedItem.setAttribute("aria-hidden", "true");
-               scrollerInner.appendChild(duplicatedItem);
-            });
-         });
-      }
-   }, []);
+   const data = useAppSelector((state) => state.getBandAlbum.data)!;
 
    return (
       <SectionWrapper
@@ -40,11 +23,11 @@ const OurEvents = () => {
                className={styles.scrollerInner}
                data-scroller_inner="inner"
             >
-               {getEventCards.map((card, i) => (
+               {(data.length < 6 ? [...data, ...data] : data).map((card, i) => (
                   <img
                      key={i}
-                     src={card.src}
-                     alt={card.alt}
+                     src={card.coverImage}
+                     alt={card.name}
                   />
                ))}
             </div>

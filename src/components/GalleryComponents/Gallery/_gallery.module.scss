@@ -117,8 +117,9 @@
 }
 
 .galleryCardsContent {
-   position: relative;
-   transform: translate(7%, -130%);
+   position: absolute;
+   bottom: 20px;
+   left: 20px;
    z-index: 5;
 }
 .image_container {

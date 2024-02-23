@@ -12,7 +12,11 @@ import styles from "./_galleryCollage.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 
-const GalleryCollage: React.FC<Prop.Collage.Props> = ({ items }) => {
+interface Props {
+   items: Slice.IGetBandImages[];
+}
+
+const GalleryCollage: React.FC<Props> = ({ items }) => {
    const [open, setOpen] = useState(false);
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
@@ -27,8 +31,8 @@ const GalleryCollage: React.FC<Prop.Collage.Props> = ({ items }) => {
    };
 
    const modalImages: SlideImage[] = images
-      .map((el) => (el ? { src: el.src } : null))
-      .filter((el): el is SlideImage => el !== null); // FIX_ME on API implement logic inside LightBox.tsx
+      .map((el) => (el ? { src: el.originalImage } : null))
+      .filter((el): el is SlideImage => el !== null);
 
    const lightBoxProps = {
       index,
@@ -49,11 +53,13 @@ const GalleryCollage: React.FC<Prop.Collage.Props> = ({ items }) => {
                images.map((data, i) => (
                   <div
                      key={i}
-                     className={data && styles.collageItem + " " + styles[data.view]}
+                     className={`${data && styles.collageItem} ${styles[data.orientation]}`}
                      onClick={() => handleOpen(i)}
                   >
-                     <p>{i}</p>
-                     <ImageLoader src={data?.src} />
+                     <ImageLoader
+                        src={data.image}
+                        bluer={data.bluer}
+                     />
                   </div>
                ))}
 

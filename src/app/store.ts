@@ -13,9 +13,15 @@ import { reducersStudentReviwe } from "../store/studentsFeedbackSlice.ts";
 import { reducersCourses } from "../store/coursesSlice.ts";
 import { reducersClients } from "../store/ourclientsSlice.ts";
 import { reducersGetTeachers } from "../store/teachersSlice.ts";
+import { reducersBandAlbumSlice } from "../store/bandAlbumSlice.ts";
+import { reducersStudioAlbumSlice } from "../store/studioAlbumSlice.ts";
+import { reducersAlbumImagesSlice } from "../store/albumImagesSlice.ts";
 
 export const store = configureStore({
    reducer: {
+      getAlbumImages: reducersAlbumImagesSlice,
+      getStudioAlbum: reducersStudioAlbumSlice,
+      getBandAlbum: reducersBandAlbumSlice,
       getAboutBand: reducersAboutBand,
       getContacts: reducersContacts,
       getCoolStudioVideo: reducersCoolStudio,

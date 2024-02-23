@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
 
-type Item = {
-   alt: string;
-   src: string;
-   view: string;
-};
-
 const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
    const [currentPage, setCurrentPage] = useState(initialPage);
    const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
@@ -33,7 +27,7 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [initialItemsPerPage]);
 
-   const getVisibleItems = (items: (Item | undefined)[]) => {
+   const getVisibleItems = (items: Slice.IGetBandImages[]) => {
       const startItemIndex = 0;
       const endItemIndex = currentPage * itemsPerPage;
       return items.slice(startItemIndex, endItemIndex);

@@ -3,25 +3,34 @@ import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import HeroText from "./HeroText";
 import styles from "./_hero.module.scss";
 
-const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
+const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...props }) => {
    const videoRef = useRef<HTMLVideoElement>(null);
 
    useEffect(() => {
       const videoElement = videoRef.current;
       videoElement?.setAttribute("muted", "true");
-      // videoElement?.setAttribute("muted", "");
+      videoElement?.setAttribute("muted", "");
       // const handleClick = (e: Event) => {
       //    e.preventDefault();
       //    e.stopPropagation();
+      //    videoElement?.play();
       // };
 
       // const handleTouch = (e: Event) => {
       //    e.preventDefault();
       //    e.stopPropagation();
+      //    videoElement?.play();
       // };
+
+      // const handleWheel= (e: Event) => {
+      //    e.preventDefault();
+      //    e.stopPropagation();
+      //    console.log(e)
+      // }
 
       // videoElement?.addEventListener("click", handleClick);
       // videoElement?.addEventListener("touchstart", handleTouch);
+      // videoElement?.addEventListener("scroll", handleWheel);
       // videoElement?.play();
 
       // return () => {
@@ -31,14 +40,17 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
    }, []);
 
    return (
-      <SectionWrapper className={styles.hero}>
+      <SectionWrapper
+         className={styles.hero}
+         {...props}
+      >
          <video
+            ref={videoRef}
+            src={video}
             muted
             autoPlay
             loop
             playsInline
-            ref={videoRef}
-            src={video}
          >
             <track kind="captions"></track>
          </video>

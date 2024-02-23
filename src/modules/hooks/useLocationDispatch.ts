@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
    /* band */
    getHeroBand,
    getAboutBand,
+   getBandAlbum,
    getOurTeam,
    getCollaborations,
    getClients,
@@ -13,6 +14,7 @@ import {
    getCoolStudio,
    getTeachers,
    getStudentReviwes,
+   getStudioAlbum,
    getCourses,
    getStudentSuccess,
    /* contacts */
@@ -20,6 +22,7 @@ import {
 } from "../../store/thunkCollection";
 
 const useLocationDispatch = () => {
+   const navigate = useNavigate();
    const { pathname } = useLocation();
    const dispatch = useAppDispatch();
    // band states
@@ -28,6 +31,7 @@ const useLocationDispatch = () => {
    const bandTeam = useAppSelector((state) => state.getOurTeam);
    const bandCollab = useAppSelector((state) => state.getCollaborations);
    const bandPartners = useAppSelector((state) => state.getOurClients);
+   const bandAlbum = useAppSelector((state) => state.getAboutBand);
    // studio states
    const studioHero = useAppSelector((state) => state.getHeroStudio);
    const studioAbout = useAppSelector((state) => state.getCoolStudioVideo);
@@ -35,42 +39,55 @@ const useLocationDispatch = () => {
    const studioTeachers = useAppSelector((state) => state.getTeachers);
    const studioTestimonial = useAppSelector((state) => state.getStudentReviwes);
    const studioStudents = useAppSelector((state) => state.getStudentSuccess);
+   const studioAlbum = useAppSelector((state) => state.getStudioAlbum);
    // contact State
    const contacts = useAppSelector((state) => state.getContacts);
-   // gallery States
-   // const bandGalleryAlbums = useAppSelector((state) => state);
-   // const studioGalleryAlbums = useAppSelector((state) => state);
-   // const bandAlbumPhotos = useAppSelector((state) => state);
-   // const studioAlbumPhotos = useAppSelector((state) => state);
+
    // initial page load
+
+   //after page loaded
    useEffect(() => {
-      !contacts.getLoading && dispatch(getContacts());
       !bandHero.getLoading && dispatch(getHeroBand());
       !studioHero.getLoading && dispatch(getHeroStudio());
-   }, [pathname, contacts.getLoading, dispatch, bandHero.getLoading, studioHero.getLoading]);
+      !bandAlbum.getLoading && dispatch(getBandAlbum());
 
+      !contacts.getLoading && dispatch(getContacts());
+   }, [
+      pathname,
+      contacts.getLoading,
+      dispatch,
+      bandHero.getLoading,
+      studioHero.getLoading,
+      navigate,
+      bandAlbum.getLoading,
+   ]);
+
+   // after Studio Page loaded
    useEffect(() => {
-      // on Studio Page
       if (pathname === "/studio") {
          !studioAbout.getLoading && dispatch(getCoolStudio());
          !studioCourses.getLoading && dispatch(getCourses());
          !studioTeachers.getLoading && dispatch(getTeachers());
          !studioTestimonial.getLoading && dispatch(getStudentSuccess());
          !studioStudents.getLoading && dispatch(getStudentReviwes());
+         !studioAlbum.getLoading && dispatch(getStudioAlbum());
+         !studioAlbum.getLoading && dispatch(getStudioAlbum());
       }
    }, [
+      navigate,
       dispatch,
       pathname,
+      studioAlbum.getLoading,
       studioAbout.getLoading,
       studioCourses.getLoading,
       studioTeachers.getLoading,
       studioTestimonial.getLoading,
       studioStudents.getLoading,
-      // studioHero.getLoading,
    ]);
 
+   // after Band Page loaded
    useEffect(() => {
-      // on band page
+      console.log(pathname);
       if (pathname === "/") {
          !bandAbout.getLoading && dispatch(getAboutBand());
          !bandTeam.getLoading && dispatch(getOurTeam());
@@ -79,10 +96,11 @@ const useLocationDispatch = () => {
          !studioCourses.getLoading && dispatch(getCourses());
       }
    }, [
+      navigate,
       dispatch,
       pathname,
+      bandAlbum.getLoading,
       bandAbout.getLoading,
-      // bandHero.getLoading,
       bandTeam.getLoading,
       bandCollab.getLoading,
       bandPartners.getLoading,
@@ -91,3 +109,70 @@ const useLocationDispatch = () => {
 };
 
 export default useLocationDispatch;
+/* 
+useEffect(() => {
+      if (!bandHero.getLoading && pathname === "/") {
+         dispatch(getHeroBand());
+      }
+      if (!contacts.getLoading && pathname === "/") {
+         dispatch(getContacts());
+      }
+      if (!studioHero.getLoading && pathname === "/studio") {
+         dispatch(getHeroStudio());
+      }
+      if (!studioAbout.getLoading && pathname === "/studio") {
+         dispatch(getCoolStudio());
+      }
+      if (!studioCourses.getLoading && pathname === "/studio") {
+         dispatch(getCourses());
+      }
+      if (!studioTeachers.getLoading && pathname === "/studio") {
+         dispatch(getTeachers());
+      }
+      if (!studioTestimonial.getLoading && pathname === "/studio") {
+         dispatch(getStudentSuccess());
+      }
+      if (!studioStudents.getLoading && pathname === "/studio") {
+         dispatch(getStudentReviwes());
+      }
+      if (!studioAlbum.getLoading && (pathname === "/studio" || pathname === "/studio/gallery")) {
+         dispatch(getStudioAlbum());
+      }
+      if (!bandAbout.getLoading && pathname === "/") {
+         dispatch(getAboutBand());
+      }
+      if (!bandTeam.getLoading && pathname === "/") {
+         dispatch(getOurTeam());
+      }
+      if (!bandCollab.getLoading && pathname === "/") {
+         dispatch(getCollaborations());
+      }
+      if (!bandPartners.getLoading && pathname === "/") {
+         dispatch(getClients());
+      }
+      if (!studioCourses.getLoading && pathname === "/") {
+         dispatch(getCourses());
+      }
+      if (!bandAlbum.getLoading && pathname === "/gallery") {
+         dispatch(getBandAlbum());
+      }
+   }, [
+      dispatch,
+      pathname,
+      bandHero.getLoading,
+      bandAbout.getLoading,
+      bandTeam.getLoading,
+      bandCollab.getLoading,
+      bandPartners.getLoading,
+      studioHero.getLoading,
+      studioAbout.getLoading,
+      studioCourses.getLoading,
+      studioTeachers.getLoading,
+      studioTestimonial.getLoading,
+      studioStudents.getLoading,
+      studioAlbum.getLoading,
+      contacts.getLoading,
+      bandAlbum.getLoading,
+   ]);
+};
+*/
