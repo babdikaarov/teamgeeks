@@ -1,6 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosApi from "../axiosApi.ts";
 
+export const getAlbumByID = createAsyncThunk("getAlbumByID", async (param: { id: number; endpoint: string }) => {
+   const getData = await axiosApi<Slice.IGetAlbumByID>(`/event_${param.endpoint}/${param.id}`);
+   const data = getData.data;
+
+   if (data) {
+      return data;
+   }
+});
 export const getAlbumImages = createAsyncThunk("getAlbumImages", async (param: { id: number; endpoint: string }) => {
    const getData = await axiosApi<Slice.IGetBandImages[]>(`/event_${param.endpoint}_images/album/${param.id}`);
    const data = getData.data;

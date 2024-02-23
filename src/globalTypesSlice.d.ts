@@ -1,4 +1,20 @@
 declare namespace Slice {
+   export interface IGetAlbumByID {
+      id: number;
+      coverImage: string;
+      date: string;
+      name: string;
+      location?: string;
+      orientation?: string;
+   }
+   export interface IAlbumByID {
+      data: IGetAlbumByID;
+      getLoading: boolean;
+   }
+   export interface IBandImagesSlice {
+      data: IGetBandImages[] | undefined;
+      getLoading: boolean;
+   }
    export interface IBandImagesSlice {
       data: IGetBandImages[] | undefined;
       getLoading: boolean;

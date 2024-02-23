@@ -16,9 +16,11 @@ import { reducersGetTeachers } from "../store/teachersSlice.ts";
 import { reducersBandAlbumSlice } from "../store/bandAlbumSlice.ts";
 import { reducersStudioAlbumSlice } from "../store/studioAlbumSlice.ts";
 import { reducersAlbumImagesSlice } from "../store/albumImagesSlice.ts";
+import { reducersAlbumByIDSlice } from "../store/albumByIDSlice.ts";
 
 export const store = configureStore({
    reducer: {
+      getAlbumByID: reducersAlbumByIDSlice,
       getAlbumImages: reducersAlbumImagesSlice,
       getStudioAlbum: reducersStudioAlbumSlice,
       getBandAlbum: reducersBandAlbumSlice,
