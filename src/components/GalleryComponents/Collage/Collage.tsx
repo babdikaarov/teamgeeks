@@ -19,6 +19,10 @@ const Collage = () => {
    const { id } = useParams();
    const dispatch = useAppDispatch();
    const bandImagesData = useAppSelector((state) => state.getAlbumImages.data!);
+
+   // FIX_ME
+   // const AlbumTittle = useAppSelector(state => state.getStudioAlbum.data!);
+
    const navigate = useNavigate();
    const sortedData = useResponsiveSorting(bandImagesData);
    useEffect(() => {

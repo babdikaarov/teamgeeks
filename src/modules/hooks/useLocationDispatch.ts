@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
    /* band */
@@ -22,6 +22,7 @@ import {
 } from "../../store/thunkCollection";
 
 const useLocationDispatch = () => {
+   const navigate = useNavigate();
    const { pathname } = useLocation();
    const dispatch = useAppDispatch();
    // band states
@@ -48,8 +49,18 @@ const useLocationDispatch = () => {
    useEffect(() => {
       !bandHero.getLoading && dispatch(getHeroBand());
       !studioHero.getLoading && dispatch(getHeroStudio());
+      !bandAlbum.getLoading && dispatch(getBandAlbum());
+
       !contacts.getLoading && dispatch(getContacts());
-   }, [pathname, contacts.getLoading, dispatch, bandHero.getLoading, studioHero.getLoading]);
+   }, [
+      pathname,
+      contacts.getLoading,
+      dispatch,
+      bandHero.getLoading,
+      studioHero.getLoading,
+      navigate,
+      bandAlbum.getLoading,
+   ]);
 
    // after Studio Page loaded
    useEffect(() => {
@@ -60,11 +71,10 @@ const useLocationDispatch = () => {
          !studioTestimonial.getLoading && dispatch(getStudentSuccess());
          !studioStudents.getLoading && dispatch(getStudentReviwes());
          !studioAlbum.getLoading && dispatch(getStudioAlbum());
-      }
-      if (pathname === "/studio/gallery") {
          !studioAlbum.getLoading && dispatch(getStudioAlbum());
       }
    }, [
+      navigate,
       dispatch,
       pathname,
       studioAlbum.getLoading,
@@ -77,6 +87,7 @@ const useLocationDispatch = () => {
 
    // after Band Page loaded
    useEffect(() => {
+      console.log(pathname);
       if (pathname === "/") {
          !bandAbout.getLoading && dispatch(getAboutBand());
          !bandTeam.getLoading && dispatch(getOurTeam());
@@ -84,10 +95,8 @@ const useLocationDispatch = () => {
          !bandPartners.getLoading && dispatch(getClients());
          !studioCourses.getLoading && dispatch(getCourses());
       }
-      if (pathname === "/gallery") {
-         !bandAlbum.getLoading && dispatch(getBandAlbum());
-      }
    }, [
+      navigate,
       dispatch,
       pathname,
       bandAlbum.getLoading,

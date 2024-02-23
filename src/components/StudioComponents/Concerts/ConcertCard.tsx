@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./_concertCard.module.scss";
 
 const ConcertCard = (props: Card.ConcertCardProps) => {
+   const navigate = useNavigate();
    return (
       /* FIX_ME add onClick to idImage "./studio/gallery/{$id}" */
-      <div className={styles.ConcertsCard}>
+      <div
+         className={styles.ConcertsCard}
+         onClick={() => navigate(`/studio/gallery/${props.id}`)}
+      >
          <img
             className={styles.concertImg}
             src={props.coverImage}

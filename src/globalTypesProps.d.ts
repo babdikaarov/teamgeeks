@@ -95,7 +95,7 @@ declare namespace Prop {
          paragraph?: string;
       };
 
-      export interface Props extends React.HTMLAttributes<HTMLDivElement> {
+      interface Props extends React.HTMLAttributes<HTMLDivElement> {
          video: string | undefined;
          text?: Text;
          children: React.ReactNode;

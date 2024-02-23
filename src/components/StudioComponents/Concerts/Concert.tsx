@@ -15,6 +15,7 @@ import styles from "./_concerts.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
+import { Link } from "react-router-dom";
 
 const Concert = () => {
    const data = useAppSelector((state) => state.getStudioAlbum.data)!;
@@ -63,12 +64,12 @@ const Concert = () => {
                </>
             )}
 
-            <a
+            <Link
                className={styles.watchmore}
-               href="/gallery"
+               to="/studio/gallery"
             >
                Смотреть еще
-            </a>
+            </Link>
          </div>
       </SectionWrapper>
    );

@@ -9,7 +9,7 @@ export const getAlbumImages = createAsyncThunk("getAlbumImages", async (param: {
       return data;
    }
 });
-export const getStudioAlbum = createAsyncThunk("getBandAlbum", async () => {
+export const getStudioAlbum = createAsyncThunk("getStudioAlbum", async () => {
    const getData = await axiosApi<Slice.IGetStudioAlbum[]>("/event_studio");
    const data = getData.data;
 

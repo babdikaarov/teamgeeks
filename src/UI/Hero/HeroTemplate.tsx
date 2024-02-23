@@ -9,19 +9,28 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
    useEffect(() => {
       const videoElement = videoRef.current;
       videoElement?.setAttribute("muted", "true");
-      // videoElement?.setAttribute("muted", "");
+      videoElement?.setAttribute("muted", "");
       // const handleClick = (e: Event) => {
       //    e.preventDefault();
       //    e.stopPropagation();
+      //    videoElement?.play();
       // };
 
       // const handleTouch = (e: Event) => {
       //    e.preventDefault();
       //    e.stopPropagation();
+      //    videoElement?.play();
       // };
+
+      // const handleWheel= (e: Event) => {
+      //    e.preventDefault();
+      //    e.stopPropagation();
+      //    console.log(e)
+      // }
 
       // videoElement?.addEventListener("click", handleClick);
       // videoElement?.addEventListener("touchstart", handleTouch);
+      // videoElement?.addEventListener("scroll", handleWheel);
       // videoElement?.play();
 
       // return () => {
@@ -36,12 +45,12 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
          {...props}
       >
          <video
+            ref={videoRef}
+            src={video}
             muted
             autoPlay
             loop
             playsInline
-            ref={videoRef}
-            src={video}
          >
             <track kind="captions"></track>
          </video>
