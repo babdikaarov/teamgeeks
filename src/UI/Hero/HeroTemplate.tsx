@@ -3,7 +3,7 @@ import SectionWrapper from "../SectionWrapper/SectionWrapper";
 import HeroText from "./HeroText";
 import styles from "./_hero.module.scss";
 
-const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
+const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...props }) => {
    const videoRef = useRef<HTMLVideoElement>(null);
 
    useEffect(() => {
@@ -31,7 +31,10 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children }) => {
    }, []);
 
    return (
-      <SectionWrapper className={styles.hero}>
+      <SectionWrapper
+         className={styles.hero}
+         {...props}
+      >
          <video
             muted
             autoPlay

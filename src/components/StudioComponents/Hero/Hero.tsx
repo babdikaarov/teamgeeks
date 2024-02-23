@@ -4,7 +4,9 @@ import { useAppSelector } from "../../../app/hooks.ts";
 import HeroTemplate from "../../../UI/Hero/HeroTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
 
-const Hero = () => {
+interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {}
+
+const Hero: React.FC<Props> = ({ ...props }) => {
    const dataStudio = useAppSelector((state) => state.getHeroStudio.data)!;
    const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
 
@@ -17,6 +19,7 @@ const Hero = () => {
       <HeroTemplate
          video={dataStudio.video}
          text={texts}
+         {...props}
       >
          <SharedButton
             whatsapp={studioNumber}

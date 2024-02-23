@@ -85,7 +85,7 @@ declare namespace Prop {
       youTubeId: string | null;
       allIDS: (string | null)[];
    }
-   export interface Logo extends HTMLAttributes<HTMLAnchorElement> {
+   export interface Logo extends React.HTMLAttributes<HTMLAnchorElement> {
       bandPage: boolean;
       footerHide?: string;
    }
@@ -95,7 +95,7 @@ declare namespace Prop {
          paragraph?: string;
       };
 
-      export interface Props {
+      export interface Props extends React.HTMLAttributes<HTMLDivElement> {
          video: string | undefined;
          text?: Text;
          children: React.ReactNode;

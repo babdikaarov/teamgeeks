@@ -14,14 +14,13 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 import styles from "./_concerts.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-import tempData from "../../../tempData/getConcertData"; //FIX_ME replace with backend
+import { useAppSelector } from "../../../app/hooks";
 
 const Concert = () => {
+   const data = useAppSelector((state) => state.getStudioAlbum.data)!;
    const { refToogle } = useToggleActiveNavigation(EBlockID.CONCERT);
-
    const mobileWidth = useMediaQuery("(max-width: 576px)");
-   const concertImages = tempData;
-   const mobileArray = concertImages.slice(0, 3);
+   const mobileArray = data.slice(0, 3);
 
    return (
       <SectionWrapper header="Отчетные концерты">
@@ -50,7 +49,7 @@ const Concert = () => {
                      navigation={{ nextEl: "#ConcertNext", prevEl: "#ConcertPrev" }}
                      className={styles.concertSwiper}
                   >
-                     {concertImages.map((image, index) => (
+                     {(data.length < 5 ? [...data, ...data] : data).map((image, index) => (
                         <SwiperSlide
                            key={index}
                            className={styles.concertsSwipeCard}

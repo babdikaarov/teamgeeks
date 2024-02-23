@@ -15,19 +15,14 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 import styles from "./_ourstudents.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-// import data from "../../../tempData/getOurStudents"; //FIX_ME replace with backend
 import { useAppSelector } from "../../../app/hooks";
 
 const OurStudents = () => {
-   let data = useAppSelector((state) => state.getStudentSuccess.data)!;
+   const data = useAppSelector((state) => state.getStudentSuccess.data)!;
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(data.map((el) => el.url));
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
-
-   if (data.length <= 4) {
-      data = [...data, ...data];
-   }
 
    return (
       <SectionWrapper
@@ -61,7 +56,7 @@ const OurStudents = () => {
                      navigation={{ nextEl: "#btn51", prevEl: "#StudentsPrev" }}
                      className={styles.ourStudentsSwiper}
                   >
-                     {data.map((url, index) => (
+                     {(data.length < 5 ? [...data, ...data] : data).map((url, index) => (
                         <SwiperSlide
                            key={index}
                            className={styles.ourStudentsSwipeCard}

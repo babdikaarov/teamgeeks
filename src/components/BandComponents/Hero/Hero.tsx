@@ -4,11 +4,16 @@ import { useAppSelector } from "../../../app/hooks.ts";
 import HeroTeamplate from "../../../UI/Hero/HeroTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
 
-const Hero = () => {
+interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {}
+
+const Hero: React.FC<Props> = ({ ...props }) => {
    const video = useAppSelector((state) => state.getHeroBand.data?.video)!;
    const { bandNumber } = useAppSelector((state) => state.getContacts.data)!;
    return (
-      <HeroTeamplate video={video}>
+      <HeroTeamplate
+         video={video}
+         {...props}
+      >
          <SharedButton
             whatsapp={bandNumber}
             classname="bandHeroButton"

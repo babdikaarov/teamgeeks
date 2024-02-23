@@ -10,21 +10,33 @@ import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import styles from "./_gallery.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-
-import getGalleryData from "../../../tempData/getGalleyData"; //FIX_ME replace with backend
+import { useAppSelector } from "../../../app/hooks";
 
 const Gallery: React.FC = () => {
-   const [events, setEvents] = useState(getGalleryData);
    const { pathname } = useLocation();
+   const [redirectTo, setRedirectTo] = useState("");
    const navigate = useNavigate();
    const onStudio = pathname.match("studio");
+   const bandData = useAppSelector((state) => state.getBandAlbum.data!);
+   const studioData = useAppSelector((state) => state.getStudioAlbum.data!);
+   const [events, setEvents] = useState<Slice.IGetBandAlbum[] | Slice.IGetStudioAlbum[]>([]);
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
    useEffect(() => {
-      if (getGalleryData) {
-         setEvents(getGalleryData);
+      // FIX_ME
+      if (!onStudio) {
+         setRedirectTo("/gallery");
+         setEvents(bandData);
+         console.log("band");
       }
-   }, []);
+      if (onStudio) {
+         setRedirectTo("/studio/gallery");
+         setEvents(studioData);
+         console.log("studio");
+      }
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [bandData, onStudio, pathname, studioData]);
 
    return (
       <>
@@ -40,19 +52,17 @@ const Gallery: React.FC = () => {
                {bigArrow}
             </button>
             <div className={styles.gallery}>
-               {events.map((event, i) => (
-                  <Fragment key={event.eventID + i}>
+               {events.map((event) => (
+                  <Fragment key={event.id}>
                      <div className={styles.galleryCards}>
-                        {/* FIX_ME add at backend stage */}
-                        {/* <Link to={`/gallery/${event.eventID}`}> */}
                         <Link
-                           to={`/gallery/${i}`}
+                           to={`${redirectTo}/${event.id}`}
                            className={styles.image_container}
                         >
-                           <ImageLoader src={event.poster} />
+                           <ImageLoader src={event.coverImage} />
                            <div className={styles.galleryCardsContent}>
                               <p>{event.date}</p>
-                              <h4>{`Name ${i}`}</h4>
+                              <h4>{event.name}</h4>
                            </div>
                         </Link>
                      </div>

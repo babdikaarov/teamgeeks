@@ -1,6 +1,31 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosApi from "../axiosApi.ts";
 
+export const getAlbumImages = createAsyncThunk("getAlbumImages", async (param: { id: number; endpoint: string }) => {
+   const getData = await axiosApi<Slice.IGetBandImages[]>(`/event_${param.endpoint}_images/album/${param.id}`);
+   const data = getData.data;
+
+   if (data) {
+      return data;
+   }
+});
+export const getStudioAlbum = createAsyncThunk("getBandAlbum", async () => {
+   const getData = await axiosApi<Slice.IGetStudioAlbum[]>("/event_studio");
+   const data = getData.data;
+
+   if (data) {
+      return data;
+   }
+});
+export const getBandAlbum = createAsyncThunk("getBandAlbum", async () => {
+   const getData = await axiosApi<Slice.IGetBandAlbum[]>("/event_band");
+   const data = getData.data;
+
+   if (data) {
+      return data;
+   }
+});
+
 export const getTeachers = createAsyncThunk("getTeachers", async () => {
    const getData = await axiosApi<Slice.ITeacherData[]>("/st_teachers");
    const data = getData.data;
