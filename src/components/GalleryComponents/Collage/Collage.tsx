@@ -8,7 +8,7 @@ import GalleryCollage from "./GalleryCollage";
 import bigArrow from "../../../assets/icons/bigArrow";
 // styles
 import styles from "./_collage.module.scss";
-import { getAlbumImages } from "../../../store/thunkCollection";
+import { getAlbumByID, getAlbumImages } from "../../../store/thunkCollection";
 import { useEffect } from "react";
 
 const studioPattern = /^\/studio\/gallery\/\d+$/;
@@ -19,15 +19,16 @@ const Collage = () => {
    const { id } = useParams();
    const dispatch = useAppDispatch();
    const bandImagesData = useAppSelector((state) => state.getAlbumImages.data!);
+   const AlbumTittleByID = useAppSelector((state) => state.getAlbumByID.data!);
 
    // FIX_ME
-   // const AlbumTittle = useAppSelector(state => state.getStudioAlbum.data!);
 
    const navigate = useNavigate();
    const sortedData = useResponsiveSorting(bandImagesData);
    useEffect(() => {
       const endpoint = studioPattern.test(pathname) ? "studio" : "band";
       dispatch(getAlbumImages({ id: Number(id), endpoint }));
+      dispatch(getAlbumByID({ id: Number(id), endpoint }));
    }, [dispatch, id, pathname]);
 
    return (
@@ -40,8 +41,8 @@ const Collage = () => {
                {bigArrow}
             </button>
             <div>
-               <p>test</p>
-               <h3>test</h3>
+               <p>{AlbumTittleByID.date}</p>
+               <h3>{AlbumTittleByID.name}</h3>
             </div>
          </div>
          <GalleryCollage items={sortedData} />
