@@ -13,19 +13,15 @@ import { EBlockID } from "../../../globalTypesEnum";
 
 const AboutStudio: React.FC = () => {
    const [expanded, setExpanded] = useState(false);
-   const [customHeader, setCustomHeader] = useState(false);
-   const [points, setPoints] = useState(false);
    const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUTSTUDIO);
 
    const toggleExpand = () => {
       setExpanded(!expanded);
-      setCustomHeader(!customHeader);
-      setPoints(!points);
    };
 
    return (
       <SectionWrapper
-         header={customHeader ? "О студии" : "Cool Studio"}
+         header={expanded ? "О студии" : "Cool Studio"}
          className={styles.coolStudio}
          id="about"
       >
@@ -41,7 +37,7 @@ const AboutStudio: React.FC = () => {
                <span>
                   <br />
                   {staticText.text2}
-                  {points ? "" : ".."}
+                  {expanded ? "" : ".."}
                </span>
                {expanded && (
                   <div className={`${styles.ExpandedText} ${expanded ? styles.expanded : ""}`}>

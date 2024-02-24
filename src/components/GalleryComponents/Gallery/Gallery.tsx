@@ -14,44 +14,45 @@ import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const Gallery: React.FC = () => {
    const navigate = useNavigate();
-   const {onStudio} = usePageLocation()
-
+   const { onStudio } = usePageLocation();
 
    const bandData = useAppSelector((state) => state.getBandAlbum.data!);
    const studioData = useAppSelector((state) => state.getStudioAlbum.data!);
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
    const redirectTo = onStudio ? "/studio/gallery" : "/gallery";
-  
 
    return (
-         <SectionWrapper
-            forwardedRef={refToogle}
-            className={styles.galleryWrapper}
+      <SectionWrapper
+         forwardedRef={refToogle}
+         className={styles.galleryWrapper}
+      >
+         <button
+            aria-label="button"
+            onClick={() => navigate(-1)}
+            className={styles.navigation}
          >
-            <button
-               aria-label="button"
-               onClick={() => navigate(-1)}
-               className={styles.navigation}
-            >
-               {bigArrow}
-            </button>
-            <div className={styles.gallery}>
-               {(onStudio ? studioData : bandData).map((event) => (
-                     <div className={styles.galleryCards} key={event.id}>
-                        <Link
-                           to={`${redirectTo}/${event.id}`}
-                           className={styles.image_container}
-                        >
-                           <ImageLoader src={event.coverImage} />
-                           <div className={styles.galleryCardsContent}>
-                              <p>{event.date}</p>
-                              <h4>{event.name}</h4>
-                           </div>
-                        </Link>
+            {bigArrow}
+         </button>
+         <div className={styles.gallery}>
+            {(onStudio ? studioData : bandData).map((event) => (
+               <div
+                  className={styles.galleryCards}
+                  key={event.id}
+               >
+                  <Link
+                     to={`${redirectTo}/${event.id}`}
+                     className={styles.image_container}
+                  >
+                     <ImageLoader src={event.coverImage} />
+                     <div className={styles.galleryCardsContent}>
+                        <p>{event.date}</p>
+                        <h4>{event.name}</h4>
                      </div>
-               ))}
-            </div>
-         </SectionWrapper>
+                  </Link>
+               </div>
+            ))}
+         </div>
+      </SectionWrapper>
    );
 };
 

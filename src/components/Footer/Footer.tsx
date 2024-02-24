@@ -3,9 +3,8 @@ import FooterComponent from "./FooterComponent";
 import { useAppSelector } from "../../app/hooks";
 import usePageLocation from "../../modules/hooks/usePageLocation";
 
-
 const Footer = () => {
-   const {onBand} = usePageLocation()
+   const { onBand } = usePageLocation();
    const coursesListData = useAppSelector((state) => state.getCourses.data)!;
    const contactDetailsData = useAppSelector((state) => state.getContacts.data)!;
    const data = {

@@ -7,7 +7,7 @@ import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const BurgerBtn = ({ toggleMenu }: { toggleMenu: () => void }) => {
    const navigate = useNavigate();
-   const {onBand} = usePageLocation()
+   const { onBand } = usePageLocation();
    const handleClick = () => {
       mainElementAnimation();
       toggleMenu();

@@ -15,7 +15,7 @@ const VideoComponent = () => {
          const [entry] = entries;
          if (entry.isIntersecting) {
             userPlayedVideo &&
-            videoRef.current?.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', "*");
+               videoRef.current?.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', "*");
             videoRef.current?.contentWindow?.postMessage('{"event":"command","func":"setVolume","args":[30]}', "*");
          } else {
             videoRef.current?.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");

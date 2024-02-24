@@ -5,7 +5,7 @@ import bodyElementAnimation from "../../../modules/bodyElementAnimation";
 import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const TopButtons = () => {
-   const {onBand, onStudio} = usePageLocation();
+   const { onBand, onStudio } = usePageLocation();
 
    return (
       <div className={styles.navButtons}>

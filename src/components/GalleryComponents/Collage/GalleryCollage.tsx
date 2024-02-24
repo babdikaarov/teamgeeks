@@ -1,6 +1,5 @@
 // modules
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { SlideImage } from "yet-another-react-lightbox";
 import usePagination from "../../../modules/hooks/usePagination";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
@@ -11,6 +10,7 @@ import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import styles from "./_galleryCollage.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
+import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 interface Props {
    items: Slice.IGetBandImages[];
@@ -21,8 +21,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const images = getVisibleItems(items);
-   const { pathname } = useLocation();
-   const onStudio = pathname.match("studio");
+   const { onStudio } = usePageLocation();
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
    const handleOpen = (i: number) => {

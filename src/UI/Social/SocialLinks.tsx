@@ -2,10 +2,13 @@ import { useAppSelector } from "../../app/hooks.ts";
 import styles from "./_socialLinks.module.scss";
 import { socialIcons } from "../../assets/icons/socialIcons.tsx";
 import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
+import usePageLocation from "../../modules/hooks/usePageLocation.ts";
 
 const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
-   const getLinks = useAppSelector((state) => state.getContacts.data)!;
-   const whatsApp = createWhatsAppLink(getLinks.whatsapp, "Заказать Cool Band");
+   const contacts = useAppSelector((state) => state.getContacts.data)!;
+   const { onBand } = usePageLocation();
+   const whatsAppBand = createWhatsAppLink(contacts.bandNumber, "Заказать Cool Band");
+   const whatsAppStudio = createWhatsAppLink(contacts.studioNumber, "Узнать больше об Обучении");
    const handleFunction = () => {
       setIsMenuOpen(false);
    };
@@ -15,7 +18,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="telegram">
             <a
                aria-label="link"
-               href={`https://t.me/${getLinks.telegram}`}
+               href={`https://t.me/${contacts.telegram}`}
                target="blank"
                onClick={handleFunction}
             >
@@ -25,7 +28,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="whatsapp">
             <a
                aria-label="link"
-               href={whatsApp}
+               href={onBand ? whatsAppBand : whatsAppStudio}
                target="blank"
                onClick={handleFunction}
             >
@@ -35,7 +38,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="instagram">
             <a
                aria-label="link"
-               href={getLinks.instagram}
+               href={contacts.instagram}
                target="blank"
                onClick={handleFunction}
             >
@@ -45,7 +48,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="youtube">
             <a
                aria-label="link"
-               href={getLinks.youtube}
+               href={contacts.youtube}
                target="blank"
                onClick={handleFunction}
             >
@@ -55,7 +58,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="tiktok">
             <a
                aria-label="link"
-               href={getLinks.tiktok}
+               href={contacts.tiktok}
                target="blank"
                onClick={handleFunction}
             >

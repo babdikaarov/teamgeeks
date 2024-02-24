@@ -5,7 +5,7 @@ import icon from "./icon";
 // FIX_ME try to animate burger icon
 
 const TopButton: React.FC<Prop.Header.TopButtonProps> = ({ isMenuOpen, toggleMenu }) => {
-   const {onBand} = usePageLocation()
+   const { onBand } = usePageLocation();
    return (
       <>
          <label className={styles.label + " " + (onBand ? styles.yellow : styles.blue)}>

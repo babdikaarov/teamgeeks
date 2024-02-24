@@ -8,7 +8,7 @@ import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   const {onStudio} = usePageLocation()
+   const { onStudio } = usePageLocation();
 
    const handleFunction = () => {
       !onStudio && mainElementAnimation();

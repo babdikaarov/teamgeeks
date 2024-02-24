@@ -39,6 +39,7 @@ declare namespace Card {
       img: string;
       name: string;
       word: string;
+      bluer: string;
    }
 
    export interface ConcertCardProps extends Slice.IGetStudioAlbum {}

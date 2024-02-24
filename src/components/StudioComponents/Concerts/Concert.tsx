@@ -67,6 +67,7 @@ const Concert = () => {
             <Link
                className={styles.watchmore}
                to="/studio/gallery"
+               onClick={() => window.scrollTo(0, 0)}
             >
                Смотреть еще
             </Link>
