@@ -96,6 +96,7 @@ const StudentsFeedback = () => {
                         img={card.image}
                         name={card.name}
                         word={card.reviews}
+                        bluer={card.bluer}
                      />
                   </SwiperSlide>
                ))}

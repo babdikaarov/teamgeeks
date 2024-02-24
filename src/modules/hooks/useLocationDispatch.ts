@@ -87,7 +87,6 @@ const useLocationDispatch = () => {
 
    // after Band Page loaded
    useEffect(() => {
-      console.log(pathname);
       if (pathname === "/") {
          !bandAbout.getLoading && dispatch(getAboutBand());
          !bandTeam.getLoading && dispatch(getOurTeam());

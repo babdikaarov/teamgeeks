@@ -1,6 +1,6 @@
+// modules
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-// modules
 import createMailtoLink from "../../modules/createMailtoLink";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 // styles

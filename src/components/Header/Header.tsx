@@ -1,29 +1,19 @@
-import { Suspense, lazy, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import lyrics from "./staticData.json";
+import usePageLocation from "../../modules/hooks/usePageLocation";
 
 const BandNavList = lazy(() => import("./pageNavigation/BandNavList"));
 const StudioNavList = lazy(() => import("./pageNavigation/StudioNavList"));
 const HeaderComponent = lazy(() => import("./HeaderComponent"));
 
 const Header = () => {
-   const [bandPage, setBandPage] = useState<boolean>(true);
-   const { pathname } = useLocation();
-
-   useEffect(() => {
-      if (/^\/(?!studio\b).*$/.test(pathname)) {
-         setBandPage(true);
-      } else {
-         setBandPage(false);
-      }
-   }, [pathname]);
-
+   const { onBand } = usePageLocation();
    return (
       <Suspense fallback={<div>Loading...</div>}>
          <HeaderComponent
-            bandPage={bandPage}
+            bandPage={onBand}
             lyrics={lyrics}
-            NavList={bandPage ? BandNavList : StudioNavList}
+            NavList={onBand ? BandNavList : StudioNavList}
          />
       </Suspense>
    );

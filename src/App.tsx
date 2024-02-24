@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout.tsx";
+import Layout from "./Layout/Layout.tsx";
 import CoolBand from "./pages/CoolBand/CoolBand.tsx";
 import CoolStudio from "./pages/CoolStudio/CoolStudio.tsx";
 import GalleryPage from "./pages/Gallery/GalleryPage.tsx";
