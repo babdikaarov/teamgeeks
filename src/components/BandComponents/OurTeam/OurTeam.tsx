@@ -13,11 +13,15 @@ import TeamCard from "./TeamCard";
 import NavigationButton from "../../../UI/Buttons/NavigationButton";
 // styles
 import styles from "./_ourTeam.module.scss";
+import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
+// Enums
+import { EBlockID } from "../../../globalTypesEnum";
 
 const OurTeam = () => {
+   const { refToogle } = useToggleActiveNavigation(EBlockID.TEAM);
+   const { ref, inView } = useInView();
    const dispatch = useAppDispatch();
    const hasSetDrawerAttribute = useAppSelector((state) => state.drawerTeam.dataDrawer);
-   const { ref, inView } = useInView();
 
    useEffect(() => {
       if (inView && !hasSetDrawerAttribute) {
@@ -31,10 +35,13 @@ const OurTeam = () => {
       <SectionWrapper
          header={"Наша команда"}
          className={styles.teamWrapper}
-         id="ourteam"
+         id={EBlockID.TEAM}
          forwardedRef={ref}
       >
-         <div className={styles.teamContainer}>
+         <div
+            className={styles.teamContainer}
+            ref={refToogle}
+         >
             <NavigationButton id="TeamPrev" />
             <Swiper
                className={styles.swiperWrapper}

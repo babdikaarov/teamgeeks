@@ -43,7 +43,10 @@ const Gallery: React.FC = () => {
                      to={`${redirectTo}/${event.id}`}
                      className={styles.image_container}
                   >
-                     <ImageLoader src={event.coverImage} />
+                     <ImageLoader
+                        src={event.coverImage}
+                        bluer={event.bluer}
+                     />
                      <div className={styles.galleryCardsContent}>
                         <p>{event.date}</p>
                         <h4>{event.name}</h4>

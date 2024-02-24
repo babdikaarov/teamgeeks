@@ -9,6 +9,7 @@ const initialState: Slice.IBandAlbumSlice = {
          date: "",
          name: "",
          orientation: "",
+         bluer: "",
       },
    ],
    getLoading: false,

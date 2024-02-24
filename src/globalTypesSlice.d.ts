@@ -35,6 +35,7 @@ declare namespace Slice {
       date: string;
       name: string;
       location: string;
+      bluer: string;
    }
    export interface IStudioAlbumSlice {
       data: IGetStudioAlbum[];
@@ -46,6 +47,7 @@ declare namespace Slice {
       date: string;
       name: string;
       orientation: string;
+      bluer: string;
    }
    export interface IBandAlbumSlice {
       data: IGetBandAlbum[];

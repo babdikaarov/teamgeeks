@@ -9,6 +9,7 @@ export const EBlockID = {
    CONCERT: "concert",
    COURSES: "courses",
    COLLAB: "collaboration",
+   TEAM: "ourteam",
    NONE: "",
 } as const;
 

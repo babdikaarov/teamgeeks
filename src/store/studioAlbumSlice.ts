@@ -9,6 +9,7 @@ const initialState: Slice.IStudioAlbumSlice = {
          date: "",
          name: "",
          location: "",
+         bluer: "",
       },
    ],
    getLoading: false,

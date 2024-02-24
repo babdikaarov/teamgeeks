@@ -21,7 +21,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
 
    return (
       <ul className={styles.navigation}>
-         <li>
+         {/* <li>
             <HashLink
                to="/"
                onClick={() => {
@@ -32,7 +32,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
             >
                Главная
             </HashLink>
-         </li>
+         </li> */}
          <li>
             <HashLink
                to={`/#${EBlockID.ABOUT}`}
@@ -40,6 +40,25 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                className={activeNavigation.focusOn === EBlockID.ABOUT ? styles.active : ""}
             >
                О нас
+            </HashLink>
+         </li>
+
+         <li>
+            <HashLink
+               to={"/#ourteam"}
+               onClick={handleFunction}
+               className={activeNavigation.focusOn === EBlockID.TEAM ? styles.active : ""}
+            >
+               Наша команда
+            </HashLink>
+         </li>
+         <li>
+            <HashLink
+               to={"/#collaboration"}
+               onClick={handleFunction}
+               className={activeNavigation.focusOn === EBlockID.COLLAB ? styles.active : ""}
+            >
+               Коллаборация
             </HashLink>
          </li>
          <li>
@@ -52,15 +71,6 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                className={activeNavigation.focusOn === EBlockID.GALLERY ? styles.active : ""}
             >
                Галерея
-            </HashLink>
-         </li>
-         <li>
-            <HashLink
-               to={"/#collaboration"}
-               onClick={handleFunction}
-               className={activeNavigation.focusOn === EBlockID.COLLAB ? styles.active : ""}
-            >
-               Коллаборация
             </HashLink>
          </li>
          <li>
