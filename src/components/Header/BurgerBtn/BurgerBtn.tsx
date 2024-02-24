@@ -1,25 +1,24 @@
 // modules
 import { useNavigate } from "react-router-dom";
-import useStudioPath from "../../../modules/hooks/useActiveMainPage";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
 // styles
 import styles from "./_burger.module.scss";
+import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const BurgerBtn = ({ toggleMenu }: { toggleMenu: () => void }) => {
    const navigate = useNavigate();
-
-   const isActiveMainPage = useStudioPath();
+   const {onBand} = usePageLocation()
    const handleClick = () => {
       mainElementAnimation();
       toggleMenu();
-      navigate(!isActiveMainPage ? "/studio" : "/");
+      navigate(onBand ? "/studio" : "/");
    };
    return (
       <button
-         className={!isActiveMainPage ? styles.studioBtn : styles.bandBtn}
+         className={onBand ? styles.studioBtn : styles.bandBtn}
          onClick={handleClick}
       >
-         {!isActiveMainPage ? "Cool Studio" : "Cool Band"}
+         {onBand ? "Cool Studio" : "Cool Band"}
       </button>
    );
 };
