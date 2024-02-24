@@ -23,7 +23,7 @@ const AboutStudio: React.FC = () => {
       <SectionWrapper
          header={expanded ? "О студии" : "Cool Studio"}
          className={styles.coolStudio}
-         id="about"
+         id={EBlockID.ABOUTSTUDIO}
       >
          <div
             ref={refToogle}

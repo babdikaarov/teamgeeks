@@ -1,6 +1,5 @@
 // modules
-import { useState } from "react";
-import { SlideImage } from "yet-another-react-lightbox";
+import { useEffect, useState } from "react";
 import usePagination from "../../../modules/hooks/usePagination";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // components
@@ -29,18 +28,21 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
       setIndex(i);
    };
 
-   const modalImages: SlideImage[] = images
-      .map((el) => (el ? { src: el.originalImage } : null))
-      .filter((el): el is SlideImage => el !== null);
-
    const lightBoxProps = {
       index,
       open,
       setOpen,
       setIndex,
-      images: modalImages,
+      images: items,
       nextPage,
    };
+
+   useEffect(() => {
+      return () => {
+         lightBoxProps.images = [];
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <>

@@ -19,7 +19,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
       <ul className={styles.navigation}>
          <li>
             <HashLink
-               to={"/studio#about"}
+               to={`/studio#${EBlockID.ABOUTSTUDIO}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.ABOUTSTUDIO ? styles.active : ""}
             >
@@ -28,7 +28,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
          </li>
          <li>
             <HashLink
-               to={"/studio#courses"}
+               to={`/studio#${EBlockID.COURSES}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.COURSES ? styles.active : ""}
             >
@@ -37,7 +37,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
          </li>
          <li>
             <HashLink
-               to={"/studio#teachers"}
+               to={`/studio#${EBlockID.TEACHERS}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.TEACHERS ? styles.active : ""}
             >
@@ -46,7 +46,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
          </li>
          <li>
             <HashLink
-               to={"/studio#students"}
+               to={`/studio#${EBlockID.STUDENTS}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.STUDENTS ? styles.active : ""}
             >
@@ -55,7 +55,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
          </li>
          <li>
             <HashLink
-               to={"/studio/gallery"}
+               to={`/studio/${EBlockID.GALLERY}`}
                onClick={() => {
                   handleFunction();
                   window.scroll(0, 0);

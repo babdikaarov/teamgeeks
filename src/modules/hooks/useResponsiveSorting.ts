@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useResponsiveSorting = (arr: Slice.IGetBandImages[]): Slice.IGetBandImages[] => {
-   const [sortedArray, setSortedArray] = useState<Slice.IGetBandImages[]>(arr);
+   const [sortedArray, setSortedArray] = useState<Slice.IGetBandImages[] | []>(arr);
 
    useEffect(() => {
       const handleResize = () => {
@@ -55,6 +55,7 @@ const useResponsiveSorting = (arr: Slice.IGetBandImages[]): Slice.IGetBandImages
 
       return () => {
          window.removeEventListener("resize", handleResize);
+         setSortedArray([]);
       };
    }, [arr]);
 

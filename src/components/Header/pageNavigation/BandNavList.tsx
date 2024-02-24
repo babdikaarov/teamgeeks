@@ -45,7 +45,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
 
          <li>
             <HashLink
-               to={"/#ourteam"}
+               to={`/#${EBlockID.TEAM}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.TEAM ? styles.active : ""}
             >
@@ -54,7 +54,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
          </li>
          <li>
             <HashLink
-               to={"/#collaboration"}
+               to={`/#${EBlockID.COLLAB}`}
                onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.COLLAB ? styles.active : ""}
             >
@@ -63,7 +63,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
          </li>
          <li>
             <HashLink
-               to={"/gallery"}
+               to={`/${EBlockID.GALLERY}`}
                onClick={() => {
                   handleFunction();
                   window.scroll(0, 0);

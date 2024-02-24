@@ -13,7 +13,6 @@
 }
 
 .teamWrapper {
-   overflow: hidden;
    @media (min-width: 1025px) {
       padding-right: 0 !important;
    }
@@ -22,6 +21,7 @@
 }
 
 .teamContainer {
+   overflow: hidden;
    max-width: 1440px;
    margin: auto;
    padding-left: 100px;

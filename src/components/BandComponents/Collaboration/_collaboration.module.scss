@@ -25,7 +25,6 @@
 }
 
 .collabWrapper {
-   overflow: hidden;
    transition-duration: 1.5s !important;
    --element-indent: calc(calc(55px * 2) - calc(20px * 2));
    @media (min-width: 1025px) {
@@ -38,6 +37,7 @@
 }
 
 .collabContainer {
+   overflow: hidden;
    max-width: 1440px;
    margin: auto;
    padding-left: 100px;

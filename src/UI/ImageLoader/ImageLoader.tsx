@@ -22,6 +22,9 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer = "" }) => {
          setLoaded(true);
       };
       img.src = src;
+      return () => {
+         setLoaded(false);
+      };
    }, [src, bluer]);
 
    return (
