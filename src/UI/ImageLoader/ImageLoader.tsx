@@ -18,14 +18,17 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer }) => {
       if (src && bluer) {
          const img = new Image();
          img.onload = () => {
-            setLoaded(true);
+            setTimeout(() => {
+               setLoaded(true);
+            }, 500);
          };
          img.src = src;
+         img.loading = "lazy";
       }
 
-      // return ()=>{
-      //    setLoaded(false)
-      // }
+      return () => {
+         setLoaded(false);
+      };
    }, [src, bluer]);
 
    return (
@@ -41,6 +44,7 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer }) => {
             <img
                className={`${styles.image} ${loaded ? styles.loaded : ""}`}
                // src={imageSrc}
+               loading="lazy"
                src={src}
                alt="Poster About"
             />

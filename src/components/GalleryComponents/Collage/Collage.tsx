@@ -22,12 +22,11 @@ const Collage = () => {
    const navigate = useNavigate();
    const sortedData = useResponsiveSorting(bandImagesData);
    const endpoint = onStudio ? "studio" : "band";
-
    useEffect(() => {
       // FIX_ME add id to slice and verify if id same no dispatch
       dispatch(getAlbumImages({ id: Number(id), endpoint }));
       dispatch(getAlbumByID({ id: Number(id), endpoint }));
-   }, [dispatch, endpoint, id]);
+   }, [dispatch, endpoint, id, onStudio]);
 
    return (
       <SectionWrapper className={styles.section}>

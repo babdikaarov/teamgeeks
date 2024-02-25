@@ -51,8 +51,8 @@ const useLocationDispatch = () => {
       !studioHero.getLoading && dispatch(getHeroStudio());
       !bandAlbum.getLoading && dispatch(getBandAlbum());
       !studioCourses.getLoading && dispatch(getCourses());
-
       !contacts.getLoading && dispatch(getContacts());
+      !studioAlbum.getLoading && dispatch(getStudioAlbum());
    }, [
       pathname,
       contacts.getLoading,
@@ -62,6 +62,7 @@ const useLocationDispatch = () => {
       navigate,
       bandAlbum.getLoading,
       studioCourses.getLoading,
+      studioAlbum.getLoading,
    ]);
 
    // after Studio Page loaded

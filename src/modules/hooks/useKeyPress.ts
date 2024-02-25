@@ -6,13 +6,13 @@ const useKeyPress = (targetKey: string) => {
    const [keyPressed, setKeyPressed] = useState(false);
    const upHandler = ({ key }: { key: string }) => {
       if (key === targetKey) {
-         setKeyPressed((prev) => !prev);
+         const path = keyPressed ? "/gallery" : "/studio/gallery";
+         setKeyPressed(!keyPressed);
+         navigate(path);
       }
    };
    useEffect(() => {
       window.addEventListener("keyup", upHandler);
-      const path = keyPressed ? "/gallery" : "/studio/gallery";
-      navigate(path);
       return () => {
          window.removeEventListener("keyup", upHandler);
       };

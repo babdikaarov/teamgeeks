@@ -33,7 +33,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
       open,
       setOpen,
       setIndex,
-      images: items,
+      images,
       nextPage,
    };
 
