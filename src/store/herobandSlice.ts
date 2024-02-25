@@ -16,8 +16,10 @@ const heroBand = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getHeroBand.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getHeroBand.rejected, (state) => {
          state.getLoading = false;

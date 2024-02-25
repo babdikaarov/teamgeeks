@@ -11,15 +11,16 @@ import styles from "./_gallery.module.scss";
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 import usePageLocation from "../../../modules/hooks/usePageLocation";
+// import useKeyPress from "../../../modules/hooks/useKeyPress";
 
 const Gallery: React.FC = () => {
    const navigate = useNavigate();
    const { onStudio } = usePageLocation();
-
    const bandData = useAppSelector((state) => state.getBandAlbum.data!);
    const studioData = useAppSelector((state) => state.getStudioAlbum.data!);
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
    const redirectTo = onStudio ? "/studio/gallery" : "/gallery";
+   // useKeyPress("a");  //use to togle between gallery pages
 
    return (
       <SectionWrapper

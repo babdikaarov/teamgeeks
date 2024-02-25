@@ -22,8 +22,10 @@ const ourTeam = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getOurTeam.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getOurTeam.rejected, (state) => {
          state.getLoading = false;

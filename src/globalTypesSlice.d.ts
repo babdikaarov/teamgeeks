@@ -12,11 +12,11 @@ declare namespace Slice {
       getLoading: boolean;
    }
    export interface IBandImagesSlice {
-      data: IGetBandImages[] | undefined;
+      data: IGetBandImages[];
       getLoading: boolean;
    }
    export interface IBandImagesSlice {
-      data: IGetBandImages[] | undefined;
+      data: IGetBandImages[];
       getLoading: boolean;
    }
    export interface IGetBandImages {
@@ -55,7 +55,7 @@ declare namespace Slice {
    }
    export namespace Courses {
       export interface IGetCourses {
-         data: ICursesData[] | undefined;
+         data: ICursesData[];
          getLoading: boolean;
       }
       export interface ICursesData {
@@ -68,7 +68,7 @@ declare namespace Slice {
    }
    export namespace StudentsFeedback {
       export interface IStudentsFeedBackState {
-         data: IStudentsFeedbackData[] | undefined;
+         data: IStudentsFeedbackData[];
          getLoading: boolean;
       }
       export interface IStudentsFeedbackData {
@@ -86,7 +86,7 @@ declare namespace Slice {
    }
 
    export interface StudentSuccessState {
-      data: getStudentSuccessData[] | undefined;
+      data: getStudentSuccessData[];
       getLoading: boolean;
    }
    export interface AboutUsBandData {
@@ -113,7 +113,7 @@ declare namespace Slice {
       tiktok: string;
    }
    export interface IContact {
-      data: IGetContacts | undefined;
+      data: IGetContacts;
       getLoading: boolean;
    }
 
@@ -125,12 +125,12 @@ declare namespace Slice {
       youtubeUrl: string;
    }
    export interface CoolStudio {
-      data: GetCoolStudioVideo | undefined;
+      data: GetCoolStudioVideo;
       getLoading: boolean;
    }
 
    export interface IOurTeam {
-      data: IGetOurTeam[] | undefined;
+      data: IGetOurTeam[];
       getLoading: boolean;
    }
 
@@ -145,7 +145,7 @@ declare namespace Slice {
    }
 
    export interface ICollaborations {
-      data: IGetCollaborations[] | undefined;
+      data: IGetCollaborations[];
       getLoading: boolean;
    }
 
@@ -163,7 +163,7 @@ declare namespace Slice {
       orientation: string;
    }
    export interface IHeroBand {
-      data: IHeroBandData | undefined;
+      data: IHeroBandData;
       getLoading: boolean;
    }
 
@@ -175,7 +175,7 @@ declare namespace Slice {
       orientation: string;
    }
    export interface IHeroStudio {
-      data: IHeroStudioData | undefined;
+      data: IHeroStudioData;
       getLoading: boolean;
    }
 
@@ -186,7 +186,7 @@ declare namespace Slice {
       bluer: string;
    }
    export interface IAboutBand {
-      data: IAboutData | undefined;
+      data: IAboutData;
       getLoading: boolean;
    }
 
@@ -197,7 +197,7 @@ declare namespace Slice {
       url: string;
    }
    export interface IClientsData {
-      data: IClients[] | undefined;
+      data: IClients[];
       getLoading: boolean;
    }
    export interface ITeacherData {
@@ -211,7 +211,7 @@ declare namespace Slice {
       orientation: string;
    }
    export interface ITeacherState {
-      data: ITeacherData[] | undefined;
+      data: ITeacherData[];
       getLoading: boolean;
    }
 }

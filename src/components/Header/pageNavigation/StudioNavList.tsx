@@ -55,7 +55,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
          </li>
          <li>
             <HashLink
-               to={`/studio/${EBlockID.GALLERY}`}
+               to={`/${EBlockID.GALLERYSTUDIO}`}
                onClick={() => {
                   handleFunction();
                   window.scroll(0, 0);

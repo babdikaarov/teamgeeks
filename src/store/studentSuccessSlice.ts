@@ -17,8 +17,10 @@ const studentSuccessSlice = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getStudentSuccess.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getStudentSuccess.rejected, (state) => {
          state.getLoading = false;

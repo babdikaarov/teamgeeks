@@ -23,8 +23,10 @@ const albumImagesSlice = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getAlbumImages.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getAlbumImages.rejected, (state) => {
          state.getLoading = false;

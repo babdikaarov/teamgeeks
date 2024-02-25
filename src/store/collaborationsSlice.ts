@@ -20,8 +20,10 @@ const collaborations = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getCollaborations.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getCollaborations.rejected, (state) => {
          state.getLoading = false;
