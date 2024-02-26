@@ -5,7 +5,7 @@
    grid-auto-rows: auto;
    color: black;
    font-size: 60px;
-   transition: all 0.1s ease-in-out;
+   // transition: all 0.1s ease-in-out;
    @media screen and (max-width: 1024px) {
       .PORTRAIT {
          max-height: calc(2 * (229px - 30px));
@@ -75,7 +75,7 @@
    position: relative;
    border-radius: 16px;
    overflow: hidden;
-   transition: all 0.3s ease-in-out;
+   // transition: all 0.1s ease-in-out;
    min-width: 100%;
 }
 

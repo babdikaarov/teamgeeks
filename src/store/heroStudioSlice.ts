@@ -18,8 +18,10 @@ const heroStudio = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getHeroStudio.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getHeroStudio.rejected, (state) => {
          state.getLoading = false;

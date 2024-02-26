@@ -17,16 +17,15 @@ const Collage = () => {
    const { onStudio } = usePageLocation();
    const { id } = useParams();
    const dispatch = useAppDispatch();
-   const bandImagesData = useAppSelector((state) => state.getAlbumImages.data!);
-   const AlbumTittleByID = useAppSelector((state) => state.getAlbumByID.data!);
+   const albumImages = useAppSelector((state) => state.getAlbumImages.data!);
+   const albumTittleByID = useAppSelector((state) => state.getAlbumByID.data!);
    const navigate = useNavigate();
-   const sortedData = useResponsiveSorting(bandImagesData);
+   const sortedData = useResponsiveSorting(albumImages);
    const endpoint = onStudio ? "studio" : "band";
-
    useEffect(() => {
       dispatch(getAlbumImages({ id: Number(id), endpoint }));
       dispatch(getAlbumByID({ id: Number(id), endpoint }));
-   }, [dispatch, endpoint, id]);
+   }, [dispatch, endpoint, id, albumTittleByID.id, onStudio]);
 
    return (
       <SectionWrapper className={styles.section}>
@@ -38,8 +37,8 @@ const Collage = () => {
                {bigArrow}
             </button>
             <div>
-               <p>{AlbumTittleByID.date}</p>
-               <h3>{AlbumTittleByID.name}</h3>
+               <p>{albumTittleByID.date}</p>
+               <h3>{albumTittleByID.name}</h3>
             </div>
          </div>
          <GalleryCollage items={sortedData} />

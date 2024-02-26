@@ -27,8 +27,10 @@ const contacts = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getContacts.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getContacts.rejected, (state) => {
          state.getLoading = false;

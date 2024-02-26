@@ -18,8 +18,10 @@ const coolStudio = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getCoolStudio.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getCoolStudio.rejected, (state) => {
          state.getLoading = false;

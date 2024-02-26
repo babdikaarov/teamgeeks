@@ -4,7 +4,7 @@ export const EBlockID = {
    ABOUTSTUDIO: "aboutStudio",
    TEACHERS: "teachers",
    STUDENTS: "students",
-   GALLERYSTUDIO: "galleryStudio",
+   GALLERYSTUDIO: "studio/gallery",
    GALLERY: "gallery",
    CONCERT: "concert",
    COURSES: "courses",

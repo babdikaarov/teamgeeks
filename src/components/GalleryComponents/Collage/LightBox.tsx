@@ -11,6 +11,7 @@ interface ISlideImage {
 }
 const LightBox: React.FC<Prop.Collage.ILightBoxProp & ISlideImage> = (props) => {
    const { index, open, setOpen, setIndex, images, nextPage } = props;
+
    const mobileSize = useMediaQuery("(max-width: 576px)");
    const slideImages = images
       .map((el) => (el ? { src: el.image } : null))
@@ -32,6 +33,12 @@ const LightBox: React.FC<Prop.Collage.ILightBoxProp & ISlideImage> = (props) => 
 
    return (
       <Lightbox
+         controller={{
+            closeOnBackdropClick: true,
+            closeOnPullUp: true,
+            closeOnPullDown: true,
+         }}
+         animation={{ fade: 300, swipe: 500 }}
          index={index}
          styles={styles}
          on={{ view: ({ index: currentIndex }) => setIndex(currentIndex) }}

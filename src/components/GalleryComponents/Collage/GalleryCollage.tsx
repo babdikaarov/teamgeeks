@@ -19,7 +19,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
    const [open, setOpen] = useState(false);
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
-   const images = getVisibleItems(items);
+   let images = getVisibleItems(items);
    const { onStudio } = usePageLocation();
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
@@ -33,12 +33,14 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
       open,
       setOpen,
       setIndex,
-      images: items,
+      images,
       nextPage,
    };
 
    useEffect(() => {
+
       return () => {
+         images = [];
          lightBoxProps.images = [];
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,8 +52,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
             className={styles.collage}
             ref={refToogle}
          >
-            {images &&
-               images.map((data, i) => (
+            {images.map((data, i) => (
                   <div
                      key={i}
                      className={`${data && styles.collageItem} ${styles[data.orientation]}`}

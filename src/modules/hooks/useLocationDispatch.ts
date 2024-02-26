@@ -50,8 +50,9 @@ const useLocationDispatch = () => {
       !bandHero.getLoading && dispatch(getHeroBand());
       !studioHero.getLoading && dispatch(getHeroStudio());
       !bandAlbum.getLoading && dispatch(getBandAlbum());
-
+      !studioCourses.getLoading && dispatch(getCourses());
       !contacts.getLoading && dispatch(getContacts());
+      !studioAlbum.getLoading && dispatch(getStudioAlbum());
    }, [
       pathname,
       contacts.getLoading,
@@ -60,17 +61,18 @@ const useLocationDispatch = () => {
       studioHero.getLoading,
       navigate,
       bandAlbum.getLoading,
+      studioCourses.getLoading,
+      studioAlbum.getLoading,
    ]);
 
    // after Studio Page loaded
    useEffect(() => {
       if (pathname === "/studio") {
          !studioAbout.getLoading && dispatch(getCoolStudio());
-         !studioCourses.getLoading && dispatch(getCourses());
+         // !studioCourses.getLoading && dispatch(getCourses());
          !studioTeachers.getLoading && dispatch(getTeachers());
          !studioTestimonial.getLoading && dispatch(getStudentSuccess());
          !studioStudents.getLoading && dispatch(getStudentReviwes());
-         !studioAlbum.getLoading && dispatch(getStudioAlbum());
          !studioAlbum.getLoading && dispatch(getStudioAlbum());
       }
    }, [
@@ -79,7 +81,7 @@ const useLocationDispatch = () => {
       pathname,
       studioAlbum.getLoading,
       studioAbout.getLoading,
-      studioCourses.getLoading,
+      // studioCourses.getLoading,
       studioTeachers.getLoading,
       studioTestimonial.getLoading,
       studioStudents.getLoading,
@@ -92,7 +94,7 @@ const useLocationDispatch = () => {
          !bandTeam.getLoading && dispatch(getOurTeam());
          !bandCollab.getLoading && dispatch(getCollaborations());
          !bandPartners.getLoading && dispatch(getClients());
-         !studioCourses.getLoading && dispatch(getCourses());
+         // !studioCourses.getLoading && dispatch(getCourses());
       }
    }, [
       navigate,
@@ -103,7 +105,7 @@ const useLocationDispatch = () => {
       bandTeam.getLoading,
       bandCollab.getLoading,
       bandPartners.getLoading,
-      studioCourses.getLoading,
+      // studioCourses.getLoading,
    ]);
 };
 

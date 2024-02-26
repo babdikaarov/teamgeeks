@@ -20,8 +20,10 @@ const courses = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getCourses.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getCourses.rejected, (state) => {
          state.getLoading = false;

@@ -12,8 +12,10 @@ const clients = createSlice({
    reducers: {},
    extraReducers: (builder) => {
       builder.addCase(getClients.fulfilled, (state, { payload }) => {
-         state.getLoading = true;
-         state.data = payload;
+         if (payload) {
+            state.getLoading = true;
+            state.data = payload;
+         }
       });
       builder.addCase(getClients.rejected, (state) => {
          state.getLoading = false;
