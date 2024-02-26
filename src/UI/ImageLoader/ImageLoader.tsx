@@ -11,7 +11,10 @@ interface ImageLoaderProps {
 const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer }) => {
    // const defaultBluer = "L03us9j[fQj[offQfQfQfQfQfQfQ";
    const [loaded, setLoaded] = useState(false);
+ 
    if(!isBlurhashValid(bluer).result) return
+
+
 
    return (
          <Suspense>
