@@ -1,14 +1,14 @@
 declare namespace Card {
-   export interface OurStudentsCardProps {
+   interface OurStudentsCardProps {
       url: string;
       addToID: number;
       allIDS: (string | null)[];
    }
-   export interface CoursesCard {
+   interface CoursesCard {
       src: string;
       title: string;
    }
-   export interface ClientCardProps {
+   interface ClientCardProps {
       card: {
          src: string;
          alt: string;
@@ -16,7 +16,7 @@ declare namespace Card {
       };
    }
 
-   export interface TeamCardProps {
+   interface TeamCardProps {
       video: string;
       image: string;
       instrument: string;
@@ -26,7 +26,7 @@ declare namespace Card {
       bluer: string;
    }
 
-   export interface TeacherCardProps {
+   interface TeacherCardProps {
       img: string;
       name: string;
       expertise: string;
@@ -35,12 +35,12 @@ declare namespace Card {
       bluer: string;
    }
 
-   export interface FeedbackCardProps {
+   interface FeedbackCardProps {
       img: string;
       name: string;
       word: string;
       bluer: string;
    }
 
-   export interface ConcertCardProps extends Slice.IGetStudioAlbum {}
+   interface ConcertCardProps extends Slice.IGetStudioAlbum {}
 }

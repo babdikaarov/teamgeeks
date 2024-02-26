@@ -1,5 +1,5 @@
 declare namespace Slice {
-   export interface IGetAlbumByID {
+   interface IGetAlbumByID {
       id: number;
       coverImage: string;
       date: string;
@@ -7,19 +7,19 @@ declare namespace Slice {
       location?: string;
       orientation?: string;
    }
-   export interface IAlbumByID {
+   interface IAlbumByID {
       data: IGetAlbumByID;
       getLoading: boolean;
    }
-   export interface IBandImagesSlice {
+   interface IBandImagesSlice {
       data: IGetBandImages[];
       getLoading: boolean;
    }
-   export interface IBandImagesSlice {
+   interface IBandImagesSlice {
       data: IGetBandImages[];
       getLoading: boolean;
    }
-   export interface IGetBandImages {
+   interface IGetBandImages {
       id: number;
       albumId: number;
       name: string;
@@ -29,7 +29,7 @@ declare namespace Slice {
       bluer: string;
       coverImage: boolean;
    }
-   export interface IGetStudioAlbum {
+   interface IGetStudioAlbum {
       id: number;
       coverImage: string;
       date: string;
@@ -37,11 +37,11 @@ declare namespace Slice {
       location: string;
       bluer: string;
    }
-   export interface IStudioAlbumSlice {
+   interface IStudioAlbumSlice {
       data: IGetStudioAlbum[];
       getLoading: boolean;
    }
-   export interface IGetBandAlbum {
+   interface IGetBandAlbum {
       id: number;
       coverImage: string;
       date: string;
@@ -49,16 +49,16 @@ declare namespace Slice {
       orientation: string;
       bluer: string;
    }
-   export interface IBandAlbumSlice {
+   interface IBandAlbumSlice {
       data: IGetBandAlbum[];
       getLoading: boolean;
    }
-   export namespace Courses {
-      export interface IGetCourses {
+   namespace Courses {
+      interface IGetCourses {
          data: ICursesData[];
          getLoading: boolean;
       }
-      export interface ICursesData {
+      interface ICursesData {
          id: number;
          image: string;
          name: string;
@@ -66,12 +66,12 @@ declare namespace Slice {
          orientation: string;
       }
    }
-   export namespace StudentsFeedback {
-      export interface IStudentsFeedBackState {
+   namespace StudentsFeedback {
+      interface IStudentsFeedBackState {
          data: IStudentsFeedbackData[];
          getLoading: boolean;
       }
-      export interface IStudentsFeedbackData {
+      interface IStudentsFeedbackData {
          id: number;
          name: string;
          image: string;
@@ -80,23 +80,23 @@ declare namespace Slice {
          orientation: string;
       }
    }
-   export interface getStudentSuccessData {
+   interface getStudentSuccessData {
       id: number;
       url: string;
    }
 
-   export interface StudentSuccessState {
+   interface StudentSuccessState {
       data: getStudentSuccessData[];
       getLoading: boolean;
    }
-   export interface AboutUsBandData {
+   interface AboutUsBandData {
       id: number;
       image: string;
       orientation: string;
       bluer: string;
    }
 
-   export interface IGetContacts {
+   interface IGetContacts {
       id: number;
       longitude: string;
       latitude: string;
@@ -112,29 +112,29 @@ declare namespace Slice {
       youtube: string;
       tiktok: string;
    }
-   export interface IContact {
+   interface IContact {
       data: IGetContacts;
       getLoading: boolean;
    }
 
-   export interface GetCoolStudioVideo {
+   interface GetCoolStudioVideo {
       id: number;
       image: string;
       orientation: string;
       bluer: string;
       youtubeUrl: string;
    }
-   export interface CoolStudio {
+   interface CoolStudio {
       data: GetCoolStudioVideo;
       getLoading: boolean;
    }
 
-   export interface IOurTeam {
+   interface IOurTeam {
       data: IGetOurTeam[];
       getLoading: boolean;
    }
 
-   export interface IGetOurTeam {
+   interface IGetOurTeam {
       id: number;
       name: string;
       image: string;
@@ -144,12 +144,12 @@ declare namespace Slice {
       bluer: string;
    }
 
-   export interface ICollaborations {
+   interface ICollaborations {
       data: IGetCollaborations[];
       getLoading: boolean;
    }
 
-   export interface IGetCollaborations {
+   interface IGetCollaborations {
       id: number;
       name: string;
       image: string;
@@ -157,50 +157,50 @@ declare namespace Slice {
       orientation: string;
    }
 
-   export interface IHeroBandData {
+   interface IHeroBandData {
       id: number;
       video: string;
       orientation: string;
    }
-   export interface IHeroBand {
+   interface IHeroBand {
       data: IHeroBandData;
       getLoading: boolean;
    }
 
-   export interface IHeroStudioData {
+   interface IHeroStudioData {
       id: number;
       title: string;
       video: string;
       text: string;
       orientation: string;
    }
-   export interface IHeroStudio {
+   interface IHeroStudio {
       data: IHeroStudioData;
       getLoading: boolean;
    }
 
-   export interface IAboutData {
+   interface IAboutData {
       id: number;
       image: string;
       orientation: string;
       bluer: string;
    }
-   export interface IAboutBand {
+   interface IAboutBand {
       data: IAboutData;
       getLoading: boolean;
    }
 
-   export interface IClients {
+   interface IClients {
       id: number;
       image: string;
       bluer: string;
       url: string;
    }
-   export interface IClientsData {
+   interface IClientsData {
       data: IClients[];
       getLoading: boolean;
    }
-   export interface ITeacherData {
+   interface ITeacherData {
       id: 0;
       name: string;
       image: string;
@@ -210,7 +210,7 @@ declare namespace Slice {
       description: string;
       orientation: string;
    }
-   export interface ITeacherState {
+   interface ITeacherState {
       data: ITeacherData[];
       getLoading: boolean;
    }

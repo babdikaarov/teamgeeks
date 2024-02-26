@@ -19,7 +19,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
    const [open, setOpen] = useState(false);
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
-   let images = getVisibleItems(items);
+   const images = getVisibleItems(items);
    const { onStudio } = usePageLocation();
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
 
@@ -38,9 +38,7 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
    };
 
    useEffect(() => {
-
       return () => {
-         images = [];
          lightBoxProps.images = [];
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,17 +51,17 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
             ref={refToogle}
          >
             {images.map((data, i) => (
-                  <div
-                     key={i}
-                     className={`${data && styles.collageItem} ${styles[data.orientation]}`}
-                     onClick={() => handleOpen(i)}
-                  >
-                     <ImageLoader
-                        src={data.image}
-                        bluer={data.bluer}
-                     />
-                  </div>
-               ))}
+               <div
+                  key={i}
+                  className={`${data && styles.collageItem} ${styles[data.orientation]}`}
+                  onClick={() => handleOpen(i)}
+               >
+                  <ImageLoader
+                     src={data.image}
+                     bluer={data.bluer}
+                  />
+               </div>
+            ))}
 
             <LightBox {...lightBoxProps} />
          </div>
