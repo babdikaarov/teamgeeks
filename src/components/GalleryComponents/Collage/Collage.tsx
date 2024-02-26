@@ -22,10 +22,12 @@ const Collage = () => {
    const navigate = useNavigate();
    const sortedData = useResponsiveSorting(albumImages);
    const endpoint = onStudio ? "studio" : "band";
+
    useEffect(() => {
       dispatch(getAlbumImages({ id: Number(id), endpoint }));
       dispatch(getAlbumByID({ id: Number(id), endpoint }));
-   }, [dispatch, endpoint, id, albumTittleByID.id, onStudio]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <SectionWrapper className={styles.section}>

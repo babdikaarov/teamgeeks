@@ -18,7 +18,7 @@ const LightBox: React.FC<Prop.Collage.ILightBoxProp & ISlideImage> = (props) => 
       .filter((el): el is SlideImage => el !== null);
 
    useEffect(() => {
-      if (index === images.length - 1) {
+      if (index === images.length - 1 && open) {
          nextPage();
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps

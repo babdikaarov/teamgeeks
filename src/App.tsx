@@ -43,6 +43,10 @@ const App = () => {
                path="/studio/gallery/:id"
                element={<CollagePage />}
             />
+            <Route
+               path="*"
+               element={<CoolBand />}
+            />
          </Routes>
       </Layout>
    );
