@@ -33,7 +33,7 @@ const Collage = () => {
       <SectionWrapper className={styles.section}>
          <div className={styles.collageInfo}>
             <button
-               onClick={() => navigate(-1)}
+               onClick={() => navigate("../")}
                aria-label="gallery-collage-button"
             >
                {bigArrow}

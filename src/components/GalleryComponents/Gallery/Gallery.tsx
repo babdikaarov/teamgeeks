@@ -29,7 +29,7 @@ const Gallery: React.FC = () => {
       >
          <button
             aria-label="button"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("../")}
             className={styles.navigation}
          >
             {bigArrow}
