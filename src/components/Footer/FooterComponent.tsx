@@ -7,6 +7,7 @@ import createWhatsAppLink from "../../modules/createWhatsAppLink";
 import styles from "./_footer.module.scss";
 // components
 import Logo from "../../UI/Logo/Logo";
+import formatPhoneNumber from "../../modules/formatPhoneNumberToText";
 
 const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, backendData }) => {
    const { bandNumber, studioNumber, address, email, city, organizationId } = backendData.contactDetails;
@@ -57,7 +58,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                         target="_blank"
                         to={createWhatsAppLink(bandNumber, "Хочу Cool Band на свем мероприятие!")}
                      >
-                        {`${bandNumber} `}
+                        {`${formatPhoneNumber(bandNumber)} `}
                         Cool Band
                      </Link>
                   </li>
@@ -66,7 +67,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                         target="_blank"
                         to={createWhatsAppLink(studioNumber, "Хочу узнать подробнее об обучении!")}
                      >
-                        {`${studioNumber} `}
+                        {`${formatPhoneNumber(studioNumber)} `}
                         Cool Studio
                      </Link>
                   </li>
