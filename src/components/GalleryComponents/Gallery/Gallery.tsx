@@ -21,7 +21,7 @@ const Gallery: React.FC = () => {
    const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
    const redirectTo = onStudio ? "/studio/gallery" : "/gallery";
    useKeyPress("a"); //use to togle between gallery pages
-
+   // console.log(onStudio)
    return (
       <SectionWrapper
          forwardedRef={refToogle}

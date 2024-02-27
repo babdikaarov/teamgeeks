@@ -1,9 +1,12 @@
 import { useLocation } from "react-router-dom";
 
 const usePageLocation = () => {
-   const { pathname } = useLocation();
-   const onBand = !pathname.match("studio");
-   const onStudio = pathname.match("studio");
+   const location = useLocation();
+   const { pathname } = location || {};
+   const onBand = !pathname || !pathname.includes("studio");
+   const onStudio = !!pathname && pathname.includes("studio");
+   // console.log(onBand)
+   // console.log(onStudio)
    return { onBand, onStudio };
 };
 
