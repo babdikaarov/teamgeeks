@@ -65,12 +65,17 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
 
             <LightBox {...lightBoxProps} />
          </div>
+         {
+            images.length === items.length ? null : (
+
          <button
             className={styles.paginationButton}
             onClick={nextPage}
          >
             Далее
          </button>
+            )
+         }
       </>
    );
 };
