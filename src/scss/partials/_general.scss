@@ -65,6 +65,31 @@ main {
       opacity: 1;
    }
 }
+@media (min-width: 1024px) {
+   #navigaionContainer {
+      width: 80%;
+      height: 60px;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition: all 0.4s linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      @media (max-width: 1024px) {
+         justify-content: start;
+      }
+   }
+
+   #navigaionContainer[data-navlist-animation="studio"] {
+      transform: rotateY(180deg);
+      opacity: 1;
+   }
+   #navigaionContainer[data-navlist-animation="band"] {
+      animation: rotate 1s linear;
+      opacity: 1;
+   }
+}
 
 #logo2footer[data-rotate="false"] {
    transition: all 0.1s ease-in;

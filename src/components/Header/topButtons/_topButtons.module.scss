@@ -26,6 +26,8 @@
    cursor: default;
 }
 .navButtonsMainActive {
+   transition: all 0.3s linear;
+
    color: $color_black;
    background: #fed102d6;
    font-weight: 700;
@@ -35,11 +37,14 @@
 
 .navButtonsSecondaryNotActive {
    box-shadow: 0px -4px 7px 0px rgba(37, 37, 37, 0.31) inset;
+   transition: all 0.3s linear;
 }
 
 // on Coolstudio page
 
 .navButtonsSecondaryActive {
+   transition: all 0.3s linear;
+
    background: #5979fa;
    font-weight: 700;
    cursor: default;
@@ -52,4 +57,5 @@
 }
 .navButtonsMainNotActive {
    box-shadow: 0px -4px 7px 0px rgba(37, 37, 37, 0.31) inset;
+   transition: all 0.3s linear;
 }

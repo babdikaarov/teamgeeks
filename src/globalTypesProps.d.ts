@@ -33,7 +33,6 @@ declare namespace Prop {
       export interface HeaderComponentProps {
          bandPage: boolean;
          lyrics: TLyrics;
-         NavList: React.FC<BandNavListProps> | React.FC<StudioNavListProps>;
       }
       export interface TopButtonProps {
          isMenuOpen: boolean;

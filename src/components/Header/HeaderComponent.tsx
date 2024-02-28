@@ -1,13 +1,18 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, lazy } from "react";
 import Logo from "../../UI/Logo/Logo.tsx";
 import SocialLinks from "../../UI/Social/SocialLinks.tsx";
 import BurgerBtn from "./BurgerBtn/BurgerBtn.tsx";
 import styles from "./_header.module.scss";
 import TopButton from "./topButtons/TopButton.tsx";
 import TopButtons from "./topButtons/TopButtons.tsx";
+import { useMediaQuery } from "../../modules/hooks/useMediaQuery.ts";
+const BandNavList = lazy(() => import("./pageNavigation/BandNavList"));
+const StudioNavList = lazy(() => import("./pageNavigation/StudioNavList"));
 
-const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo(({ bandPage, lyrics, NavList }) => {
+const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo(({ bandPage, lyrics }) => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const isDesctop = useMediaQuery("(min-width: 1024px)");
+   console.log(isDesctop);
 
    const toggleMenu = useCallback(() => {
       setIsMenuOpen((prevState) => !prevState);
@@ -28,10 +33,33 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
                bandPage={bandPage}
                id="logoRotate"
             />
-            <NavList
-               lyrics={lyrics}
-               {...{ setIsMenuOpen }}
-            />
+            <div
+               id="navigaionContainer"
+               data-navlist-animation={bandPage ? "band" : "studio"}
+            >
+               {!isDesctop && bandPage ? (
+                  <BandNavList
+                     lyrics={lyrics}
+                     {...{ setIsMenuOpen }}
+                  />
+               ) : (
+                  <BandNavList
+                     lyrics={lyrics}
+                     {...{ setIsMenuOpen }}
+                  />
+               )}
+               {!isDesctop && !bandPage ? (
+                  <StudioNavList
+                     lyrics={lyrics}
+                     {...{ setIsMenuOpen }}
+                  />
+               ) : (
+                  <StudioNavList
+                     lyrics={lyrics}
+                     {...{ setIsMenuOpen }}
+                  />
+               )}
+            </div>
             <SocialLinks {...{ setIsMenuOpen }} />
             <BurgerBtn toggleMenu={toggleMenu} />
          </nav>
