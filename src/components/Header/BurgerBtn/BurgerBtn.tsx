@@ -1,24 +1,23 @@
 // modules
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
 // styles
 import styles from "./_burger.module.scss";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const BurgerBtn = ({ toggleMenu }: { toggleMenu: () => void }) => {
    const navigate = useNavigate();
-   const { onBand } = usePageLocation();
+   const { pathname } = useLocation();
    const handleClick = () => {
       mainElementAnimation();
       toggleMenu();
-      navigate(onBand ? "/studio" : "/");
+      navigate(!pathname.includes("studio") ? "/studio" : "/");
    };
    return (
       <button
-         className={onBand ? styles.studioBtn : styles.bandBtn}
+         className={!pathname.includes("studio") ? styles.studioBtn : styles.bandBtn}
          onClick={handleClick}
       >
-         {onBand ? "Cool Studio" : "Cool Band"}
+         {!pathname.includes("studio") ? "Cool Studio" : "Cool Band"}
       </button>
    );
 };

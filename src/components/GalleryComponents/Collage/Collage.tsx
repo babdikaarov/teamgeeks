@@ -1,5 +1,5 @@
 // modules
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import useResponsiveSorting from "../../../modules/hooks/useResponsiveSorting";
 // components
@@ -10,18 +10,18 @@ import bigArrow from "../../../assets/icons/bigArrow";
 import styles from "./_collage.module.scss";
 import { getAlbumByID, getAlbumImages } from "../../../store/thunkCollection";
 import { useEffect } from "react";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const Collage = () => {
    window.scroll(0, 0);
-   const { onStudio } = usePageLocation();
+   const { pathname } = useLocation();
+
    const { id } = useParams();
    const dispatch = useAppDispatch();
    const albumImages = useAppSelector((state) => state.getAlbumImages.data!);
    const albumTittleByID = useAppSelector((state) => state.getAlbumByID.data!);
    const navigate = useNavigate();
    const sortedData = useResponsiveSorting(albumImages);
-   const endpoint = onStudio ? "studio" : "band";
+   const endpoint = pathname.includes("studio") ? "studio" : "band";
 
    useEffect(() => {
       dispatch(getAlbumImages({ id: Number(id), endpoint }));

@@ -8,13 +8,11 @@ import ButtonWithArrow from "./ButtonWithArrow";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 
 const OurEvents = () => {
-   const data = useAppSelector((state) => {
-      if (state.getBandAlbum.data.length < 4) {
-         return [...state.getBandAlbum.data, ...state.getBandAlbum.data];
-      } else {
-         return state.getBandAlbum.data;
-      }
+   const dataStore: Slice.IGetBandAlbum[] = useAppSelector((state) => {
+      state.getBandAlbum.data;
    })!;
+   if (!dataStore) return;
+   const data = dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore;
 
    return (
       <SectionWrapper
@@ -33,7 +31,7 @@ const OurEvents = () => {
                   <ImageLoader
                      bluer={card.bluer}
                      src={card.coverImage}
-                     key={card.id}
+                     key={self.crypto.randomUUID()}
                   />
                ))}
             </div>
@@ -43,7 +41,7 @@ const OurEvents = () => {
             >
                {data.map((card) => (
                   <ImageLoader
-                     key={card.id}
+                     key={self.crypto.randomUUID()}
                      bluer={card.bluer}
                      src={card.coverImage}
                   />

@@ -1,10 +1,10 @@
 // components
 import FooterComponent from "./FooterComponent";
 import { useAppSelector } from "../../app/hooks";
-import usePageLocation from "../../modules/hooks/usePageLocation";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
-   const { onBand } = usePageLocation();
+   const { pathname } = useLocation();
    const coursesListData = useAppSelector((state) => state.getCourses.data)!;
    const contactDetailsData = useAppSelector((state) => state.getContacts.data)!;
    const data = {
@@ -15,7 +15,7 @@ const Footer = () => {
    return (
       <FooterComponent
          backendData={data}
-         bandPage={onBand}
+         bandPage={!pathname.includes("studio")}
       />
    );
 };

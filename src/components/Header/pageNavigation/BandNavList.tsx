@@ -3,19 +3,22 @@ import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
 import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_NavList.module.scss";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
+import { useLocation } from "react-router-dom";
 
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   const { onStudio } = usePageLocation();
+   const { pathname } = useLocation();
 
    const handleFunction = () => {
-      !onStudio && mainElementAnimation();
+      !pathname.includes("studio") && mainElementAnimation();
       setIsMenuOpen(false);
    };
 
    return (
-      <ul className={styles.navigation}>
+      <ul
+         className={styles.navigation}
+         data-navigation="band"
+      >
          {/* <li>
             <HashLink
                to="/"

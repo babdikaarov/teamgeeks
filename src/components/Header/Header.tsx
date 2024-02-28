@@ -1,19 +1,24 @@
 import { Suspense, lazy } from "react";
 import lyrics from "./staticData.json";
-import usePageLocation from "../../modules/hooks/usePageLocation";
+import { useLocation } from "react-router-dom";
+// import { logoAnimation } from "../../modules/transition";
 
 const BandNavList = lazy(() => import("./pageNavigation/BandNavList"));
 const StudioNavList = lazy(() => import("./pageNavigation/StudioNavList"));
 const HeaderComponent = lazy(() => import("./HeaderComponent"));
 
 const Header = () => {
-   const { onBand } = usePageLocation();
+   const { pathname } = useLocation();
+   // useEffect(()=>{
+   //    logoAnimation(pathname.includes('studio'))
+   // // eslint-disable-next-line react-hooks/exhaustive-deps
+   // },[])
    return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
          <HeaderComponent
-            bandPage={onBand}
+            bandPage={!pathname.includes("studio")}
             lyrics={lyrics}
-            NavList={onBand ? BandNavList : StudioNavList}
+            NavList={!pathname.includes("studio") ? BandNavList : StudioNavList}
          />
       </Suspense>
    );

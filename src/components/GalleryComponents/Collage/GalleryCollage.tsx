@@ -9,7 +9,7 @@ import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import styles from "./_galleryCollage.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
+import { useLocation } from "react-router-dom";
 
 interface Props {
    items: Slice.IGetBandImages[];
@@ -20,8 +20,10 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
    const [index, setIndex] = useState(0);
    const { getVisibleItems, nextPage } = usePagination(8);
    const images = getVisibleItems(items);
-   const { onStudio } = usePageLocation();
-   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
+   const { pathname } = useLocation();
+   const { refToogle } = useToggleActiveNavigation(
+      pathname.includes("studio") ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY,
+   );
 
    const handleOpen = (i: number) => {
       setOpen(true);

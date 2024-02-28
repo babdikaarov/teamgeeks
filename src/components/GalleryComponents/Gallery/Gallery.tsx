@@ -1,5 +1,5 @@
 // modules
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // components
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
@@ -10,17 +10,18 @@ import styles from "./_gallery.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
 import useKeyPress from "../../../modules/hooks/useKeyPress";
 
 const Gallery: React.FC = () => {
    const navigate = useNavigate();
-   const { onStudio } = usePageLocation();
+   const { pathname } = useLocation();
    const bandData = useAppSelector((state) => state.getBandAlbum.data!);
    const studioData = useAppSelector((state) => state.getStudioAlbum.data!);
-   const { refToogle } = useToggleActiveNavigation(onStudio ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY);
-   const redirectTo = onStudio ? "/studio/gallery" : "/gallery";
-   useKeyPress("a"); //use to togle between gallery pages
+   const { refToogle } = useToggleActiveNavigation(
+      pathname.includes("studio") ? EBlockID.GALLERYSTUDIO : EBlockID.GALLERY,
+   );
+   const redirectTo = pathname.includes("studio") ? "/studio/gallery" : "/gallery";
+   useKeyPress("a"); //use to togle between gallery pages for testing
    // console.log(onStudio)
    return (
       <SectionWrapper
@@ -35,7 +36,7 @@ const Gallery: React.FC = () => {
             {bigArrow}
          </button>
          <div className={styles.gallery}>
-            {(onStudio ? studioData : bandData).map((event) => (
+            {(pathname.includes("studio") ? studioData : bandData).map((event) => (
                <div
                   className={styles.galleryCards}
                   key={event.id}

@@ -7,12 +7,12 @@ import CollagePage from "./pages/Collage/CollagePage.tsx";
 import "./scss/partials/_variables.scss";
 import useTitle from "./modules/hooks/useTitle.ts";
 import useLocationDispatch from "./modules/hooks/useLocationDispatch.ts";
-import useRouterRedirect from "./modules/hooks/useRedirect.ts";
+// import useRouterRedirect from "./modules/hooks/useRedirect.ts";
 
 const App = () => {
    useTitle();
    useLocationDispatch();
-   useRouterRedirect();
+   // useRouterRedirect();
 
    return (
       <Layout>

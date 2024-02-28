@@ -2,11 +2,11 @@ import { useAppSelector } from "../../app/hooks.ts";
 import styles from "./_socialLinks.module.scss";
 import { socialIcons } from "../../assets/icons/socialIcons.tsx";
 import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
-import usePageLocation from "../../modules/hooks/usePageLocation.ts";
+import { useLocation } from "react-router-dom";
 
 const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
    const contacts = useAppSelector((state) => state.getContacts.data)!;
-   const { onBand } = usePageLocation();
+   const { pathname } = useLocation();
    const whatsAppBand = createWhatsAppLink(contacts.bandNumber, "Заказать Cool Band");
    const whatsAppStudio = createWhatsAppLink(contacts.studioNumber, "Узнать больше об Обучении");
    const handleFunction = () => {
@@ -28,7 +28,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
          <li id="whatsapp">
             <a
                aria-label="link"
-               href={onBand ? whatsAppBand : whatsAppStudio}
+               href={!pathname.includes("studio") ? whatsAppBand : whatsAppStudio}
                target="blank"
                onClick={handleFunction}
             >

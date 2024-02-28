@@ -74,21 +74,21 @@ main {
    transform: rotateY(180deg);
    transition: all 0.1s ease-in;
 }
-#logo1footer[data-rotate="false"] {
-   transition: all 0.1s ease-in;
-   transform: rotateY(180deg);
+
+#logoRotate {
+   transition: all 0.4s ease-in;
 }
-#logo1footer[data-rotate="true"] {
-   transform: rotateY(0deg);
-   transition: all 0.1s ease-in;
-}
+
 #logoRotate[data-rotate="true"] {
    transform: rotateY(0deg);
-   transition: all 0.4s ease-in;
 }
+
 #logoRotate[data-rotate="false"] {
-   transition: all 0.4s ease-in;
    transform: rotateY(180deg);
+}
+
+.rotateNavigation {
+   position: relative;
 }
 
 // Typography

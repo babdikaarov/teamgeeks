@@ -18,6 +18,20 @@
    }
 }
 
+.navigation[data-navigation="studio"] {
+}
+.navigation[data-navigation="band"] {
+}
+
+@keyframes rotateNav {
+   from {
+      transform: scale(0.4) translateY(45deg);
+   }
+   to {
+      transform: scale(1) translateY(0deg);
+   }
+}
+
 .navigation a {
    text-decoration: none;
 }

@@ -13,8 +13,7 @@ const useRouterRedirect = () => {
          const lastSegment = pathname.split("/").pop();
          if (!lastSegment) return;
          if (!isNaN(parseInt(lastSegment)) && /^-?\d+$/.test(lastSegment)) {
-            const number = parseInt(lastSegment, 10);
-            console.log(number);
+            return;
          } else {
             navigate(`/gallery`);
          }
