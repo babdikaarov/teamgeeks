@@ -5,9 +5,18 @@ import styles from "./_ourevents.module.scss";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ButtonWithArrow from "./ButtonWithArrow";
+import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+
 
 const OurEvents = () => {
-   const data = useAppSelector((state) => state.getBandAlbum.data)!;
+   const data = useAppSelector((state) => {
+      if(state.getBandAlbum.data.length < 4){
+         return [...state.getBandAlbum.data, ...state.getBandAlbum.data]
+      } else {
+         return state.getBandAlbum.data
+      }
+   })!;
+
 
    return (
       <SectionWrapper
@@ -16,21 +25,33 @@ const OurEvents = () => {
       >
          <div
             className={styles.scroller}
-            data-scroller="outter"
             data-direction="left"
          >
             <div
                className={styles.scrollerInner}
                data-scroller_inner="inner"
             >
-               {(data.length < 6 ? [...data, ...data] : data).map((card, i) => (
-                  <img
-                     key={i}
-                     src={card.coverImage}
-                     alt={card.name}
+               {data.map((card) => (
+
+                  <ImageLoader 
+                  bluer={card.bluer}
+                  src={card.coverImage}
+                  key={card.id}
                   />
                ))}
-            </div>
+            </div> 
+            <div
+               className={styles.scrollerInner}
+               data-scroller_inner="copy"
+            >
+               {data.map((card) => (
+                  <ImageLoader 
+                   key={card.id}
+                   bluer={card.bluer}
+                   src={card.coverImage}
+                   />
+               ))}
+            </div> 
          </div>
          <ButtonWithArrow
             text="Подробнее"

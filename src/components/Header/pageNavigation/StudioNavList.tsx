@@ -2,16 +2,16 @@
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
+// import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_NavList.module.scss";
-import usePageLocation from "../../../modules/hooks/usePageLocation";
+// import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   const { onStudio } = usePageLocation();
+   // const { onStudio } = usePageLocation();
 
    const handleFunction = () => {
-      !onStudio && mainElementAnimation();
+      // !onStudio && mainElementAnimation();
       setIsMenuOpen(false);
    };
 

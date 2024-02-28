@@ -1,32 +1,35 @@
 .ourEvent {
    position: relative;
    overflow: hidden;
-   // width: 100vw;
-   // left: 50%;
-   // transform: translateX(-50%);
    padding-inline: 0;
 }
 
-.scroller[data-scroller="scroller"] {
-   max-width: 100%;
-}
+
 
 .scroller {
    position: relative;
    overflow: hidden;
+   white-space: nowrap;
+}
+.scroller:hover .scrollerInner {
+   cursor: pointer;
+   animation-play-state: paused;
 }
 
 .scrollerInner {
    // adjust adnimation duration here
+   display: inline-flex;
+   gap: 20px;
+   margin-right: 20px;
+   animation: scroll 20s var(--_animation-direction, forwards) linear infinite;
+}
+
+.scrollerInner div {
    height: 400px;
-   display: flex;
-   gap: 16px;
-   width: max-content;
-   flex-wrap: nowrap;
-   animation: scroll 25s var(--_animation-direction, forwards) linear infinite;
-   @media screen and (max-width: 1024px) {
+   width: 360px;
+   @media (max-width: 1024px) {
+      width: 196px;
       height: 216px;
-      gap: 8px;
    }
 }
 
@@ -39,8 +42,11 @@
 }
 
 @keyframes scroll {
+   from {
+      transform: translate(calc(20px));
+   }
    to {
-      transform: translate(calc(-25% - 0.5rem));
+      transform: translate(calc(-100%));
    }
 }
 
@@ -66,12 +72,12 @@
    height: 130px;
    position: absolute;
    border-radius: 50%;
-   z-index: 1;
+   z-index: 2;
    @media screen and (max-width: 1024px) {
-      height: 50px;
+      height: 80px;
    }
    @media screen and (max-width: 576px) {
-      height: 30px;
+      height: 50px;
    }
 }
 

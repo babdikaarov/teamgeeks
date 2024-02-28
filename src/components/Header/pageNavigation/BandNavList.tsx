@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
+// import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_NavList.module.scss";
 
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen }) => {
@@ -14,7 +14,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
 
    const handleFunction = useCallback(() => {
       if (!onBand) {
-         mainElementAnimation();
+         // mainElementAnimation();
       }
       setIsMenuOpen(false);
    }, [onBand, setIsMenuOpen]);
