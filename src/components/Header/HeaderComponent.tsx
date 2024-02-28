@@ -37,19 +37,19 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
                id="navigaionContainer"
                data-navlist-animation={bandPage ? "band" : "studio"}
             >
-               {!isDesctop && bandPage ? (
+               {isDesctop ? (
+                  <>
+                     <BandNavList
+                        lyrics={lyrics}
+                        {...{ setIsMenuOpen }}
+                     />
+                     <StudioNavList
+                        lyrics={lyrics}
+                        {...{ setIsMenuOpen }}
+                     />
+                  </>
+               ) : bandPage ? (
                   <BandNavList
-                     lyrics={lyrics}
-                     {...{ setIsMenuOpen }}
-                  />
-               ) : (
-                  <BandNavList
-                     lyrics={lyrics}
-                     {...{ setIsMenuOpen }}
-                  />
-               )}
-               {!isDesctop && !bandPage ? (
-                  <StudioNavList
                      lyrics={lyrics}
                      {...{ setIsMenuOpen }}
                   />
