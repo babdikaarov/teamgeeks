@@ -24,7 +24,10 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
                className={styles.close}
                onClick={toggleMenu}
             ></span>
-            <Logo bandPage={bandPage} />
+            <Logo
+               bandPage={bandPage}
+               id="logoRotate"
+            />
             <NavList
                lyrics={lyrics}
                {...{ setIsMenuOpen }}

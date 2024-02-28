@@ -37,10 +37,7 @@ const useLocationDispatch = () => {
    const studioAlbum = useAppSelector((state) => state.getStudioAlbum);
    const contacts = useAppSelector((state) => state.getContacts);
 
-
-   
-   
-   useEffect(()=>{
+   useEffect(() => {
       !bandHero.getLoading && dispatch(getHeroBand());
       !studioHero.getLoading && dispatch(getHeroStudio());
       !bandAlbum.getLoading && dispatch(getBandAlbum());
@@ -48,7 +45,7 @@ const useLocationDispatch = () => {
       !bandTeam.getLoading && dispatch(getOurTeam());
       !bandCollab.getLoading && dispatch(getCollaborations());
       !bandPartners.getLoading && dispatch(getClients());
-      
+
       !contacts.getLoading && dispatch(getContacts());
 
       !studioCourses.getLoading && dispatch(getCourses());
@@ -59,9 +56,8 @@ const useLocationDispatch = () => {
       !studioTestimonial.getLoading && dispatch(getStudentSuccess());
       !studioStudents.getLoading && dispatch(getStudentReviwes());
       !studioAlbum.getLoading && dispatch(getStudioAlbum());
-   },[])
-
-
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 };
 
 export default useLocationDispatch;

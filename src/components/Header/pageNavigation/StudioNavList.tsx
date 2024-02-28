@@ -2,22 +2,22 @@
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-// import mainElementAnimation from "../../../modules/mainElementAnimation";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_NavList.module.scss";
-// import usePageLocation from "../../../modules/hooks/usePageLocation";
+import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   // const { onStudio } = usePageLocation();
+   const { onStudio } = usePageLocation();
 
    const handleFunction = () => {
-      // !onStudio && mainElementAnimation();
+      onStudio && mainElementAnimation();
       setIsMenuOpen(false);
    };
 
    return (
       <ul className={styles.navigation}>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/studio#${EBlockID.ABOUTSTUDIO}`}
                onClick={handleFunction}
@@ -26,7 +26,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                О студии
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/studio#${EBlockID.COURSES}`}
                onClick={handleFunction}
@@ -35,7 +35,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                Направления
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/studio#${EBlockID.TEACHERS}`}
                onClick={handleFunction}
@@ -44,7 +44,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                Преподаватели
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/studio#${EBlockID.STUDENTS}`}
                onClick={handleFunction}
@@ -53,7 +53,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                Ученики
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/${EBlockID.GALLERYSTUDIO}`}
                onClick={() => {

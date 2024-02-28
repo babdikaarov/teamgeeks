@@ -14,10 +14,16 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
    return (
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
-            <Logo bandPage={bandPage} />
             <Logo
-               bandPage={!bandPage}
+               bandPage={bandPage}
+               id="logo1footer"
+               onFooter
+            />
+            <Logo
+               bandPage={bandPage}
+               id="logo2footer"
                footerHide={styles.footerHide}
+               onFooter
             />
          </div>
 

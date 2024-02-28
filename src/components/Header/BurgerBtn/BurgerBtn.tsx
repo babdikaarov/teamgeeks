@@ -1,6 +1,6 @@
 // modules
 import { useNavigate } from "react-router-dom";
-// import mainElementAnimation from "../../../modules/mainElementAnimation";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
 // styles
 import styles from "./_burger.module.scss";
 import usePageLocation from "../../../modules/hooks/usePageLocation";
@@ -9,7 +9,7 @@ const BurgerBtn = ({ toggleMenu }: { toggleMenu: () => void }) => {
    const navigate = useNavigate();
    const { onBand } = usePageLocation();
    const handleClick = () => {
-      // mainElementAnimation();
+      mainElementAnimation();
       toggleMenu();
       navigate(onBand ? "/studio" : "/");
    };

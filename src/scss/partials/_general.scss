@@ -54,19 +54,41 @@ main {
 }
 // animation of page switch
 .fade {
-   animation: fade 400ms ease-in-out;
+   animation: fade 600ms linear;
 }
 
 @keyframes fade {
-   from {
-      opacity: 1;
-   }
-   50% {
+   0% {
       opacity: 0;
    }
    to {
       opacity: 1;
    }
+}
+
+#logo2footer[data-rotate="false"] {
+   transition: all 0.1s ease-in;
+   transform: rotateY(0deg);
+}
+#logo2footer[data-rotate="true"] {
+   transform: rotateY(180deg);
+   transition: all 0.1s ease-in;
+}
+#logo1footer[data-rotate="false"] {
+   transition: all 0.1s ease-in;
+   transform: rotateY(180deg);
+}
+#logo1footer[data-rotate="true"] {
+   transform: rotateY(0deg);
+   transition: all 0.1s ease-in;
+}
+#logoRotate[data-rotate="true"] {
+   transform: rotateY(0deg);
+   transition: all 0.4s ease-in;
+}
+#logoRotate[data-rotate="false"] {
+   transition: all 0.4s ease-in;
+   transform: rotateY(180deg);
 }
 
 // Typography

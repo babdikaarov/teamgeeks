@@ -1,23 +1,18 @@
-import { useCallback } from "react";
-import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-// import mainElementAnimation from "../../../modules/mainElementAnimation";
+import mainElementAnimation from "../../../modules/mainElementAnimation";
 import styles from "./_NavList.module.scss";
+import usePageLocation from "../../../modules/hooks/usePageLocation";
 
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen }) => {
-   const { pathname } = useLocation();
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
+   const { onStudio } = usePageLocation();
 
-   const onBand = pathname === "/";
-
-   const handleFunction = useCallback(() => {
-      if (!onBand) {
-         // mainElementAnimation();
-      }
+   const handleFunction = () => {
+      !onStudio && mainElementAnimation();
       setIsMenuOpen(false);
-   }, [onBand, setIsMenuOpen]);
+   };
 
    return (
       <ul className={styles.navigation}>
@@ -33,7 +28,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                Главная
             </HashLink>
          </li> */}
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/#${EBlockID.ABOUT}`}
                onClick={handleFunction}
@@ -43,7 +38,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
             </HashLink>
          </li>
 
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/#${EBlockID.TEAM}`}
                onClick={handleFunction}
@@ -52,7 +47,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                Наша команда
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/#${EBlockID.COLLAB}`}
                onClick={handleFunction}
@@ -61,7 +56,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                Коллаборация
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <HashLink
                to={`/${EBlockID.GALLERY}`}
                onClick={() => {
@@ -73,7 +68,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
                Галерея
             </HashLink>
          </li>
-         <li>
+         <li className="rotateNavigation">
             <a
                href={lyrics}
                target="_blank"

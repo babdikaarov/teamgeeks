@@ -1,8 +1,8 @@
 export default () => {
-   const target = document.getElementsByTagName("main")[0];
-   target.classList.add("fade");
-   window.scroll(0, 0);
-   setTimeout(() => {
-      target.classList.remove("fade");
-   }, 300);
+   // const target = document.getElementById("logoRotate");
+   // target?.setAttribute("rotate", "true")
+   // window.scroll(0, 0);
+   // setTimeout(() => {
+   //    target?.removeAttribute("rotate");
+   // }, 600);
 };

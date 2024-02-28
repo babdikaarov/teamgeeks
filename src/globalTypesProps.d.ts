@@ -88,6 +88,7 @@ declare namespace Prop {
    export interface Logo extends React.HTMLAttributes<HTMLAnchorElement> {
       bandPage: boolean;
       footerHide?: string;
+      onFooter?: boolean;
    }
    export namespace Hero {
       type Text = {

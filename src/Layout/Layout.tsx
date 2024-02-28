@@ -12,9 +12,11 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
    return (
       <>
          <Header />
-         <Hero style={onGallery ? { display: "none" } : onStudio ? { display: "none" } : {}} />
-         <StudioHero style={onGallery ? { display: "none" } : onStudio ? {} : { display: "none" }} />
-         <main>{children}</main>
+         <main>
+            <Hero style={onGallery ? { display: "none" } : onStudio ? { display: "none" } : {}} />
+            <StudioHero style={onGallery ? { display: "none" } : onStudio ? {} : { display: "none" }} />
+            {children}
+         </main>
          <Footer />
          <MadeBy />
       </>

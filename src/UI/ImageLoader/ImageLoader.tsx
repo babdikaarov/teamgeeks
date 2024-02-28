@@ -17,19 +17,18 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer }) => {
    return (
       <Suspense>
          <div className={styles.container}>
-
-         <Blurhash
-            hash={bluer}
-            className={styles.div}
+            <Blurhash
+               hash={bluer}
+               className={styles.div}
             />
-         <img
-            className={`${styles.image} ${loaded ? styles.loaded : ""}`}
-            onLoad={() => setLoaded(true)}
-            loading="lazy"
-            src={src}
-            alt="Poster About"
+            <img
+               className={`${styles.image} ${loaded ? styles.loaded : ""}`}
+               onLoad={() => setLoaded(true)}
+               loading="lazy"
+               src={src}
+               alt="Poster About"
             />
-            </div>
+         </div>
       </Suspense>
    );
 };

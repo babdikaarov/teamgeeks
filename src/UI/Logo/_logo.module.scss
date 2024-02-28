@@ -1,6 +1,7 @@
 .pageLogo {
    display: block;
    position: relative;
+   transform-style: preserve-3d;
    width: 104px;
    height: 60px;
 }
@@ -48,4 +49,23 @@
 
 .pageLogo:hover .CoolIcons {
    transform: translateX(-3px);
+}
+
+.front,
+.back {
+   // transition: transform 0.7s ease-out;
+   // transform-style: preserve-3d;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.back {
+   transform: rotateY(0.5turn);
 }
