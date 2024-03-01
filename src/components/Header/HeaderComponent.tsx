@@ -26,13 +26,13 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
             <div id="navigaionContainer" data-navlist-animation={bandPage ? "band" : "studio"}>
                {isDesctop ? (
                   <>
-                     <BandNavList  {...{ setIsMenuOpen }} />
-                     <StudioNavList  {...{ setIsMenuOpen }} />
+                     <BandNavList {...{ setIsMenuOpen }} />
+                     <StudioNavList {...{ setIsMenuOpen }} />
                   </>
                ) : bandPage ? (
-                  <BandNavList  {...{ setIsMenuOpen }} />
+                  <BandNavList {...{ setIsMenuOpen }} />
                ) : (
-                  <StudioNavList  {...{ setIsMenuOpen }} />
+                  <StudioNavList {...{ setIsMenuOpen }} />
                )}
             </div>
             <SocialLinks {...{ setIsMenuOpen }} />

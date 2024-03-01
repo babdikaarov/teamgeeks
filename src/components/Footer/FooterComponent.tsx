@@ -15,7 +15,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData })
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
             <Logo id="logo1footer" />
-            <Logo id="logo2footer" footerHide={styles.footerHide}  />
+            <Logo id="logo2footer" footerHide={styles.footerHide} />
          </div>
 
          <div className={styles.footerInfo}>

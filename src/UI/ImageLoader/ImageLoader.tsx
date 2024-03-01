@@ -13,24 +13,17 @@ const ImageLoader: React.FC<ImageLoaderProps> = ({ src, bluer }) => {
    const [loaded, setLoaded] = useState(false);
    const [isDelaySet, setIsDelaySet] = useState(false);
 
-   
    useEffect(() => {
-      setTimeout(()=>{
-         setIsDelaySet(true)
-      }, 100)
-   
+      setTimeout(() => {
+         setIsDelaySet(true);
+      }, 100);
    }, []);
-   
+
    if (!isBlurhashValid(bluer).result) return;
    return (
-      <Suspense >
-         <div className={styles.container}
-        
-         >
-            <Blurhash hash={bluer} className={styles.div}
-            
-            data-delay={isDelaySet}
-            />
+      <Suspense>
+         <div className={styles.container}>
+            <Blurhash hash={bluer} className={styles.div} data-delay={isDelaySet} />
             <img
                className={`${styles.image} ${loaded ? styles.loaded : ""}`}
                onLoad={() => setLoaded(true)}

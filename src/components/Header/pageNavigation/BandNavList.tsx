@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
    // const { pathname } = useLocation();
-   const lyrics = useAppSelector(state => state.getContacts.data.whatsapp!)
+   const lyrics = useAppSelector((state) => state.getContacts.data.whatsapp!);
    const handleFunction = () => {
       mainElementAnimation();
       setIsMenuOpen(false);

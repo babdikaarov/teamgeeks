@@ -9,14 +9,13 @@ import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 import { useEffect, useState } from "react";
 
 const OurEvents = () => {
-   const [data, setData ] = useState<Slice.IGetBandAlbum[]>([]);
+   const [data, setData] = useState<Slice.IGetBandAlbum[]>([]);
    const dataStore: Slice.IGetBandAlbum[] = useAppSelector((state) => state.getBandAlbum.data)!;
 
-   useEffect(()=>{
-      if(!dataStore)return
-      setData(dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore)
-
-   },[dataStore])
+   useEffect(() => {
+      if (!dataStore) return;
+      setData(dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore);
+   }, [dataStore]);
 
    return (
       <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
