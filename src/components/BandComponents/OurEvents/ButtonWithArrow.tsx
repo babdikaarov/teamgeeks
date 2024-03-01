@@ -1,6 +1,6 @@
 import { Link, LinkProps } from "react-router-dom";
 import styles from "./_buttonWithArrow.module.scss";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
+import { mainElementAnimation } from "../../../modules/transition";
 import arrow_right_circle_fill from "../../../assets/icons/arrow_right_circle_fill";
 
 const ButtonWithArrow: React.FC<Prop.ButtonWithArrowProps & LinkProps> = ({ text, ...props }) => {

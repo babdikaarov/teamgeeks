@@ -9,13 +9,13 @@ import styles from "./_footer.module.scss";
 import Logo from "../../UI/Logo/Logo";
 import formatPhoneNumber from "../../modules/formatPhoneNumberToText";
 
-const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, backendData }) => {
+const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData }) => {
    const { bandNumber, studioNumber, address, email, city, organizationId } = backendData.contactDetails;
    return (
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
-            <Logo bandPage={bandPage} id="logo1footer" onFooter />
-            <Logo bandPage={bandPage} id="logo2footer" footerHide={styles.footerHide} onFooter />
+            <Logo id="logo1footer" />
+            <Logo id="logo2footer" footerHide={styles.footerHide}  />
          </div>
 
          <div className={styles.footerInfo}>

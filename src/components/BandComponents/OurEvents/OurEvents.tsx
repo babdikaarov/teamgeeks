@@ -6,13 +6,17 @@ import styles from "./_ourevents.module.scss";
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ButtonWithArrow from "./ButtonWithArrow";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+import { useEffect, useState } from "react";
 
 const OurEvents = () => {
-   const dataStore: Slice.IGetBandAlbum[] = useAppSelector((state) => {
-      state.getBandAlbum.data;
-   })!;
-   if (!dataStore) return;
-   const data = dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore;
+   const [data, setData ] = useState<Slice.IGetBandAlbum[]>([]);
+   const dataStore: Slice.IGetBandAlbum[] = useAppSelector((state) => state.getBandAlbum.data)!;
+
+   useEffect(()=>{
+      if(!dataStore)return
+      setData(dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore)
+
+   },[dataStore])
 
    return (
       <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>

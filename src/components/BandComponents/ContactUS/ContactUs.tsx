@@ -3,9 +3,12 @@ import ContactUsTemplate from "../../../UI/Contact/ContactUsTemplate";
 import SharedButton from "../../../UI/Buttons/SharedButton";
 // staticData
 import staticText from "./staticData.json";
-import backendData from "./backendData.json"; // FIX_ME remove backendData.json and add backendData when ready
+import { useAppSelector } from "../../../app/hooks";
 
 const ContactUs = () => {
+
+   const bandNumber = useAppSelector(state => state.getContacts.data.bandNumber!)
+
    return (
       <ContactUsTemplate
          heading={staticText.heading}
@@ -13,7 +16,7 @@ const ContactUs = () => {
          secondHeading={staticText.secondHeading}
          button={
             <SharedButton
-               whatsapp={backendData.whatsapp.link.toString()}
+               whatsapp={bandNumber}
                classname="bandContactButton"
                text="Связаться с нами"
             />

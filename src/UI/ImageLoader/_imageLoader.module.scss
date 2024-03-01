@@ -1,7 +1,11 @@
 .container {
    position: relative;
    height: 100%;
+ 
 }
+
+
+
 
 .image {
    border-radius: 16px;
@@ -21,9 +25,15 @@
 }
 
 .div {
+   opacity: 0 !important;
    width: 100% !important;
    height: 100% !important;
    border-radius: 16px !important;
    overflow: hidden !important;
    position: absolute !important;
+   transition: opacity 0.001s linear;
+
+}
+.div[data-delay="true"]{
+   opacity: 1 !important;
 }

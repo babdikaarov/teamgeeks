@@ -1,6 +1,6 @@
 // modules
 import { useLocation, useNavigate } from "react-router-dom";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
+import { mainElementAnimation } from "../../../modules/transition";
 // styles
 import styles from "./_burger.module.scss";
 

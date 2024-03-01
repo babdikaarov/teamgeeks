@@ -1,16 +1,17 @@
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-import mainElementAnimation from "../../../modules/mainElementAnimation";
+import { mainElementAnimation } from "../../../modules/transition";
 import styles from "./_NavList.module.scss";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen }) => {
+const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   const { pathname } = useLocation();
-
+   // const { pathname } = useLocation();
+   const lyrics = useAppSelector(state => state.getContacts.data.whatsapp!)
    const handleFunction = () => {
-      !pathname.includes("studio") && mainElementAnimation();
+      mainElementAnimation();
       setIsMenuOpen(false);
    };
 
@@ -57,16 +58,13 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
             </HashLink>
          </li>
          <li className="rotateNavigation">
-            <HashLink
+            <Link
                to={`/${EBlockID.GALLERY}`}
-               onClick={() => {
-                  handleFunction();
-                  window.scroll(0, 0);
-               }}
+               onClick={handleFunction}
                className={activeNavigation.focusOn === EBlockID.GALLERY ? styles.active : ""}
             >
                Галерея
-            </HashLink>
+            </Link>
          </li>
          <li className="rotateNavigation">
             <a href={lyrics} target="_blank" rel="noopener noreferrer">

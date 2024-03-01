@@ -32,14 +32,13 @@ declare namespace Prop {
       }
       export interface HeaderComponentProps {
          bandPage: boolean;
-         lyrics: TLyrics;
       }
       export interface TopButtonProps {
          isMenuOpen: boolean;
          toggleMenu: () => void;
       }
       export interface NavListProps extends TSetIsMenuOpen {
-         lyrics: string;
+         lyrics?: string;
       }
    }
    export namespace Collage {
@@ -85,7 +84,7 @@ declare namespace Prop {
       allIDS: (string | null)[];
    }
    export interface Logo extends React.HTMLAttributes<HTMLAnchorElement> {
-      bandPage: boolean;
+      bandPage?: boolean;
       footerHide?: string;
       onFooter?: boolean;
    }

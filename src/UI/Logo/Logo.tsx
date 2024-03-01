@@ -1,36 +1,41 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./_logo.module.scss";
 import blogo from "/logo/blogo.svg";
 import slogo from "/logo/slogo.svg";
 
-const Logo: React.FC<Prop.Logo> = ({ id, bandPage, footerHide, onFooter }) => {
+const Logo: React.FC<Prop.Logo> = ({ id, footerHide }) => {
    const { pathname } = useLocation();
-
+   
    return (
-      <NavLink
+      <div
          id={id}
-         to={bandPage ? "/" : "/studio"}
-         onClick={() => window.scrollTo(0, 0)}
          className={styles.pageLogo}
          data-rotate={!pathname.includes("studio")}
       >
-         <div className={styles.front}>
+         <Link
+         to={"/"}
+
+          className={styles.front} onClick={()=>window.scrollTo(0,0)}
+          >
             <div className={`${styles.hoverStateBackground} ${styles.mainLogo} ${footerHide}`}></div>
             <img
                className={styles.CoolIcons}
-               src={onFooter ? (!pathname.includes("studio") ? blogo : slogo) : blogo}
+               src={blogo}
                alt={"Cool Band"}
             />
-         </div>
-         <div className={styles.back}>
+         </Link>
+         <Link
+            to={"/studio"}
+          className={styles.back}
+          onClick={()=> window.scrollTo(0,0)} >
             <div className={`${styles.hoverStateBackground} ${styles.studioLogo} ${footerHide}`}></div>
             <img
                className={styles.CoolIcons}
-               src={onFooter ? (!pathname.includes("studio") ? slogo : blogo) : slogo}
+               src={slogo}
                alt={"Cool Studio"}
             />
-         </div>
-      </NavLink>
+         </Link>
+      </div>
    );
 };
 export default Logo;

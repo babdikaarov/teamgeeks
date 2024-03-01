@@ -10,6 +10,7 @@ import bigArrow from "../../../assets/icons/bigArrow";
 import styles from "./_collage.module.scss";
 import { getAlbumByID, getAlbumImages } from "../../../store/thunkCollection";
 import { useEffect } from "react";
+// import NotFound from "../../../pages/NotFound/NotFound";
 
 const Collage = () => {
    window.scroll(0, 0);
@@ -28,11 +29,14 @@ const Collage = () => {
       dispatch(getAlbumByID({ id: Number(id), endpoint }));
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
-
+   // if (id && id.match(/^\d+$/)) {
+      
+   // }
+   // console.log(id);
    return (
       <SectionWrapper className={styles.section}>
          <div className={styles.collageInfo}>
-            <button onClick={() => navigate("../")} aria-label="gallery-collage-button">
+            <button onClick={() => navigate(-1)} aria-label="gallery-collage-button">
                {bigArrow}
             </button>
             <div>
@@ -40,7 +44,7 @@ const Collage = () => {
                <h3>{albumTittleByID.data.name}</h3>
             </div>
          </div>
-         <GalleryCollage items={sortedData} />
+         {sortedData && <GalleryCollage items={sortedData} />}
       </SectionWrapper>
    );
 };

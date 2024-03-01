@@ -25,7 +25,7 @@ const Gallery: React.FC = () => {
    // console.log(onStudio)
    return (
       <SectionWrapper forwardedRef={refToogle} className={styles.galleryWrapper}>
-         <button aria-label="button" onClick={() => navigate("../")} className={styles.navigation}>
+         <button aria-label="button" onClick={() => navigate(-1)} className={styles.navigation}>
             {bigArrow}
          </button>
          <div className={styles.gallery}>

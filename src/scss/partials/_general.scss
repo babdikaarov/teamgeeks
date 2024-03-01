@@ -99,6 +99,14 @@ main {
    transform: rotateY(180deg);
    transition: all 0.1s ease-in;
 }
+#logo1footer[data-rotate="true"] {
+   transition: all 0.1s ease-in;
+   transform: rotateY(0deg);
+}
+#logo1footer[data-rotate="false"] {
+   transform: rotateY(180deg);
+   transition: all 0.1s ease-in;
+}
 
 #logoRotate {
    transition: all 0.4s ease-in;

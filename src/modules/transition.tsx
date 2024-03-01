@@ -1,3 +1,4 @@
+
 export const mainElementAnimation = () => {
    const target = document.getElementsByTagName("main")[0];
    target.classList.add("fade");

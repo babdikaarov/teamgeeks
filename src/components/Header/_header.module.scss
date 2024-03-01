@@ -20,14 +20,17 @@
 
 .nav {
    max-width: 1240px;
-   margin: 0 auto;
    height: 80px;
    display: flex;
    align-items: center;
    justify-content: space-between;
    gap: 10px;
-   @media (max-width: 1240px) {
-      padding-inline: 10px;
+   @media (min-width: 1024px) {
+      left: calc(50% - 20px);
+      top: 0;
+      transform: translateX(-50%);
+      position: relative;
+      margin-inline: 20px;
    }
    @include mix.xl {
       height: 100%;

@@ -9,10 +9,9 @@ import { useMediaQuery } from "../../modules/hooks/useMediaQuery.ts";
 const BandNavList = lazy(() => import("./pageNavigation/BandNavList"));
 const StudioNavList = lazy(() => import("./pageNavigation/StudioNavList"));
 
-const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo(({ bandPage, lyrics }) => {
+const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo(({ bandPage }) => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const isDesctop = useMediaQuery("(min-width: 1024px)");
-   console.log(isDesctop);
 
    const toggleMenu = useCallback(() => {
       setIsMenuOpen((prevState) => !prevState);
@@ -23,17 +22,17 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
          <TopButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
          <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
             <span className={styles.close} onClick={toggleMenu}></span>
-            <Logo bandPage={bandPage} id="logoRotate" />
+            <Logo id="logoRotate" />
             <div id="navigaionContainer" data-navlist-animation={bandPage ? "band" : "studio"}>
                {isDesctop ? (
                   <>
-                     <BandNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
-                     <StudioNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
+                     <BandNavList  {...{ setIsMenuOpen }} />
+                     <StudioNavList  {...{ setIsMenuOpen }} />
                   </>
                ) : bandPage ? (
-                  <BandNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
+                  <BandNavList  {...{ setIsMenuOpen }} />
                ) : (
-                  <StudioNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
+                  <StudioNavList  {...{ setIsMenuOpen }} />
                )}
             </div>
             <SocialLinks {...{ setIsMenuOpen }} />
