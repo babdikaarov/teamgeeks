@@ -17,10 +17,10 @@ const Collage = () => {
 
    const { id } = useParams();
    const dispatch = useAppDispatch();
-   const albumImages = useAppSelector((state) => state.getAlbumImages.data!);
-   const albumTittleByID = useAppSelector((state) => state.getAlbumByID.data!);
+   const albumImages = useAppSelector((state) => state.getAlbumImages!);
+   const albumTittleByID = useAppSelector((state) => state.getAlbumByID!);
    const navigate = useNavigate();
-   const sortedData = useResponsiveSorting(albumImages);
+   const sortedData = useResponsiveSorting(albumImages.data);
    const endpoint = pathname.includes("studio") ? "studio" : "band";
 
    useEffect(() => {
@@ -36,8 +36,8 @@ const Collage = () => {
                {bigArrow}
             </button>
             <div>
-               <p>{albumTittleByID.date}</p>
-               <h3>{albumTittleByID.name}</h3>
+               <p>{albumTittleByID.data.date}</p>
+               <h3>{albumTittleByID.data.name}</h3>
             </div>
          </div>
          <GalleryCollage items={sortedData} />

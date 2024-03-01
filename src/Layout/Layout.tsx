@@ -3,9 +3,9 @@ import Footer from "../components/Footer/Footer.tsx";
 import Header from "../components/Header/Header.tsx";
 import Hero from "../components/BandComponents/Hero/Hero.tsx";
 import StudioHero from "../components/StudioComponents/Hero/Hero.tsx";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
-const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+const Layout: React.FC<React.PropsWithChildren> = () => {
    const { pathname } = useLocation();
    const onStudio = pathname.match("studio");
    const onGallery = pathname.includes("gallery");
@@ -15,7 +15,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
          <main>
             <Hero style={onGallery ? { display: "none" } : onStudio ? { display: "none" } : {}} />
             <StudioHero style={onGallery ? { display: "none" } : onStudio ? {} : { display: "none" }} />
-            {children}
+            <Outlet />
          </main>
          <Footer />
          <MadeBy />

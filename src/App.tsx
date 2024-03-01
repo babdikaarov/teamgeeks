@@ -16,18 +16,17 @@ const App = () => {
    // useRouterRedirect();
 
    return (
-      <Layout>
-         <Routes>
-            <Route path="/" element={<CoolBand />} />
-            <Route path="/studio" element={<CoolStudio />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/gallery/:id" element={<CollagePage />} />
-            <Route path="/studio/gallery" element={<GalleryPage />} />
-            <Route path="/studio/gallery/:id" element={<CollagePage />} />
-
-            <Route path="*" element={<NotFound />} />
-         </Routes>
-      </Layout>
+      <Routes>
+         <Route path="/" element={<Layout />}>
+            <Route index element={<CoolBand />} />
+            <Route path="studio" element={<CoolStudio />} />
+            <Route path="gallery" element={<GalleryPage />} />
+            <Route path="gallery/:id" element={<CollagePage />} />
+            <Route path="studio/gallery" element={<GalleryPage />} />
+            <Route path="studio/gallery/:id" element={<CollagePage />} />
+         </Route>
+         <Route path="*" element={<NotFound />} />
+      </Routes>
    );
 };
 
