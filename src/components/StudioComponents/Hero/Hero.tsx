@@ -16,16 +16,8 @@ const Hero: React.FC<Props> = ({ ...props }) => {
    };
 
    return (
-      <HeroTemplate
-         video={dataStudio.video}
-         text={texts}
-         {...props}
-      >
-         <SharedButton
-            whatsapp={studioNumber}
-            classname="studioHeroButton"
-            text="Записаться на пробный урок"
-         />
+      <HeroTemplate video={dataStudio.video} text={texts} {...props}>
+         <SharedButton whatsapp={studioNumber} classname="studioHeroButton" text="Записаться на пробный урок" />
       </HeroTemplate>
    );
 };

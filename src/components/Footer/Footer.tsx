@@ -12,12 +12,7 @@ const Footer = () => {
       contactDetails: contactDetailsData,
    };
 
-   return (
-      <FooterComponent
-         backendData={data}
-         bandPage={!pathname.includes("studio")}
-      />
-   );
+   return <FooterComponent backendData={data} bandPage={!pathname.includes("studio")} />;
 };
 
 export default Footer;

@@ -32,14 +32,8 @@ const Teachers = () => {
    }, []);
 
    return (
-      <SectionWrapper
-         header="Команда Cool  Studio"
-         id="teachers"
-      >
-         <div
-            ref={refToogle}
-            className={styles.teacherContainer}
-         >
+      <SectionWrapper header="Команда Cool  Studio" id="teachers">
+         <div ref={refToogle} className={styles.teacherContainer}>
             <NavigationButton id="TeachersPrev" />
             <Swiper
                className={styles.teacherSwiper}
@@ -64,11 +58,7 @@ const Teachers = () => {
                }}
             >
                {data.map((card, i) => (
-                  <SwiperSlide
-                     key={i}
-                     onClick={() => openModal(card)}
-                     className={styles.cardSwiperTeacher}
-                  >
+                  <SwiperSlide key={i} onClick={() => openModal(card)} className={styles.cardSwiperTeacher}>
                      <TeacherCard
                         img={card.image}
                         name={card.name}
@@ -82,17 +72,8 @@ const Teachers = () => {
             </Swiper>
             <NavigationButton id="TeachersNext" />
          </div>
-         <SharedButton
-            whatsapp={studioNumber}
-            classname="studioTeachersButton"
-            text="Связаться с нами"
-         />
-         {selectedTeacher && (
-            <Modal
-               teacher={selectedTeacher}
-               closeModal={closeModal}
-            />
-         )}
+         <SharedButton whatsapp={studioNumber} classname="studioTeachersButton" text="Связаться с нами" />
+         {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
       </SectionWrapper>
    );
 };

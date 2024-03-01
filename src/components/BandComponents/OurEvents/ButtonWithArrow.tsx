@@ -5,11 +5,7 @@ import arrow_right_circle_fill from "../../../assets/icons/arrow_right_circle_fi
 
 const ButtonWithArrow: React.FC<Prop.ButtonWithArrowProps & LinkProps> = ({ text, ...props }) => {
    return (
-      <Link
-         {...props}
-         className={styles.a}
-         onClick={mainElementAnimation}
-      >
+      <Link {...props} className={styles.a} onClick={mainElementAnimation}>
          <div className={styles.h6}>
             {text} {arrow_right_circle_fill}
          </div>

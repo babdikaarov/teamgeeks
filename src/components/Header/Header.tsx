@@ -13,10 +13,7 @@ const Header = () => {
    // },[])
    return (
       <Suspense>
-         <HeaderComponent
-            bandPage={!pathname.includes("studio")}
-            lyrics={lyrics}
-         />
+         <HeaderComponent bandPage={!pathname.includes("studio")} lyrics={lyrics} />
       </Suspense>
    );
 };

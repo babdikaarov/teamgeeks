@@ -16,12 +16,7 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
    return (
       <ul className={styles.socialLinks}>
          <li id="telegram">
-            <a
-               aria-label="link"
-               href={`https://t.me/${contacts.telegram}`}
-               target="blank"
-               onClick={handleFunction}
-            >
+            <a aria-label="link" href={`https://t.me/${contacts.telegram}`} target="blank" onClick={handleFunction}>
                {socialIcons.telegram}
             </a>
          </li>
@@ -36,32 +31,17 @@ const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {
             </a>
          </li>
          <li id="instagram">
-            <a
-               aria-label="link"
-               href={contacts.instagram}
-               target="blank"
-               onClick={handleFunction}
-            >
+            <a aria-label="link" href={contacts.instagram} target="blank" onClick={handleFunction}>
                {socialIcons.instagram}
             </a>
          </li>
          <li id="youtube">
-            <a
-               aria-label="link"
-               href={contacts.youtube}
-               target="blank"
-               onClick={handleFunction}
-            >
+            <a aria-label="link" href={contacts.youtube} target="blank" onClick={handleFunction}>
                {socialIcons.youtube}
             </a>
          </li>
          <li id="tiktok">
-            <a
-               aria-label="link"
-               href={contacts.tiktok}
-               target="blank"
-               onClick={handleFunction}
-            >
+            <a aria-label="link" href={contacts.tiktok} target="blank" onClick={handleFunction}>
                {socialIcons.tiktok}
             </a>
          </li>

@@ -25,10 +25,7 @@ const AboutStudio: React.FC = () => {
          className={styles.coolStudio}
          id={EBlockID.ABOUTSTUDIO}
       >
-         <div
-            ref={refToogle}
-            className={styles.AboutUsWrapper}
-         >
+         <div ref={refToogle} className={styles.AboutUsWrapper}>
             <div className={styles.TextWrapper}>
                <span>
                   {staticText.text1}

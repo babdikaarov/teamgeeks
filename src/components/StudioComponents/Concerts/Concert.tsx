@@ -25,17 +25,9 @@ const Concert = () => {
 
    return (
       <SectionWrapper header="Отчетные концерты">
-         <div
-            className={styles.ConcertSlider}
-            ref={refToogle}
-         >
+         <div className={styles.ConcertSlider} ref={refToogle}>
             {mobileWidth ? (
-               mobileArray.map((card, i) => (
-                  <ConcertCard
-                     key={i}
-                     {...card}
-                  />
-               ))
+               mobileArray.map((card, i) => <ConcertCard key={i} {...card} />)
             ) : (
                <>
                   <Swiper
@@ -51,10 +43,7 @@ const Concert = () => {
                      className={styles.concertSwiper}
                   >
                      {(data.length < 5 ? [...data, ...data] : data).map((image, index) => (
-                        <SwiperSlide
-                           key={index}
-                           className={styles.concertsSwipeCard}
-                        >
+                        <SwiperSlide key={index} className={styles.concertsSwipeCard}>
                            <ConcertCard {...image} />
                         </SwiperSlide>
                      ))}
@@ -64,11 +53,7 @@ const Concert = () => {
                </>
             )}
 
-            <Link
-               className={styles.watchmore}
-               to="/studio/gallery"
-               onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link className={styles.watchmore} to="/studio/gallery" onClick={() => window.scrollTo(0, 0)}>
                Смотреть еще
             </Link>
          </div>

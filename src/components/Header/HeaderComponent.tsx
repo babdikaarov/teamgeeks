@@ -20,44 +20,20 @@ const HeaderComponent: React.FC<Prop.Header.HeaderComponentProps> = React.memo((
 
    return (
       <header className={styles.header}>
-         <TopButton
-            isMenuOpen={isMenuOpen}
-            toggleMenu={toggleMenu}
-         />
+         <TopButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
          <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
-            <span
-               className={styles.close}
-               onClick={toggleMenu}
-            ></span>
-            <Logo
-               bandPage={bandPage}
-               id="logoRotate"
-            />
-            <div
-               id="navigaionContainer"
-               data-navlist-animation={bandPage ? "band" : "studio"}
-            >
+            <span className={styles.close} onClick={toggleMenu}></span>
+            <Logo bandPage={bandPage} id="logoRotate" />
+            <div id="navigaionContainer" data-navlist-animation={bandPage ? "band" : "studio"}>
                {isDesctop ? (
                   <>
-                     <BandNavList
-                        lyrics={lyrics}
-                        {...{ setIsMenuOpen }}
-                     />
-                     <StudioNavList
-                        lyrics={lyrics}
-                        {...{ setIsMenuOpen }}
-                     />
+                     <BandNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
+                     <StudioNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
                   </>
                ) : bandPage ? (
-                  <BandNavList
-                     lyrics={lyrics}
-                     {...{ setIsMenuOpen }}
-                  />
+                  <BandNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
                ) : (
-                  <StudioNavList
-                     lyrics={lyrics}
-                     {...{ setIsMenuOpen }}
-                  />
+                  <StudioNavList lyrics={lyrics} {...{ setIsMenuOpen }} />
                )}
             </div>
             <SocialLinks {...{ setIsMenuOpen }} />

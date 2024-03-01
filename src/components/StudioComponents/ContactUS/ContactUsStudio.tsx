@@ -12,13 +12,7 @@ const ContactUsStudio = () => {
       <ContactUsTemplate
          heading={staticData.heading}
          paragraph={staticData.paragraph}
-         button={
-            <SharedButton
-               whatsapp={studioNumber}
-               classname="studioTeachersButton"
-               text="Связаться с нами"
-            />
-         }
+         button={<SharedButton whatsapp={studioNumber} classname="studioTeachersButton" text="Связаться с нами" />}
       />
    );
 };

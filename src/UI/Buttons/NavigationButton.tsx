@@ -3,10 +3,7 @@ import icon from "../../assets/icons/bigArrow";
 
 const NavigationButton: React.FC<Prop.INavigationProps> = ({ id }) => {
    return (
-      <button
-         aria-label="navigation"
-         id={id}
-      >
+      <button aria-label="navigation" id={id}>
          {icon}
       </button>
    );

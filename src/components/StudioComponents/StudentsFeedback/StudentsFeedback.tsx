@@ -92,12 +92,7 @@ const StudentsFeedback = () => {
             >
                {(data.length < 5 ? [...data, ...data] : data).map((card, i) => (
                   <SwiperSlide key={i}>
-                     <StudentsFeedbackCard
-                        img={card.image}
-                        name={card.name}
-                        word={card.reviews}
-                        bluer={card.bluer}
-                     />
+                     <StudentsFeedbackCard img={card.image} name={card.name} word={card.reviews} bluer={card.bluer} />
                   </SwiperSlide>
                ))}
             </Swiper>

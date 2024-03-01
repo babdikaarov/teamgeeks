@@ -14,21 +14,9 @@ const Courses = () => {
    const { data } = useAppSelector((state) => state.getCourses);
 
    return (
-      <SectionWrapper
-         header="Направления"
-         id="courses"
-      >
-         <div
-            ref={refToogle}
-            className={styles.courses_flex}
-         >
-            {data?.map((course) => (
-               <CoursesCard
-                  key={course.id}
-                  src={course.image}
-                  title={course.name}
-               />
-            ))}
+      <SectionWrapper header="Направления" id="courses">
+         <div ref={refToogle} className={styles.courses_flex}>
+            {data?.map((course) => <CoursesCard key={course.id} src={course.image} title={course.name} />)}
          </div>
       </SectionWrapper>
    );

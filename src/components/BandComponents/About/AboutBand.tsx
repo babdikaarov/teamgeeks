@@ -15,25 +15,15 @@ const AboutBand: React.FC = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.ABOUT);
 
    return (
-      <SectionWrapper
-         className={styles.aboutBand}
-         header={"Cool band"}
-         id={EBlockID.ABOUT}
-      >
-         <div
-            className={styles.about}
-            ref={refToogle}
-         >
+      <SectionWrapper className={styles.aboutBand} header={"Cool band"} id={EBlockID.ABOUT}>
+         <div className={styles.about} ref={refToogle}>
             <article className={styles.article}>
                <p>{staticText.text1}</p>
                <p>{staticText.text2}</p>
                <p>{staticText.text3}</p>
             </article>
             <div className={styles.image}>
-               <ImageLoader
-                  src={data?.image}
-                  bluer={data?.bluer && data.bluer}
-               />
+               <ImageLoader src={data?.image} bluer={data?.bluer && data.bluer} />
             </div>
          </div>
       </SectionWrapper>

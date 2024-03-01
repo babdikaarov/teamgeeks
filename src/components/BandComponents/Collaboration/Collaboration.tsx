@@ -32,17 +32,8 @@ const Collaboration = () => {
    const data = useAppSelector((state) => state.getCollaborations.data)!;
 
    return (
-      <SectionWrapper
-         header={"Коллаборации"}
-         className={styles.collabWrapper}
-         id={EBlockID.COLLAB}
-         forwardedRef={ref}
-      >
-         <div
-            ref={refToogle}
-            className={styles.collabContainer}
-            data-animate={true}
-         >
+      <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id={EBlockID.COLLAB} forwardedRef={ref}>
+         <div ref={refToogle} className={styles.collabContainer} data-animate={true}>
             <NavigationButton id="CollabPrev" />
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
@@ -58,15 +49,9 @@ const Collaboration = () => {
                modules={[Mousewheel, Navigation, FreeMode]}
             >
                {data?.map((card, i) => (
-                  <SwiperSlide
-                     key={i}
-                     className={styles.card}
-                  >
+                  <SwiperSlide key={i} className={styles.card}>
                      <div>
-                        <ImageLoader
-                           src={card.image}
-                           bluer={card.bluer}
-                        />
+                        <ImageLoader src={card.image} bluer={card.bluer} />
                      </div>
                      <p>{card.name}</p>
                   </SwiperSlide>

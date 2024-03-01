@@ -25,22 +25,11 @@ const OurStudents = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
 
    return (
-      <SectionWrapper
-         header="Успехи наших студентов"
-         id="students"
-      >
-         <div
-            ref={refToogle}
-            className={styles.ourStudents}
-         >
+      <SectionWrapper header="Успехи наших студентов" id="students">
+         <div ref={refToogle} className={styles.ourStudents}>
             {mobileWidth ? (
                mobileArray.map((url, index) => (
-                  <OurStudentsCard
-                     key={index}
-                     url={url.url}
-                     addToID={index}
-                     allIDS={allIDS}
-                  />
+                  <OurStudentsCard key={index} url={url.url} addToID={index} allIDS={allIDS} />
                ))
             ) : (
                <>
@@ -57,15 +46,8 @@ const OurStudents = () => {
                      className={styles.ourStudentsSwiper}
                   >
                      {(data.length < 5 ? [...data, ...data] : data).map((url, index) => (
-                        <SwiperSlide
-                           key={index}
-                           className={styles.ourStudentsSwipeCard}
-                        >
-                           <OurStudentsCard
-                              url={url.url}
-                              addToID={url.id}
-                              allIDS={allIDS}
-                           />
+                        <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
+                           <OurStudentsCard url={url.url} addToID={url.id} allIDS={allIDS} />
                         </SwiperSlide>
                      ))}
                   </Swiper>
@@ -73,11 +55,7 @@ const OurStudents = () => {
                   <NavigationButton id="StudentsNext" />
                </>
             )}
-            <a
-               className={styles.watchmore}
-               href="https://www.youtube.com/@coolstudiokg"
-               target="_blank"
-            >
+            <a className={styles.watchmore} href="https://www.youtube.com/@coolstudiokg" target="_blank">
                Больше видео
             </a>
          </div>

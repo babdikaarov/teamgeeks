@@ -16,10 +16,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
    };
 
    return (
-      <ul
-         className={styles.navigation}
-         data-navigation="studio"
-      >
+      <ul className={styles.navigation} data-navigation="studio">
          <li className="rotateNavigation">
             <HashLink
                to={`/studio#${EBlockID.ABOUTSTUDIO}`}

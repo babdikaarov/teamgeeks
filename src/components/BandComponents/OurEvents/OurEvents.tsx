@@ -15,43 +15,20 @@ const OurEvents = () => {
    const data = dataStore.length < 4 ? [...dataStore, ...dataStore] : dataStore;
 
    return (
-      <SectionWrapper
-         header={"Наши мероприятия"}
-         className={styles.ourEvent}
-      >
-         <div
-            className={styles.scroller}
-            data-direction="left"
-         >
-            <div
-               className={styles.scrollerInner}
-               data-scroller_inner="inner"
-            >
+      <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
+         <div className={styles.scroller} data-direction="left">
+            <div className={styles.scrollerInner} data-scroller_inner="inner">
                {data.map((card) => (
-                  <ImageLoader
-                     bluer={card.bluer}
-                     src={card.coverImage}
-                     key={self.crypto.randomUUID()}
-                  />
+                  <ImageLoader bluer={card.bluer} src={card.coverImage} key={self.crypto.randomUUID()} />
                ))}
             </div>
-            <div
-               className={styles.scrollerInner}
-               data-scroller_inner="copy"
-            >
+            <div className={styles.scrollerInner} data-scroller_inner="copy">
                {data.map((card) => (
-                  <ImageLoader
-                     key={self.crypto.randomUUID()}
-                     bluer={card.bluer}
-                     src={card.coverImage}
-                  />
+                  <ImageLoader key={self.crypto.randomUUID()} bluer={card.bluer} src={card.coverImage} />
                ))}
             </div>
          </div>
-         <ButtonWithArrow
-            text="Подробнее"
-            to={"/gallery"}
-         />
+         <ButtonWithArrow text="Подробнее" to={"/gallery"} />
       </SectionWrapper>
    );
 };

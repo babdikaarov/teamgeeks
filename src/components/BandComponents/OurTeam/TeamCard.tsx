@@ -12,30 +12,16 @@ const TeamCard: React.FC<Card.TeamCardProps> = ({ image, instrument, name, video
    const mouse = flipHanler.mouseOverLeave(!tabletSize);
 
    return (
-      <div
-         className={`${styles.card}`}
-         data-animate={animate}
-         {...touch}
-         {...mouse}
-      >
+      <div className={`${styles.card}`} data-animate={animate} {...touch} {...mouse}>
          <div className={styles.front}>
-            <ImageLoader
-               src={image}
-               bluer={bluer}
-            />
+            <ImageLoader src={image} bluer={bluer} />
             <div className={styles.text}>
                <div className={styles.h4}>{name}</div>
                <p>{instrument}</p>
             </div>
          </div>
          <div className={styles.back}>
-            <video
-               src={video}
-               autoPlay
-               muted
-               loop
-               playsInline
-            >
+            <video src={video} autoPlay muted loop playsInline>
                <track kind="captions"></track>
             </video>
             <div className={styles.text}>

@@ -15,10 +15,7 @@ const OurStudentsCard: React.FC<Card.OurStudentsCardProps> = ({ url, addToID, al
    const modalID = `studentModal${addToID}}`;
    const { openModal } = useModalCotroller();
    return (
-      <div
-         className={styles.StudentCard}
-         onClick={() => openModal(modalID)}
-      >
+      <div className={styles.StudentCard} onClick={() => openModal(modalID)}>
          <div>
             {!imageLoaded && <div className={styles.loadingBox}></div>}
             <img
@@ -30,17 +27,10 @@ const OurStudentsCard: React.FC<Card.OurStudentsCardProps> = ({ url, addToID, al
             />
          </div>
          <span className={styles.icon}>
-            <img
-               src="/icons/play.svg"
-               alt="play"
-            />
+            <img src="/icons/play.svg" alt="play" />
          </span>
          <div className={styles.h6}>{title}</div>
-         <ModalYouTube
-            id={modalID}
-            youTubeId={id}
-            allIDS={allIDS}
-         />
+         <ModalYouTube id={modalID} youTubeId={id} allIDS={allIDS} />
       </div>
    );
 };

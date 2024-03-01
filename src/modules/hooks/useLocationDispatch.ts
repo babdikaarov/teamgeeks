@@ -45,9 +45,7 @@ const useLocationDispatch = () => {
       !bandTeam.getLoading && dispatch(getOurTeam());
       !bandCollab.getLoading && dispatch(getCollaborations());
       !bandPartners.getLoading && dispatch(getClients());
-
       !contacts.getLoading && dispatch(getContacts());
-
       !studioCourses.getLoading && dispatch(getCourses());
       !studioAlbum.getLoading && dispatch(getStudioAlbum());
       !studioAbout.getLoading && dispatch(getCoolStudio());
@@ -55,7 +53,6 @@ const useLocationDispatch = () => {
       !studioTeachers.getLoading && dispatch(getTeachers());
       !studioTestimonial.getLoading && dispatch(getStudentSuccess());
       !studioStudents.getLoading && dispatch(getStudentReviwes());
-      !studioAlbum.getLoading && dispatch(getStudioAlbum());
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 };

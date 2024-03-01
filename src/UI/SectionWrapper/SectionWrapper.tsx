@@ -9,12 +9,7 @@ const SectionWrapper: React.FC<Prop.SectionWrapper> = ({
    ...props
 }) => {
    return (
-      <section
-         ref={forwardedRef}
-         className={className + " " + styles.sectionWrapper}
-         id={id}
-         {...props}
-      >
+      <section ref={forwardedRef} className={className + " " + styles.sectionWrapper} id={id} {...props}>
          {header.length > 0 && <h2 className={styles.h2}>{header}</h2>}
          {children}
       </section>

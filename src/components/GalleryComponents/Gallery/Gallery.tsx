@@ -24,31 +24,15 @@ const Gallery: React.FC = () => {
    useKeyPress("a"); //use to togle between gallery pages for testing
    // console.log(onStudio)
    return (
-      <SectionWrapper
-         forwardedRef={refToogle}
-         className={styles.galleryWrapper}
-      >
-         <button
-            aria-label="button"
-            onClick={() => navigate("../")}
-            className={styles.navigation}
-         >
+      <SectionWrapper forwardedRef={refToogle} className={styles.galleryWrapper}>
+         <button aria-label="button" onClick={() => navigate("../")} className={styles.navigation}>
             {bigArrow}
          </button>
          <div className={styles.gallery}>
             {(pathname.includes("studio") ? studioData : bandData).map((event) => (
-               <div
-                  className={styles.galleryCards}
-                  key={event.id}
-               >
-                  <Link
-                     to={`${redirectTo}/${event.id}`}
-                     className={styles.image_container}
-                  >
-                     <ImageLoader
-                        src={event.coverImage}
-                        bluer={event.bluer}
-                     />
+               <div className={styles.galleryCards} key={event.id}>
+                  <Link to={`${redirectTo}/${event.id}`} className={styles.image_container}>
+                     <ImageLoader src={event.coverImage} bluer={event.bluer} />
                      <div className={styles.galleryCardsContent}>
                         <p>{event.date}</p>
                         <h4>{event.name}</h4>

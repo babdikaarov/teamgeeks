@@ -23,18 +23,8 @@ const ModalYouTube: React.FC<Prop.ModalYouTube> = ({ id, youTubeId, allIDS }) =>
    }, []);
 
    return (
-      <dialog
-         id={id}
-         className={styles.modal}
-         ref={dialogRef}
-      >
-         <img
-            src={close}
-            id="closeBtn"
-            alt="close"
-            className={styles.close}
-            onClick={() => handleClose}
-         />
+      <dialog id={id} className={styles.modal} ref={dialogRef}>
+         <img src={close} id="closeBtn" alt="close" className={styles.close} onClick={() => handleClose} />
          {isOpen && (
             <iframe
                ref={ref}

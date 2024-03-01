@@ -48,30 +48,21 @@ const GalleryCollage: React.FC<Props> = ({ items }) => {
 
    return (
       <>
-         <div
-            className={styles.collage}
-            ref={refToogle}
-         >
+         <div className={styles.collage} ref={refToogle}>
             {images.map((data, i) => (
                <div
                   key={i}
                   className={`${data && styles.collageItem} ${styles[data.orientation]}`}
                   onClick={() => handleOpen(i)}
                >
-                  <ImageLoader
-                     src={data.image}
-                     bluer={data.bluer}
-                  />
+                  <ImageLoader src={data.image} bluer={data.bluer} />
                </div>
             ))}
 
             <LightBox {...lightBoxProps} />
          </div>
          {images.length === items.length ? null : (
-            <button
-               className={styles.paginationButton}
-               onClick={nextPage}
-            >
+            <button className={styles.paginationButton} onClick={nextPage}>
                Далее
             </button>
          )}

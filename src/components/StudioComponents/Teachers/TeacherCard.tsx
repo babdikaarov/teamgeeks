@@ -13,16 +13,8 @@ const TeacherCard: React.FC<Card.TeacherCardProps> = (props) => {
    return (
       <div className={styles.cardContainer}>
          <div className={styles.imageContainer}>
-            <ImageLoader
-               src={img}
-               bluer={bluer}
-            />
-            <a
-               aria-label="instagram"
-               href={instagram}
-               target="blank"
-               onClick={handleInstagramClick}
-            >
+            <ImageLoader src={img} bluer={bluer} />
+            <a aria-label="instagram" href={instagram} target="blank" onClick={handleInstagramClick}>
                {socialIcons.instagram}
             </a>
          </div>

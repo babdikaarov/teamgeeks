@@ -32,16 +32,8 @@ const OurTeam = () => {
    const data = useAppSelector((state) => state.getOurTeam.data)!;
 
    return (
-      <SectionWrapper
-         header={"Наша команда"}
-         className={styles.teamWrapper}
-         id={EBlockID.TEAM}
-         forwardedRef={ref}
-      >
-         <div
-            className={styles.teamContainer}
-            ref={refToogle}
-         >
+      <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id={EBlockID.TEAM} forwardedRef={ref}>
+         <div className={styles.teamContainer} ref={refToogle}>
             <NavigationButton id="TeamPrev" />
             <Swiper
                className={styles.swiperWrapper}
@@ -68,14 +60,8 @@ const OurTeam = () => {
                }}
             >
                {data.map((card, i) => (
-                  <SwiperSlide
-                     key={i}
-                     className={styles.cardContainer + " " + styles[card.orientation]}
-                  >
-                     <TeamCard
-                        animate={i === 0}
-                        {...card}
-                     />
+                  <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.orientation]}>
+                     <TeamCard animate={i === 0} {...card} />
                   </SwiperSlide>
                ))}
             </Swiper>

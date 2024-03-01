@@ -13,10 +13,7 @@ const BurgerBtn = ({ toggleMenu }: { toggleMenu: () => void }) => {
       navigate(!pathname.includes("studio") ? "/studio" : "/");
    };
    return (
-      <button
-         className={!pathname.includes("studio") ? styles.studioBtn : styles.bandBtn}
-         onClick={handleClick}
-      >
+      <button className={!pathname.includes("studio") ? styles.studioBtn : styles.bandBtn} onClick={handleClick}>
          {!pathname.includes("studio") ? "Cool Studio" : "Cool Band"}
       </button>
    );

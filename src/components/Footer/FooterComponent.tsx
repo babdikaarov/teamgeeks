@@ -14,17 +14,8 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
    return (
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
-            <Logo
-               bandPage={bandPage}
-               id="logo1footer"
-               onFooter
-            />
-            <Logo
-               bandPage={bandPage}
-               id="logo2footer"
-               footerHide={styles.footerHide}
-               onFooter
-            />
+            <Logo bandPage={bandPage} id="logo1footer" onFooter />
+            <Logo bandPage={bandPage} id="logo2footer" footerHide={styles.footerHide} onFooter />
          </div>
 
          <div className={styles.footerInfo}>
@@ -33,10 +24,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                <ul>
                   {backendData.coursesList.map((item, i) => (
                      <li key={i}>
-                        <HashLink
-                           to="/studio/#courses"
-                           aria-label="link"
-                        >
+                        <HashLink to="/studio/#courses" aria-label="link">
                            {item}
                         </HashLink>
                      </li>
@@ -47,10 +35,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                <div className={styles.h4}>Адрес:</div>
                <ul>
                   <li>
-                     <Link
-                        target="_blank"
-                        to={`https://2gis.kg/${city}/firm/${organizationId}`}
-                     >
+                     <Link target="_blank" to={`https://2gis.kg/${city}/firm/${organizationId}`}>
                         {address}
                      </Link>
                   </li>
@@ -60,19 +45,13 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ bandPage, back
                <div className={styles.h4}>Контакты:</div>
                <ul>
                   <li>
-                     <Link
-                        target="_blank"
-                        to={createWhatsAppLink(bandNumber, "Хочу Cool Band на свем мероприятие!")}
-                     >
+                     <Link target="_blank" to={createWhatsAppLink(bandNumber, "Хочу Cool Band на свем мероприятие!")}>
                         {`${formatPhoneNumber(bandNumber)} `}
                         Cool Band
                      </Link>
                   </li>
                   <li>
-                     <Link
-                        target="_blank"
-                        to={createWhatsAppLink(studioNumber, "Хочу узнать подробнее об обучении!")}
-                     >
+                     <Link target="_blank" to={createWhatsAppLink(studioNumber, "Хочу узнать подробнее об обучении!")}>
                         {`${formatPhoneNumber(studioNumber)} `}
                         Cool Studio
                      </Link>

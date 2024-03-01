@@ -14,12 +14,7 @@ const TwoGis = () => {
 
    return (
       <>
-         <iframe
-            title="twogis"
-            frameBorder="no"
-            className={styles.map}
-            src={twoGisIframeURL}
-         ></iframe>
+         <iframe title="twogis" frameBorder="no" className={styles.map} src={twoGisIframeURL}></iframe>
       </>
    );
 };

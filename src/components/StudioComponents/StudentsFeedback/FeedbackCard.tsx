@@ -5,10 +5,7 @@ const StudentsFeedbackCard: React.FC<Card.FeedbackCardProps> = ({ img, name, wor
    return (
       <div className={styles.StudentsFeedbackCard}>
          <div className={styles.image}>
-            <ImageLoader
-               src={img}
-               bluer={bluer}
-            />
+            <ImageLoader src={img} bluer={bluer} />
          </div>
          <div className={styles.StudentsText}>
             <div className={styles.StudentsName}>{name}</div>

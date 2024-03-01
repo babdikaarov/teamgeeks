@@ -15,10 +15,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
    };
 
    return (
-      <ul
-         className={styles.navigation}
-         data-navigation="band"
-      >
+      <ul className={styles.navigation} data-navigation="band">
          {/* <li>
             <HashLink
                to="/"
@@ -72,11 +69,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ lyrics, setIsMenuOpen
             </HashLink>
          </li>
          <li className="rotateNavigation">
-            <a
-               href={lyrics}
-               target="_blank"
-               rel="noopener noreferrer"
-            >
+            <a href={lyrics} target="_blank" rel="noopener noreferrer">
                Репертуар
             </a>
          </li>

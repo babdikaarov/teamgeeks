@@ -40,26 +40,11 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
    }, []);
 
    return (
-      <SectionWrapper
-         className={styles.hero}
-         {...props}
-      >
-         <video
-            ref={videoRef}
-            src={video}
-            muted
-            autoPlay
-            loop
-            playsInline
-         >
+      <SectionWrapper className={styles.hero} {...props}>
+         <video ref={videoRef} src={video} muted autoPlay loop playsInline>
             <track kind="captions"></track>
          </video>
-         {text && (
-            <HeroText
-               header={text.header}
-               className={styles.textPosition}
-            />
-         )}
+         {text && <HeroText header={text.header} className={styles.textPosition} />}
          {children}
       </SectionWrapper>
    );

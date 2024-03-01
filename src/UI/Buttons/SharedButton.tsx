@@ -6,11 +6,7 @@ const SharedButton: React.FC<Prop.ISharedProps> = ({ whatsapp, classname, text }
    const whatsappText = createWhatsAppLink(whatsapp, text);
 
    return (
-      <a
-         href={whatsappText}
-         target="blank"
-         className={classname}
-      >
+      <a href={whatsappText} target="blank" className={classname}>
          <button>
             {text} {phone}
          </button>
