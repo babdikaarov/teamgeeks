@@ -16,6 +16,7 @@ import styles from "./_concerts.module.scss";
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 import { Link } from "react-router-dom";
+import { mainElementAnimation } from "../../../modules/transition";
 
 
 const Concert = () => {
@@ -55,7 +56,7 @@ const Concert = () => {
                </>
             )}
 
-            <Link className={styles.watchmore} to="/studio/gallery" onClick={() => window.scrollTo(0, 0)}>
+            <Link className={styles.watchmore} to="/studio/gallery" onClick={mainElementAnimation}>
                Смотреть еще
             </Link>
          </div>

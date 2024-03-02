@@ -11,7 +11,6 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
    const { pathname } = useLocation();
 
    const handleFunction = () => {
-      (pathname.includes("studio") && mainElementAnimation());
       setIsMenuOpen(false);
    };
 
@@ -58,7 +57,11 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                to={`/${EBlockID.GALLERYSTUDIO}`}
                onClick={() => {
                   handleFunction();
-                  window.scroll(0, 0);
+                  if(pathname.includes("gallery")){
+                     return
+                  } else {
+                     mainElementAnimation();
+                  }
                }}
                className={
                   activeNavigation.focusOn === EBlockID.GALLERYSTUDIO || activeNavigation.focusOn === EBlockID.CONCERT

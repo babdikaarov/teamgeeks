@@ -23,7 +23,9 @@ const TeamCard: React.FC<Card.TeamCardProps> = ({ image, instrument, name, video
       // console.log(videoElement.play());
 
    }, []);
-
+   if(instrument === "-"){
+      instrument = ""
+   }
    
    return (
       

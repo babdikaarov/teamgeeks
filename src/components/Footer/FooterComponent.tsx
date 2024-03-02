@@ -1,6 +1,6 @@
 // modules
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import createMailtoLink from "../../modules/createMailtoLink";
 import createWhatsAppLink from "../../modules/createWhatsAppLink";
 // styles
@@ -8,9 +8,18 @@ import styles from "./_footer.module.scss";
 // components
 import Logo from "../../UI/Logo/Logo";
 import formatPhoneNumber from "../../modules/formatPhoneNumberToText";
+import { mainElementAnimation } from "../../modules/transition";
 
 const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData }) => {
    const { bandNumber, studioNumber, address, email, city, organizationId } = backendData.contactDetails;
+   const {pathname} = useLocation();
+   const handleNavigation = () => {
+      if(pathname.includes("studio")){
+         return
+      } else {
+         mainElementAnimation();
+      }
+   }
    return (
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
@@ -24,7 +33,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData })
                <ul>
                   {backendData.coursesList.map((item, i) => (
                      <li key={i}>
-                        <HashLink to="/studio/#courses" aria-label="link">
+                        <HashLink to="/studio/#courses" aria-label="link" onClick={handleNavigation} > 
                            {item}
                         </HashLink>
                      </li>

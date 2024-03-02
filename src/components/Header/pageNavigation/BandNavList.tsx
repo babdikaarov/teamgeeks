@@ -3,12 +3,12 @@ import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
 import { mainElementAnimation } from "../../../modules/transition";
 import styles from "./_NavList.module.scss";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    const activeNavigation = useAppSelector((state) => state.getActiveNavigationState);
-   // const { pathname } = useLocation();
+   const { pathname } = useLocation();
    const lyrics = useAppSelector((state) => state.getContacts.data.whatsapp!);
    const handleFunction = () => {
       // (!pathname.includes('studio') && mainElementAnimation());
@@ -62,7 +62,11 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
                to={`/${EBlockID.GALLERY}`}
                onClick={()=> {
                   handleFunction();
-                  mainElementAnimation();
+                  if(pathname.includes("gallery")){
+                     return
+                  } else {
+                     mainElementAnimation();
+                  }
                }}
                className={activeNavigation.focusOn === EBlockID.GALLERY ? styles.active : ""}
             >

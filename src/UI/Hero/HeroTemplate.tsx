@@ -50,11 +50,11 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
 
    return (
       <SectionWrapper className={styles.hero} {...props}>
-         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="auto" autoPlay={true} muted={true} playsInline={true}  >
+         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="metadata" autoPlay={true} muted={true} playsInline={true}  >
             {/* <track kind="captions"></track> */}
             {/* <source src={video} typeof="video/mp4" /> */}
          </video>
-         {text && <HeroText header={text.header} className={styles.textPosition} />}
+         {text && <HeroText header={text.header} paragraph={text.paragraph} className={styles.textPosition} />}
          {children}
       </SectionWrapper>
    );
