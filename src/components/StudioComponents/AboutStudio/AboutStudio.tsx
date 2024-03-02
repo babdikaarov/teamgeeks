@@ -25,29 +25,29 @@ const AboutStudio: React.FC = () => {
          className={styles.coolStudio}
          id={EBlockID.ABOUTSTUDIO}
       >
-         <div ref={refToogle} className={styles.AboutUsWrapper}>
-            <div className={styles.TextWrapper}>
-               <span>
+         <article ref={refToogle} className={styles.AboutUsWrapper}>
+            <article className={styles.TextWrapper}>
+               <p>
                   {staticText.text1}
                   <br />
-               </span>
-               <span>
+               </p>
+               <p>
                   <br />
                   {staticText.text2}
                   {expanded ? "" : ".."}
-               </span>
+               </p>
                {expanded && (
-                  <div className={`${styles.ExpandedText} ${expanded ? styles.expanded : ""}`}>
-                     <span>
+                  <article className={`${styles.ExpandedText} ${expanded ? styles.expanded : ""}`}>
+                     <p>
                         <br />
                         {staticText.text3}
                         <br />
-                     </span>
-                     <span>
+                     </p>
+                     <p>
                         <br />
                         {staticText.text4}
-                     </span>
-                  </div>
+                     </p>
+                  </article>
                )}
                <button
                   className={`${styles.ExpandButton} ${expanded ? styles.CollapseButton : styles.MoreButton}`}
@@ -55,9 +55,9 @@ const AboutStudio: React.FC = () => {
                >
                   {expanded ? "Свернуть" : "еще"}
                </button>
-            </div>
+            </article>
             <VideoComponent />
-         </div>
+         </article>
       </SectionWrapper>
    );
 };

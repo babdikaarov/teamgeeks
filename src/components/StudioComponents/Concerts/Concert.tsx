@@ -17,12 +17,14 @@ import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 import { Link } from "react-router-dom";
 
+
 const Concert = () => {
-   const data = useAppSelector((state) => state.getStudioAlbum.data)!;
+   const album = useAppSelector((state) => state.getStudioAlbum)!;
    const { refToogle } = useToggleActiveNavigation(EBlockID.CONCERT);
    const mobileWidth = useMediaQuery("(max-width: 576px)");
-   const mobileArray = data.slice(0, 3);
+   const mobileArray = album.data.slice(0, 3);
 
+   if(!album.getLoading) return null
    return (
       <SectionWrapper header="Отчетные концерты">
          <div className={styles.ConcertSlider} ref={refToogle}>
@@ -42,7 +44,7 @@ const Concert = () => {
                      navigation={{ nextEl: "#ConcertNext", prevEl: "#ConcertPrev" }}
                      className={styles.concertSwiper}
                   >
-                     {(data.length < 5 ? [...data, ...data] : data).map((image, index) => (
+                     {(album.data.length < 5 ? [...album.data, ...album.data] : album.data).map((image, index) => (
                         <SwiperSlide key={index} className={styles.concertsSwipeCard}>
                            <ConcertCard {...image} />
                         </SwiperSlide>

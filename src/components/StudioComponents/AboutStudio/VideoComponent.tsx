@@ -46,7 +46,7 @@ const VideoComponent = () => {
          <iframe
             ref={videoRef}
             className={styles.video}
-            src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1`}
             title="YouTube video player"
             allow="autoplay; encrypted-media"
             sandbox="allow-scripts allow-same-origin allow-presentation"

@@ -27,6 +27,7 @@ const ModalYouTube: React.FC<Prop.ModalYouTube> = ({ id, youTubeId, allIDS }) =>
          <img src={close} id="closeBtn" alt="close" className={styles.close} onClick={() => handleClose} />
          {isOpen && (
             <iframe
+            
                ref={ref}
                width="100%"
                height="100%"
@@ -34,6 +35,7 @@ const ModalYouTube: React.FC<Prop.ModalYouTube> = ({ id, youTubeId, allIDS }) =>
                title="YouTube video player"
                allowFullScreen
                allow="encrypted-media"
+               
                sandbox="allow-scripts allow-same-origin allow-presentation"
             ></iframe>
          )}

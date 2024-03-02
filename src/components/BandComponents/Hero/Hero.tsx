@@ -7,7 +7,7 @@ import SharedButton from "../../../UI/Buttons/SharedButton.tsx";
 interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
 const Hero: React.FC<Props> = ({ ...props }) => {
-   const video = useAppSelector((state) => state.getHeroBand.data?.video)!;
+   const video = useAppSelector((state) => state.getHeroBand.data.video)!;
    const { bandNumber } = useAppSelector((state) => state.getContacts.data)!;
    return (
       <HeroTeamplate video={video} {...props}>

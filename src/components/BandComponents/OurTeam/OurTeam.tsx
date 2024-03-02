@@ -29,8 +29,8 @@ const OurTeam = () => {
       }
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
-   const data = useAppSelector((state) => state.getOurTeam.data)!;
-
+   const team = useAppSelector((state) => state.getOurTeam)!;
+   if(!team.getLoading) return null
    return (
       <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id={EBlockID.TEAM} forwardedRef={ref}>
          <div className={styles.teamContainer} ref={refToogle}>
@@ -59,7 +59,7 @@ const OurTeam = () => {
                   },
                }}
             >
-               {data.map((card, i) => (
+               {team.data.map((card, i) => (
                   <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.orientation]}>
                      <TeamCard animate={i === 0} {...card} />
                   </SwiperSlide>

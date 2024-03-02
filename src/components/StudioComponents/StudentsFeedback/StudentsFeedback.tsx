@@ -1,5 +1,4 @@
 // modules
-import { useEffect, useState } from "react";
 import { useAppSelector } from "../../../app/hooks";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,23 +12,16 @@ import NavigationButton from "../../../UI/Buttons/NavigationButton";
 import styles from "./_studentsFeedback.module.scss";
 
 const StudentsFeedback = () => {
-   const [initialSlide, setInitialSlide] = useState<number>(1);
-   const data = useAppSelector((state) => state.getStudentReviwes.data)!;
+   const feedbacks = useAppSelector((state) => state.getStudentReviwes)!;
 
-   useEffect(() => {
-      if (!data) return;
-      if (data.length > 0) {
-         setInitialSlide(Math.floor(data.length / 2));
-      }
-   }, [data]);
-
+   if(!feedbacks.getLoading)return null
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
             <NavigationButton id="FeedbackPrev" />
 
             <Swiper
-               key={initialSlide}
+               key={1}
                className={styles.feedbackSwiper}
                effect={"coverflow"}
                grabCursor
@@ -90,7 +82,7 @@ const StudentsFeedback = () => {
                   },
                }}
             >
-               {(data.length < 5 ? [...data, ...data] : data).map((card, i) => (
+               {(feedbacks.data.length < 6 ? [...feedbacks.data, ...feedbacks.data, ...feedbacks.data] : feedbacks.data).map((card, i) => (
                   <SwiperSlide key={i}>
                      <StudentsFeedbackCard img={card.image} name={card.name} word={card.reviews} bluer={card.bluer} />
                   </SwiperSlide>

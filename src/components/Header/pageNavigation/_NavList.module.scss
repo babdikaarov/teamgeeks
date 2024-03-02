@@ -19,17 +19,26 @@
 }
 
 @media (min-width: 1024px) {
-   .navigation[data-navigation="studio"] {
-      transform: rotateY(0.5turn);
-      z-index: 2;
-   }
-   .navigation[data-navigation="band"] {
-      z-index: 1;
-   }
-   .navigation[data-navigation="studio"],
-   .navigation[data-navigation="band"] {
-      position: absolute;
-      backface-visibility: hidden;
+   .navigation {
+   backface-visibility: hidden ;
+ 
+   
+}
+.navigation[data-navigation="studio"] {
+   transform: rotateY(0.5turn);
+   z-index: 2;
+}
+.navigation[data-navigation="band"] {
+   z-index: 1;
+   
+}
+.navigation[data-navigation="studio"],
+.navigation[data-navigation="band"] {
+   position: absolute;
+   backface-visibility: hidden; 
+   -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   transform-style: preserve-3d;
    }
 }
 

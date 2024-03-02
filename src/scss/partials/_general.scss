@@ -70,24 +70,28 @@ main {
       width: 80%;
       height: 60px;
       transform-style: preserve-3d;
-      // backface-visibility: hidden;
       transition: all 0.4s linear;
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
+      z-index: -1;
+
       @media (max-width: 1024px) {
          justify-content: start;
       }
    }
-
+   
    #navigaionContainer[data-navlist-animation="studio"] {
       transform: rotateY(180deg);
       opacity: 1;
    }
+
+
+
    #navigaionContainer[data-navlist-animation="band"] {
-      animation: rotate 1s linear;
       opacity: 1;
+
    }
 }
 
@@ -122,9 +126,10 @@ main {
 
 .rotateNavigation {
    position: relative;
+   // transform-style: preserve-3d;
+
 }
 
-// Typography
 
 body {
    font-family: "Montserrat Alternates", sans-serif;

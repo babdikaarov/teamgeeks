@@ -8,8 +8,18 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
 
    useEffect(() => {
       const videoElement = videoRef.current;
-      videoElement?.setAttribute("muted", "true");
-      videoElement?.setAttribute("muted", "");
+      if (!videoElement)return
+      videoElement.volume = 0;
+      videoElement.setAttribute("muted", "true");
+      videoElement.setAttribute("muted", "");
+      videoElement.onpause  = () => (videoElement.play());
+      videoElement.play()
+      console.log(videoElement.play());
+      // if (videoElement) {
+      //    videoElement.oncanplaythrough = () => {
+      //      videoElement.play();
+      //    };
+      //  }
       // const handleClick = (e: Event) => {
       //    e.preventDefault();
       //    e.stopPropagation();
@@ -31,18 +41,18 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
       // videoElement?.addEventListener("click", handleClick);
       // videoElement?.addEventListener("touchstart", handleTouch);
       // videoElement?.addEventListener("scroll", handleWheel);
-      // videoElement?.play();
 
       // return () => {
       //    videoElement?.removeEventListener("click", handleClick);
       //    videoElement?.removeEventListener("touchstart", handleTouch);
       // };
-   }, []);
+   }, [videoRef]);
 
    return (
       <SectionWrapper className={styles.hero} {...props}>
-         <video ref={videoRef} src={video} muted autoPlay loop playsInline>
-            <track kind="captions"></track>
+         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="auto" autoPlay={true} muted={true} playsInline={true} disablePictureInPicture onClick={(e)=> e.stopPropagation()} >
+            {/* <track kind="captions"></track> */}
+            {/* <source src={video} typeof="video/mp4" /> */}
          </video>
          {text && <HeroText header={text.header} className={styles.textPosition} />}
          {children}

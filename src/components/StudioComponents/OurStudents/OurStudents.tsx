@@ -17,13 +17,17 @@ import styles from "./_ourstudents.module.scss";
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 
+
 const OurStudents = () => {
-   const data = useAppSelector((state) => state.getStudentSuccess.data)!;
+   const students = useAppSelector((state) => state.getStudentSuccess)!;
    const mobileWidth = useMediaQuery("(max-width: 576px)");
-   const mobileArray = data.slice(0, 3);
-   const allIDS = extractAllYouTubeVideoID(data.map((el) => el.url));
+   const mobileArray = students.data.slice(0, 3);
+   const allIDS = extractAllYouTubeVideoID(students.data.map((el) => el.url));
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
 
+
+
+   if(!students.getLoading) return null
    return (
       <SectionWrapper header="Успехи наших студентов" id="students">
          <div ref={refToogle} className={styles.ourStudents}>
@@ -45,7 +49,7 @@ const OurStudents = () => {
                      navigation={{ nextEl: "#btn51", prevEl: "#StudentsPrev" }}
                      className={styles.ourStudentsSwiper}
                   >
-                     {(data.length < 5 ? [...data, ...data] : data).map((url, index) => (
+                     {(students.data.length < 5 ? [...students.data, ...students.data] : students.data).map((url, index) => (
                         <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
                            <OurStudentsCard url={url.url} addToID={url.id} allIDS={allIDS} />
                         </SwiperSlide>

@@ -20,7 +20,7 @@ import { EBlockID } from "../../../globalTypesEnum";
 const Teachers = () => {
    const [selectedTeacher, setSelectedTeacher] = useState<Slice.ITeacherData | null>(null);
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEACHERS);
-   const data = useAppSelector((state) => state.getTeachers.data)!;
+   const teachers = useAppSelector((state) => state.getTeachers)!;
    const { studioNumber } = useAppSelector((state) => state.getContacts.data)!;
 
    const openModal = useCallback((teacher: Slice.ITeacherData) => {
@@ -29,13 +29,14 @@ const Teachers = () => {
 
    const closeModal = useCallback(() => {
       setSelectedTeacher(null);
-   }, []);
-
+   }, []);  
+   if(!teachers.getLoading)return null
    return (
       <SectionWrapper header="Команда Cool  Studio" id="teachers">
          <div ref={refToogle} className={styles.teacherContainer}>
             <NavigationButton id="TeachersPrev" />
             <Swiper
+               key={3}
                className={styles.teacherSwiper}
                slidesPerView={"auto"}
                freeMode
@@ -57,7 +58,7 @@ const Teachers = () => {
                   },
                }}
             >
-               {data.map((card, i) => (
+               {[...teachers.data, ...teachers.data].map((card, i) => (
                   <SwiperSlide key={i} onClick={() => openModal(card)} className={styles.cardSwiperTeacher}>
                      <TeacherCard
                         img={card.image}

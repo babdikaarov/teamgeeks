@@ -9,7 +9,7 @@
    overflow: hidden;
    white-space: nowrap;
 }
-.scroller:hover .scrollerInner {
+.scroller:hover .scrollerInner[data-animation="true"] {
    cursor: pointer;
    animation-play-state: paused;
 }

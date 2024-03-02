@@ -14,7 +14,7 @@ export const useYouTubeData = (url: string) => {
    });
 
    const getVideoTitle = async (url: string) => {
-      const oEmbedUrl = `https://www.youtube.com/oembed?url=${url}&format=json`;
+      const oEmbedUrl = `https://www.youtube-nocookie.com/oembed?url=${url}&format=json`;
 
       try {
          const response = await fetch(oEmbedUrl);

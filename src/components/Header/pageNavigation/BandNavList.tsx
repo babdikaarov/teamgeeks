@@ -11,12 +11,12 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    // const { pathname } = useLocation();
    const lyrics = useAppSelector((state) => state.getContacts.data.whatsapp!);
    const handleFunction = () => {
-      mainElementAnimation();
+      // (!pathname.includes('studio') && mainElementAnimation());
       setIsMenuOpen(false);
    };
 
    return (
-      <ul className={styles.navigation} data-navigation="band">
+      <ul className={styles.navigation} data-navigation="band" >
          {/* <li>
             <HashLink
                to="/"
@@ -60,7 +60,10 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
          <li className="rotateNavigation">
             <Link
                to={`/${EBlockID.GALLERY}`}
-               onClick={handleFunction}
+               onClick={()=> {
+                  handleFunction();
+                  mainElementAnimation();
+               }}
                className={activeNavigation.focusOn === EBlockID.GALLERY ? styles.active : ""}
             >
                Галерея

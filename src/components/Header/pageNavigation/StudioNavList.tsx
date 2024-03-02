@@ -11,7 +11,7 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
    const { pathname } = useLocation();
 
    const handleFunction = () => {
-      pathname.includes("studio") && mainElementAnimation();
+      (pathname.includes("studio") && mainElementAnimation());
       setIsMenuOpen(false);
    };
 
