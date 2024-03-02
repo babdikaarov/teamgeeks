@@ -128,12 +128,11 @@
    transition: transform 0.5s ease-in-out;
 }
 
-.pageLogo:hover .CoolIcons  {
-   transform: translateX(-3px) ;
+.pageLogo:hover .CoolIcons {
+   transform: translateX(-3px);
 }
-.front *{
-   
-    backface-visibility: hidden;
+.front * {
+   backface-visibility: hidden;
 }
 .front {
    transform-style: preserve-3d;

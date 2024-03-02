@@ -8,7 +8,7 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
 
    useEffect(() => {
       const videoElement = videoRef.current;
-      if (!videoElement)return
+      if (!videoElement) return;
       videoElement.volume = 0;
       videoElement.setAttribute("muted", "true");
       videoElement.setAttribute("muted", "");
@@ -50,7 +50,16 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
 
    return (
       <SectionWrapper className={styles.hero} {...props}>
-         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="metadata" autoPlay={true} muted={true} playsInline={true}  >
+         <video
+            ref={videoRef}
+            src={video}
+            typeof="video/mp4"
+            loop
+            preload="metadata"
+            autoPlay={true}
+            muted={true}
+            playsInline={true}
+         >
             {/* <track kind="captions"></track> */}
             {/* <source src={video} typeof="video/mp4" /> */}
          </video>

@@ -5,9 +5,9 @@ import { mainElementAnimation } from "../../../modules/transition";
 const ConcertCard = (props: Card.ConcertCardProps) => {
    const navigate = useNavigate();
    const handleNavigation = () => {
-      navigate(`/studio/gallery/${props.id}`)
-         mainElementAnimation();
-   }
+      navigate(`/studio/gallery/${props.id}`);
+      mainElementAnimation();
+   };
    return (
       <div className={styles.ConcertsCard} onClick={handleNavigation}>
          <img className={styles.concertImg} src={props.coverImage} alt="event poster" />

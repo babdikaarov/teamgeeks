@@ -28,7 +28,7 @@ export const getStudioAlbum = createAsyncThunk("getStudioAlbum", async () => {
 export const getBandAlbum = createAsyncThunk("getBandAlbum", async () => {
    const getData = await axiosApi<Slice.IGetBandAlbum[]>("/event_band");
    const data = getData.data;
-   
+
    if (data) {
       return data.filter((el: Slice.IGetBandAlbum) => el.coverImage);
    }

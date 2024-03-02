@@ -81,17 +81,14 @@ main {
          justify-content: start;
       }
    }
-   
+
    #navigaionContainer[data-navlist-animation="studio"] {
       transform: rotateY(180deg);
       opacity: 1;
    }
 
-
-
    #navigaionContainer[data-navlist-animation="band"] {
       opacity: 1;
-
    }
 }
 
@@ -127,9 +124,7 @@ main {
 .rotateNavigation {
    position: relative;
    // transform-style: preserve-3d;
-
 }
-
 
 body {
    font-family: "Montserrat Alternates", sans-serif;

@@ -20,12 +20,20 @@ const OurEvents = () => {
    return (
       <SectionWrapper header={"Наши мероприятия"} className={styles.ourEvent}>
          <div className={styles.scroller} data-direction="left">
-            <div className={styles.scrollerInner} data-scroller_inner="inner" data-animation={true} /* false for no pause interaction */ >
+            <div
+               className={styles.scrollerInner}
+               data-scroller_inner="inner"
+               data-animation={true} /* false for no pause interaction */
+            >
                {data.map((card) => (
                   <ImageLoader bluer={card.bluer} src={card.coverImage} key={self.crypto.randomUUID()} />
                ))}
             </div>
-            <div className={styles.scrollerInner} data-scroller_inner="copy" data-animation={true} /* false for no pause interaction */ >
+            <div
+               className={styles.scrollerInner}
+               data-scroller_inner="copy"
+               data-animation={true} /* false for no pause interaction */
+            >
                {data.map((card) => (
                   <ImageLoader key={self.crypto.randomUUID()} bluer={card.bluer} src={card.coverImage} />
                ))}

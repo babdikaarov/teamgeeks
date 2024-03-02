@@ -14,7 +14,7 @@ import styles from "./_studentsFeedback.module.scss";
 const StudentsFeedback = () => {
    const feedbacks = useAppSelector((state) => state.getStudentReviwes)!;
 
-   if(!feedbacks.getLoading)return null
+   if (!feedbacks.getLoading) return null;
    return (
       <SectionWrapper header={"Отзывы наших студентов"}>
          <div className={styles.feedbackContainer}>
@@ -82,7 +82,10 @@ const StudentsFeedback = () => {
                   },
                }}
             >
-               {(feedbacks.data.length < 6 ? [...feedbacks.data, ...feedbacks.data, ...feedbacks.data] : feedbacks.data).map((card, i) => (
+               {(feedbacks.data.length < 6
+                  ? [...feedbacks.data, ...feedbacks.data, ...feedbacks.data]
+                  : feedbacks.data
+               ).map((card, i) => (
                   <SwiperSlide key={i}>
                      <StudentsFeedbackCard img={card.image} name={card.name} word={card.reviews} bluer={card.bluer} />
                   </SwiperSlide>

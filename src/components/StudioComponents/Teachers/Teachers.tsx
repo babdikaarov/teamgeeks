@@ -29,8 +29,8 @@ const Teachers = () => {
 
    const closeModal = useCallback(() => {
       setSelectedTeacher(null);
-   }, []);  
-   if(!teachers.getLoading)return null
+   }, []);
+   if (!teachers.getLoading) return null;
    return (
       <SectionWrapper header="Команда Cool  Studio" id="teachers">
          <div ref={refToogle} className={styles.teacherContainer}>

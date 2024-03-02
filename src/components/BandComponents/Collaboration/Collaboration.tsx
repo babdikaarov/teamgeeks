@@ -30,7 +30,7 @@ const Collaboration = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const collab = useAppSelector((state) => state.getCollaborations)!;
-   if(!collab.getLoading) return null
+   if (!collab.getLoading) return null;
    return (
       <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id={EBlockID.COLLAB} forwardedRef={ref}>
          <div ref={refToogle} className={styles.collabContainer} data-animate={true}>

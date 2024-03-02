@@ -57,8 +57,8 @@ const StudioNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) =>
                to={`/${EBlockID.GALLERYSTUDIO}`}
                onClick={() => {
                   handleFunction();
-                  if(pathname.includes("gallery")){
-                     return
+                  if (pathname.includes("gallery")) {
+                     return;
                   } else {
                      mainElementAnimation();
                   }

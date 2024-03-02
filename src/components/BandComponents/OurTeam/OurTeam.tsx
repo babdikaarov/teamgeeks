@@ -30,7 +30,7 @@ const OurTeam = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const team = useAppSelector((state) => state.getOurTeam)!;
-   if(!team.getLoading) return null
+   if (!team.getLoading) return null;
    return (
       <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id={EBlockID.TEAM} forwardedRef={ref}>
          <div className={styles.teamContainer} ref={refToogle}>

@@ -12,14 +12,14 @@ import { mainElementAnimation } from "../../modules/transition";
 
 const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData }) => {
    const { bandNumber, studioNumber, address, email, city, organizationId } = backendData.contactDetails;
-   const {pathname} = useLocation();
+   const { pathname } = useLocation();
    const handleNavigation = () => {
-      if(pathname.includes("studio")){
-         return
+      if (pathname.includes("studio")) {
+         return;
       } else {
          mainElementAnimation();
       }
-   }
+   };
    return (
       <footer className={styles.footer}>
          <div className={styles.footerLogos}>
@@ -33,7 +33,7 @@ const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData })
                <ul>
                   {backendData.coursesList.map((item, i) => (
                      <li key={i}>
-                        <HashLink to="/studio/#courses" aria-label="link" onClick={handleNavigation} > 
+                        <HashLink to="/studio/#courses" aria-label="link" onClick={handleNavigation}>
                            {item}
                         </HashLink>
                      </li>

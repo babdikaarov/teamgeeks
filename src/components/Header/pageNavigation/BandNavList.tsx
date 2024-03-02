@@ -16,7 +16,7 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
    };
 
    return (
-      <ul className={styles.navigation} data-navigation="band" >
+      <ul className={styles.navigation} data-navigation="band">
          {/* <li>
             <HashLink
                to="/"
@@ -60,10 +60,10 @@ const BandNavList: React.FC<Prop.Header.NavListProps> = ({ setIsMenuOpen }) => {
          <li className="rotateNavigation">
             <Link
                to={`/${EBlockID.GALLERY}`}
-               onClick={()=> {
+               onClick={() => {
                   handleFunction();
-                  if(pathname.includes("gallery")){
-                     return
+                  if (pathname.includes("gallery")) {
+                     return;
                   } else {
                      mainElementAnimation();
                   }

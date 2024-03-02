@@ -18,14 +18,13 @@ import { useAppSelector } from "../../../app/hooks";
 import { Link } from "react-router-dom";
 import { mainElementAnimation } from "../../../modules/transition";
 
-
 const Concert = () => {
    const album = useAppSelector((state) => state.getStudioAlbum)!;
    const { refToogle } = useToggleActiveNavigation(EBlockID.CONCERT);
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = album.data.slice(0, 3);
 
-   if(!album.getLoading) return null
+   if (!album.getLoading) return null;
    return (
       <SectionWrapper header="Отчетные концерты">
          <div className={styles.ConcertSlider} ref={refToogle}>
