@@ -12,9 +12,9 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
       videoElement.volume = 0;
       videoElement.setAttribute("muted", "true");
       videoElement.setAttribute("muted", "");
-      videoElement.onpause  = () => (videoElement.play());
-      videoElement.play()
-      console.log(videoElement.play());
+      // videoElement.onpause  = () => (videoElement.play());
+      // videoElement.play()
+      // console.log(videoElement.play());
       // if (videoElement) {
       //    videoElement.oncanplaythrough = () => {
       //      videoElement.play();
@@ -50,7 +50,7 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
 
    return (
       <SectionWrapper className={styles.hero} {...props}>
-         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="auto" autoPlay={true} muted={true} playsInline={true} disablePictureInPicture onClick={(e)=> e.stopPropagation()} >
+         <video ref={videoRef} src={video} typeof="video/mp4"  loop  preload="auto" autoPlay={true} muted={true} playsInline={true}  >
             {/* <track kind="captions"></track> */}
             {/* <source src={video} typeof="video/mp4" /> */}
          </video>
