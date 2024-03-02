@@ -22,15 +22,15 @@ export const getStudioAlbum = createAsyncThunk("getStudioAlbum", async () => {
    const data = getData.data;
 
    if (data) {
-      return data;
+      return data.filter((el: Slice.IGetStudioAlbum) => el.coverImage);
    }
 });
 export const getBandAlbum = createAsyncThunk("getBandAlbum", async () => {
    const getData = await axiosApi<Slice.IGetBandAlbum[]>("/event_band");
    const data = getData.data;
-
+   
    if (data) {
-      return data;
+      return data.filter((el: Slice.IGetBandAlbum) => el.coverImage);
    }
 });
 
