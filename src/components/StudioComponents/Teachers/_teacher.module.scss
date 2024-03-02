@@ -5,6 +5,10 @@
    width: 100%;
 }
 
+.teacherSwiper[data-lessFour="true"] div {
+   justify-content: center;
+}
+
 .teacherSwiper::-webkit-scrollbar {
    display: none;
 }

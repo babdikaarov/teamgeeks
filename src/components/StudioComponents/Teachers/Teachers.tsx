@@ -31,21 +31,24 @@ const Teachers = () => {
       setSelectedTeacher(null);
    }, []);
    if (!teachers.getLoading) return null;
+   const lessFour = teachers.data.length < 4;
    return (
       <SectionWrapper header="Команда Cool  Studio" id="teachers">
          <div ref={refToogle} className={styles.teacherContainer}>
-            <NavigationButton id="TeachersPrev" />
+            {!lessFour ? <NavigationButton id="TeachersPrev" /> : null}
             <Swiper
                key={3}
                className={styles.teacherSwiper}
+               data-lessFour={lessFour}
                slidesPerView={"auto"}
-               freeMode
-               loop
+               freeMode={!lessFour}
+               loop={!lessFour}
                mousewheel={{
                   forceToAxis: true,
                }}
                navigation={{ nextEl: "#TeachersNext", prevEl: "#TeachersPrev" }}
-               modules={[Mousewheel, Navigation, FreeMode]}
+               modules={lessFour ? [] : [Mousewheel, Navigation, FreeMode]}
+               
                breakpoints={{
                   1024: {
                      spaceBetween: 53,
@@ -58,8 +61,11 @@ const Teachers = () => {
                   },
                }}
             >
-               {[...teachers.data, ...teachers.data].map((card, i) => (
-                  <SwiperSlide key={i} onClick={() => openModal(card)} className={styles.cardSwiperTeacher}>
+               {(!lessFour ? [...teachers.data, ...teachers.data] : teachers.data).map((card, i) => (
+                  <SwiperSlide key={i} onClick={() => openModal(card)} 
+                  className={styles.cardSwiperTeacher}
+                  
+                  >
                      <TeacherCard
                         img={card.image}
                         name={card.name}
@@ -71,7 +77,7 @@ const Teachers = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="TeachersNext" />
+            {!lessFour ? <NavigationButton id="TeachersNext" /> : null}
          </div>
          <SharedButton whatsapp={studioNumber} classname="studioTeachersButton" text="Связаться с нами" />
          {selectedTeacher && <Modal teacher={selectedTeacher} closeModal={closeModal} />}
