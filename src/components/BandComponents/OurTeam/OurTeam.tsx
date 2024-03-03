@@ -16,7 +16,7 @@ import styles from "./_ourTeam.module.scss";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // Enums
 import { EBlockID } from "../../../globalTypesEnum";
-import { useLessCollabTeam } from "../../../modules/useLessCollabTeam";
+import { useLessCollabTeam } from "../../../modules/hooks/useLess";
 
 const OurTeam = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEAM);

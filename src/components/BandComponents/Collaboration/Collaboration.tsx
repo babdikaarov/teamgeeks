@@ -16,7 +16,7 @@ import { EBlockID } from "../../../globalTypesEnum";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
-import { useLessCollabTeam } from "../../../modules/useLessCollabTeam";
+import { useLessCollabTeam } from "../../../modules/hooks/useLess";
 
 const Collaboration = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);

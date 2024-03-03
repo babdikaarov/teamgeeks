@@ -6,6 +6,10 @@
    border-radius: 16px;
 }
 
+.concertSwiper[data-less-three="true"] div {
+   justify-content: center;
+}
+
 .ConcertSlider {
    position: relative;
    margin: 0 auto;
@@ -25,8 +29,11 @@
 
 .concertsSwipeCard {
    min-width: 380px;
+   max-width: 380px;
+   width: unset !important;
    @include xl {
       min-width: 295px;
+      max-width: 295px;
       height: 175px;
    }
    @include sm {

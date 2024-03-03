@@ -20,16 +20,24 @@
    max-width: 1160px;
    width: 100%;
 }
+
+.ourStudentsSwiper[data-less-three="true"] div {
+   justify-content: center;
+}
+
 .ourStudentsSwipeCard {
    min-width: 380px;
+   max-width: 380px;
+   width: unset !important;
    @include xl {
       min-width: 295px;
-      height: 200px;
+      max-width: 295px;
+      height: 175px;
    }
    @include sm {
       min-width: 358px;
       width: 100%;
-      height: 220px;
+      height: 200px;
    }
 }
 

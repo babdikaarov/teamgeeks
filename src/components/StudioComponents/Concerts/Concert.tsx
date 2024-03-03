@@ -17,6 +17,7 @@ import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 import { Link } from "react-router-dom";
 import { mainElementAnimation } from "../../../modules/transition";
+import { useLessConcertSuccess } from "../../../modules/hooks/useLess";
 
 const Concert = () => {
    const album = useAppSelector((state) => state.getStudioAlbum)!;
@@ -24,7 +25,9 @@ const Concert = () => {
    const mobileWidth = useMediaQuery("(max-width: 576px)");
    const mobileArray = album.data.slice(0, 3);
 
+   const lessThree = useLessConcertSuccess(album.data.length);
    if (!album.getLoading) return null;
+
    return (
       <SectionWrapper header="Отчетные концерты">
          <div className={styles.ConcertSlider} ref={refToogle}>
@@ -34,30 +37,37 @@ const Concert = () => {
                <>
                   <Swiper
                      spaceBetween={10}
-                     slidesPerView={3}
-                     freeMode
-                     loop
+                     slidesPerView={"auto"}
+                     freeMode={!lessThree.less}
+                     loop={!lessThree.less}
                      mousewheel={{
                         forceToAxis: true,
                      }}
-                     modules={[Mousewheel, Navigation, FreeMode]}
+                     modules={!lessThree.less ? [Mousewheel, Navigation, FreeMode] : []}
                      navigation={{ nextEl: "#ConcertNext", prevEl: "#ConcertPrev" }}
                      className={styles.concertSwiper}
+                     data-less-three={lessThree.less}
                   >
-                     {(album.data.length < 5 ? [...album.data, ...album.data] : album.data).map((image, index) => (
+                     {(!lessThree.less ? [...album.data, ...album.data] : album.data).map((image, index) => (
                         <SwiperSlide key={index} className={styles.concertsSwipeCard}>
                            <ConcertCard {...image} />
                         </SwiperSlide>
                      ))}
                   </Swiper>
-                  <NavigationButton id="ConcertPrev" />
-                  <NavigationButton id="ConcertNext" />
+                  {!lessThree.hide ? (
+                     <>
+                        <NavigationButton id="ConcertPrev" />
+                        <NavigationButton id="ConcertNext" />
+                     </>
+                  ) : null}
                </>
             )}
 
-            <Link className={styles.watchmore} to="/studio/gallery" onClick={mainElementAnimation}>
-               Смотреть еще
-            </Link>
+            {!(lessThree.size === 1) ? (
+               <Link className={styles.watchmore} to="/studio/gallery" onClick={mainElementAnimation}>
+                  Смотреть еще
+               </Link>
+            ) : null}
          </div>
       </SectionWrapper>
    );

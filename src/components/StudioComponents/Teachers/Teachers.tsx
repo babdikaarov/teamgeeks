@@ -39,7 +39,7 @@ const Teachers = () => {
             <Swiper
                key={3}
                className={styles.teacherSwiper}
-               data-lessFour={lessFour}
+               data-less-four={lessFour}
                slidesPerView={"auto"}
                freeMode={!lessFour}
                loop={!lessFour}

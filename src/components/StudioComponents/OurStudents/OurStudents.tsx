@@ -16,6 +16,7 @@ import styles from "./_ourstudents.module.scss";
 // ENUMS
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
+import { useLessConcertSuccess } from "../../../modules/hooks/useLess";
 
 const OurStudents = () => {
    const students = useAppSelector((state) => state.getStudentSuccess)!;
@@ -23,6 +24,7 @@ const OurStudents = () => {
    const mobileArray = students.data.slice(0, 3);
    const allIDS = extractAllYouTubeVideoID(students.data.map((el) => el.url));
    const { refToogle } = useToggleActiveNavigation(EBlockID.STUDENTS);
+   const lessThree = useLessConcertSuccess(students.data.length);
 
    if (!students.getLoading) return null;
    return (
@@ -35,32 +37,37 @@ const OurStudents = () => {
             ) : (
                <>
                   <Swiper
-                     slidesPerView={3}
                      spaceBetween={10}
-                     freeMode
-                     loop
+                     slidesPerView={"auto"}
+                     freeMode={!lessThree.less}
+                     loop={!lessThree.less}
                      mousewheel={{
                         forceToAxis: true,
                      }}
-                     modules={[Mousewheel, Navigation, FreeMode]}
+                     modules={!lessThree.less ? [Mousewheel, Navigation, FreeMode] : []}
                      navigation={{ nextEl: "#btn51", prevEl: "#StudentsPrev" }}
                      className={styles.ourStudentsSwiper}
+                     data-less-three={lessThree.less}
                   >
-                     {(students.data.length < 5 ? [...students.data, ...students.data] : students.data).map(
-                        (url, index) => (
-                           <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
-                              <OurStudentsCard url={url.url} addToID={url.id} allIDS={allIDS} />
-                           </SwiperSlide>
-                        ),
-                     )}
+                     {(!lessThree.less ? [...students.data, ...students.data] : students.data).map((url, index) => (
+                        <SwiperSlide key={index} className={styles.ourStudentsSwipeCard}>
+                           <OurStudentsCard url={url.url} addToID={url.id} allIDS={allIDS} />
+                        </SwiperSlide>
+                     ))}
                   </Swiper>
-                  <NavigationButton id="StudentsPrev" />
-                  <NavigationButton id="StudentsNext" />
+                  {!lessThree.hide ? (
+                     <>
+                        <NavigationButton id="StudentsPrev" />
+                        <NavigationButton id="StudentsNext" />
+                     </>
+                  ) : null}
                </>
             )}
-            <a className={styles.watchmore} href="https://www.youtube.com/@coolstudiokg" target="_blank">
-               Больше видео
-            </a>
+            {!(lessThree.size === 1) ? (
+               <a className={styles.watchmore} href="https://www.youtube.com/@coolstudiokg" target="_blank">
+                  Больше видео
+               </a>
+            ) : null}
          </div>
       </SectionWrapper>
    );
