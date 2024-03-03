@@ -30,7 +30,11 @@ const Gallery: React.FC = () => {
          </button>
          <div className={styles.gallery}>
             {(pathname.includes("studio") ? studioData : bandData).map((event) => (
-               <div className={styles.galleryCards} key={event.id}>
+               <div
+                  className={styles.galleryCards}
+                  key={event.id}
+                  onClick={() => navigate(`${redirectTo}/${event.id}`)}
+               >
                   <Link to={`${redirectTo}/${event.id}`} className={styles.image_container}>
                      <ImageLoader src={event.coverImage} bluer={event.bluer} />
                      <div className={styles.galleryCardsContent}>

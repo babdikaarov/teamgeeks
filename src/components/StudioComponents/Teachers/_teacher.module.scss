@@ -9,6 +9,13 @@
    justify-content: center;
 }
 
+.teacherSwiper[data-less-four="true"] {
+   margin-left: 53px;
+   @media (max-width: 440px) {
+      margin-left: 10px;
+   }
+}
+
 .teacherSwiper::-webkit-scrollbar {
    display: none;
 }

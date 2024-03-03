@@ -110,6 +110,9 @@
    opacity: 0.5;
    z-index: 2;
 }
+.galleryCards:hover {
+   cursor: pointer;
+}
 .galleryCards {
    position: relative;
    color: $color_yellow;
@@ -143,4 +146,5 @@
    height: 100%;
    width: 100%;
    position: relative;
+   // z-index: 10;
 }

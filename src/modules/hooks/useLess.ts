@@ -31,3 +31,18 @@ export const useLessConcertSuccess = (size: number) => {
       return { less: false, size: undefined, hide: false };
    }
 };
+export const useLessTeachers = (size: number) => {
+   const widthMore_652 = useMediaQuery("(min-width: 652px)");
+   const widthMore_430 = useMediaQuery("(min-width: 430px)");
+   const widthMore_275 = useMediaQuery("(min-width: 250px)");
+
+   if (widthMore_652 && size === 3) {
+      return { less: true, center: true, hide: true };
+   } else if (widthMore_430 && size === 2) {
+      return { less: true, center: true, hide: true };
+   } else if (widthMore_275 && size === 1) {
+      return { less: true, center: true, hide: true };
+   } else {
+      return { less: false, center: undefined, hide: false };
+   }
+};
