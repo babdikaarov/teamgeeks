@@ -59,6 +59,16 @@
    }
 }
 
+.collabContainer[data-lessSix="5"] {
+   padding-left: 20px;
+}
+.collabContainer[data-lessSix="4"] {
+   padding-left: 0px;
+}
+.collabContainer[data-lessSix="2"] {
+   padding-inline: 0px;
+}
+
 .card:active {
    cursor: grabbing;
 }

@@ -16,6 +16,7 @@ import styles from "./_ourTeam.module.scss";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // Enums
 import { EBlockID } from "../../../globalTypesEnum";
+import { useLessCollabTeam } from "../../../modules/useLessCollabTeam";
 
 const OurTeam = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.TEAM);
@@ -30,23 +31,27 @@ const OurTeam = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const team = useAppSelector((state) => state.getOurTeam)!;
+   const size = team.data.length;
+   const helperLess = useLessCollabTeam(size);
+
    if (!team.getLoading) return null;
+
    return (
       <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id={EBlockID.TEAM} forwardedRef={ref}>
-         <div className={styles.teamContainer} ref={refToogle}>
-            <NavigationButton id="TeamPrev" />
+         <div className={styles.teamContainer} ref={refToogle} data-lessSix={helperLess.size}>
+            {!helperLess.hide ? <NavigationButton id="TeamPrev" /> : null}
             <Swiper
                className={styles.swiperWrapper}
                data-draw-out={hasSetDrawerAttribute}
                spaceBetween={30}
                slidesPerView={"auto"}
-               freeMode
-               loop
+               freeMode={!helperLess.less}
+               loop={!helperLess.less}
                mousewheel={{
                   forceToAxis: true,
                }}
                navigation={{ nextEl: "#TeamNext", prevEl: "#TeamPrev" }}
-               modules={[Mousewheel, Navigation, FreeMode]}
+               modules={!helperLess.less ? [Mousewheel, Navigation, FreeMode] : []}
                breakpoints={{
                   1200: {
                      spaceBetween: 30,
@@ -59,13 +64,13 @@ const OurTeam = () => {
                   },
                }}
             >
-               {[...team.data, ...team.data].map((card, i) => (
+               {(!helperLess.less ? [...team.data, ...team.data] : team.data).map((card, i) => (
                   <SwiperSlide key={i} className={styles.cardContainer + " " + styles[card.orientation]}>
                      <TeamCard animate={i === 0} {...card} />
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="TeamNext" />
+            {!helperLess.hide ? <NavigationButton id="TeamNext" /> : null}
          </div>
       </SectionWrapper>
    );

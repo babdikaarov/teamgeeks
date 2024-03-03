@@ -16,6 +16,7 @@ import { EBlockID } from "../../../globalTypesEnum";
 // components
 import SectionWrapper from "../../../UI/SectionWrapper/SectionWrapper";
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
+import { useLessCollabTeam } from "../../../modules/useLessCollabTeam";
 
 const Collaboration = () => {
    const { refToogle } = useToggleActiveNavigation(EBlockID.COLLAB);
@@ -30,25 +31,27 @@ const Collaboration = () => {
    }, [inView, hasSetDrawerAttribute, dispatch]);
 
    const collab = useAppSelector((state) => state.getCollaborations)!;
+   const size = collab.data.length;
+   const helperLess = useLessCollabTeam(size);
    if (!collab.getLoading) return null;
    return (
       <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id={EBlockID.COLLAB} forwardedRef={ref}>
-         <div ref={refToogle} className={styles.collabContainer} data-animate={true}>
-            <NavigationButton id="CollabPrev" />
+         <div ref={refToogle} className={styles.collabContainer} data-animate={true} data-lessSix={helperLess.size}>
+            {!helperLess.hide ? <NavigationButton id="CollabPrev" /> : null}
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
                className={styles.swiperWrapper}
                spaceBetween={0}
                slidesPerView={"auto"}
-               freeMode
-               loop
+               freeMode={!helperLess.less}
+               loop={!helperLess.less}
                mousewheel={{
                   forceToAxis: true,
                }}
                navigation={{ nextEl: "#CollabNext", prevEl: "#CollabPrev" }}
-               modules={[Mousewheel, Navigation, FreeMode]}
+               modules={!helperLess.less ? [Mousewheel, Navigation, FreeMode] : []}
             >
-               {collab.data.map((card, i) => (
+               {(!helperLess.less ? [...collab.data, ...collab.data] : collab.data).map((card, i) => (
                   <SwiperSlide key={i} className={styles.card}>
                      <div>
                         <ImageLoader src={card.image} bluer={card.bluer} />
@@ -57,7 +60,7 @@ const Collaboration = () => {
                   </SwiperSlide>
                ))}
             </Swiper>
-            <NavigationButton id="CollabNext" />
+            {!helperLess.hide ? <NavigationButton id="CollabNext" /> : null}
          </div>
       </SectionWrapper>
    );

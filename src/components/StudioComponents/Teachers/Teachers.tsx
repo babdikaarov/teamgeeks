@@ -48,7 +48,6 @@ const Teachers = () => {
                }}
                navigation={{ nextEl: "#TeachersNext", prevEl: "#TeachersPrev" }}
                modules={lessFour ? [] : [Mousewheel, Navigation, FreeMode]}
-               
                breakpoints={{
                   1024: {
                      spaceBetween: 53,
@@ -62,10 +61,7 @@ const Teachers = () => {
                }}
             >
                {(!lessFour ? [...teachers.data, ...teachers.data] : teachers.data).map((card, i) => (
-                  <SwiperSlide key={i} onClick={() => openModal(card)} 
-                  className={styles.cardSwiperTeacher}
-                  
-                  >
+                  <SwiperSlide key={i} onClick={() => openModal(card)} className={styles.cardSwiperTeacher}>
                      <TeacherCard
                         img={card.image}
                         name={card.name}
