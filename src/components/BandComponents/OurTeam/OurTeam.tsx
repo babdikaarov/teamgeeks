@@ -38,7 +38,7 @@ const OurTeam = () => {
 
    return (
       <SectionWrapper header={"Наша команда"} className={styles.teamWrapper} id={EBlockID.TEAM} forwardedRef={ref}>
-         <div className={styles.teamContainer} ref={refToogle} data-lessSix={helperLess.size}>
+         <div className={styles.teamContainer} ref={refToogle} data-less-six={helperLess.size}>
             {!helperLess.hide ? <NavigationButton id="TeamPrev" /> : null}
             <Swiper
                className={styles.swiperWrapper}

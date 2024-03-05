@@ -36,7 +36,7 @@ const Collaboration = () => {
    if (!collab.getLoading) return null;
    return (
       <SectionWrapper header={"Коллаборации"} className={styles.collabWrapper} id={EBlockID.COLLAB} forwardedRef={ref}>
-         <div ref={refToogle} className={styles.collabContainer} data-animate={true} data-lessSix={helperLess.size}>
+         <div ref={refToogle} className={styles.collabContainer} data-animate={true} data-less-six={helperLess.size}>
             {!helperLess.hide ? <NavigationButton id="CollabPrev" /> : null}
             <Swiper
                data-draw-out={hasSetDrawerAttribute}
