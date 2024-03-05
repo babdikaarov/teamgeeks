@@ -1,7 +1,7 @@
 // import { HeroTextProps } from "./types";
 
 const HeroText: React.FC<Prop.Hero.TextProps> = ({ header = "", paragraph = "", className }) => {
-   if (header.length === 0) return;
+   if (header === "-") return;
    if (paragraph === "-") {
       paragraph = "";
    }

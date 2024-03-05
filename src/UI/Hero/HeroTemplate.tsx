@@ -55,7 +55,7 @@ const HeroTemplate: React.FC<Prop.Hero.Props> = ({ video, text, children, ...pro
             src={video}
             typeof="video/mp4"
             loop
-            preload="metadata"
+            // preload="metadata"
             autoPlay={true}
             muted={true}
             playsInline={true}
