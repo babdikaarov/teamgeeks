@@ -16,7 +16,7 @@ import styles from "./_concerts.module.scss";
 import { EBlockID } from "../../../globalTypesEnum";
 import { useAppSelector } from "../../../app/hooks";
 import { Link } from "react-router-dom";
-import { mainElementAnimation } from "../../../modules/transition";
+import { mainElementAnimation } from "../../../modules/helperFc/transition";
 import { useLessConcertSuccess } from "../../../modules/hooks/useLess";
 
 const Concert = () => {

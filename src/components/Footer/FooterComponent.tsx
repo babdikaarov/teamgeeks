@@ -1,14 +1,14 @@
 // modules
 import { HashLink } from "react-router-hash-link";
 import { Link, useLocation } from "react-router-dom";
-import createMailtoLink from "../../modules/createMailtoLink";
-import createWhatsAppLink from "../../modules/createWhatsAppLink";
+import createMailtoLink from "../../modules/helperFc/createMailtoLink";
+import createWhatsAppLink from "../../modules/helperFc/createWhatsAppLink";
 // styles
 import styles from "./_footer.module.scss";
 // components
 import Logo from "../../UI/Logo/Logo";
-import formatPhoneNumber from "../../modules/formatPhoneNumberToText";
-import { mainElementAnimation } from "../../modules/transition";
+import formatPhoneNumber from "../../modules/helperFc/formatPhoneNumberToText";
+import { mainElementAnimation } from "../../modules/helperFc/transition";
 
 const FooterComponent: React.FC<Prop.Footer.FooterComponent> = ({ backendData }) => {
    const { bandNumber, studioNumber, address, email, city, organizationId } = backendData.contactDetails;

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./_concertCard.module.scss";
-import { mainElementAnimation } from "../../../modules/transition";
+import { mainElementAnimation } from "../../../modules/helperFc/transition";
 
 const ConcertCard = (props: Card.ConcertCardProps) => {
    const navigate = useNavigate();

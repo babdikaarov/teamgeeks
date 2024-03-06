@@ -33,7 +33,7 @@ const usePagination = (initialItemsPerPage = 8, initialPage = 1) => {
       return items.slice(startItemIndex, endItemIndex);
    };
    const nextPage = () => {
-      console.log("next page");
+      // console.log("next page");
       setCurrentPage((prevPage) => prevPage + 1);
    };
 

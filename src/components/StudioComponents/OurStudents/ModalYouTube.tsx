@@ -1,5 +1,5 @@
 // modules
-import { createParameterString } from "../../../modules/createParametrString";
+import { createParameterString } from "../../../modules/helperFc/createParametrString";
 import { useModalCotroller } from "../../../modules/hooks/useModalCotroller";
 // components
 import close from "/icons/X.svg";

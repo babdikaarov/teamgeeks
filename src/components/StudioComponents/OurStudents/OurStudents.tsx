@@ -1,6 +1,6 @@
 // modules
 import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
-import { extractAllYouTubeVideoID } from "../../../modules/extractAllYouTubeVideoID";
+import { extractAllYouTubeVideoID } from "../../../modules/helperFc/extractAllYouTubeVideoID";
 import useToggleActiveNavigation from "../../../modules/hooks/useToggleActiveNavigation";
 // swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";

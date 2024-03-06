@@ -1,6 +1,6 @@
 // modules
 import { useMediaQuery } from "../../../modules/hooks/useMediaQuery";
-import flipHanler from "../../../modules/eventHandlers";
+import flipHanler from "../../../modules/helperFc/eventHandlers";
 // components
 import ImageLoader from "../../../UI/ImageLoader/ImageLoader";
 // styles

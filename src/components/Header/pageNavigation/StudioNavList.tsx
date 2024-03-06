@@ -2,7 +2,7 @@
 import { HashLink } from "react-router-hash-link";
 import { useAppSelector } from "../../../app/hooks";
 import { EBlockID } from "../../../globalTypesEnum";
-import { mainElementAnimation } from "../../../modules/transition";
+import { mainElementAnimation } from "../../../modules/helperFc/transition";
 import styles from "./_NavList.module.scss";
 import { useLocation } from "react-router-dom";
 

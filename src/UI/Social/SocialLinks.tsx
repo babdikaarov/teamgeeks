@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../app/hooks.ts";
 import styles from "./_socialLinks.module.scss";
 import { socialIcons } from "../../assets/icons/socialIcons.tsx";
-import createWhatsAppLink from "../../modules/createWhatsAppLink.ts";
+import createWhatsAppLink from "../../modules/helperFc/createWhatsAppLink.ts";
 import { useLocation } from "react-router-dom";
 
 const SocialLinks: React.FC<Prop.SocialLinks> = ({ setIsMenuOpen }) => {

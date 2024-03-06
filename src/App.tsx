@@ -8,12 +8,10 @@ import "./scss/partials/_variables.scss";
 import useTitle from "./modules/hooks/useTitle.ts";
 import useLocationDispatch from "./modules/hooks/useLocationDispatch.ts";
 import NotFound from "./pages/NotFound/NotFound.tsx";
-// import useRouterRedirect from "./modules/hooks/useRedirect.ts";
 
 const App = () => {
    useTitle();
    useLocationDispatch();
-   // useRouterRedirect();
 
    return (
       <Routes>

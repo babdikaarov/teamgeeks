@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./_topButtons.module.scss";
-import { mainElementAnimation } from "../../../modules/transition";
+import { mainElementAnimation } from "../../../modules/helperFc/transition";
 
 const TopButtons = () => {
    const { pathname } = useLocation();

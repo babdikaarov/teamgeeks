@@ -1,7 +1,7 @@
 // modules
 import { useEffect, useRef, useState } from "react";
 import { useAppSelector } from "../../../app/hooks";
-import { extractYouTubeVideoId } from "../../../modules/extractAllYouTubeVideoID";
+import { extractYouTubeVideoId } from "../../../modules/helperFc/extractAllYouTubeVideoID";
 // styles
 import styles from "./_videoComponent.module.scss";
 
