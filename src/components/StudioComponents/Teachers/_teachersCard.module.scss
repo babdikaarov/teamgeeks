@@ -42,15 +42,21 @@
 .cardContainer {
    border-radius: 16px;
    // border-top-right-radius: 16px;
+   height: 380px;
    width: 250px;
    overflow: hidden;
    padding: 1px;
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
    @include xxl {
       width: 224px;
       border-radius: 14px;
+      height: 333px;
    }
    @include xl {
+      height: 278px;
       width: 202px;
       border-radius: 12px;
    }
@@ -58,6 +64,7 @@
       width: 186px;
       background-color: #252525;
       border-radius: 9px;
+      height: 255px;
    }
    @include md {
       width: 170px;
@@ -98,7 +105,6 @@
    letter-spacing: normal;
    @include xxl {
       font-size: 16px;
-      margin-bottom: 13px;
    }
    @include xl {
       font-size: 14px;
@@ -110,13 +116,7 @@
    }
    @include md {
       font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 1px;
-   }
-   @include sm {
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 1px;
+      margin-bottom: 3px;
    }
 }
 
@@ -130,21 +130,10 @@
    }
    @include xl {
       font-size: 12px;
-      margin-bottom: 5px;
-   }
-   @media screen and (max-width: 892px) {
-      font-size: 12px;
-      margin-bottom: 4px;
-   }
-   @include md {
-      font-size: 12px;
-      font-weight: 500;
       margin-bottom: 3px;
    }
-   @include sm {
-      font-size: 12px;
+   @include md {
       font-weight: 500;
-      margin-bottom: 1px;
    }
 }
 
@@ -153,6 +142,7 @@
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 2;
+   line-height: normal;
    overflow: hidden;
    font-size: 15px;
    font-weight: 300;
